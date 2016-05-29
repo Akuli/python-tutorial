@@ -17,6 +17,6 @@ Most importantly, when learning a programming language you need to **experiment 
 Here's a list of chapters in this tutorial: 
  
 1. [Installing Python and using it as a calculator](1.md) 
-2. [Strings, variables, booleans and None](2.md) 
+2. [Strings, variables, Booleans and None](2.md) 
 3. [Using functions and storing code in files](3.md) 
 4. [If, elif, else and while](4.md) 
