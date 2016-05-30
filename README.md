@@ -25,4 +25,4 @@ Here's a list of chapters in this tutorial:
 3. [Using functions and storing code in files](3.md) 
 4. [If, elif, else and while](4.md) 
 
-You are free to copy and redistribute this tutorial and its code examples with or without modifications. See [LICENSE.md](LICENSE.md) for more information.
+This tutorial is not officially licensed yet, but **you are free to read, download and distribute it with or without modifications if you include this notice with your copy**. If you have a suggestion for license or other suggestions, please help us improve this tutorial by making an [issue](https://github.com/Akuli/python-tutorial/issues) of it.
