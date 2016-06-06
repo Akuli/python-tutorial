@@ -45,6 +45,14 @@ These are answers for exercises in the chapters. In programming, there's always 
     >>>
     ```
 
+    Spaces don't effect the calculating order, but you can use them to make the order easier to see:
+
+    ```py
+    >>> 4/3 * pi * 5**3
+    523.5987755982989
+    >>>
+    ```
+
 ### Chapter 3
 
 1. Content of the file:
