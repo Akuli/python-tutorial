@@ -1,6 +1,6 @@
 # Answers
 
-These are answers for exercises in the chapters. In programming, there's always more than one way to do things, so if your solution wasn't exactly like mine it's not necessarily wrong. Some Pythonistas say that there should be only one right way, but that goal will never be fully reached.
+These are answers for exercises in the chapters. In programming, there's always more than one way to do things, so if your solution wasn't exactly like mine it's not necessarily wrong. Some Python users say that there should be only one right way, but that goal will never be fully reached.
 
 ### Chapter 1
 
