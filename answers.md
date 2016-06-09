@@ -31,7 +31,7 @@ These are answers for exercises in the chapters. In programming, there's always 
     ```py
     >>> (4 / 3) * 3.14 * (5 * 5 * 5)
     523.3333333333334
-    >>> 4 / 3 * 3.14 * 5 * 5 * 5      # parenthesis aren't needed
+    >>> 4 / 3 * 3.14 * 5 * 5 * 5      # parentheses aren't needed
     523.3333333333334
     >>>
     ```
