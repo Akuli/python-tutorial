@@ -29,4 +29,4 @@ This tutorial is not officially licensed yet, but **you are free to read, downlo
 
 I'm Akuli and I have written most of this tutorial, but the following people have helped me with it:
 - [SpiritualForest](https://github.com/SpiritualForest): Lots of typing error fixes.
-- [theelous3](https://github.com/theelous3): Some small improvements and fixes.
+- [theelous3](https://github.com/theelous3): Small improvements and fixes.
