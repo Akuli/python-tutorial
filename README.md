@@ -2,9 +2,9 @@
 
 [Python](https://en.wikipedia.org/wiki/Python_\(programming_language\)) is a high-level, interactive and object-oriented programming language. Its simple syntax makes it a great choice for a first programming language for a beginner.
 
-No tutorial is good for everyone. This one is aimed at people with no programming experience at all. If you have programmed in the past with some other language you probably want to read [the official tutorial](https://docs.python.org/3/tutorial/) instead. Like most other tutorials, this tutorial starts with math. You can skip that if you hate math.
+No tutorial is good for everyone. This one is aimed at people with very little programming experience or no programming experience at all. If you have programmed a lot in the past using some other language you probably want to read [the official tutorial](https://docs.python.org/3/tutorial/) instead. Like most other tutorials, this tutorial starts with math, and you can skip that if you hate math.
 
-This tutorial uses Python 3. Python 2 is not under active development anymore, and more and more projects are moving to Python 3. Currently there are a few packages that don't support Python 3 that well at the time of writing this (such as twisted), but if you haven't programmed yet Python 3 is a great choice.
+This tutorial uses Python 3. Python 2 is not under active development anymore, and more and more projects are moving to Python 3. There are a few packages that don't support Python 3 that well at the time of writing this (such as twisted), but you don't need to worry about that.
 
 This tutorial includes lots of footnotes _[*]_. They are for people who want to know more about something in more detail and for people who would otherwise complain about how my tutorial is wrong about some things. There's often links to awesome resources such as tutorials and videos. If you've finished reading my tutorial and doing the exercises I recommend reading the footnotes and other places they point to.
 
