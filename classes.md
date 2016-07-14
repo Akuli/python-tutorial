@@ -37,7 +37,7 @@ string.
 >>> 
 ```
 
-Let's say you make a program that processes data about website. With a
+Let's say you make a program that processes data about websites. With a
 custom class, you're not limited to `str`, `int` and other classes
 Python comes with. Instead you can define a Website class, and make
 Websites and process information about websites directly. Defining your
