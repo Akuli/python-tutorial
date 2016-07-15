@@ -171,8 +171,11 @@ the `Website` class.
 >>> 
 ```
 
-In most cases it's not recommended to use class attributes. Using
-instance attributes instead is simpler.
+`Website.is_online` is `Website`'s class attribute, and in Python you can
+access class attributes through instances also, so in this case
+`stackoverflow.is_online` points to `Website.is_online`. That can be
+confusing, which is why it's not recommended to use class attributes like
+this. Use instance attributes instead, e.g. `stackoverflow.is_online = True`.
 
 ### Functions and methods
 
