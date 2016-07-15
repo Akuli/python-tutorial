@@ -237,10 +237,11 @@ But is `stackoverflow.info` the same thing as `Website.info`?
 
 It's not.
 
-Instead, `stackoverflow.info` is a **method**. Effbot also has a `.info`
-method. So `Website.info(stackoverflow)` does the same thing as
-`stackoverflow.info()`, and when `stackoverflow.info()` is called it
-automatically gets `stackoverflow` as an argument.
+Instead, `stackoverflow.info` is a **method**. Functions as class
+attributes can be accessed as methods from instances. Effbot also
+has a `.info` method. So `Website.info(stackoverflow)` does the same
+thing as `stackoverflow.info()`, and when `stackoverflow.info()` is
+called it automatically gets `stackoverflow` as an argument.
 
 In other words, `Class.method(instance)`  does the same thing as
 `instance.method()`. This also works with built-in classes, for
