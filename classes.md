@@ -63,12 +63,12 @@ Let's use it to define an empty class.
 >>> 
 ```
 
-**_Note_:** If you are using Python 2 I highly recommend using
+_**Note:** If you are using Python 2 I highly recommend using
 `class Website(object):` instead of `class Website:`. This creates a
 new-style class instead of an old-style class. Old-style classes are
 different than new-style classes in some ways and not supported in this
 tutorial. In Python 3, there are no old-style classes and
-`class Website(object):` does the same thing as `class Website:`.
+`class Website(object):` does the same thing as `class Website:`._
 
 Note that I named the class `Website`, not `website`. This way we know
 that it's a class. Built-in classes use lowercase names (like `str`
