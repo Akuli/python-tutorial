@@ -37,6 +37,20 @@ string.
 >>> 
 ```
 
+We can also get an instance's class with `type()`:
+
+```py
+>>> type('')
+<class 'str'>
+>>> type(0)
+<class 'int'>
+>>> type([])
+<class 'list'>
+>>> type({})
+<class 'dict'>
+>>> 
+```
+
 Let's say you make a program that processes data about websites. With a
 custom class, you're not limited to `str`, `int` and other classes
 Python comes with. Instead you can define a Website class, and make
