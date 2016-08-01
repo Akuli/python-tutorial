@@ -5,6 +5,10 @@ tkinter GUI's before I understood how they work. Everything I did with
 classes worked, but I didn't understand how. Hopefully you'll first
 learn to understand classes, and then learn to use them.
 
+This tutorial assumes that you know how functions work and how to
+create your own functions with the `def` keyword. If you don't, I
+highly recommend learning that first, and then moving to classes.
+
 ### Why should I use custom classes in my projects?
 
 Python comes with a lot of classes that you are already familiar with.
