@@ -128,6 +128,9 @@ True
 
 `url`, `founding_year` and `free_to_use` are not variables, they are
 **attributes**. More specifically, they are **instance attributes**.
+The biggest difference is that variables are accessed by their name,
+and attributes are accessed by typing a name of an object (like
+stackoverflow), then a dot and then the name of the attribute.
 
 If we make another Website, does it have the same `url`, `founding_year`
 and `free_to_use`?
