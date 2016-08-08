@@ -14,9 +14,9 @@ probably want to read
 This tutorial uses Python 3. Python 2 is getting outdated all the time,
 and more and more projects are moving to Python 3. There are a few
 popular libraries that don't support Python 3 that well at the time of
-writing this, but you don't need to worry about that just yet. They will
-probably support Python 3 by the time you've learned the basics and you
-may actually need them.
+writing this, but you don't need to worry about that just yet. They
+will probably support Python 3 by the time you've learned the basics
+and you may actually need them.
 
 Here's a list of chapters in this tutorial. Read them one by one in the
 order they are listed. **If you jump to a chapter without reading

@@ -2,7 +2,7 @@
 
 ### Using if statements
 
-Back in chapter 2, we learned what the boolean values True and False are.
+Now we know what True and False are.
 
 ```py
 >>> 1 == 1
@@ -10,37 +10,42 @@ True
 >>> 1 == 2
 False
 >>>
-```
-
-We also learned how to assign them to variables.
-
-```py
 >>> its_raining = True
 >>> its_raining
 True
 >>>
 ```
 
-But what if we want to execute different code depending on something? That's when `if` comes in.
+But what if we want to execute different code depending on something?
+That's when `if` comes in.
 
 ```py
 >>> its_raining = True
 >>> if its_raining:
-        print("It's raining!")
-
-
+...     print("It's raining!")
+... 
 It's raining!
 >>> its_raining = False
 >>> if its_raining:
-        print("It's raining!")        # nothing happens
-
-
->>>
+...     print("It's raining!")        # nothing happens
+... 
+>>> 
 ```
 
-After typing the line with print we need to press Enter twice to actually run the code we wrote. IDLE also indents everything we want to run if it's raining.
+The prompt changed from `>>>` to `...`. It meant that Python was
+expecting me to keep typing. When I was done, I just pressed Enter
+twice. My code was execute and the prompt was restored to `>>>`.
 
-At this point it's easier to put your code into a file and use it there. The file's content would be like this:
+At this point it's easier to put your code into a file and use it
+there. If you use IDLE, go to File at top left and select New File, or
+just press Ctrl+N.
+
+![New File in IDLE](idle-new.png)
+
+If you are not using IDLE, open whatever editor you have installed, or
+install
+
+The file's content would be like this:
 
 ```py
 its_raining = True
