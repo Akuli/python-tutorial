@@ -27,7 +27,7 @@ it.**
 2. [Installing Python](installing-python.md)
 3. [Getting started with Python](getting-started.md)
 4. [ThinkPython: The way of the program](the-way-of-the-program.md)
-5. [Variables, Booleans and None](2.md)
+5. [Variables, Booleans and None](variables.md)
 6. [Using functions and storing code in files](using-functions.md)
 7. [If, elif, else and while](4.md)
 
