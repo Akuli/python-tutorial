@@ -67,8 +67,6 @@ Calling a function without assigning the return value to anything (e.g. `print('
 >>> 
 ```
 
-If you still have trouble understanding functions, feel free to come to a good Python IRC channel like [#python](https://kiwiirc.com/client/irc.freenode.net/#python), [##python-friendly](https://kiwiirc.com/client/irc.freenode.net/##python-friendly) or [##learnpython](https://kiwiirc.com/client/irc.freenode.net/##learnpython). There will be plenty of skilled people ready to help you. Just ask your question nicely and be patient.
-
 You can also pass multiple parameters separated with commas. The print function will add spaces between them.
 
 ```py
