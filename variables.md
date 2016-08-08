@@ -1,6 +1,6 @@
 # 2. Variables, Booleans and None
 
-### Variables
+## Variables
 
 Variables are easy to understand. They simply **contain data**. Actually
 they [point to data](https://www.youtube.com/watch?v=_AEJHKGk9ns), but
@@ -109,7 +109,7 @@ variable called hello and then type hello:
 >>> 
 ```
 
-### Booleans
+## Booleans
 
 There are two Boolean values, True and False. In Python, and in many
 other programming languages, `=` is assigning and `==` is comparing.
@@ -142,7 +142,7 @@ False
 >>> 
 ```
 
-### None
+## None
 
 None is Python's "nothing" value. It behaves just like any other value,
 and it's often used as a default value for different kinds of things.
@@ -164,7 +164,7 @@ This is because the prompt never echoes back None. That is handy,
 because many things result in None, and it would be annoying to see
 None coming up all the time.
 
-### Other comparing operators
+## Other comparing operators
 
 So far we've used `==`, but there are other operators also. At this
 point, this list probably looks awfully long, but it's actually pretty
@@ -191,7 +191,7 @@ However, `!=` and `not in` should be used in cases like this because
 they're more convinient once you get used to them.
 
 There's also `is`, but don't use it instead of `==` unless you know
-what you are doing. We'll find uses for it later.
+what you are doing. We'll learn more about it later.
 
 ***
 

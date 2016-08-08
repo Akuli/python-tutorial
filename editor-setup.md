@@ -20,7 +20,7 @@ you want to indent**. Your editor should give you four spaces when you
 hit the tab key. Your editor should also remove four spaces when you
 hit backspace and there are four spaces before the cursor.
 
-#### Geany
+### Geany
 
 1. Create a file called `hello.py`, and open it in geany. Or create a
     file in geany and save it as `hello.py`.
@@ -36,7 +36,7 @@ color than the rest of your text. `"Strings"`, `# comments` and
 everything else should also have their own colors. This makes it much
 easier to write code.
 
-#### Geany
+### Geany
 
 Geany has syntax highlighting by default. You can also install more
 [color schemes](https://www.geany.org/Download/Extras#colors) if you
@@ -47,7 +47,7 @@ View, then Change Color Scheme.
 
 Advanced editors support plugins. You may find some of them useful.
 
-#### Geany
+### Geany
 
 On Debian-based GNU/Linux distributions, install the geany-plugins
 package. See [the Geany website](https://plugins.geany.org/) for

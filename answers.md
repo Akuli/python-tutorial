@@ -2,7 +2,7 @@
 
 These are answers for exercises in the chapters. In programming, there's always more than one way to do things, so if your solution wasn't exactly like mine it's not necessarily wrong. Some Python users say that there should be only one right way, but that goal will never be fully reached.
 
-### Chapter 1
+## Chapter 1
 
 1. 18996.20 €
 
@@ -53,7 +53,7 @@ These are answers for exercises in the chapters. In programming, there's always 
     >>>
     ```
 
-### Chapter 3
+## Chapter 3
 
 1. Content of the file:
 
@@ -94,7 +94,7 @@ These are answers for exercises in the chapters. In programming, there's always 
     print(words * 1000)
     ```
 
-### Chapter 4
+## Chapter 4
 
 1. You can compare the word against an empty string (`""` or `''`). In this example, the password is "secret".
 
@@ -153,7 +153,8 @@ These are answers for exercises in the chapters. In programming, there's always 
         Wrong password!
         >>>
 
-3. This is a great chance to use a while loop. In this example, the correct password is "secret".
+3. This is a great chance to use a while loop. In this example, the
+    correct password is "secret".
 
     ```py
     running = True
@@ -166,7 +167,21 @@ These are answers for exercises in the chapters. In programming, there's always 
             print("Wrong password.")
     ```
 
-    Another alternative:
+    You can also use `break` to get out of a loop, and `while True:` to
+    do an infinite loop. This is recommended instead of the previous
+    alternative, because you don't need a useless `running` variable.
+
+    ```py
+    while True:
+        password = input("Enter your password: ")
+        if password == "secret":
+            print("Welcome!")
+            break
+        else:
+            print("Wrong password.")
+    ```
+
+    Even shorter alternative:
 
     ```py
     while input("Enter your password: ") != "secret":
@@ -174,7 +189,8 @@ These are answers for exercises in the chapters. In programming, there's always 
     print("Welcome!")
     ```
 
-4. One way to do this is to put the inputs directly to `if` and `elif` lines. Again, the correct password is "secret".
+4. One way to do this is to put the inputs directly to `if` and `elif`
+    lines. Again, the correct password is "secret".
 
     ```py
     if input("Enter your password: (3 attempts left) ") == "secret":
@@ -202,4 +218,8 @@ These are answers for exercises in the chapters. In programming, there's always 
         Welcome!
         >>>
 
-[Home](README.md)
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md)

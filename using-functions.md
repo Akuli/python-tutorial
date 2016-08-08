@@ -1,6 +1,6 @@
 # 3. Using functions and storing code in files
 
-### Functions
+## Functions
 
 Now we know how to make Python show text.
 
@@ -103,7 +103,7 @@ Enter something: hello
 >>>
 ```
 
-### Storing code in files
+## Storing code in files
 
 Now it's time to write some code into a file for the first time. In IDLE, go to File at top left and select New File, or just press Ctrl+N.
 
@@ -136,7 +136,7 @@ After running the program you can check what the `word` variable contains in the
 >>>
 ```
 
-### Exercises
+## Exercises
 
 1. Write a program into a file that asks the user to write a word and then prints that word 1000 times. For example, if the user enters `hi` the program would reply `hihihihi...`.
 2. Make it to print spaces between the words. It should be like `hi hi hi hi...`.

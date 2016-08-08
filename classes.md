@@ -9,7 +9,7 @@ This tutorial assumes that you know how functions work and how to
 create your own functions with the `def` keyword. If you don't, I
 highly recommend learning that first, and then moving to classes.
 
-### Why should I use custom classes in my projects?
+## Why should I use custom classes in my projects?
 
 Python comes with a lot of classes that you are already familiar with.
 
@@ -61,7 +61,7 @@ Python comes with. Instead you can define a Website class, and make
 Websites and process information about websites directly. Defining your
 own object types like this is called **object-orientated programming**.
 
-### First class
+## First class
 
 In Python, `pass` does nothing.
 
@@ -160,7 +160,7 @@ handy way to see which attributes the instance contains.
 >>> 
 ```
 
-### Class attributes
+## Class attributes
 
 What happens if we set an attribute of the `Website` class to some value
 instead of doing that to an instance?
@@ -205,7 +205,7 @@ access class attributes through instances also, so in this case
 confusing, which is why it's not recommended to use class attributes like
 this. Use instance attributes instead, e.g. `stackoverflow.is_online = True`.
 
-### Functions and methods
+## Functions and methods
 
 Let's define a function that prints information about a website.
 
@@ -276,7 +276,7 @@ In other words, `Class.method(instance)` does the same thing as
 `instance.method()`. This also works with built-in classes, for
 example `'hello'.lower()` is same as `str.lower('hello')`.
 
-### Defining methods when defining the class
+## Defining methods when defining the class
 
 Maybe we could define a method when we make the class instead of adding
 it later?
@@ -362,7 +362,7 @@ Free to use: True
 Classes have many other magic methods too, but I'm not going to cover
 them in this tutorial.
 
-### When should I use classes?
+## When should I use classes?
 
 Don't do this:
 
@@ -393,7 +393,7 @@ word = input("Enter something: ")
 print("You entered " + word + ".")
 ```
 
-### Important things
+## Important things
 
 Here are some of the most important things covered in this tutorial.
 Make sure you understand them.
@@ -413,3 +413,9 @@ Make sure you understand them.
 - `__init__` is a special method, and it's ran when a new instance of a
   class is created. It does nothing by default.
 - Don't use classes if your code is easier to read without them.
+
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md)

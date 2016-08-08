@@ -3,7 +3,7 @@
 When you have a problem with Python, you're not alone! There are many
 places to ask for help in.
 
-### IRC
+## IRC
 
 IRC is the oldest chatting service I know, but as of 2016, it's still
 in use, and a great way to get help in Python. You don't need to
@@ -34,12 +34,12 @@ Do this:
 Don't do this:
 
     <you>   HEEEEELP MEEEEEEEEEEEEEEE!!!
-    <you>     File "foo", line 3
+    <you>     File "hello.py", line 3
     <you>       if a = b:
     <you>            ^
     <you>   SyntaxError: invalid syntax
 
-### Websites to ask help on
+## Websites to ask help on
 
 Personally, I've never asked a question on any of these sites. Getting
 help on IRC is much faster.

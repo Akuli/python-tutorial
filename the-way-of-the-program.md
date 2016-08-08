@@ -10,7 +10,7 @@ boring.
 When you're done reading, read the summary and make sure you've learned
 everything.
 
-### Summary
+## Summary
 
 - Now you should have some kind of idea about what programming is.
 - Each value has a type, and you can find that out with `type(value)`.

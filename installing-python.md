@@ -10,7 +10,7 @@ Let's get started!
 
 ## Downloading and installing Python
 
-#### Windows
+### Windows
 
 Use the official Python installer, it will install Python and IDLE for
 you.
@@ -22,12 +22,12 @@ you.
 4. Select the "advanced installation" option, and make sure the py.exe
     launcher gets installed.
 
-#### Mac OSX
+### Mac OSX
 
 I don't have an up-to-date copy of Mac OSX. If you would like to write
 instructions for OSX, [tell me](contact-me.md).
 
-#### GNU/Linux
+### GNU/Linux
 
 You already have Python, there's no need to download anything.
 
@@ -49,7 +49,7 @@ I'm not going to focus on the third option in this tutorial, but if you
 know how to use Python with something else than PowerShell, command
 prompt, a terminal or IDLE it's fine. Do whatever you want.
 
-#### If you are not an advanced user and you have no idea what PowerShell, command prompt and terminal are
+### If you are not an advanced user and you have no idea what PowerShell, command prompt and terminal are
 
 Use IDLE. Experienced Python users will say that IDLE is garbage, but
 don't listen to them. These people want you to use "better"
@@ -74,7 +74,7 @@ take more screenshots:
 The exact content of your Python's welcome message is probably different
 than mine, it's ok.
 
-#### If you like working with PowerShell, command prompt or terminal
+### If you like working with PowerShell, command prompt or terminal
 
 On Windows. you should be able to run Python from a PowerShell window,
 or a command prompt window if you don't have PowerShell. Open one of
