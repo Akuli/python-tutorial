@@ -29,7 +29,7 @@ it.**
 4. [ThinkPython: The way of the program](the-way-of-the-program.md)
 5. [Variables, Booleans and None](variables.md)
 6. [Using functions and storing code in files](using-functions.md)
-7. [If, elif, else and while](4.md)
+7. [If, elif, else and while](if.md)
 
 Other things this tutorial comes with:
 
