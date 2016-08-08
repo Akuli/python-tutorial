@@ -14,7 +14,7 @@ it, there are a few ways to contact me:
 - Tell me on IRC.
 
     I'm usually on ##learnpython and ##python-friendly on freenode. See
-    [Getting help] for instructions to getting there.
+    [Getting help](getting-help.md) for instructions to getting there.
 
 ***
 
