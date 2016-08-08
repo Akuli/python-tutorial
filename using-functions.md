@@ -18,7 +18,7 @@ Hello!
 >>>
 ```
 
-Now you're ready for a classic example, which is also the first program in many tutorials :)
+Now we are ready for a classic example, which is also the first program in many tutorials :)
 
 ```py
 >>> print("Hello World!")
@@ -144,6 +144,9 @@ After running the program you can check what the `word` variable contains in the
 2. Make it to print spaces between the words. It should be like `hi hi hi hi...`.
 3. Make something that asks the user to enter two words, and prints 1000 of each with spaces in between. For example, if the user enters `hello` and `hi` the program would print `hello hi hello hi hello hi...`.
 
-The answers are [here](answers.md).
 
-[Previous](2.md) | [Next](4.md) | [Home](README.md)
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md)

@@ -1,19 +1,20 @@
 # Quick introduction to this tutorial
 
 I started writing a full Python tutorial, but I stopped when I realized
-that it would be a lot of work. Instead, I'm currently combining it with
-links to other free tutorials, so some day it should be all you need to
-get started with Python.
+that it would be a lot of work. Instead, I started adding links to other
+free tutorials. Since much of this is collected from different places
+around the Internet, you will end up reading about some things twice.
+Just skip them and move on :)
 
-Everything in this tutorial contains a lot of examples, and the tutorial
+Everything in this tutorial contains lots of examples, and the tutorial
 should be easy to follow. But what should you do if you don't understand
 something the first time you read it?
 
 1. Read the example code and the explanation for it again.
 2. Try the example yourself.
-3. If you still don't understand, please [tell me](contact-me.md). I want
-    to improve the tutorial so other readers won't have the same problem
-    as you did.
+3. If you still don't understand, please [tell me](contact-me.md). I
+    want to improve the tutorial so other readers won't have the same
+    problem you had.
 
 One of the most important things with learning to program is to
 **not fear mistakes**. If you make a mistake, your computer will not
@@ -25,7 +26,7 @@ Even though a good tutorial is an important part about learning to
 program, you also need to learn to make your own things. Use what you
 have learned, and create something with it.
 
-### Summary
+## Summary
 
 - Now you should know what to do if you don't understand something.
 - Don't fear mistakes.

@@ -13,16 +13,8 @@ it, there are a few ways to contact me:
 
 - Tell me on IRC.
 
-    I'm usually on
-    [##learnpython on freenode](https://kiwiirc.com/client/chat.freenode.net/##learnpython).
-    You don't need to register anywhere, just click the link and you're
-    good to go. If there's no Akuli in the user list, try again after a
-    few hours. Maybe we are not on the same time zone.
-
-    If you need to post a code example that is more than two lines long,
-    post it [here](http://dpaste.com/) first. Just copy-paste your code
-    to the big text area and click the "Paste it" button. Then post a
-    link to your paste on IRC.
+    I'm usually on ##learnpython and ##python-friendly on freenode. See
+    [Getting help] for instructions to getting there.
 
 ***
 
