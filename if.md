@@ -45,7 +45,8 @@ code looks more like this:
 
         
 It's raining!
->>> ```
+>>> 
+```
 
 At this point it's easier to put your code into a file and use it
 there. If you use IDLE, go to File at top left and select New File, or
