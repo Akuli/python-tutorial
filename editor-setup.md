@@ -72,7 +72,7 @@ theme.
 Type M-x, type `load-theme`, press Tab twice to see a list of theme
 names, then enter a theme name and press Enter. If you want to
 automatically change the theme when Emacs starts, add
-`(load-theme 'your-theme-name)` to your ~/.emacs file.
+`(load-theme 'your-theme-name)` to your `~/.emacs` file.
 
 ### IDLE
 
