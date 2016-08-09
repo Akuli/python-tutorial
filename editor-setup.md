@@ -41,6 +41,10 @@ backspace and there are four spaces before the cursor.
 2. Go to Editor at top.
 3. Change the indent width to 4 and select *Add spaces instead of tabs*.
 
+### GNU Emacs
+
+Emacs uses spaces with Python files by default.
+
 ### Mousepad
 
 1. Go to *Document* at the top, then *Tab Size*.
@@ -71,12 +75,12 @@ theme.
 
 Type M-x, type `load-theme`, press Tab twice to see a list of theme
 names, then enter a theme name and press Enter. If you want to
-automatically change the theme when Emacs starts, add
-`(load-theme 'your-theme-name)` to your `~/.emacs` file.
+automatically set the theme when Emacs starts, add
+`(load-theme 'your-theme-name)` to your `~/.emacs`.
 
-### IDLE
+### Mousepad
 
-Go to *Options*, then *Configure IDLE*, then *Highlighting* at top.
+Click *View*, go to *Color Scheme* and select whatever you want.
 
 ## Is your editor using Python 3?
 
@@ -99,17 +103,16 @@ If the version starts with 2, it's too old.
 1. Go to *Build*, then *Set Build Commands*.
 2. Replace `python` or `python2` with `python3` everywhere.
 
+### gedit, pluma and Mousepad
+
+These editors don't support running programs with F5.
+
 ### GNU Emacs
 
 Usually I write something in Emacs, then I press Ctrl+Z to suspend
 Emacs and run the program myself and run `fg` to get back to Emacs. If
 you know how to run programs in Emacs and you'd like to write about it
 here, [tell me](contact-me.md).
-
-### IDLE
-
-If you [installed IDLE](installing-python.md) correctly, it should use
-Python 3.
 
 ***
 
