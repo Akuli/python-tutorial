@@ -22,7 +22,7 @@ Oops! That didn't work. But like I wrote in the
 
 Maybe we can press Enter without typing anything?
 
-```
+```py
 >>> 
 >>> 
 >>> 
@@ -31,7 +31,7 @@ Maybe we can press Enter without typing anything?
 
 That worked. How about numbers?
 
-```
+```py
 >>> 123
 123
 >>> -123
@@ -48,7 +48,7 @@ There we go, it echoes them back.
 In some countries, decimal numbers are written with a comma, like `3,14`
 instead of `3.14`. Maybe Python knows that?
 
-```
+```py
 >>> 3,14
 (3, 14)
 >>> 
@@ -60,7 +60,7 @@ worked just fine.
 
 What if we type a `#`?
 
-```
+```py
 >>> #
 >>> 
 ```
@@ -68,7 +68,7 @@ What if we type a `#`?
 Nothing happened at all. Maybe we can type a `#` and then some text
 after it?
 
-```
+```py
 >>> # hello there
 >>> 
 ```
