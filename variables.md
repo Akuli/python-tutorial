@@ -151,7 +151,7 @@ We'll find a bunch of ways to use None later.
 None's behavior on the interactive prompt might be a bit confusing at
 first:
 
-```
+```py
 >>> thingy = None
 >>> thingy
 >>> 
@@ -170,6 +170,8 @@ So far we've used `==`, but there are other operators also. At this
 point, this list probably looks awfully long, but it's actually pretty
 easy to learn.
 
+| Usage     | Description                       | True example          |
+|-----------|-----------------------------------|-----------------------|
 | `a == b`  | a is equal to b                   | `1 == 1`              |
 | `a != b`  | a is not equal to b               | `1 == 2`              |
 | `a > b`   | a is greater than b               | `2 > 1`               |
@@ -181,6 +183,8 @@ We can also combine multiple comparisons. These are not always correct,
 because a and b don't need to be Booleans. We'll learn more about that
 later.
 
+| Usage     | Description                               | True example                      |
+|-----------|-------------------------------------------|-----------------------------------|
 | `a and b` | a is True and b is True                   | `1 == 1 and 2 == 2`               |
 | `a or b`  | a is True, b is True or they're both True | `False or 1 == 1`, `True or True` |
 
