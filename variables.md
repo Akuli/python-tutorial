@@ -15,7 +15,7 @@ think about them as data containers for now.
 
 We can also change the value of a variable after setting it.
 
-```
+```py
 >>> a = 2
 >>> a
 2
@@ -24,7 +24,7 @@ We can also change the value of a variable after setting it.
 
 Trying to access a variable that is not defined is an error.
 
-```
+```py
 >>> thingy
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
