@@ -10,7 +10,7 @@ Now we know how to make Python show text.
 >>>
 ```
 
-But that includes `''`. One way to show text to the user without `''` is with the print function, which was previously used for printing a `None`. In Python, printing doesn't have anything to do with physical printers, it just means showing text on the screen.
+But that includes `''`. One way to show text to the user without `''` is with the print function. In Python, printing doesn't have anything to do with physical printers, it just means showing text on the screen.
 
 ```py
 >>> print('Hello!')
