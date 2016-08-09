@@ -58,8 +58,8 @@ color than the rest of your text. `"Strings"`, `# comments` and
 everything else should also have their own colors. This makes it much
 easier to write code.
 
-**All of the editors below have syntax highlighting by default**, but
-you can also change the colors if you don't like them.
+Most of the editors below have syntax highlighting turned on by
+default, but you can also change the colors.
 
 ### Geany
 
