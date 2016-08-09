@@ -1,6 +1,6 @@
 # 4. Using if, elif, else and while
 
-### Using if statements
+## Using if statements
 
 Now we know what True and False are.
 
@@ -34,7 +34,18 @@ It's raining!
 
 The prompt changed from `>>>` to `...`. It meant that Python was
 expecting me to keep typing. When I was done, I just pressed Enter
-twice. My code was execute and the prompt was restored to `>>>`.
+twice. My code was execute and the prompt was restored to `>>>`. IDLE
+does this a bit differently, so if you use IDLE, running this example
+code looks more like this:
+
+```py
+>>> its_raining = True
+>>> if its_raining:
+        print("It's raining!")
+
+        
+It's raining!
+>>> ```
 
 At this point it's easier to put your code into a file and use it
 there. If you use IDLE, go to File at top left and select New File, or
@@ -42,10 +53,10 @@ just press Ctrl+N.
 
 ![New File in IDLE](idle-new.png)
 
-If you are not using IDLE, open whatever editor you have installed, or
-install
+If you don't use IDLE, please take the time to
+[set up your editor correctly](editor-setup.md).
 
-The file's content would be like this:
+Create a file called `rain.py`, and type the following content into it:
 
 ```py
 its_raining = True
@@ -53,9 +64,42 @@ if its_raining:
     print("It's raining!")
 ```
 
-### Using else
+The line with a print is **indented** by four spaces. Indentation is
+important in Python. If the indentation is not consistent, we may get
+an error or our program may do something else than we wanted it to.
 
-What if you want to print a different message if it's not raining? You could do something like this:
+Now run the rain program. Most editors (including IDLE) will run your
+code when you press F5. If your editor doesn't, run it from PowerShell,
+command prompt or terminal. You probably need to first go to wherever
+you saved your file. with `cd`. For example, if the file is on your
+desktop, type `cd Desktop` before running the file.
+
+Running from IDLE looks like this:
+
+    >>> 
+    ========================= RESTART: /home/you/rain.py =========================
+    It's raining!
+    >>> 
+
+And running from the Windows PowerShell or command prompt looks like
+this:
+
+    C:\Users\You> cd Desktop
+    C:\Users\You\Desktop> py rain.py
+    It's raining!
+    C:\Users\You\Desktop> 
+
+Running from a terminal looks like this:
+
+    you@YourComputer:~$ cd Desktop
+    you@YourComputer:~/Desktop$ python3 rain.py
+    It's raining!
+    you@YourComputer:~/Desktop$ 
+
+## Using else
+
+What if you want to print a different message if it's not raining? You
+could do something like this:
 
 ```py
 its_raining = True                  # you can change this to False
@@ -67,7 +111,8 @@ if its_not_raining:
     print("It's not raining.")
 ```
 
-Now your program will print a different value depending on what the value of `its_raining` is.
+Now your program will print a different value depending on what the
+value of `its_raining` is.
 
 You can also add `not its_raining` directly to the second if statement:
 
@@ -91,7 +136,8 @@ else:
     print("It's not raining.")
 ```
 
-By combining that with the input function we can make a program that asks for a password and checks if it's correct.
+By combining that with the input function we can make a program that
+asks for a password and checks if it's correct.
 
 ```py
 print("Hello!")
@@ -117,11 +163,14 @@ The program prints different things depending on what you enter.
     Access denied.
     >>>
 
-Using the input function for passwords doesn't work very well because we can't hide the password with asterisks. There are better ways to get a password from the user, but you shouldn't worry about that just yet.
+Using the input function for passwords doesn't work very well because
+we can't hide the password with asterisks. There are better ways to get
+a password from the user, but you shouldn't worry about that just yet.
 
-### Avoiding many levels of indentation with elif
+## Avoiding many levels of indentation with elif
 
-If you have more than one condition to check, your code will end up looking a bit messy.
+If you have more than one condition to check, your code will end up
+looking a bit messy.
 
 ```py
 print("Hello!")
@@ -145,7 +194,8 @@ else:
                     print("I don't know what", word, "means.")
 ```
 
-Instead of typing `else`, indenting more and typing an `if` you can simply type `elif`, which is short for `else if`. Like this:
+Instead of typing `else`, indenting more and typing an `if` you can
+simply type `elif`, which is short for `else if`. Like this:
 
 ```py
 print("Hello!")
@@ -167,19 +217,19 @@ else:
 
 ### Repeating with while loops
 
-While loops are similar to if statements. The only difference is that at the end of the indented block they go back to the line with the word `while` and the condition.
+While loops are similar to if statements. The only difference is that
+at the end of the indented block they jump **back to the line with the
+word `while`**.
 
 ```py
 its_raining = True
 while its_raining:
     print("It's raining!")
-    # We'll jump back to the second line from here
+    # we'll jump back to the second line from here
 ```
 
-Don't get scared when you run the program. Like I wrote in the introduction, this will not destroy or crash your computer. It just repeats the same thing quickly. You can interrupt the program by hitting Ctrl+C. You'll get an error message saying that a `KeyboardInterrupt` occurred, that's normal. The output is like this:
+When you run the program, it keeps printing `It's raining!` forever:
 
-    >>> ================================ RESTART ================================
-    >>>
     It's raining!
     It's raining!
     It's raining!
@@ -189,31 +239,59 @@ Don't get scared when you run the program. Like I wrote in the introduction, thi
     It's raining!
     (many more lines of raining)
 
-What happened is that the indented while block ran, just like an if block. Then, at the end of the block we moved back to the beginning of the while loop. `its_raining` was still `True`, so the indented block ran again, and so on.
+This program will not destroy or crash your computer. It just repeats
+the same thing quickly, but not quickly enough to damage anything. You
+can interrupt the program by hitting Ctrl+C.
 
-While loops are often used for repeating things forever _[*]_ with a `while True`.
+The indented while block ran, just like an if block. Then, at the end
+of the block we moved back to the beginning of the while loop.
+`its_raining` was still `True`, so the indented block ran again, and so
+on.
+
+While loops are often used for repeating things and endless number of
+times with a `while True`. These are called **infinite loops**. You can
+actually stop an infinite loop, just add a `break` into it. If you have
+two loops inside each other, `break` will break the outermost loop.
 
 ```py
 while True:
-    answer = input("Is it still raining? (y/n) ")
-    if answer == "y":
+    answer = input("Is it still raining? (y=yes/n=no/q=quit) ")
+    if answer == 'y':
         print("It's raining!")
-    elif answer == "n":
+    elif answer == 'n':
         print("It's not raining.")
+    elif answer == 'q':
+        break
     else:
-        print("Please enter 'y' or 'n'.")
+        print("Please enter 'y', 'n' or 'q'.")
 ```
 
-Again, you can interrupt the program with Ctrl+C.
+## Summary
 
-_[*] There are many ways to interrupt while loops, including `while True` loops. `break` will end the innermost loop it's in, and `exit()` will quit the whole program._
+- Indentation is important in Python.
+- Indented code under an if statement runs if the condition is true.
+- While works just like if, but it jumps back to the line with the word
+    `while` when it gets to the end of the indented block.
+- `while True:` runs the loop until you interrupt it, for example with
+    Ctrl+C or a `break`.
 
-### Exercises
-1. Make a program that asks for a password and prints `Welcome!`, `Access denied` or `You didn't enter anything` depending on whether the user entered the correct password, a wrong password, or nothing at all by pressing Enter without typing anything.
-2. Make a program that asks for username and password and checks them. Make users "foo" and "bar" with passwords "biz" and "baz".
-3. Make a program that asks for username and password and gives the user an infinite number of attempts, so the user can always try again if he mistypes the password.
+## Exercises
+
+1. Make a program that asks for a password and prints `Welcome!`,
+    `Access denied` or `You didn't enter anything` depending on whether
+    the user entered the correct password, a wrong password, or nothing
+    at all by pressing Enter without typing anything.
+2. Make a program that asks for username and password and checks them.
+    Make users "foo" and "bar" with passwords "biz" and "baz".
+3. Make a program that asks for a username and a password and gives the
+    user an infinite number of attempts, so the user can always try
+    again if he mistypes the password.
 4. Can you limit the number of attempts to 3?
 
 The answers are [here](answers.md).
 
-[Previous](3.md) | [Next](5.md) | [Home](README.md)
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md)
