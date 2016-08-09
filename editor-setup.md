@@ -110,9 +110,9 @@ These editors don't support running programs with F5.
 ### GNU Emacs
 
 Usually I write something in Emacs, then I press Ctrl+Z to suspend
-Emacs and run the program myself and run `fg` to get back to Emacs. If
-you know how to run programs in Emacs and you'd like to write about it
-here, [tell me](contact-me.md).
+Emacs, run the program myself and then I run `fg` to get back to Emacs.
+If you know how to run programs in Emacs and you'd like to write about
+it here, [tell me](contact-me.md).
 
 ***
 
