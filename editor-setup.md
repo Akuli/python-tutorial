@@ -102,8 +102,9 @@ If the version starts with 2, it's too old.
 ### GNU Emacs
 
 Usually I write something in Emacs, then I press Ctrl+Z to suspend
-Emacs and run the program myself. If you know how to run programs in
-Emacs and you'd like to write about it here, [tell me](contact-me.md).
+Emacs and run the program myself and run `fg` to get back to Emacs. If
+you know how to run programs in Emacs and you'd like to write about it
+here, [tell me](contact-me.md).
 
 ### IDLE
 
