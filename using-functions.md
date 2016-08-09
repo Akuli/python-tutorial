@@ -10,7 +10,9 @@ Now we know how to make Python show text.
 >>>
 ```
 
-But that includes `''`. One way to show text to the user without `''` is with the print function. In Python, printing doesn't have anything to do with physical printers, it just means showing text on the screen.
+But that includes `''`. One way to show text to the user without `''`
+is with the print function. In Python, printing doesn't have anything
+to do with physical printers, it just means showing text on the screen.
 
 ```py
 >>> print('Hello!')
@@ -18,7 +20,8 @@ Hello!
 >>>
 ```
 
-Now we are ready for a classic example, which is also the first program in many tutorials :)
+Now we are ready for a classic example, which is also the first program
+in many tutorials :)
 
 ```py
 >>> print("Hello World!")
@@ -34,11 +37,20 @@ But what exactly is print?
 >>>
 ```
 
-In Python 3, print is a function. Functions do something. They are used by typing their name _[*]_ and parenthesis. Inside the parenthesis, we can pass some parameters too. In `print("hello")` the function name is `print` and we give it one parameter, which is `"hello"`.
+In Python 3, print is a function. Functions do something. They are used
+by typing their name _[*]_ and parenthesis. Inside the parenthesis, we
+can pass some parameters too. In `print("hello")` the function name is
+`print` and we give it one parameter, which is `"hello"`.
 
-_[*] Actually, a name of [a variable that points to the function](https://www.youtube.com/watch?v=_AEJHKGk9ns). Functions are also variables in Python. This means that `print_me_a_thingy = print` and then `print_me_a_thingy('hello world')` works just fine._
+_[*] Actually, a name of
+[a variable that points to the function](https://www.youtube.com/watch?v=_AEJHKGk9ns).
+Functions are also variables in Python. This means that
+`print_me_a_thingy = print` and then `print_me_a_thingy('hello world')`
+works just fine._
 
-Functions are often thoght of as difficult to understand, but they really are not. They just do something with the parameters they're given. But if we do `x = print('hello')`, what is x?
+Functions are often thoght of as difficult to understand, but they
+really are not. They just do something with the parameters they're
+given. But if we do `x = print('hello')`, what is x?
 
 ```py
 >>> x = print('hello')
@@ -48,18 +60,30 @@ None
 >>>
 ```
 
-So doing `x = print('hello')` set `x` to `None`. Here's what happened, explained in more detail:
+So doing `x = print('hello')` set `x` to `None`. Here's what happened,
+explained in more detail:
 
 - In `x = print('hello')`, the right side is processed first.
-- `print('hello')` calls the print function with the parameter `'hello'`.
-- The function runs **immediately** when it's called. It shows the word hello.
+- `print('hello')` calls the print function with the parameter
+    `'hello'`.
+- The function runs **immediately** when it's called. It shows the word
+    hello.
 - The print function returns `None`.
-- Now the right side has been processed. `print('hello')` returned `None`, so we can imagine we have `None` instead of `print('hello')` there, and the assignment now looks like `x = None`.
+- Now the right side has been processed. `print('hello')` returned
+    `None`, so we can imagine we have `None` instead of
+    `print('hello')` there, and the assignment now looks like
+    `x = None`.
 - x is now `None`.
 
-All functions need to return something. So does the print function, and that's why it returns `None`. Of course, `x = print('hello')` is useless compared to `print('hello')`, because the print function always returns `None` and we can do `x = None` without any printing.
+All functions need to return something. So does the print function, and
+that's why it returns None. Of course, `x = print('hello')` is useless
+compared to `print('hello')`, because the print function always returns
+`None` and we can do `x = None` without any printing.
 
-Calling a function without assigning the return value to anything (e.g. `print('hello')`) simply throws away the return value. The interactive `>>>` prompt also echoes the return value back if it's not None:
+Calling a function without assigning the return value to anything (e.g.
+`print('hello')` instead of `x = print('hello')`) simply throws away
+the return value. The interactive `>>>` prompt also echoes the return
+value back if it's not None:
 
 ```py
 >>> str(123)
@@ -67,7 +91,8 @@ Calling a function without assigning the return value to anything (e.g. `print('
 >>> 
 ```
 
-You can also pass multiple parameters separated with commas. The print function will add spaces between them.
+You can also pass multiple parameters separated with commas. The print
+function will add spaces between them.
 
 ```py
 >>> print("Hello", "World!")
@@ -83,7 +108,8 @@ Unlike with `+`, the parameters don't need to be strings.
 >>>
 ```
 
-Not all functions return None. The input function can be used for getting a string from the user.
+Not all functions return None. The input function can be used for
+getting a string from the user.
 
 ```py
 >>> x = input("Enter something:")
@@ -93,23 +119,29 @@ Enter something:hello
 >>>
 ```
 
-`input("Enter something:")` showed the text `Enter something:` on the screen and waited for me to type something. I typed hello and pressed Enter. Then input returned the hello I typed as a string and it was assigned to x.
+`input("Enter something:")` showed the text `Enter something:` on the
+screen and waited for me to type something. I typed hello and pressed
+Enter. Then input returned the hello I typed as a string and it was
+assigned to x.
 
 You may want to add a space after the `:`, like this:
 
 ```py
->>> x = input("Enter something: ")     # now there's space between : and where I type
+>>> x = input("Enter something: ")  # now there's space between : and where i type
 Enter something: hello
 >>>
 ```
 
 ## Storing code in files
 
-Now it's time to write some code into a file for the first time. In IDLE, go to File at top left and select New File, or just press Ctrl+N.
+Now it's time to write some code into a file for the first time. In
+IDLE, go to File at top left and select New File, or just press Ctrl+N.
 
 ![New File in IDLE](idle-new.png)
 
-Type something like this into the window that opens. When your code is in a file, adding `x` will not show the value of a variable called x to the user. You need to print it instead.
+Type something like this into the window that opens. When your code is
+in a file, adding `x` will not show the value of a variable called x to
+the user. You need to print it instead.
 
 ```py
 print("Hello.")
