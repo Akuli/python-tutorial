@@ -6,10 +6,10 @@ don't like using it for some reason, you need
 trying out things. You also need an editor for writing code that will
 be stored in files.
 
-If you use IDLE as your editor, it comes with everything set up for you
-and you can get started right away. If you are going to use some other
-editor, you may need to change some settings to make it suitable for
-Python use.
+If you use IDLE as your editor, **it comes with everything set up for
+you, and you don't need to worry about setting up anything**. If you
+don't, you probably need to change some settings to make your editor
+suitable for Python use.
 
 Do **not** use word processors like Microsoft Word and LibreOffice
 Write for programming. They create their own files, but you need plain
@@ -84,7 +84,7 @@ Click *View*, go to *Color Scheme* and select whatever you want.
 
 ## Is your editor using Python 3?
 
-Some editors allow you to run your programs with a single keypress,
+Some editors allow you to run your programs with a single keystroke,
 usually by pressing F5. This tutorial is written for Python 3 or newer,
 so your editor also needs to run the programs in Python 3 or newer.
 
@@ -111,8 +111,8 @@ These editors don't support running programs with F5.
 
 Usually I write something in Emacs, then I press Ctrl+Z to suspend
 Emacs, run the program myself and then I run `fg` to get back to Emacs.
-If you know how to run programs in Emacs and you'd like to write about
-it here, [tell me](contact-me.md).
+If you know how to run Python programs in Emacs and you'd like to write
+about it here, [tell me](contact-me.md).
 
 ***
 
