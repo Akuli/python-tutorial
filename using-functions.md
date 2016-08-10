@@ -1,4 +1,4 @@
-# 3. Using functions and storing code in files
+# Using functions and storing code in files
 
 ## Functions
 

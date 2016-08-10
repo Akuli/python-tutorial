@@ -1,4 +1,4 @@
-# 2. Variables, Booleans and None
+# Variables, Booleans and None
 
 ## Variables
 
@@ -54,9 +54,9 @@ We'll learn to use most of them later in this tutorial. Trying to use a
 keyword as a variable name causes a syntax error:
 
 ```py
->>> if = 'hello'
+>>> if = 123
   File "<stdin>", line 1
-    if = 'hello'
+    if = 123
        ^
 SyntaxError: invalid syntax
 >>> 
@@ -76,8 +76,8 @@ back to the same variable on the left side:
 ```
 
 To do something to a variable (for example, to add something to it) we
-can use `+=`, `-=`, `*=` and `/=` instead of `+`, `-`, `*` and `/`. The
-"advanced" `%=`, `//=` and `**=` also work.
+can also use `+=`, `-=`, `*=` and `/=` instead of `+`, `-`, `*` and
+`/`. The "advanced" `%=`, `//=` and `**=` also work.
 
 ```py
 >>> a += 2          # a = a + 2

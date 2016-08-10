@@ -1,4 +1,4 @@
-# 4. Using if, elif, else and while
+# Using if, elif, else and while
 
 ## Using if statements
 
