@@ -115,7 +115,8 @@ These are answers for exercises in the chapters. In programming, there's always 
 
 ## Loops
 
-1.
+1. For loop over the users, each user is a list that contains a
+    username and a password.
 
     ```py
     users = [
