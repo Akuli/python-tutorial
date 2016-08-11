@@ -44,7 +44,7 @@ for thing in things:
 
 [Read more about lists in ThinkPython
 here.](http://greenteapress.com/thinkpython2/html/thinkpython2011.html)
-Skip the chapter "10.7 Map, filter and reduce", and all excercises. You
+Skip the chapter "10.7 Map, filter and reduce", and all exercises. You
 would need to know how to define functions using the `def` keyword, but
 we haven't talked about that yet.
 

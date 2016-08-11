@@ -6,7 +6,7 @@ here.](http://greenteapress.com/thinkpython2/html/thinkpython2002.html).
 
 Read the glossary also, but don't study it too much. Some things in it
 are useful to know, but I think studying it carefully would be really
-boring. Also do all excercises except the last one. It's more about
+boring. Also do all exercises except the last one. It's more about
 math skills than learning Python.
 
 When you're done reading, read the summary below and make sure you've
@@ -27,7 +27,7 @@ learned everything.
         doesn't matter if you use 'single quotes' or "double quotes",
         they do the same thing in Python.
 
-## More excercises
+## More exercises
 
 1. What happens if you use + between two strings, like
     `"hello" + "world"`?
