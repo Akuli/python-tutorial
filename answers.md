@@ -110,6 +110,87 @@ These are answers for exercises in the chapters. In programming, there's always 
     >>> 
     ```
 
+## Loops
+
+1.
+
+    ```py
+    users = [
+        ['foo', 'bar'],
+        ['biz', 'baz'],
+    ]
+
+    username = input("Username: ")
+    password = input("Password: ")
+
+    logged_in = False
+    for user in users:
+        if username == user[0] and password == user[1]:
+            logged_in = True
+            break
+
+    if logged_in:
+        print("Welcome, " + username + "!")
+    else:
+        print("Wrong username or password.")
+    ```
+
+2. Just put the whole thing in a `while True:`. Remember that a break
+    will always break the innermost loop it's in.
+
+    ```py
+    users = [
+        ['foo', 'bar'],
+        ['biz', 'baz'],
+    ]
+
+    while True:
+        username = input("Username: ")
+        password = input("Password: ")
+
+        logged_in = False
+        for user in users:
+            if username == user[0] and password == user[1]:
+                logged_in = True
+                break   # break the for loop
+
+        if logged_in:
+            print("Welcome, " + username + "!")
+            break   # break the while loop
+        else:
+            print("Wrong username or password.")
+    ```
+
+3. Add a for loop that works as an attempt counter.
+
+    ```py
+    users = [
+        ['foo', 'bar'],
+        ['biz', 'baz'],
+    ]
+
+    for attempts_left in [3, 2, 1, 0]:
+        if attempts_left == 0:
+            print("No attempts left!")
+            break
+
+        print(attempts_left, "attempts left.")
+        username = input("Username: ")
+        password = input("Password: ")
+
+        logged_in = False
+        for user in users:
+            if username == user[0] and password == user[1]:
+                logged_in = True
+                break   # break the inner for loop
+
+        if logged_in:
+            print("Welcome, " + username + "!")
+            break   # break the outer for loop
+        else:
+            print("Wrong username or password.")
+    ```
+
 ***
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).

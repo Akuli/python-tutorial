@@ -31,6 +31,7 @@ it.**
 6. [Using functions](using-functions.md)
 7. [If, else and elif](if.md)
 8. [ThinkPython: Lists](lists.md)
+9. [Loops](loops.md)
 
 Other things this tutorial comes with:
 

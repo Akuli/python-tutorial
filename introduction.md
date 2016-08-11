@@ -10,17 +10,20 @@ Everything in this tutorial contains lots of examples, and the tutorial
 should be easy to follow. But what should you do if you don't understand
 something the first time you read it?
 
-1. Read the example code and the explanation for it again.
-2. Try the example yourself.
-3. If you still don't understand, please [tell me](contact-me.md). I
-    want to improve the tutorial so other readers won't have the same
-    problem you had.
+- Read the example code and the explanation for it again.
+- Try the example yourself.
+- If there's something you haven't seen before in the tutorial and it's
+    not explained, try to find it from the previous chapters.
+- If you still have trouble understanding the tutorial or any other
+    problems with the tutorial, please [tell me](contact-me.md). I want
+    to improve the tutorial so other readers won't have the same
+    problems as you have.
 
-One of the most important things with learning to program is to
-**not fear mistakes**. If you make a mistake, your computer will not
-break in any way. You'll get an error message that tells you what's
-wrong and where. Even professional programmers do mistakes and get error
-messages all the time, and there's nothing wrong with it.
+One of the most important things with learning to program is to **not
+fear mistakes**. If you make a mistake, your computer will not break in
+any way. You'll get an error message that tells you what's wrong and
+where. Even professional programmers do mistakes and get error messages
+all the time, and there's nothing wrong with it.
 
 Even though a good tutorial is an important part about learning to
 program, you also need to learn to make your own things. Use what you
