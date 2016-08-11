@@ -10,13 +10,15 @@ These are answers for exercises in the chapters. In programming, there's always 
 
 ## Using if, else and elif
 
-1.
+1. Just ask the word and print word * 1000.
+
     ```py
     word = input("Enter a word: ")
     print(word * 1000)
     ```
 
-2.
+2. Add a space to the word before printing.
+
     ```py
     word = input("Enter a word: ")
     word += " "
@@ -41,7 +43,8 @@ These are answers for exercises in the chapters. In programming, there's always 
     print(yes_space * 999 + no_space)
     ```
 
-3.
+3. Like this:
+
     ```py
     first = input("Enter a word: ")
     second = input("Enter another word: ")
