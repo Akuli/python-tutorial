@@ -1,13 +1,11 @@
-# Using functions and storing code in files
-
-## Functions
+# Using functions
 
 Now we know how to make Python show text.
 
 ```py
 >>> 'Hello!'
 'Hello!'
->>>
+>>> 
 ```
 
 But that includes `''`. One way to show text to the user without `''`
@@ -17,7 +15,7 @@ to do with physical printers, it just means showing text on the screen.
 ```py
 >>> print('Hello!')
 Hello!
->>>
+>>> 
 ```
 
 Now we are ready for a classic example, which is also the first program
@@ -26,7 +24,7 @@ in many tutorials :)
 ```py
 >>> print("Hello World!")
 Hello World!
->>>
+>>> 
 ```
 
 But what exactly is print?
@@ -34,78 +32,94 @@ But what exactly is print?
 ```py
 >>> print
 <built-in function print>
->>>
+>>> 
 ```
 
-In Python 3, print is a function. Functions do something. They are used
-by typing their name _[*]_ and parenthesis. Inside the parenthesis, we
-can pass some parameters too. In `print("hello")` the function name is
-`print` and we give it one parameter, which is `"hello"`.
+In Python 3, print is a function. Functions do something when they are
+**called** by typing their name and parentheses. Inside the
+parentheses, we can pass some arguments too. In `print("hello")` the
+function is `print` and we give it one argument, which is `"hello"`.
 
-_[*] Actually, a name of
-[a variable that points to the function](https://www.youtube.com/watch?v=_AEJHKGk9ns).
-Functions are also variables in Python. This means that
-`print_me_a_thingy = print` and then `print_me_a_thingy('hello world')`
-works just fine._
-
-Functions are often thoght of as difficult to understand, but they
-really are not. They just do something with the parameters they're
-given. But if we do `x = print('hello')`, what is x?
+Functions are sometimes thoght of as difficult to understand, but they
+really are not. They just do something when they are called. But if we
+do `x = print('hello')`, what is x?
 
 ```py
 >>> x = print('hello')
 hello
 >>> print(x)       # x is now None
 None
->>>
+>>> 
 ```
 
-So doing `x = print('hello')` set `x` to `None`. Here's what happened,
+So doing `x = print('hello')` set x to None. Here's what happened,
 explained in more detail:
 
 - In `x = print('hello')`, the right side is processed first.
-- `print('hello')` calls the print function with the parameter
+- `print('hello')` calls the print function with the argument
     `'hello'`.
 - The function runs **immediately** when it's called. It shows the word
     hello.
-- The print function returns `None`.
+- The print function **returns** None. All functions need to return
+    something, and print returns None because there's no need to return
+    anything else.
 - Now the right side has been processed. `print('hello')` returned
-    `None`, so we can imagine we have `None` instead of
-    `print('hello')` there, and the assignment now looks like
-    `x = None`.
-- x is now `None`.
-
-All functions need to return something. So does the print function, and
-that's why it returns None. Of course, `x = print('hello')` is useless
-compared to `print('hello')`, because the print function always returns
-`None` and we can do `x = None` without any printing.
+    None, so we can imagine we have None instead of `print('hello')`
+    there, and the assignment now looks like `x = None`.
+- x is now None.
 
 Calling a function without assigning the return value to anything (e.g.
 `print('hello')` instead of `x = print('hello')`) simply throws away
 the return value. The interactive `>>>` prompt also echoes the return
-value back if it's not None:
+value back if it's not None.
+
+Of course, `x = print('hello')` is useless compared to `print('hello')`
+because the print function always returns None and we can do `x = None`
+without any printing.
+
+You can also print an empty line by calling print without any
+arguments:
 
 ```py
->>> str(123)
-'123'
+>>> print()
+
 >>> 
 ```
 
-You can also pass multiple parameters separated with commas. The print
-function will add spaces between them.
+In Python, `\n` is a newline character. Printing a string that contains
+a newline character also prints a newline:
+
+```py
+>>> print('hello\nworld')
+hello
+world
+>>> 
+```
+
+If you want to print a backslash, you need to **escape** it by typing
+two backslashes:
+
+```py
+>>> print('hello\\nworld')
+hello\nworld
+>>> 
+```
+
+You can also pass multiple arguments to the print function. Separate
+them with commas, and print will add spaces between them.
 
 ```py
 >>> print("Hello", "World!")
 Hello World!
->>>
+>>> 
 ```
 
-Unlike with `+`, the parameters don't need to be strings.
+Unlike with `+`, the arguments don't need to be strings.
 
 ```py
 >>> print(42, "is an integer, and the value of pi is", 3.14)
 42 is an integer, and the value of pi is 3.14
->>>
+>>> 
 ```
 
 Not all functions return None. The input function can be used for
@@ -116,7 +130,7 @@ getting a string from the user.
 Enter something:hello
 >>> x
 'hello'
->>>
+>>> 
 ```
 
 `input("Enter something:")` showed the text `Enter something:` on the
@@ -129,51 +143,17 @@ You may want to add a space after the `:`, like this:
 ```py
 >>> x = input("Enter something: ")  # now there's space between : and where i type
 Enter something: hello
->>>
+>>> 
 ```
 
-## Storing code in files
+## Summary
 
-Now it's time to write some code into a file for the first time. In
-IDLE, go to File at top left and select New File, or just press Ctrl+N.
-
-![New File in IDLE](idle-new.png)
-
-Type something like this into the window that opens. When your code is
-in a file, adding `x` will not show the value of a variable called x to
-the user. You need to print it instead.
-
-```py
-print("Hello.")
-word = input("Enter something: ")
-print("You entered", word)
-```
-
-Go to File, Save and save the file. Then press F5 to run it. It will run in the window you opened first. Another window like that will be opened if you closed it already. You should see something like this in it:
-
-    >>> ================================ RESTART ================================
-    >>>
-    Hello.
-    Enter something: hi
-    You entered hi
-    >>>
-
-Awesome, it runs and you can interact with it by typing text into it and pressing Enter! :smiley: Again, when the program ran it waited for me to type something. I typed 'hi' and pressed Enter.
-
-After running the program you can check what the `word` variable contains in the window the program ran in. Again, in the `>>>` prompt you don't need print to show things like you need in files.
-
-```py
->>> word
-'hi'
->>>
-```
-
-## Exercises
-
-1. Write a program into a file that asks the user to write a word and then prints that word 1000 times. For example, if the user enters `hi` the program would reply `hihihihi...`.
-2. Make it to print spaces between the words. It should be like `hi hi hi hi...`.
-3. Make something that asks the user to enter two words, and prints 1000 of each with spaces in between. For example, if the user enters `hello` and `hi` the program would print `hello hi hello hi hello hi...`.
-
+- `function()` calls a function without any arguments, and
+    `function(1, 2, 3)` calls a function with 1, 2 and 3 as arguments.
+    `x = function()` calls a function, and assigns the return value of
+    the call to y.
+- When a function is called, it does something and returns something.
+- Python comes with `print` and `input`. They are built-in functions.
 
 ***
 

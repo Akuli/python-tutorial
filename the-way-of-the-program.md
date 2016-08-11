@@ -1,14 +1,16 @@
 # ThinkPython: The way of the program
 
 ThinkPython is a free Python book. Its first chapter is about
-programming in general. Read it
-[here](http://greenteapress.com/thinkpython2/html/thinkpython2002.html).
+programming in general. [Read it
+here.](http://greenteapress.com/thinkpython2/html/thinkpython2002.html).
+
 Read the glossary also, but don't study it too much. Some things in it
 are useful to know, but I think studying it carefully would be really
-boring.
+boring. Also do all excercises except the last one. It's more about
+math skills than learning Python.
 
-When you're done reading, read the summary and make sure you've learned
-everything.
+When you're done reading, read the summary below and make sure you've
+learned everything.
 
 ## Summary
 
@@ -18,11 +20,21 @@ everything.
     thing as writing `int` to the prompt.
 - Types and classes are the same thing (in Python 3).
 - Some of the most commonly used types are:
-    - int is short for integer. `1` and `2` are ints.
-    - float is short for floating point number. `1.0` and `3.14` are floats.
+    - int is short for integer. `1` and `2` are integers.
+    - float is short for floating point number. `1.0` and `3.14` are
+        floats.
     - str is short for string. `"hello"` and `'hello'` are strings. It
         doesn't matter if you use 'single quotes' or "double quotes",
         they do the same thing in Python.
+
+## More excercises
+
+1. What happens if you use + between two strings, like
+    `"hello" + "world"`?
+1. What happens if you use + between a string and an integer, like
+    `"hello" + 123`?
+2. What happens if you use + between a float and an integer, like
+    `3.14 + 123`?
 
 ***
 

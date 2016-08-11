@@ -1,4 +1,4 @@
-# Using if, elif, else and while
+# Using if, else and elif
 
 ## Using if statements
 
@@ -65,6 +65,8 @@ if its_raining:
     print("It's raining!")
 ```
 
+The file extension is `.py`, which is short for Python.
+
 The line with a print is **indented** by four spaces. Indentation is
 important in Python. If the indentation is not consistent, we may get
 an error or our program may do something else than we wanted it to.
@@ -78,7 +80,7 @@ desktop, type `cd Desktop` before running the file.
 Running from IDLE looks like this:
 
     >>> 
-    ========================= RESTART: /home/you/rain.py =========================
+    ========================= RESTART: /some/place/rain.py =========================
     It's raining!
     >>> 
 
@@ -96,6 +98,10 @@ Running from a terminal looks like this:
     you@YourComputer:~/Desktop$ python3 rain.py
     It's raining!
     you@YourComputer:~/Desktop$ 
+
+From now on, if a code example starts with `>>>` run it on the
+interactive prompt, and if it doesn't, write it to a file and run the
+file.
 
 ## Using else
 
@@ -216,78 +222,34 @@ else:
     print("I don't know what", word, "means.")
 ```
 
-### Repeating with while loops
-
-While loops are similar to if statements. The only difference is that
-at the end of the indented block they jump **back to the line with the
-word `while`**.
-
-```py
-its_raining = True
-while its_raining:
-    print("It's raining!")
-    # we'll jump back to the second line from here
-```
-
-When you run the program, it keeps printing `It's raining!` forever:
-
-    It's raining!
-    It's raining!
-    It's raining!
-    It's raining!
-    It's raining!
-    It's raining!
-    It's raining!
-    (many more lines of raining)
-
-This program will not destroy or crash your computer. It just repeats
-the same thing quickly, but not quickly enough to damage anything. You
-can interrupt the program by hitting Ctrl+C.
-
-The indented while block ran, just like an if block. Then, at the end
-of the block we moved back to the beginning of the while loop.
-`its_raining` was still `True`, so the indented block ran again, and so
-on.
-
-While loops are often used for repeating things and endless number of
-times with a `while True`. These are called **infinite loops**. You can
-actually stop an infinite loop, just add a `break` into it. If you have
-two loops inside each other, `break` will break the outermost loop.
-
-```py
-while True:
-    answer = input("Is it still raining? (y=yes/n=no/q=quit) ")
-    if answer == 'y':
-        print("It's raining!")
-    elif answer == 'n':
-        print("It's not raining.")
-    elif answer == 'q':
-        break
-    else:
-        print("Please enter 'y', 'n' or 'q'.")
-```
-
 ## Summary
 
 - Indentation is important in Python.
 - Indented code under an if statement runs if the condition is true.
-- While works just like if, but it jumps back to the line with the word
-    `while` when it gets to the end of the indented block.
-- `while True:` runs the loop until you interrupt it, for example with
-    Ctrl+C or a `break`.
+- You can also add an else statement. Indented code under it will run
+    if the code under the if statement does not run.
+- elif is short for else if.
 
-## Exercises
+## Excercises
 
-1. Make a program that asks for a password and prints `Welcome!`,
+1. Write a program into a file that asks the user to write a word and
+    then prints that word 1000 times. For example, if the user enters
+    `hi` the program would reply `hihihihi...`.
+
+2. Add spaces between the words, so the output is like `hi hi hi ...`.
+
+3. Make something that asks the user to enter two words, and prints
+    1000 of each with spaces in between. For example, if the user
+    enters `hello` and `hi` the program would print
+    `hello hi hello hi hello hi...`.
+
+4. Make a program that asks for a password and prints `Welcome!`,
     `Access denied` or `You didn't enter anything` depending on whether
     the user entered the correct password, a wrong password, or nothing
     at all by pressing Enter without typing anything.
-2. Make a program that asks for username and password and checks them.
+
+5. Make a program that asks for username and password and checks them.
     Make users "foo" and "bar" with passwords "biz" and "baz".
-3. Make a program that asks for a username and a password and gives the
-    user an infinite number of attempts, so the user can always try
-    again if he mistypes the password.
-4. Can you limit the number of attempts to 3?
 
 The answers are [here](answers.md).
 

@@ -79,7 +79,7 @@ In Python, these pieces of text starting with a `#` are known as
 **comments**. They don't effect the code in any way, but you can use
 them to explain what your code does.
 
-### Using Python as a calculator
+## Using Python as a calculator
 
 Maybe we could type mathematical statements?
 
@@ -132,7 +132,7 @@ TypeError: unsupported operand type(s) for *: 'set' and 'int'
 >>>
 ```
 
-### More advanced math
+## More advanced math
 
 I decided to include this in my tutorial because some people might be
 interested in this. Feel free to skip this if you're not interested.
@@ -190,7 +190,7 @@ Powers are calculated before `*` and `/`, but after `()`.
 >>>
 ```
 
-### Summary
+## Summary
 
 - Errors don't matter.
 - You can enter any Python commands to the interactive `>>>` prompt, and

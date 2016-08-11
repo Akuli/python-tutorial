@@ -51,7 +51,7 @@ Python also has some words that cannot be used as variable names
 because they have a special meaning. They are called **keywords**, and
 you can run `help('keywords')` to see the full list if you want to.
 We'll learn to use most of them later in this tutorial. Trying to use a
-keyword as a variable name causes a syntax error:
+keyword as a variable name causes a syntax error.
 
 ```py
 >>> if = 123
@@ -65,7 +65,7 @@ SyntaxError: invalid syntax
 When assigning something to a variable using a `=`, the right side of
 the `=` is always executed before the left side. This means that we can
 do something with a variable on the right side, then assign the result
-back to the same variable on the left side:
+back to the same variable on the left side.
 
 ```py
 >>> a = 1
@@ -164,13 +164,21 @@ This is because the prompt never echoes back None. That is handy,
 because many things result in None, and it would be annoying to see
 None coming up all the time.
 
+If you want to see a None on the interactive prompt, use print:
+
+```py
+>>> print(thingy)
+None
+>>> 
+```
+
 ## Other comparing operators
 
 So far we've used `==`, but there are other operators also. At this
 point, this list probably looks awfully long, but it's actually pretty
 easy to learn.
 
-| Usage     | Description                       | True example          |
+| Usage     | Description                       | True examples         |
 |-----------|-----------------------------------|-----------------------|
 | `a == b`  | a is equal to b                   | `1 == 1`              |
 | `a != b`  | a is not equal to b               | `1 == 2`              |
@@ -188,11 +196,8 @@ later.
 | `a and b` | a is True and b is True                   | `1 == 1 and 2 == 2`               |
 | `a or b`  | a is True, b is True or they're both True | `False or 1 == 1`, `True or True` |
 
-There is more than one way to do some things. For example, to check if
-a is not equal to 1 we could do `a != 1` or `not a == 1`. To check if
-b does not contain a we could do `a not in b` or `not a in b`.
-However, `!=` and `not in` should be used in cases like this because
-they're more convinient once you get used to them.
+Another way to combine operations is chaining. For example, `a < b < c`
+does the same thing as `a < b and b < c`.
 
 There's also `is`, but don't use it instead of `==` unless you know
 what you are doing. We'll learn more about it later.

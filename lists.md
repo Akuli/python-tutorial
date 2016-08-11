@@ -44,7 +44,7 @@ for thing in things:
 
 [Read more about lists in ThinkPython
 here.](http://greenteapress.com/thinkpython2/html/thinkpython2011.html)
-Skip the chapter "10.7 Map, filter and reduce" and the excercises. You
+Skip the chapter "10.7 Map, filter and reduce", and all excercises. You
 would need to know how to define functions using the `def` keyword, but
 we haven't talked about that yet.
 
@@ -57,12 +57,12 @@ we haven't talked about that yet.
     converting other values to lists, like `list_of_thingy = list(thingy)`.
     If we do `list = something`, then `list(thingy)` will probably do
     something else than we want it to do.
-- When we have created a list, we can slice it. For example,
+- When we have created a list, we can **slice** it. For example,
     `our_list[2:]` results in a new list with everything in the
     original list except the first two elements. Negative indexes start
     from the end of the list, for example, `our_list[-2:]` is a list of
     the last two elements.
-- We can also index lists, `our_list[0]` is the first element in the
+- We can also **index** lists, `our_list[0]` is the first element in the
     list. Non-negative indexes start at zero, and negative indexes
     start at -1.
 - You can assign to indexes and slices like `some_list[0] = 'hi'`, or

@@ -2,82 +2,38 @@
 
 These are answers for exercises in the chapters. In programming, there's always more than one way to do things, so if your solution wasn't exactly like mine it's not necessarily wrong. Some Python users say that there should be only one right way, but that goal will never be fully reached.
 
-## Chapter 1
+## ThinkPython: The way of the program
 
-1. 18996.20 €
+1. The strings get added together.
+2. We get an error.
+3. We get a floating point number.
 
-    ```py
-    >>> 49.95 + 200
-    249.95
-    >>> 100 * 249.95
-    24995.0
-    >>> 1 - (24 / 100)
-    0.76
-    >>> 24995.0 * 0.76
-    18996.2
-    >>>
-    ```
+## Using if, else and elif
 
-    All in one line:
-
-    ```py
-    >>> 100 * (49.95 + 200) * (1 - (24 / 100))
-    18996.2
-    >>>
-    ```
-
-2. About 523
-
-    ```py
-    >>> (4 / 3) * 3.14 * (5 * 5 * 5)
-    523.3333333333334
-    >>> 4 / 3 * 3.14 * 5 * 5 * 5      # parentheses aren't needed
-    523.3333333333334
-    >>>
-    ```
-
-    More advanced way:
-
-    ```py
-    >>> from math import pi
-    >>> 4 / 3 * pi * 5 ** 3
-    523.5987755982989
-    >>>
-    ```
-
-    Spaces don't effect the calculating order, but you can use them to make the order easier to see:
-
-    ```py
-    >>> 4/3 * pi * 5**3
-    523.5987755982989
-    >>>
-    ```
-
-## Chapter 3
-
-1. Content of the file:
-
+1.
     ```py
     word = input("Enter a word: ")
     print(word * 1000)
     ```
 
-2. Content of the file:
-
+2.
     ```py
     word = input("Enter a word: ")
     word += " "
     print(word * 1000)
     ```
 
-    You can also add the space right away on the first line:
+    We can also add the space right away on the first line:
 
     ```py
     word = input("Enter a word: ") + " "
     print(word * 1000)
     ```
 
-    Of course, there are 999 spaces between 1000 words and this will print 1000 spaces instead, so there will be a useless space at the end, but it doesn't matter. To get rid of the space, you can do something like this instead:
+    Of course, there are 999 spaces between 1000 words and this will
+    print 1000 spaces instead, so there will be a useless space at the
+    end, but it doesn't matter. If we really want to get rid of the
+    space, we can do something like this instead:
 
     ```py
     no_space = input("Enter a word: ")
@@ -85,8 +41,7 @@ These are answers for exercises in the chapters. In programming, there's always 
     print(yes_space * 999 + no_space)
     ```
 
-3. Like this:
-
+3.
     ```py
     first = input("Enter a word: ")
     second = input("Enter another word: ")
@@ -94,9 +49,8 @@ These are answers for exercises in the chapters. In programming, there's always 
     print(words * 1000)
     ```
 
-## Chapter 4
-
-1. You can compare the word against an empty string (`""` or `''`). In this example, the password is "secret".
+4. You can compare the word against an empty string (`""` or `''`) to
+    check if it's empty. In this example, the password is "secret".
 
     ```py
     word = input("Enter your password: ")
@@ -109,7 +63,8 @@ These are answers for exercises in the chapters. In programming, there's always 
         print("Access denied.")
     ```
 
-2. Simply check the username first, then the password in indented blocks of code.
+5. Simply check the username first, then the password in indented
+    blocks of code.
 
     ```py
     username = input("Enter your username: ")
@@ -131,92 +86,29 @@ These are answers for exercises in the chapters. In programming, there's always 
 
     Example output:
 
-        >>> ================================ RESTART ================================
-        >>>
-        Enter your username: foo
-        Enter your password: biz
-        Welcome foo!
-        >>> ================================ RESTART ================================
-        >>>
-        Enter your username: bar
-        Enter your password: baz
-        Welcome bar!
-        >>> ================================ RESTART ================================
-        >>>
-        Enter your username: spam
-        Enter your password: eggs
-        Wrong username.
-        >>> ================================ RESTART ================================
-        >>>
-        Enter your username: foo
-        Enter your password: lol
-        Wrong password!
-        >>>
-
-3. This is a great chance to use a while loop. In this example, the
-    correct password is "secret".
-
-    ```py
-    running = True
-    while running:
-        password = input("Enter your password: ")
-        if password == "secret":
-            print("Welcome!")
-            running = False
-        else:
-            print("Wrong password.")
     ```
-
-    You can also use `break` to get out of a loop, and `while True:` to
-    do an infinite loop. This is recommended instead of the previous
-    alternative, because you don't need a useless `running` variable.
-
-    ```py
-    while True:
-        password = input("Enter your password: ")
-        if password == "secret":
-            print("Welcome!")
-            break
-        else:
-            print("Wrong password.")
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: foo
+    Enter your password: biz
+    Welcome foo!
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: bar
+    Enter your password: baz
+    Welcome bar!
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: spam
+    Enter your password: eggs
+    Wrong username.
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: foo
+    Enter your password: lol
+    Wrong password!
+    >>> 
     ```
-
-    Even shorter alternative:
-
-    ```py
-    while input("Enter your password: ") != "secret":
-        print("Wrong password.")
-    print("Welcome!")
-    ```
-
-4. One way to do this is to put the inputs directly to `if` and `elif`
-    lines. Again, the correct password is "secret".
-
-    ```py
-    if input("Enter your password: (3 attempts left) ") == "secret":
-        print("Welcome!")
-    elif input("Enter your password: (2 attempts left) ") == "secret":
-        print("Welcome!")
-    elif input("Enter your password: (last attempt) ") == "secret":
-        print("Welcome!")
-    else:
-        print("Access denied!")
-    ```
-
-    Example output:
-
-        >>> ================================ RESTART ================================
-        >>>
-        Enter your password: (3 attempts left) asdf
-        Enter your password: (2 attempts left) asdf
-        Enter your password: (last attempt) asdf
-        Access denied!
-        >>> ================================ RESTART ================================
-        >>>
-        Enter your password: (3 attempts left) asdf
-        Enter your password: (2 attempts left) secret
-        Welcome!
-        >>>
 
 ***
 

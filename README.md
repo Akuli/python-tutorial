@@ -28,8 +28,8 @@ it.**
 3. [Getting started with Python](getting-started.md)
 4. [ThinkPython: The way of the program](the-way-of-the-program.md)
 5. [Variables, Booleans and None](variables.md)
-6. [Using functions and storing code in files](using-functions.md)
-7. [If, elif, else and while](if.md)
+6. [Using functions](using-functions.md)
+7. [If, else and elif](if.md)
 8. [ThinkPython: Lists](lists.md)
 
 Other things this tutorial comes with:
