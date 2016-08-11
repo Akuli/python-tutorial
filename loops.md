@@ -257,3 +257,10 @@ Or if you want to clear a list, just use the `.clear()` list method:
 
 2. Make the program ask the username and password over and over again
 3. Can you limit the number of attempts to 3?
+
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Previous](lists.md) |
+[Back to the list of contents](README.md)

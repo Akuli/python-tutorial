@@ -40,4 +40,5 @@ have learned, and create something with it.
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
+[Next](installing-python.md) |
 [Back to the list of contents](README.md)

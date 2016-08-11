@@ -1,4 +1,4 @@
-# Using if, else and elif
+# If, else and elif
 
 ## Using if statements
 
@@ -257,4 +257,6 @@ The answers are [here](answers.md).
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
+[Previous](using-functions.md) |
+[Next](lists.md) |
 [Back to the list of contents](README.md)
