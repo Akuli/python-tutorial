@@ -116,8 +116,8 @@ These are answers for exercises in the chapters. In programming, there's always 
 
     ```py
     users = [
-        ['foo', 'bar'],
-        ['biz', 'baz'],
+        ['foo', 'biz'],
+        ['bar', 'baz'],
     ]
 
     username = input("Username: ")
@@ -140,8 +140,8 @@ These are answers for exercises in the chapters. In programming, there's always 
 
     ```py
     users = [
-        ['foo', 'bar'],
-        ['biz', 'baz'],
+        ['foo', 'biz'],
+        ['bar', 'baz'],
     ]
 
     while True:
@@ -165,14 +165,14 @@ These are answers for exercises in the chapters. In programming, there's always 
 
     ```py
     users = [
-        ['foo', 'bar'],
-        ['biz', 'baz'],
+        ['foo', 'biz'],
+        ['bar', 'baz'],
     ]
 
     for attempts_left in [3, 2, 1, 0]:
         if attempts_left == 0:
             print("No attempts left!")
-            break
+            break   # break the outer for loop
 
         print(attempts_left, "attempts left.")
         username = input("Username: ")

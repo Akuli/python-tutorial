@@ -230,7 +230,7 @@ else:
     if the code under the if statement does not run.
 - elif is short for else if.
 
-## Excercises
+## Exercises
 
 1. Write a program into a file that asks the user to write a word and
     then prints that word 1000 times. For example, if the user enters

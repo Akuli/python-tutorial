@@ -32,24 +32,22 @@ print("It's not raining anymore.")
 If you're not familiar with while loops, the program's output may be a
 bit surprising:
 
-```
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-Oh crap, it's raining!
-(much more raining)
-```
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    Oh crap, it's raining!
+    (much more raining)
 
 Again, this program does not break your computer. It just prints the
 same thing multiple times. We can interrupt it by pressing Ctrl+C.
@@ -76,17 +74,15 @@ print("It's not raining anymore.")
 
 Running the program may look like this:
 
-```
-It's raining!
-Or is it? (y=yes, n=no) i dunno
-Enter y or n next time.
-It's raining!
-Or is it? (y=yes, n=no) y
-Oh well...
-It's raining!
-Or is it? (y=yes, n=no) n
-It's not raining anymore.
-```
+    It's raining!
+    Or is it? (y=yes, n=no) i dunno
+    Enter y or n next time.
+    It's raining!
+    Or is it? (y=yes, n=no) y
+    Oh well...
+    It's raining!
+    Or is it? (y=yes, n=no) n
+    It's not raining anymore.
 
 We can also interrupt a loop even if the condition is still true using
 the `break` keyword. In this case, we'll set condition to True and rely
@@ -106,14 +102,12 @@ while True:
 
 The program works like this:
 
-```py
-Is it raining? (y=yes, n=no) who knows              
-Enter y or n.
-Is it raining? (y=yes, n=no) y
-It's raining!
-Is it raining? (y=yes, n=no) n
-It's not raining anymore.
-```
+    Is it raining? (y=yes, n=no) who knows              
+    Enter y or n.
+    Is it raining? (y=yes, n=no) y
+    It's raining!
+    Is it raining? (y=yes, n=no) n
+    It's not raining anymore.
 
 ## Until loops
 
@@ -146,13 +140,11 @@ print(stuff[4])
 
 The output of the program is like this:
 
-```py
-hello
-hi
-how are you doing
-im fine
-how about you
-```
+    hello
+    hi
+    how are you doing
+    im fine
+    how about you
 
 But this is only going to print five items, so if we add something to
 stuff, it's not going to be printed. Or if we remove something from
@@ -161,7 +153,8 @@ stuff, we'll get an error saying "list index out of range".
 We could also create an index variable, and use a while loop:
 
 ```py
->>> length_of_stuff = len(stuff)        # len(x) is the length of x
+>>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
+>>> length_of_stuff = len(stuff)  # len(x) is the length of x, 5 in this case
 >>> index = 0
 >>> while index < length_of_stuff:
 ...     print(stuff[index])
@@ -181,7 +174,6 @@ a lot of stuff to worry about for just printing each item.
 This is when for loops come in:
 
 ```py
->>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> for thing in stuff:
 ...     # this is repeated for each element of stuff, that is, first
 ...     # for stuff[0], then for stuff[1], etc.
@@ -236,7 +228,7 @@ Instead, you can create a copy of stuff and loop over it.
 >>> 
 ```
 
-Or if you want to clear a list, just use the `.clear()` list method.
+Or if you want to clear a list, just use the `.clear()` list method:
 
 ```py
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
@@ -246,7 +238,7 @@ Or if you want to clear a list, just use the `.clear()` list method.
 >>> 
 ```
 
-## Excercises
+## Exercises
 
 1. Back in "Using if, else and elif" we created a program that asked
     for username and password and checks them, and we made users "foo"
@@ -256,8 +248,8 @@ Or if you want to clear a list, just use the `.clear()` list method.
 
     ```py
     users = [
-        ['foo', 'bar'],
-        ['biz', 'baz'],
+        ['foo', 'biz'],
+        ['bar', 'baz'],
     ]
     ```
 
