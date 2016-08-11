@@ -30,6 +30,7 @@ it.**
 5. [Variables, Booleans and None](variables.md)
 6. [Using functions and storing code in files](using-functions.md)
 7. [If, elif, else and while](if.md)
+8. [ThinkPython: Lists](lists.md)
 
 Other things this tutorial comes with:
 
