@@ -152,7 +152,7 @@ Enter something: hello
 - `function()` calls a function without any arguments, and
     `function(1, 2, 3)` calls a function with 1, 2 and 3 as arguments.
     `x = function()` calls a function, and assigns the return value of
-    the call to y.
+    the call to x.
 - When a function is called, it does something and returns something.
 - Python comes with `print` and `input`. They are built-in functions.
 
