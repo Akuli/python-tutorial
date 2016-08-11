@@ -36,6 +36,8 @@ Other things this tutorial comes with:
 
 - [Getting help](getting-help.md)
 - [Contact me](contact-me.md)
+- [Setting up a text editor](editor-setup.md)
+- [Answers for the exercises](answers.md)
 
 I'm Akuli and I have written most of this tutorial, but the following
 people have helped me with it:
