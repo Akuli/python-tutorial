@@ -99,11 +99,12 @@ world
 If you want to print a backslash, you need to **escape** it by typing
 two backslashes:
 
-```py
->>> print('hello\\nworld')
-hello\nworld
->>> 
-```
+[comment]: # (For some reason, GitHub's syntax highlighting doesn't)
+[comment]: # (work here.)
+
+    >>> print('hello\\nworld')
+    hello\nworld
+    >>> 
 
 You can also pass multiple arguments to the print function. Separate
 them with commas, and print will add spaces between them.
