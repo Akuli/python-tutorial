@@ -195,6 +195,43 @@ These are answers for exercises in the chapters. In programming, there's always 
             print("Wrong username or password.")
     ```
 
+## Defining functions
+
+1. Use `-value` to get tha negative in the abs function, and for loops
+    in the other two functions.
+
+    ```py
+    def my_abs(value):
+        if value < 0:
+            return -value
+        # actually, this else is useless because returning ends the
+        # function anyway
+        else:
+            value
+
+    def my_any(a_list):  # don't call this "list", see summary in the Lists chapter
+        for item in a_list:
+            if item:
+                return True    # ends the function
+        return True
+
+    def my_all(a_list):
+        for item in a_list:
+            if not item:
+                return False
+        return True
+    ```
+
+2. Like this:
+
+    ```py
+    def box(message, character='*'):
+        number_of_characters = len(message) + 4
+        print(character * number_of_characters)
+        print(message)
+        print(character * number_of_characters)
+    ```
+
 ***
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).

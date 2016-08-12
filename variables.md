@@ -199,6 +199,9 @@ later.
 Another way to combine operations is chaining. For example, `a < b < c`
 does the same thing as `a < b and b < c`.
 
+`not` can be used for negations. If `value` is true, `not value` is
+False, and if `value` is false, `not value` is True.
+
 There's also `is`, but don't use it instead of `==` unless you know
 what you are doing. We'll learn more about it later.
 

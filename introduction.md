@@ -13,7 +13,9 @@ something the first time you read it?
 - Read the example code and the explanation for it again.
 - Try the example yourself.
 - If there's something you haven't seen before in the tutorial and it's
-    not explained, try to find it from the previous chapters.
+    not explained, try to find it from the previous chapters. Also feel
+    free to come back to previous chapters of this tutorial while doing
+    the exercises!
 - If you still have trouble understanding the tutorial or any other
     problems with the tutorial, please [tell me](contact-me.md). I want
     to improve the tutorial so other readers won't have the same

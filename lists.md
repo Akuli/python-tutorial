@@ -71,7 +71,7 @@ we haven't talked about that yet.
 
     ```py
     >>> a = []
-    >>> b = a            # this does not copy anything
+    >>> b = a    # this does not copy anything, see the state diargams
     >>> b += [1, 2, 3]
     >>> a
     [1, 2, 3]
