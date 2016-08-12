@@ -101,7 +101,18 @@ If the version starts with 2, it's too old.
 ### Geany
 
 1. Go to *Build*, then *Set Build Commands*.
-2. Replace `python` or `python2` with `python3` everywhere.
+2. Replace `python` or `python2` with `python3` everywhere. Or if you
+    are using Windows, run `python` on a terminal and enter these
+    commands:
+
+    ```py
+    >>> import sys
+    >>> print(sys.executable)
+    ```
+
+    You'll get a path to your python.exe. Replace `python` in the build
+    commands with this path. Most importantly, your *Execute* command
+    should be `"C:\your\path" "%f"`.
 
 ### gedit, pluma and Mousepad
 
