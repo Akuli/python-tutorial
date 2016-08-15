@@ -152,11 +152,11 @@ However, modifying a global variable in-place from a function is easy.
 ```py
 >>> foo = ['global foo']
 >>> def bar():
-...     foo.append('bar foo')
+...     foo.append('local foo')
 ... 
 >>> bar()
 >>> foo
-['global foo', 'bar foo']
+['global foo', 'local foo']
 >>> 
 ```
 
