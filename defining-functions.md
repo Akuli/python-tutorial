@@ -206,9 +206,9 @@ This function can be called in two ways:
         hi
         >>> 
 
-    Positional arguments are great for simple things like
-    `print("hello")`, but if your function takes many positional
-    arguments it may be hard to tell which argument is which.
+    Positional arguments are great for simple things, but if your
+    function takes many positional arguments it may be hard to tell
+    which argument is which.
 
 - Using a **keyword argument**:
 
@@ -227,7 +227,8 @@ This function can be called in two ways:
     it.
 
 Personally, I would use this function with a positional argument. It
-only takes one argument.
+only takes one argument, so I don't need to worry about which argument
+is which.
 
 Now it's time to solve our box printing problem:
 
@@ -272,16 +273,13 @@ that doesn't specify what to return, our function will return None.
 
 ```py
 >>> def return_none_1():
-...     print("This will return None.")
+...     pass
 ... 
 >>> def return_none_2():
-...     print("This will also return None.")
 ...     return
 ... 
 >>> x = return_none_1()
-This will return None.
 >>> y = return_none_2()
-This will also return None.
 >>> print(x, y)
 None None
 >>> 
