@@ -182,9 +182,8 @@ So far our functions seem to be really isolated from the rest of our
 code, and it sucks! But they really are not as isolated as you might
 think they are.
 
-Let's think about what the built-in function input does. It takes an
-argument, and returns a value. Maybe a custom function could do that
-also?
+Let's think about what the print function does. It takes an argument
+and prints it. Maybe a custom function could also take an argument?
 
 ```py
 >>> def print_twice(message):
@@ -312,7 +311,7 @@ print_box("Hello World", "*")
 ```
 
 But we don't need to change our existing code. We can make the second
-argument **optional** by giving it a **default value**.
+argument **optional** by giving it a default value.
 
 ```py
 def print_box(message, character='*'):
@@ -438,9 +437,7 @@ functions.
     and all the exercises because you didn't know how to define
     functions. Read those parts now, and do the exercises.
 
-
-
-5. Use a search engine (e.g. Google) to find more exercises about
+4. Use a search engine (e.g. Google) to find more exercises about
     defining functions.
 
 Answers for the first and second exercise are [here](answers.md).
