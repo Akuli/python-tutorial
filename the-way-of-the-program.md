@@ -30,11 +30,11 @@ learned everything.
 ## More exercises
 
 1. What happens if you use + between two strings, like
-    `"hello" + "world"`?
-1. What happens if you use + between a string and an integer, like
-    `"hello" + 123`?
-2. What happens if you use + between a float and an integer, like
-    `3.14 + 123`?
+    `"hello" + "world"`? How about `"hello" * "world"`?
+2. What happens if you use + between a string and an integer, like
+    `"hello" + 3`? How about `"hello" * 3`?
+3. What happens if you use + between a float and an integer, like
+    `0.5 + 3`? How about `0.5 * 3`?
 
 ***
 

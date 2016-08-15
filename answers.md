@@ -4,9 +4,9 @@ These are answers for exercises in the chapters. In programming, there's always 
 
 ## ThinkPython: The way of the program
 
-1. The strings get added together.
-2. We get an error.
-3. We get a floating point number.
+1. With +, the strings get added together, and with * we get an error.
+2. With + we get an error, and with * the string is repeated multiple times.
+3. Python calculates the result and echoes it.
 
 ## Using if, else and elif
 
