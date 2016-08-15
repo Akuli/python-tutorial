@@ -40,7 +40,7 @@ else:
     print_box("You didn't enter Python :(")
 ```
 
-That's nice, but where do we a box function like that?
+That's nice, but where do we get a `print_box` function like that?
 
 ## First functions
 
@@ -186,7 +186,7 @@ Let's think about what the built-in function input does. It takes an
 argument, and returns a value. Maybe a custom function could do that
 also?
 
-```
+```py
 >>> def print_twice(message):
 ...     print(message)
 ...     print(message)
@@ -201,10 +201,12 @@ This function can be called in two ways:
     This is the recommended way for functions that take only one or two
     arguments. I would do this in my code.
 
-        >>> print_twice("hi")
-        hi
-        hi
-        >>> 
+    ```py
+    >>> print_twice("hi")
+    hi
+    hi
+    >>> 
+    ```
 
     Positional arguments are great for simple things, but if your
     function takes many positional arguments it may be hard to tell
@@ -212,10 +214,12 @@ This function can be called in two ways:
 
 - Using a **keyword argument**:
 
-        >>> print_twice(message="hi")
-        hi
-        hi
-        >>> 
+    ```py
+    >>> print_twice(message="hi")
+    hi
+    hi
+    >>> 
+    ```
 
     Keyword arguments are great when your function needs to take many
     arguments, because each argument has a name and it's easy to see
@@ -278,10 +282,10 @@ that doesn't specify what to return, our function will return None.
 >>> def return_none_2():
 ...     return
 ... 
->>> x = return_none_1()
->>> y = return_none_2()
->>> print(x, y)
-None None
+>>> print(return_none_1())
+None
+>>> print(return_none_2())
+None
 >>> 
 ```
 
@@ -299,8 +303,8 @@ def print_box(message, character):
     print(character * len(message))
 ```
 
-Then we could change our existing code to always call print_box with a
-star as the second argument:
+Then we could change our existing code to always call `print_box` with
+a star as the second argument:
 
 ```py
 print_box("Hello World", "*")
@@ -322,34 +326,46 @@ different character in two ways:
 
 - Using a positional argument.
 
-        print_box("Hello World!")
+    ```py
+    print_box("Hello World!")
+    ```
 
 - Using a keyword argument.
 
-        print_box(message="Hello World!")
+    ```py
+    print_box(message="Hello World!")
+    ```
 
 Or we can give it a different character in a few different ways if we
 need to:
 
 - Using two positional arguments.
 
-        print_box("Enter a word:", "?")
+    ```py
+    print_box("Enter a word:", "?")
+    ```
 
 - Using two keyword arguments.
 
-        print_box(message="Enter a word:", character="?")
-        print_box(character="?", message="Enter a word:")
+    ```py
+    print_box(message="Enter a word:", character="?")
+    print_box(character="?", message="Enter a word:")
+    ```
 
 - Using one positional argument and one keyword argument.
 
     I would probably do this. If an argument has a default value, I
     like to use a keyword argument to change it if needed.
 
-        print_box("Enter a word:", character="?")
+    ```py
+    print_box("Enter a word:", character="?")
+    ```
 
     However, this doesn't work:
 
-        print_box(character="?", "Enter a word:")
+    ```py
+    print_box(character="?", "Enter a word:")
+    ```
 
     The problem is that we have a keyword argument before a positional
     argument. Python doesn't allow this. You don't need to worry about
@@ -359,9 +375,9 @@ need to:
 ## Exercises
 
 **There is a lot to learn with functions, and I don't expect you to
-learn everything at once.** However, there's also lots and lots of free
-Python exercises about defining functions you can do. Do many of them
-and spend a lot of time with them, so you'll get used to defining
+learn everything at once.** However, there's also lots of free Python
+exercises about defining functions you can do. Do many of them and
+spend a lot of time with them, so you'll get used to defining
 functions.
 
 1. Python comes with many built-in functions. Some of the simplest ones
@@ -369,34 +385,41 @@ functions.
 
     - abs returns the absolute value of its only argument.
 
-            >>> abs(1)
-            1
-            >>> abs(-1)
-            1
-            >>> 
+        ```py
+        >>> abs(1)
+        1
+        >>> abs(-1)
+        1
+        >>> 
+        ```
 
     - any returns True if any of the elements of a list is true, and
         False otherwise.
 
-            >>> any([True, False, True])
-            True
-            >>> any([False, False, False])
-            False
-            >>> 
+        ```py
+        >>> any([True, False, True])
+        True
+        >>> any([False, False, False])
+        False
+        >>> 
+        ```
 
     - all returns True if all elements of a list are true, and False
         otherwise.
 
-            >>> all([True, True, True])
-            True
-            >>> all([True, False, True])
-            False
-            >>> 
+        ```py
+        >>> all([True, True, True])
+        True
+        >>> all([True, False, True])
+        False
+        >>> 
+        ```
 
-    Define functions my_abs, my_all and my_any that work the same way
-    without using built-in functions. Then run the program with IDLE,
-    or with `py -i file.py` on Windows or `python3 -i file.py` on other
-    operating systems. Then try the above examples with your functions.
+    Define functions `my_abs`, `my_all` and `my_any` that work the same
+    way without using the built-in functions. Then run the program with
+    IDLE, or with `py -i file.py` on Windows or `python3 -i file.py` on
+    other operating systems. Try the above examples with your
+    functions.
 
 2. The box printing function doesn't really print a box, it prints a
     message between two lines.
@@ -415,7 +438,9 @@ functions.
     and all the exercises because you didn't know how to define
     functions. Read those parts now, and do the exercises.
 
-4. Use a search engine (e.g. Google) to find more exercises about
+
+
+5. Use a search engine (e.g. Google) to find more exercises about
     defining functions.
 
 Answers for the first and second exercise are [here](answers.md).
