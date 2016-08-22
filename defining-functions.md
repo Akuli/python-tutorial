@@ -242,58 +242,12 @@ def print_box(message):
     print('*' * len(message))
 ```
 
-## Output
-
-The built-in input function returns a value. Can our function return a
-value also?
-
-```py
->>> def times_two(x):
-...     return x * 2
-... 
->>> times_two(3)
-6
->>> times_two("hello")
-'hellohello'
->>> 
-```
-
-Yes, it can.
-
-Note that **returning from a function ends it immediately**.
-
-```py
->>> def return_before_print():
-...     return None
-...     print("This never gets printed.")
-... 
->>> return_before_print()
->>> 
-```
-
-If we don't have any return statements or we have a return statement
-that doesn't specify what to return, our function will return None.
-
-```py
->>> def return_none_1():
-...     pass
-... 
->>> def return_none_2():
-...     return
-... 
->>> print(return_none_1())
-None
->>> print(return_none_2())
-None
->>> 
-```
-
 ## Default values
 
 What if we want to print different characters instead of always
 printing stars?
 
-We could change our print_box function to take two arguments:
+We could change our `print_box` function to take two arguments:
 
 ```py
 def print_box(message, character):
@@ -370,6 +324,52 @@ need to:
     argument. Python doesn't allow this. You don't need to worry about
     this, because if you accidentally call a function like this you
     will get an error message.
+
+## Output
+
+The built-in input function returns a value. Can our function return a
+value also?
+
+```py
+>>> def times_two(x):
+...     return x * 2
+... 
+>>> times_two(3)
+6
+>>> times_two("hello")
+'hellohello'
+>>> 
+```
+
+Yes, it can.
+
+Note that **returning from a function ends it immediately**.
+
+```py
+>>> def return_before_print():
+...     return None
+...     print("This never gets printed.")
+... 
+>>> return_before_print()
+>>> 
+```
+
+If we don't have any return statements or we have a return statement
+that doesn't specify what to return, our function will return None.
+
+```py
+>>> def return_none_1():
+...     pass
+... 
+>>> def return_none_2():
+...     return
+... 
+>>> print(return_none_1())
+None
+>>> print(return_none_2())
+None
+>>> 
+```
 
 ## Exercises
 
