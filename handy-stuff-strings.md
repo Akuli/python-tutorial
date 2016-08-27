@@ -33,9 +33,70 @@ so it creates a new string but it puts it back to the same variable.
 
 `+` and `*` are nice, but what else can we do with strings?
 
+## The in keyword
+
+We can use `in` and `not in` to check if a string contains another
+string:
+
+```py
+>>> "Hello" in our_string
+True
+>>> "Python" in our_string
+False
+>>> "Python" not in our_string
+True
+>>> 
+```
+
+## Indexing
+
+Indexing strings is simple. Just type a string or a name of a variable
+name pointing to it, and then whatever index you want inside square
+brackets.
+
+```py
+>>> our_string[1]
+'e'
+>>> 
+```
+
+That's interesting. We got a string that is only one character long. But
+the first character of `Hello World!` should be `H`, not `e`, so why did
+we get an e?
+
+Programming starts at zero. Indexing strings also starts at zero. The
+first character is `our_string[0]`, the second character is
+`our_string[1]`, and so on.
+
+So string indexes work like this:
+
+![Indexing with non-negative values](images/indexing1.png)
+
+If we index with a negative value Python starts counting from the end of
+the string.
+
+```py
+>>> our_string[-1]
+'!'
+>>> 
+```
+
+Just like that, we got the last character with -1.
+
+But why didn't that start at zero? `our_string[-1]` is the last
+character, but `our_string[1]` is not the first character!
+
+That's because 0 and -0 are equal, so indexing with -0 would do the same
+thing as indexing with 0.
+
+Indexing with negative values works like this:
+
+![Indexing with negative values](images/indexing2.png)
+
 ## Slicing
 
-Slicing is really simple. It just means getting a part of the string.
+Slicing is like indexing, but instead of getting a string that is one
+character long we usually get a string that is multiple characters long.
 For example, to get all characters between the second place between the
 characters and the fifth place between the characters, we can do this:
 
@@ -45,13 +106,15 @@ characters and the fifth place between the characters, we can do this:
 >>> 
 ```
 
-So the syntax is like `some_string[start:end]`.
+So the syntax is like `some_string[start:end]`. The `:` is important.
+Square brackets without the `:` mean indexing, and square brackets with
+`:` mean slicing.
 
 This picture shows you how the slicing works:
 
 ![Slicing with non-negative values](images/slicing1.png)
 
-But what happens if we slice with negative values?
+So, how does slicing work with negative values?
 
 ```py
 >>> our_string[-5:-2]
@@ -59,8 +122,8 @@ But what happens if we slice with negative values?
 >>> 
 ```
 
-It turns out that slicing with negative values simply starts counting
-from the end of the string.
+Seems to be working just like with indexing. As you can see, we don't
+need to worry about what starts from zero and what doesn't.
 
 ![Slicing with negative values](images/slicing2.png)
 
@@ -86,63 +149,46 @@ TypeError: 'str' object does not support item assignment
 >>> 
 ```
 
-There's also a step argument we can give to our slices, but I'm not
-going to talk about it in this tutorial.
+## Slicing with steps
 
-## Indexing
-
-So now we know how slicing works. But what happens if we forget the `:`?
+There's also a step argument we can give to our slices. It's one by
+default, and it means that the slices contain every character between
+the start and the stop.
 
 ```py
->>> our_string[1]
-'e'
+'Hello World!'
+>>> our_string[0:12]
+'Hello World!'
+>>> our_string[0:12:1]
+'Hello World!'
 >>> 
 ```
 
-That's interesting. We got a string that is only one character long. But
-the first character of `Hello World!` should be `H`, not `e`, so why did
-we get an e?
-
-Programming starts at zero. Indexing strings also starts at zero. The
-first character is `our_string[0]`, the second character is
-`our_string[1]`, and so on.
-
-So string indexes work like this:
-
-![Indexing with non-negative values](images/indexing1.png)
-
-How about negative values?
+Setting the step to something greater than 1 just makes Python skip
+characters. For example, if you set it to 2 Python will get `H`, throw
+away `e`, get the first `l`, throw away the second `l` and so on.
 
 ```py
->>> our_string[-1]
-'!'
+>>> our_string[0:12:2]
+'HloWrd'
 >>> 
 ```
 
-We got the last character.
-
-But why didn't that start at zero? `our_string[-1]` is the last
-character, but `our_string[1]` is not the first character!
-
-That's because 0 and -0 are equal, so indexing with -0 would do the same
-thing as indexing with 0.
-
-Indexing with negative values works like this:
-
-![Indexing with negative values](images/indexing2.png)
-
-## The in keyword
-
-We can use `in` and `not in` to check if a string contains another
-string:
+You can also specify the step and leave out everything else.
 
 ```py
->>> "Hello" in our_string
-True
->>> "Python" in our_string
-False
->>> "Python" not in our_string
-True
+>>> our_string[::2]
+'HloWrd'
+>>> 
+```
+
+One of the most common ways to use a step is setting it to -1. That
+way Python will go right to left instead of going left to right, and the
+string is reversed.
+
+```py
+>>> our_string[::-1]
+'!dlroW olleH'
 >>> 
 ```
 
@@ -158,7 +204,7 @@ You can run `help(str)` to read it.
 
 Remember that nothing can modify strings in-place. Most string methods
 return a new string, but things like `our_string = our_string.upper()`
-still work because the new string is assigned to the old variable.
+still work because the new string is assigned back to the old variable.
 
 Here's some of the most commonly used string methods:
 
@@ -185,7 +231,7 @@ Here's some of the most commonly used string methods:
     ```
 
     But that gets a bit complicated if we don't know the length of the
-    substring beforehand.
+    other string beforehand.
 
     ```py
     >>> substring = 'Hello'
