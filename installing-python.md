@@ -61,7 +61,7 @@ programming tools are not going to help you with this at all.
 Launch Python's IDLE like any other program. You should see something
 like this:
 
-![IDLE](idle.png)
+![IDLE](images/idle.png)
 
 From now on, I'll instead show everything like this, so I don't have to
 take more screenshots:

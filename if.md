@@ -52,7 +52,7 @@ At this point it's easier to put your code into a file and use it
 there. If you use IDLE, go to File at top left and select New File, or
 just press Ctrl+N.
 
-![New File in IDLE](idle-new.png)
+![New File in IDLE](images/idle-new.png)
 
 If you don't use IDLE, please take the time to
 [set up your editor correctly](editor-setup.md).
