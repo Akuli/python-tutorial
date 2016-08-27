@@ -25,16 +25,6 @@ We also know how to repeat them multiple times.
 >>> 
 ```
 
-Also note that everything returns a new string, and the original string
-is never modified.
-
-```py
->>> our_string = "Hello World!"
->>> our_string
-'Hello World!'
->>> 
-```
-
 Python strings are **immutable**. That's basically a fancy way to say that
 they cannot be changed in-place, and you need to create a new string to
 change them. Even `some_string += another_string` creates a new string.
