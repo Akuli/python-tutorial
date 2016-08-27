@@ -238,7 +238,7 @@ Here's some of the most commonly used string methods:
 
 - Last but not least, we can use `strip`, `lstrip` and `rstrip` to
     remove spaces, newlines and some other whitespace characters from
-    the end of a string. `lstrip` strips from the left side, `lstrip`
+    the end of a string. `lstrip` strips from the left side, `rstrip`
     strips from the right side and `strip` strips from both sides.
 
     ```py
