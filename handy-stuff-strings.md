@@ -342,6 +342,6 @@ If you need to know more about formatting I recommend reading
 
 - Python has many string methods. Use [the documentation]
     (https://docs.python.org/3/library/stdtypes.html#string-methods)
-    when you don't rememeber something about them.
+    or `help(str)` when you don't rememeber something about them.
 
 - String formatting means adding other things to the middle of a string.
