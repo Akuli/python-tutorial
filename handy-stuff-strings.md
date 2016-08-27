@@ -103,7 +103,7 @@ That's interesting. We got a string that is only one character long. But
 the first character of `Hello World!` should be `H`, not `e`, so why did
 we get an e?
 
-Prograhttps://pyformat.info/mming starts at zero. Indexing strings also starts at zero. The
+Programming starts at zero. Indexing strings also starts at zero. The
 first character is `our_string[0]`, the second character is
 `our_string[1]`, and so on.
 
@@ -119,13 +119,15 @@ How about negative values?
 >>> 
 ```
 
+We got the last character.
+
 But why didn't that start at zero? `our_string[-1]` is the last
 character, but `our_string[1]` is not the first character!
 
 That's because 0 and -0 are equal, so indexing with -0 would do the same
 thing as indexing with 0.
 
-So indexing with negative values works like this:
+Indexing with negative values works like this:
 
 ![Indexing with negative values](images/indexing2.png)
 
