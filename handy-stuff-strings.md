@@ -234,6 +234,7 @@ Here's some of the most commonly used string methods:
     >>> 'Hello-World-test'.split('-')
     ['Hello', 'World', 'test']
     >>> 
+    ```
 
 - Last but not least, we can use `strip`, `lstrip` and `rstrip` to
     remove spaces, newlines and some other whitespace characters from
