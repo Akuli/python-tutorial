@@ -293,7 +293,7 @@ Here's some of the most commonly used string methods:
     >>> '  hello 123 \n '.rstrip()
     '  hello 123'
     >>> '  hello 123 \n '.strip()
-    'hello 123
+    'hello 123'
     >>> 
     ```
 
