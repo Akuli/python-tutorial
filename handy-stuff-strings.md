@@ -51,7 +51,7 @@ True
 ## Indexing
 
 Indexing strings is simple. Just type a string or a name of a variable
-name pointing to it, and then whatever index you want inside square
+pointing to it, and then whatever index you want inside square
 brackets.
 
 ```py
