@@ -374,18 +374,18 @@ If you need to know more about formatting I recommend reading
 
 ## Summary
 
-- Slicing returns a copy of a string with indexes from one index to
-    another index. The indexes work like this:
-
-    ![Slicing](images/slicing3.png)
+- The `in` keyword can be used for checking if a string contains another
+    string.
 
 - Indexing returns one character of a string. Remember that you don't
     need a `:` with indexing. The indexes work like this:
 
     ![Indexing](images/indexing3.png)
 
-- The `in` keyword can be used for checking if a string contains another
-    string.
+- Slicing returns a copy of a string with indexes from one index to
+    another index. The indexes work like this:
+
+    ![Slicing](images/slicing3.png)
 
 - Python has many string methods. Use [the documentation]
     (https://docs.python.org/3/library/stdtypes.html#string-methods)
