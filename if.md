@@ -73,10 +73,6 @@ if its_raining:
 
 The file extension is `.py`, which is short for Python.
 
-The line with a print is **indented** by four spaces. Indentation is
-important in Python. If the indentation is not consistent, we may get
-an error or our program may do something else than we wanted it to.
-
 Now run the rain program. Most editors (including IDLE) will run your
 code when you press F5. If your editor doesn't, run it from PowerShell,
 command prompt or terminal. You probably need to first go to wherever
