@@ -34,9 +34,14 @@ It's raining!
 
 The prompt changed from `>>>` to `...`. It meant that Python was
 expecting me to keep typing. When I was done, I just pressed Enter
-twice. My code was executed and the prompt went back to `>>>`. IDLE
-does this a bit differently, so if you use IDLE, running this example
-code looks more like this:
+twice. My code was executed and the prompt went back to `>>>`.
+
+An important thing to notice is that the line with a print is
+**indented**. You can press the tab key, or if it doesn't work
+just press space a few times.
+
+IDLE does this a bit differently, so if you use IDLE, running the
+example code looks more like this:
 
 ```py
 >>> its_raining = True
@@ -55,7 +60,8 @@ just press Ctrl+N.
 ![New File in IDLE](images/idle-new.png)
 
 If you don't use IDLE, please take the time to
-[set up your editor correctly](editor-setup.md).
+[set up your editor correctly](editor-setup.md). When you're done your
+editor should give you four spaces every time you press tab.
 
 Create a file called `rain.py`, and type the following content into it:
 
