@@ -34,7 +34,7 @@ It's raining!
 
 The prompt changed from `>>>` to `...`. It meant that Python was
 expecting me to keep typing. When I was done, I just pressed Enter
-twice. My code was execute and the prompt was restored to `>>>`. IDLE
+twice. My code was executed and the prompt went back to `>>>`. IDLE
 does this a bit differently, so if you use IDLE, running this example
 code looks more like this:
 
@@ -99,9 +99,9 @@ Running from a terminal looks like this:
     It's raining!
     you@YourComputer:~/Desktop$ 
 
-From now on, if a code example starts with `>>>` run it on the
+From now on, **if a code example starts with `>>>` run it on the
 interactive prompt, and if it doesn't, write it to a file and run the
-file.
+file**.
 
 ## Using else
 
