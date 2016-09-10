@@ -98,7 +98,7 @@ The file extension is `.py`, which is short for Python.
 Now run the rain program. Most editors (including IDLE) will run your
 code when you press F5. If your editor doesn't, run it from PowerShell,
 command prompt or terminal. You probably need to first go to wherever
-you saved your file. with `cd`. For example, if the file is on your
+you saved your file with `cd`. For example, if the file is on your
 desktop, type `cd Desktop` before running the file.
 
 Running from IDLE looks like this:
