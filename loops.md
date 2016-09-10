@@ -256,6 +256,8 @@ Or if you want to clear a list, just use the `.clear()` list method:
     Then rewrite the rest of the program using a for loop.
 
 2. Make the program ask the username and password over and over again
+    until the user enters them correctly.
+
 3. Can you limit the number of attempts to 3?
 
 ***
