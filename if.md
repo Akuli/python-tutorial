@@ -53,6 +53,28 @@ It's raining!
 >>> 
 ```
 
+But why is that `if its_raining` instead of `if(its_raining)`?
+
+Earlier we learned that `if` is a **keyword**.
+
+```py
+>>> if = 123
+  File "<stdin>", line 1
+    if = 123
+       ^
+SyntaxError: invalid syntax
+>>> 
+```
+
+Functions like `print` need `()` after their name to work. But `if` is
+a keyword, not a function, so it doesn't need `()`. Python has separate
+functions and keywords because it's possible to create custom functions,
+but it's not possible to create custom keywords. That's why keywords are
+usually used for "magic" things that would be difficult to do with just
+functions.
+
+## Storing code in files
+
 At this point it's easier to put your code into a file and use it
 there. If you use IDLE, go to File at top left and select New File, or
 just press Ctrl+N.
