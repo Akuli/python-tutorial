@@ -25,7 +25,7 @@ We also know how to repeat them multiple times.
 >>> 
 ```
 
-Python strings are **immutable**. That's basically a fancy way to say that
+Python strings are **immutable**. That's just a fancy way to say that
 they cannot be changed in-place, and you need to create a new string to
 change them. Even `some_string += another_string` creates a new string.
 Python will treat that as `some_string = some_string + another_string`,
@@ -87,7 +87,7 @@ TypeError: 'str' object does not support item assignment
 ```
 
 There's also a step argument we can give to our slices, but I'm not
-going to talk about it in this tutorial.
+going to talk about it now.
 
 ## Indexing
 
@@ -106,6 +106,20 @@ we get an e?
 Programming starts at zero. Indexing strings also starts at zero. The
 first character is `our_string[0]`, the second character is
 `our_string[1]`, and so on.
+
+```py
+>>> our_string[0]
+'H'
+>>> our_string[1]
+'e'
+>>> our_string[2]
+'l'
+>>> our_string[3]
+'l'
+>>> our_string[4]
+'o'
+>>> 
+```
 
 So string indexes work like this:
 
@@ -151,113 +165,53 @@ True
 Python's strings have many useful methods. [The official documentation]
 (https://docs.python.org/3/library/stdtypes.html#string-methods) covers
 them all, but I'm going to just show some of the most commonly used ones
-briefly. **You don't need to remember all of these string methods, just
-learn to use the link above so you can find them when you need them.**
-Python also comes with built-in documentation about the string methods.
-You can run `help(str)` to read it.
+briefly. Python also comes with built-in documentation about the string
+methods. You can run `help(str)` to read it.
 
 Remember that nothing can modify strings in-place. Most string methods
 return a new string, but things like `our_string = our_string.upper()`
 still work because the new string is assigned to the old variable.
 
+Here's an example with some of the most commonly used string methods:
+
 Here's some of the most commonly used string methods:
 
-- `upper` and `lower` can be used for converting to uppercase and
-    lowercase.
-
-    ```py
-    >>> our_string.upper()
-    'HELLO WORLD!'
-    >>> our_string.lower()
-    'hello world!'
-    >>> 
-    ```
-
-- To check if a string starts or ends with another string we could just
-  slice the string and compare with to the slice.
-
-    ```py
-    >>> our_string[:5] == 'Hello'
-    True
-    >>> our_string[-2:] == 'hi'
-    False
-    >>> 
-    ```
-
-    But that gets a bit complicated if we don't know the length of the
-    substring beforehand.
-
-    ```py
-    >>> substring = 'Hello'
-    >>> our_string[:len(substring)] == substring
-    True
-    >>> substring = 'hi'
-    >>> our_string[-len(substring):] == substring
-    False
-    >>> 
-    ```
-
-    That's why it's recommended to use `startswith` and `endswith`:
-
-    ```py
-    >>> our_string.startswith('Hello')
-    True
-    >>> our_string.endswith('hi')
-    False
-    >>> 
-    ```
-
-- If we need to find out where a substring is located, we can do that
-    with `index`:
-
-    ```py
-    >>> our_string.index('World')
-    6
-    >>> our_string[6:]
-    'World!'
-    >>> 
-    ```
-
-- The `join` method joins a list of other strings. We'll talk more about
-    lists later.
-
-    ```py
-    >>> '-'.join(['Hello', 'World', 'test'])
-    'Hello-World-test'
-    >>> 
-    ```
-
-    The `split` method is the opposite of joining, it splits a string to
-    a list.
-
-    ```py
-    >>> 'Hello-World-test'.split('-')
-    ['Hello', 'World', 'test']
-    >>> 
-    ```
-
-- Last but not least, we can use `strip`, `lstrip` and `rstrip` to
-    remove spaces, newlines and some other whitespace characters from
-    the end of a string. `lstrip` strips from the left side, `rstrip`
-    strips from the right side and `strip` strips from both sides.
-
-    ```py
-    >>> '  hello 123 \n '.lstrip()
-    'hello 123 \n '
-    >>> '  hello 123 \n '.rstrip()
-    '  hello 123'
-    >>> '  hello 123 \n '.strip()
-    'hello 123
-    >>> 
-    ```
-
-It's also possible to combine string methods with slicing and other
-string methods:
-
 ```py
->>> our_string.upper()[:7].startswith('HELLO')
+>>> our_string.upper()
+'HELLO WORLD!'
+>>> our_string.lower()
+'hello world!'
+>>> our_string.startswith('Hello')
 True
->>> 
+>>> our_string.endswith('World!')
+True
+>>> our_string.endswith('world!')  # Python is case-sensitive
+False
+>>> '  hello 123 \n '.lstrip()    # left strip
+'hello 123 \n '
+>>> '  hello 123 \n '.rstrip()    # right strip
+'  hello 123'
+>>> '  hello 123 \n '.strip()     # strip from both sides
+'hello 123'
+>>> our_string.ljust(30, '-')
+'Hello World!------------------'
+>>> our_string.rjust(30, '-')
+'------------------Hello World!'
+>>> our_string.center(30, '-')
+'---------Hello World!---------'
+>>> our_string.count('o')   # it contains two o's
+2
+>>> our_string.index('o')   # the first o is our_string[4]
+4
+>>> our_string.rindex('o')  # the last o is our_string[7]
+7
+>>> '-'.join(['hello', 'world', 'test'])
+'hello-world-test'
+>>> 'hello-world-test'.split('-')
+['hello', 'world', 'test']
+>>> our_string.upper()[3:].startswith('LO WOR')  # combining multiple things
+True
+>>>
 ```
 
 ## String formatting
@@ -303,7 +257,8 @@ they are just different. The two ways are:
 - `%s`-formatting, also known as printf-formatting and old-style
     formatting. This has less features than `.format()`-formatting, but
     `'Hello %s.' % name` is shorter and faster to type than
-    `'Hello {}.'.format(name)`.
+    `'Hello {}.'.format(name)`. I like to use printf-formatting for simple
+    things and `.format` when I need more powerful features.
 
     ```py
     >>> "Hello %s." % name
