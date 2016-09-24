@@ -371,9 +371,37 @@ None
 >>> 
 ```
 
+## Return or print?
+
+There's two ways to output information from functions. They can print
+something or they can return something. So, should we print or return?
+
+Most of the time returning makes functions much easier to use. Think
+about the `input()` function. It asks the user to enter something, and
+then the user enters something and that value is returned. If the input
+function would print the value instead of returning it, things like
+`name = input("Name: ")` wouldn't work and assigning the output to a
+variable would be much more difficult. Printing things is fine when you
+know that you'll only need to print the result and you'll never need to
+assign it to a variable.
+
+## Summary
+
+- Functions are a way to write code once, and then use that same
+    code in multiple places.
+- Variables inside functions are **locals**, and variables outside
+    functions are **globals**. Functions can access all variables, but
+    by default, they can only create and change the value of local
+    variables.
+- Functions can take **arguments** and they can behave differently
+    depending on what arguments they get. Functions can also
+    **return** one value. Returning also ends the function immediately.
+- Return a value instead of printing it if you need to do something with
+    it after calling the function.
+
 ## Exercises
 
-**There is a lot to learn with functions, and I don't expect you to
+**There is a lot to learn about functions, and I don't expect you to
 learn everything at once.** However, there's also lots of free Python
 exercises about defining functions you can do. Do many of them and
 spend a lot of time with them, so you'll get used to defining
