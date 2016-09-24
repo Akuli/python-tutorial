@@ -2,13 +2,11 @@
 
 ## Variables
 
-Variables are easy to understand. They simply **contain data**. Actually
-they [point to data](https://www.youtube.com/watch?v=_AEJHKGk9ns), but
-think about them as data containers for now.
+Variables are easy to understand. They simply **point to data**.
 
 ```py
->>> a = 1      # create a variable called a and assign 1 to it
->>> a          # get the value of a and let Python echo it
+>>> a = 1   # create a variable called a that points to 1
+>>> a       # get the value that a points to
 1
 >>>
 ```
@@ -16,7 +14,7 @@ think about them as data containers for now.
 We can also change the value of a variable after setting it.
 
 ```py
->>> a = 2
+>>> a = 2    # make it point to 2 instead
 >>> a
 2
 >>> 
@@ -45,6 +43,21 @@ use underscores.
 >>> number_one = 1
 >>> number_two = 2
 >>> 
+```
+
+Variable names are case-sensitive, like many other things in Python.
+
+```py
+>>> thing = 1
+>>> THING = 2
+>>> thIng = 3
+>>> thing
+1
+>>> THING
+2
+>>> thIng
+3
+>>>
 ```
 
 Python also has some words that cannot be used as variable names
