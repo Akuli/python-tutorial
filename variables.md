@@ -6,17 +6,40 @@ Variables are easy to understand. They simply **point to data**.
 
 ```py
 >>> a = 1   # create a variable called a that points to 1
->>> a       # get the value that a points to
+>>> b = 2   # create another variable
+>>> a       # get the value that the variable points to
 1
+>>> b
+2
 >>>
 ```
+
+Let's draw a diagram of these variables.
+
+![Variable diagram](images/variables1.png)
 
 We can also change the value of a variable after setting it.
 
 ```py
->>> a = 2    # make it point to 2 instead
+>>> a = 2    # make a point to 2 instead of 1
 >>> a
 2
+>>> 
+```
+
+So now our diagram looks like this:
+
+![Variable diagram](images/variables2.png)
+
+Setting a variable to another variable gets the value of the other
+variable and sets the first variable to point to that value.
+
+```py
+>>> a = 1
+>>> b = a  # this makes b point to 1, not a
+>>> a = 5
+>>> b      # b didn't change when a changed
+1
 >>> 
 ```
 
@@ -30,14 +53,26 @@ NameError: name 'thingy' is not defined
 >>> 
 ```
 
+Variables are simple to understand, but there's a few details that we
+need to keep in mind:
+
+- Variables always point to a value, **they never point to other
+    variables**. That's why the arrows in our diagrams always go left
+    to right.
+- Multiple variables can point to the same value, but one variable
+    cannot point to multiple values.
+
+- The values that variables point to can point to other values also.
+    We'll learn more about that when we'll talk about [lists](lists.md).
+
 Variables are an important part of most programming languages, and they
 allow programmers to write much larger programs than they could write
 without variables.
 
 Variable names can be multiple characters long. They can contain
-uppercase characters, numbers and some other characters, but most of
-the time you should use simple, lowercase variable names. You can also
-use underscores.
+uppercase characters, numbers and some other characters, but most of the
+time you should use simple, lowercase variable names. You can also use
+underscores.
 
 ```py
 >>> number_one = 1
