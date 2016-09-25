@@ -308,3 +308,9 @@ else:
 
     print("Done! Now run this program again and select 'y'.")
 ```
+
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md)
