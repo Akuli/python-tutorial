@@ -257,6 +257,4 @@ what you are doing. We'll learn more about it later.
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
-[Previous](the-way-of-the-program.md) |
-[Next](using-functions.md) |
 [Back to the list of contents](README.md)

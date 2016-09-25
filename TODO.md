@@ -1,6 +1,62 @@
-# Things that are not in the tutorial yet
+# Stuff that will (hopefully) be added to this tutorial
 
-- Reading and writing files.
-- Exceptions.
-- Custom classes part 2. Inheritance, multiple inheritance, diamond
-    diagrams, custom exceptions.
+This tutorial is not complete. It still needs:
+
+- Dictionaries and tuples (can be in the same thing since tuples
+    are needed for dict keys)
+- Explain `for a, b in thing` somewhere
+- **More exercises and examples everywhere!**
+- reading and writing files
+    - first of all: what are files, directories/folders and paths
+    - print(..., file=thefile), not thefile.write(...)
+    - show how to iterate over the file and .read() it
+    - why .rstrip('\n') instead of .strip()
+    - files remember their position, reading the same file object twice
+- modules
+    - just files and folders, have a look at Python's lib directory
+    - "batteries included" filosofy
+    - briefly introduce some of the most commonly used standard library
+        modules:
+        - math
+            - it's not a file, what is it?
+        - sys
+            - sys.exit() vs exit()
+        - time
+        - os, os.path, subprocess
+        - random
+        - webbrowser
+    - explain even more briefly and link to documentation/tutorials:
+        - configparser
+        - textwrap
+        - collections, itertools, functools
+        - traceback
+        - types
+        - warnings
+        - json
+    - link to third party modules:
+        - appdirs
+        - requests
+- Exceptions
+- explain bool(x) and why it matters
+- classes part 2
+    - non-public `_variables`
+    - singular inheritance, inheritance of built-in classes
+    - using super
+- quick overview of some of the most useful built-in functions and classes
+    - range
+    - zip
+    - classmethod and staticmethod
+- iterables and iterators: something most Python programmers need to be aware of
+- classes part 3: multiple inheritance
+    - an advanced thing
+    - built-in classes don't use it
+    - diamond diagrams, why to use super()
+- last chapter: "What should I do now?" links to other resources
+    - GUI programming tutorials
+        - easygui
+        - tkinter in effbot (warn the readers about star imports)
+        - pyqt5 in zetcode
+        - gtk+ 3 in readthedocs
+    - a pygame tutorial
+    - David Beazley's metaprogramming and other talks
+    - a regex tutorial

@@ -93,6 +93,4 @@ we haven't talked about that yet.
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
-[Previous](if.md) |
-[Next](loops.md) |
 [Back to the list of contents](README.md)

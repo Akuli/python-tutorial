@@ -301,3 +301,9 @@ If you need to know more about formatting I recommend reading
     or `help(str)` when you don't rememeber something about them.
 
 - String formatting means adding other things to the middle of a string.
+
+***
+
+You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md)

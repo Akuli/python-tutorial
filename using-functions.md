@@ -160,6 +160,4 @@ Enter something: hello
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
-[Previous](variables.md) |
-[Next](if.md) |
 [Back to the list of contents](README.md)

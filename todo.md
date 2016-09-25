@@ -1,4 +1,0 @@
-- Lists and tuples
-- Loops (maybe move while loops here?)
-- Defining functions
-- More exercises!

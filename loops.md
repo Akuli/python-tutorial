@@ -264,5 +264,4 @@ Or if you want to clear a list, just use the `.clear()` list method:
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
-[Previous](lists.md) |
 [Back to the list of contents](README.md)
