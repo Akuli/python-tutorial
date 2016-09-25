@@ -296,7 +296,7 @@ if been_here_before:
     elif input("Password: ") != password:
         print("Wrong password!")
     else:
-        print("Correct password, welcome!")
+        print("Correct username and password, welcome!")
 
 else:
     # Write username and password to a file.
