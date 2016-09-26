@@ -259,7 +259,7 @@ use the `read()` method.
 >>> 
 ```
 
-You can also open full paths, like `open('C:\\Users\\me', 'r')`.
+You can also open full paths, like `open('C:\\Users\\me\\myfile.txt', 'r')`.
 The reason why we need to use `\\` when we really mean `\` is that
 backslash has a special meaning. There are special characters like
 `\n`, and `\\` means an actual backslash.
@@ -294,9 +294,9 @@ you don't need to double anything or use `r` in front of paths.
 >>> 
 ```
 
-## Example: File viewer
+## Examples
 
-The following program prints the contents of files:
+This program prints the contents of files:
 
 ```py
 while True:
@@ -310,8 +310,6 @@ while True:
         for line in f:
             print(line.rstrip('\n'))
 ```
-
-## Example: User information
 
 This program stores the user's username and password in a file.
 Plain text files are definitely not a good way to store usernames
