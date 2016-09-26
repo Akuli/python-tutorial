@@ -34,11 +34,12 @@ it.**
 9. [Handy stuff with strings](handy-stuff-strings.md)
 10. [Loops](loops.md)
 11. [Files](files.md)
+12. [Modules](modules.md)
+13. [Defining functions](defining-functions.md)
 
 Parts of this tutorial that aren't ready to be added to the rest of it
 yet:
 
-- [Defining functions](defining-functions.md)
 - [Classes](classes.md)
 
 Other things this tutorial comes with:
@@ -47,6 +48,7 @@ Other things this tutorial comes with:
 - [Contact me](contact-me.md)
 - [Setting up a text editor](editor-setup.md)
 - [Answers for the exercises](answers.md)
+- [The TODO list](TODO.md)
 
 I'm Akuli and I have written most of this tutorial, but the following
 people have helped me with it:

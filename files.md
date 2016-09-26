@@ -5,7 +5,7 @@
 These are simple thing that many computer users already know, but I'll go
 through them just to make sure you know them also.
 
-#### Files
+### Files
 
 - Each file has a **name**, like `hello.py`, `mytext.txt` or
     `coolimage.png`. Usually the name ends with an **extension** that
@@ -17,13 +17,13 @@ through them just to make sure you know them also.
 - Files have **content** that consists of
     [8-bit bytes](https://www.youtube.com/watch?v=Dnd28lQHquU).
 
-#### Directories/folders
+### Directories/folders
 
 Directories are a way to group files. They also have a name and a location
 like files, but instead of containing data directly like files do they
 contain other files and directories.
 
-#### Paths
+### Paths
 
 Directories and files have a path, like `C:\Users\me\hello.py`. That just
 means that there's a folder called `C:`, and inside it there's a folder
@@ -178,7 +178,16 @@ It's also possible to read lines one by one. Files have a
 `readline()` method that reads the next line, and returns `''`
 if we're at the end of the file.
 
-**TODO:** example of readline()
+```py
+>>> with open('hello.txt', 'r') as f:
+...     first_line = f.readline()
+...     second_line = f.readline()
+... 
+>>> first_line
+'Hello one!\n'
+>>> second_line
+'Hello two!\n'
+```
 
 There's only one confusing thing about reading files. If you try
 to read it twice you'll find out that it only gets read once:
@@ -199,7 +208,10 @@ to read it twice you'll find out that it only gets read once:
 >>> 
 ```
 
-But if we open the file again, everything works.
+File objects remember their position. When we tried to read the
+file again it was already at the end, and there was nothing left
+to read. But if we open the file again, it's in the beginning
+again and everything works.
 
 ```py
 >>> first = []
@@ -247,7 +259,38 @@ use the `read()` method.
 >>> 
 ```
 
-**TODO:** Explain paths and \\.
+You can also open full paths, like `open('C:\\Users\\me', 'r')`.
+The reason why we need to use `\\` when we really mean `\` is that
+backslash has a special meaning. There are special characters like
+`\n`, and `\\` means an actual backslash.
+
+```py
+>>> print('C:\some\name')
+C:\some
+ame
+>>> print('C:\\some\\name')
+C:\some\name
+>>> 
+```
+
+Another way to create paths is to tell Python to escape them by
+adding an `r` to the beginning of the string. In this case the `r`
+is short for "raw", not "read".
+
+```py
+>>> r'C:\some\name' == 'C:\\some\\name'
+True
+>>> 
+```
+
+If you don't use Windows and your paths don't contain backslashes
+you don't need to double anything or use `r` in front of paths.
+
+```py
+>>> print('/some/name')
+/some/name
+>>> 
+```
 
 ## Example: File viewer
 
