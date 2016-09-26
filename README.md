@@ -11,17 +11,23 @@ you have programmed a lot in the past using some other language you
 probably want to read
 [the official tutorial](https://docs.python.org/3/tutorial/) instead.
 
-This tutorial uses Python 3. Python 2 is getting outdated all the time,
+This tutorial uses Python 3, and you need Python 3 to be able to run the
+example code yourself. Python 2 is getting outdated all the time,
 and more and more projects are moving to Python 3. There are a few
 popular libraries that don't support Python 3 that well at the time of
 writing this, but you don't need to worry about that just yet. They
 will probably support Python 3 by the time you've learned the basics
 and you may actually need them.
 
+I have tested most of the code in this tutorial on Python 3.4, but
+everything should also work on any Python 3 version or newer.
+
 Here's a list of chapters in this tutorial. Read them one by one in the
-order they are listed. **If you jump to a chapter without reading
-everything before it, you will probably have hard time understanding
-it.**
+order they are listed. **If you jump to a chapter without reading and
+understanding everything before it, you may have hard time understanding
+the chapter you're trying to read.** However, the chapters are mostly
+independent from each other, so you can also use this tutorial together
+with other tutorials.
 
 1. [Quick introduction to this tutorial](introduction.md)
 2. [Installing Python](installing-python.md)
@@ -44,7 +50,7 @@ yet:
 
 Other things this tutorial comes with:
 
-- [Getting help](getting-help.md)
+- **Important:** [getting help](getting-help.md)
 - [Contact me](contact-me.md)
 - [Setting up a text editor](editor-setup.md)
 - [Answers for the exercises](answers.md)
