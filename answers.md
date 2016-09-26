@@ -197,7 +197,7 @@ These are answers for exercises in the chapters. In programming, there's always 
 
 ## Defining functions
 
-1. Use `-value` to get tha negative in the abs function, and for loops
+1. Use `-value` to get the negative in the abs function, and for loops
     in the other two functions.
 
     ```py
