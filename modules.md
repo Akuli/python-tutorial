@@ -420,7 +420,7 @@ while True:
         # i have no idea when this code would actually run
         print("Interesting, it exists but it's not a file or a folder.")
     else:
-        print("I can't find it :(")
+        print("I can't find it :(", file=sys.stderr)
 ```
 
 ## More modules!
