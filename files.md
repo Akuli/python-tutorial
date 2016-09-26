@@ -264,7 +264,9 @@ The reason why we need to use `\\` when we really mean `\` is that
 backslash has a special meaning. There are special characters like
 `\n`, and `\\` means an actual backslash.
 
-```py
+[comment]: <> (GitHub's syntax highlighting screws up with backslashes.)
+
+```
 >>> print('C:\some\name')
 C:\some
 ame

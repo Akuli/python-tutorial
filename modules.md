@@ -82,9 +82,10 @@ need to pass the `-i` option to Python, so if you would normally run
 will run the file and then give you a `>>>` prompt that we can use
 to check what's wrong. If you use IDLE, just run the file normally.
 
-We should end up with something like this:
+We should end up with the same error message, and then a `>>>`.
+Like this:
 
-```
+```py
 Traceback (most recent call last):
   File "random.py", line 1, in <module>
     import random
@@ -399,6 +400,7 @@ Check what a path points to.
 
 ```py
 import os
+import sys
 
 print("You are currently in %s." % os.getcwd())
 
