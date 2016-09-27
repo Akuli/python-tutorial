@@ -62,8 +62,9 @@ Let's use it to define a function that does nothing.
 >>> 
 ```
 
-Seems to be working so far, we have a function. Let's see what happens
-if we call it.
+Seems to be working so far, we have a function. Actually it's just
+a value that is assigned to a variable called `do_nothing`. Let's see
+what happens if we call it.
 
 ```py
 >>> do_nothing()
@@ -130,7 +131,7 @@ program, even in functions.
 >>> 
 ```
 
-But there are also **local variables**. They exist only inside
+But there are also **local variables**. They exist only **inside**
 functions, and they are deleted when the function exits.
 
 ```py
@@ -150,18 +151,19 @@ NameError: name 'd' is not defined
 However, modifying a global variable in-place from a function is easy.
 
 ```py
->>> foo = ['global foo']
->>> def bar():
-...     foo.append('local foo')
+>>> stuff = ['global stuff']
+>>> def add_stuff():
+...     stuff.append('local stuff')
 ... 
->>> bar()
->>> foo
-['global foo', 'local foo']
+>>> add_stuff()
+>>> stuff
+['global stuff', 'local stuff']
 >>> 
 ```
 
 This doesn't work if the value is of an immutable type, like string or
-integer. Fortunately, Python will tell you if something's wrong.
+integer because immutable values cannot be modified in-place.
+Fortunately, Python will tell you if something's wrong.
 
 ```py
 >>> foo = 1
@@ -376,14 +378,53 @@ None
 There's two ways to output information from functions. They can print
 something or they can return something. So, should we print or return?
 
-Most of the time returning makes functions much easier to use. Think
+Most of the time **returning makes functions much easier to use**. Think
 about the `input()` function. It asks the user to enter something, and
 then the user enters something and that value is returned. If the input
 function would print the value instead of returning it, things like
-`name = input("Name: ")` wouldn't work and assigning the output to a
+`name = input("Name: ")` wouldn't work and assigning the result to a
 variable would be much more difficult. Printing things is fine when you
 know that you'll only need to print the result and you'll never need to
 assign it to a variable.
+
+## Examples
+
+Ask yes/no questions.
+
+```py
+def ask_yes_no(prompt):
+    while True:
+        answer = input(prompt + ' (y or n) ')
+        if answer == 'y' or answer == 'Y':
+            return True    # returning ends the function
+        if answer == 'n' or answer == 'N':
+            return False
+        print("Answer 'y' or 'n'.")
+
+if ask_yes_no("Do you like ice cream?"):
+    print("You like ice cream!")
+else:
+    print("You don't like ice cream.")
+```
+
+Ask questions with multiple answers.
+
+```py
+def ask_until_correct(prompt, correct_options,
+                      error_message="I don't know what you meant."):
+    while True:
+        answer = input(prompt + ' ')
+        if answer in correct_options:
+            return answer   # returning ends the function
+        print(error_message)
+
+
+colors = ['red', 'yellow', 'blue', 'green', 'orange', 'pink', 'black',
+          'gray', 'white', 'brown']
+choice = ask_until_correct("What's your favorite color?", colors,
+                           error_message="I don't know that color.")
+print("Your favorite color is %s!" % choice)
+```
 
 ## Summary
 
@@ -394,9 +435,10 @@ assign it to a variable.
     by default, they can only create and change the value of local
     variables.
 - Functions can take **arguments** and they can behave differently
-    depending on what arguments they get. Functions can also
-    **return** one value, like the built-in input function does.
-    Returning also ends the function immediately.
+    depending on what arguments they get. Arguments are just local
+    variables.
+- Functions can also **return** one value, like the built-in input
+    function does. Returning also ends the function immediately.
 - Return a value instead of printing it if you need to do something with
     it after calling the function.
 
@@ -405,8 +447,7 @@ assign it to a variable.
 **There is a lot to learn about functions, and I don't expect you to
 learn everything at once.** However, there's also lots of free Python
 exercises about defining functions you can do. Do many of them and
-spend a lot of time with them, so you'll get used to defining
-functions.
+spend time with them until you're familiar with defining functions.
 
 1. Python comes with many built-in functions. Some of the simplest ones
     are abs, all and any. They can be used like this:
@@ -421,8 +462,8 @@ functions.
         >>> 
         ```
 
-    - any returns True if any of the elements of a list is true, and
-        False otherwise.
+    - any returns True if one or more of the elements of a list is true,
+        and False otherwise.
 
         ```py
         >>> any([True, False, True])
@@ -466,8 +507,7 @@ functions.
     and all the exercises because you didn't know how to define
     functions. Read those parts now, and do the exercises.
 
-4. Use a search engine (e.g. Google) to find more exercises about
-    defining functions.
+4. Find more exercises about defining functions online.
 
 Answers for the first and second exercise are [here](answers.md).
 
