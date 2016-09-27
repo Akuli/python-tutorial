@@ -395,7 +395,8 @@ assign it to a variable.
     variables.
 - Functions can take **arguments** and they can behave differently
     depending on what arguments they get. Functions can also
-    **return** one value. Returning also ends the function immediately.
+    **return** one value, like the built-in input function does.
+    Returning also ends the function immediately.
 - Return a value instead of printing it if you need to do something with
     it after calling the function.
 
