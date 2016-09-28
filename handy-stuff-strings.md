@@ -260,6 +260,9 @@ they are just different. The two ways are:
     `'Hello {}.'.format(name)`. I like to use printf-formatting for simple
     things and `.format` when I need more powerful features.
 
+    **TODO:** warn readers about formatting tuples, and show experienced
+    users that dictionaries aren't a problem
+
     ```py
     >>> "Hello %s." % name
     'Hello Akuli.'
