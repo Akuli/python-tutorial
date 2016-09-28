@@ -314,7 +314,7 @@ is running on. The official documentation is
 >>> 
 >>> os.path.isfile('hello.txt')  # check if it's a file
 True
->>> os.path.isdir('stuff')
+>>> os.path.isfile('stuff')
 False
 >>> os.path.isdir('hello.txt')   # check if it's a directory
 False
