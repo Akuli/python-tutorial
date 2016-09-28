@@ -40,8 +40,8 @@ with other tutorials.
 9. [Handy stuff with strings](handy-stuff-strings.md)
 10. [Loops](loops.md)
 11. [Files](files.md)
-12. [Modules](modules.md)
-13. [Defining functions](defining-functions.md)
+12. [Defining functions](defining-functions.md)
+13. [Modules](modules.md)
 
 Parts of this tutorial that aren't ready to be added to the rest of it
 yet:
