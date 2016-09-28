@@ -362,7 +362,8 @@ for thing in things:
 ```
 
 Measure how long it takes for the user to answer a question.
-The `%.2f` trick is explained [here](https://pyformat.info/).
+The `%.2f` rounds down to 2 decimals, and you can find more
+formatting tricks [here](https://pyformat.info/).
 
 ```py
 import time
