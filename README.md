@@ -39,9 +39,10 @@ with other tutorials.
 8. [ThinkPython: Lists](lists.md)
 9. [Handy stuff with strings](handy-stuff-strings.md)
 10. [Loops](loops.md)
-11. [Files](files.md)
-12. [Defining functions](defining-functions.md)
-13. [Modules](modules.md)
+11. [Trey Hunner: zip and enumerate](trey-hunner-zip-and-enumerate.md)
+12. [Files](files.md)
+13. [Defining functions](defining-functions.md)
+14. [Modules](modules.md)
 
 Parts of this tutorial that aren't ready to be added to the rest of it
 yet:

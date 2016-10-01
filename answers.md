@@ -195,10 +195,77 @@ These are answers for exercises in the chapters. In programming, there's always 
             print("Wrong username or password.")
     ```
 
+## Trey Hunner: zip and enumerate
+
+1. Read some lines with `input` and then enumerate it.
+
+    ```py
+    print("Enter something, and press Enter without typing anything",
+          "when you're done.")
+
+    lines = []
+    while True:
+        line = input('>')
+        if line == '':
+            break
+        lines.append(line)
+
+    for index, line in enumerate(lines, start=1):
+        print("Line", index, "is:", line)
+    ```
+
+2. Let's start by trying out `zip` with strings:
+
+    ```py
+    >>> for pair in zip('ABC', 'abc'):
+    ...     print(pair)
+    ... 
+    ('A', 'a')
+    ('B', 'b')
+    ('C', 'c')
+    >>> 
+    ```
+
+    Great, it works just like it works with lists. Now let's create
+    the letter printing program:
+
+    ```py
+    uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lowercase = 'abcdefghijklmnopqrstuvwxyz'
+
+    for upper, lower in zip(uppercase, lowercase):
+        print(upper, lower)
+    ```
+
+3. This one is a bit more difficult than the other two because we
+    need to combine `zip` and `enumerate`. I would pass a `zip`
+    result to `enumerate`, like this:
+
+    ```py
+    uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lowercase = 'abcdefghijklmnopqrstuvwxyz'
+
+    for index, letterpair in enumerate(zip(uppercase, lowercase), start=1):
+        upper, lower = letterpair
+        print(index, upper, lower)
+    ```
+
+    Another alternative is to pass an `enumerate` result to `zip`. This is
+    a bit more complicated, so I wouldn't do it this way.
+
+    ```py
+    uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lowercase = 'abcdefghijklmnopqrstuvwxyz'
+
+    for upper, indexlowerpair in zip(uppercase, enumerate(lowercase, start=1)):
+        index, lower = indexlowerpair
+        print(index, upper, lower)
+    ```
+
 ## Defining functions
 
-1. Use `-value` to get the negative in the abs function, and for loops
-    in the other two functions.
+1. Use `-value` (it works just like `-1`) to get the negative in
+    the abs function, and for loops in the other two functions.
 
     ```py
     def my_abs(value):
@@ -213,7 +280,7 @@ These are answers for exercises in the chapters. In programming, there's always 
         for item in a_list:
             if item:
                 return True    # ends the function
-        return True
+        return False
 
     def my_all(a_list):
         for item in a_list:
@@ -225,10 +292,10 @@ These are answers for exercises in the chapters. In programming, there's always 
 2. Like this:
 
     ```py
-    def box(message, character='*'):
+    def print_box(message, character='*'):
         number_of_characters = len(message) + 4
         print(character * number_of_characters)
-        print(message)
+        print(character, message, character)
         print(character * number_of_characters)
     ```
 
