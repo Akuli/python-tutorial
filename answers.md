@@ -207,7 +207,7 @@ These are answers for exercises in the chapters. In programming, there's always 
         # actually, this else is useless because returning ends the
         # function anyway
         else:
-            value
+            return value
 
     def my_any(a_list):  # don't call this "list", see summary in the Lists chapter
         for item in a_list:
