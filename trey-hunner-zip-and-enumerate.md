@@ -189,6 +189,8 @@ For looping over a list with indexes:
     26 Z z
     ```
 
+The answers are [here](answers.md).
+
 ***
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
