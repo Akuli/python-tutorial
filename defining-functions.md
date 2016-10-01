@@ -148,6 +148,10 @@ NameError: name 'd' is not defined
 >>> 
 ```
 
+Let's draw a diagram of these variables:
+
+![Locals and globals.](images/locals-and-globals.png)
+
 However, modifying a global variable in-place from a function is easy.
 
 ```py
