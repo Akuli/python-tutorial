@@ -275,6 +275,32 @@ else:
 5. Make a program that asks for username and password and checks them.
     Make users "foo" and "bar" with passwords "biz" and "baz".
 
+    Example output:
+
+    ```
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: foo
+    Enter your password: biz
+    Welcome foo!
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: bar
+    Enter your password: baz
+    Welcome bar!
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: spam
+    Enter your password: eggs
+    Wrong username.
+    >>> ================================ RESTART ================================
+    >>> 
+    Enter your username: foo
+    Enter your password: lol
+    Wrong password!
+    >>> 
+    ```
+
 The answers are [here](answers.md).
 
 ***

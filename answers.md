@@ -87,32 +87,6 @@ These are answers for exercises in the chapters. In programming, there's always 
         print("Wrong username.")
     ```
 
-    Example output:
-
-    ```
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: foo
-    Enter your password: biz
-    Welcome foo!
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: bar
-    Enter your password: baz
-    Welcome bar!
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: spam
-    Enter your password: eggs
-    Wrong username.
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: foo
-    Enter your password: lol
-    Wrong password!
-    >>> 
-    ```
-
 ## Loops
 
 1. For loop over the users, each user is a list that contains a
@@ -197,7 +171,7 @@ These are answers for exercises in the chapters. In programming, there's always 
 
 ## Trey Hunner: zip and enumerate
 
-1. Read some lines with `input` and then enumerate it.
+1. Read some lines with `input` into a list and then enumerate it.
 
     ```py
     print("Enter something, and press Enter without typing anything",
@@ -238,14 +212,27 @@ These are answers for exercises in the chapters. In programming, there's always 
     ```
 
 3. This one is a bit more difficult than the other two because we
-    need to combine `zip` and `enumerate`. I would pass a `zip`
-    result to `enumerate`, like this:
+    need to combine `zip` and `enumerate`. One way to do this is
+    to pass a `zip` result to `enumerate`, like this:
 
     ```py
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
     for index, letterpair in enumerate(zip(uppercase, lowercase), start=1):
+        upper, lower = letterpair
+        print(index, upper, lower)
+    ```
+
+    We can also save the zip result to a variable. I would
+    probably do this.
+
+    ```py
+    uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lowercase = 'abcdefghijklmnopqrstuvwxyz'
+
+    letterzip = zip(uppercase, lowercase)
+    for index, letterpair in enumerate(letterzip, start=1):
         upper, lower = letterpair
         print(index, upper, lower)
     ```
