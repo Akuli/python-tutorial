@@ -391,6 +391,29 @@ variable would be much more difficult. Printing things is fine when you
 know that you'll only need to print the result and you'll never need to
 assign it to a variable.
 
+So if our function returns a value we can use it like this:
+
+```py
+>>> def return_hi():
+...     return "hi"
+... 
+>>> print(return_hi())
+hi
+>>> 
+```
+
+If the function prints instead we can call it and just throw away
+the None it returns:
+
+```py
+>>> def print_hi():
+...     print("hi")
+... 
+>>> print_hi()
+hi
+>>> 
+```
+
 ## Examples
 
 Ask yes/no questions.
