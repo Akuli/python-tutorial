@@ -177,7 +177,7 @@ For looping over a list with indexes:
     **Hint:** how do strings behave with `zip`? Try it out on the
     `>>>` prompt and see.
 
-3. Can you also make it print the indexes also?
+3. Can you make it print the indexes also?
 
     ```
     1 A a
