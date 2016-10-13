@@ -73,6 +73,19 @@ but it's not possible to create custom keywords. That's why keywords are
 usually used for "magic" things that would be difficult to do with just
 functions.
 
+Also note that if statements check the condition once only, so if you
+set it to false later the if statement won't notice it.
+
+```py
+>>> its_raining = True
+>>> if its_raining:
+...     its_raining = False
+...     print("It's not raining, but this runs anyway.")
+...
+It's not raining, but this runs anyway.
+>>>
+```
+
 ## Storing code in files
 
 At this point it's easier to put your code into a file and use it
@@ -167,7 +180,20 @@ else:
     print("It's not raining.")
 ```
 
-By combining that with the input function we can make a program that
+The else part simply runs when the if statement doesn't run. It doesn't
+check the condition again.
+
+```py
+>>> its_raining = True
+>>> if its_raining:
+...     its_raining = False
+... else:
+...     print("It's not raining, but this still doesn't run.")
+...
+>>>
+```
+
+By combining `else` with the input function we can make a program that
 asks for a password and checks if it's correct.
 
 ```py
