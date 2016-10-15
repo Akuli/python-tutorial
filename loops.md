@@ -232,7 +232,7 @@ you, but later you'll realize that for loops are much easier to work
 with than while loops and index variables, especially in large projects.
 
 There's only one big limitation with for looping over lists. We
-shouldn't modify the list in the for loop. If you do, the results can
+shouldn't modify the list in the for loop. If we do, the results can
 be surprising:
 
 ```py
