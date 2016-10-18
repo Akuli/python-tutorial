@@ -29,7 +29,7 @@ the chapter you're trying to read.** However, the chapters are mostly
 independent from each other, so you can also use this tutorial together
 with other tutorials.
 
-1. [Quick introduction to this tutorial](introduction.md)
+1. [What is programming?](what-is-programming.md)
 2. [Installing Python](installing-python.md)
 3. [Getting started with Python](getting-started.md)
 4. [ThinkPython: The way of the program](the-way-of-the-program.md)
