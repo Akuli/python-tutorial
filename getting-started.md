@@ -18,7 +18,7 @@ NameError: name 'hello' is not defined
 ```
 
 Oops! That didn't work. But like I wrote in the
-[introduction](introduction.md), **errors don't matter**.
+[introduction](what-is-programming.md), **errors don't matter**.
 
 Maybe we can press Enter without typing anything?
 
