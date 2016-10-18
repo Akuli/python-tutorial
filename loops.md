@@ -84,6 +84,19 @@ Running the program may look like this:
     Or is it? (y=yes, n=no) n
     It's not raining anymore.
 
+The while loop doesn't check the condition all the time, it only checks
+it in the beginning.
+
+```py
+>>> its_raining = True
+>>> while its_raining:
+...     its_raining = False
+...     print("It's not raining, but the while loop doesn't know it yet.")
+...
+It's not raining, but the while loop doesn't know it yet.
+>>>
+```
+
 We can also interrupt a loop even if the condition is still true using
 the `break` keyword. In this case, we'll set condition to True and rely
 on nothing but `break` to end the loop.
@@ -108,6 +121,17 @@ The program works like this:
     It's raining!
     Is it raining? (y=yes, n=no) n
     It's not raining anymore.
+
+Unlike setting the condition to False, breaking the loop ends it
+immediately.
+
+```py
+>>> while True:
+...     break
+...     print("This is never printed.")
+...
+>>>
+```
 
 ## Until loops
 
@@ -154,7 +178,7 @@ We could also create an index variable, and use a while loop:
 
 ```py
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
->>> length_of_stuff = len(stuff)  # len(x) is the length of x, 5 in this case
+>>> length_of_stuff = len(stuff)  # len(stuff) is 5
 >>> index = 0
 >>> while index < length_of_stuff:
 ...     print(stuff[index])
@@ -168,8 +192,9 @@ how about you
 >>> 
 ```
 
-But there's `len()` and an index variable we need to increment. That's
-a lot of stuff to worry about for just printing each item.
+But there's `len()` and an index variable we need to increment and a
+while loop and many other things to worry about. That's a lot of work
+just for printing each item.
 
 This is when for loops come in:
 
@@ -202,8 +227,12 @@ how about you
 >>> 
 ```
 
-There's only one big limitation with for looping over lists. You
-shouldn't modify the list in the for loop. If you do, the results can
+Right now the while loop version might seem easier to understand for
+you, but later you'll realize that for loops are much easier to work
+with than while loops and index variables, especially in large projects.
+
+There's only one big limitation with for looping over lists. We
+shouldn't modify the list in the for loop. If we do, the results can
 be surprising:
 
 ```py
@@ -216,7 +245,7 @@ be surprising:
 >>> 
 ```
 
-Instead, you can create a copy of stuff and loop over it.
+Instead, we can create a copy of stuff and loop over it.
 
 ```py
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
@@ -228,7 +257,8 @@ Instead, you can create a copy of stuff and loop over it.
 >>> 
 ```
 
-Or if you want to clear a list, just use the `.clear()` list method:
+Or if we just want to clear a list, we can use the `clear`
+[list method](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists):
 
 ```py
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
