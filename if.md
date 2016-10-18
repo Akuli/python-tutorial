@@ -142,7 +142,7 @@ file**.
 
 ## Using else
 
-What if you want to print a different message if it's not raining? You
+What if we want to print a different message if it's not raining? We
 could do something like this:
 
 ```py
@@ -155,10 +155,10 @@ if its_not_raining:
     print("It's not raining.")
 ```
 
-Now your program will print a different value depending on what the
+Now our program will print a different value depending on what the
 value of `its_raining` is.
 
-You can also add `not its_raining` directly to the second if statement:
+We can also add `not its_raining` directly to the second if statement:
 
 ```py
 its_raining = True
@@ -169,7 +169,7 @@ if not its_raining:
     print("It's not raining.")
 ```
 
-But you can make it even better by using `else`.
+But we can make it even better by using `else`.
 
 ```py
 its_raining = True
