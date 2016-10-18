@@ -239,8 +239,9 @@ But that gets complicated if you have many things to add.
 Instead it's recommended to use string formatting. It means putting
 other things in the middle of a string.
 
-Python has two ways to format strings. One is not better than the other,
-they are just different. The two ways are:
+Python has multiple ways to format strings. One is not necessarily
+better than others, they are just different. Here's a few ways to solve
+our problem:
 
 - `.format()`-formatting, also known as new-style formatting. This
     formatting style has a lot of features, but it's a little bit more
@@ -271,7 +272,17 @@ they are just different. The two ways are:
     >>> 
     ```
 
-Both formatting styles have many other features also:
+- f-strings are even less typing, but new in Python 3.6. **Use this only if
+    you know that nobody will need to run your code on Python versions older
+    than 3.6.** Here the f is short for "format".
+
+    ```py
+    >>> f"My name is {name} and I'm on the {channel} channel on {network}."
+    "My name is Akuli and I'm on the ##learnpython channel on freenode."
+    >>>
+    ```
+
+All of these formatting styles have many other features also:
 
 ```py
 >>> 'Three zeros and number one: {:04d}'.format(1)
