@@ -75,6 +75,15 @@ after it?
 
 Again, nothing happened.
 
+If you're not using IDLE, the prompt will change from `>>>` to
+`...`. Just press Enter again to get it back to `>>>`.
+
+```py
+>>> #
+... 
+>>> 
+```
+
 In Python, these pieces of text starting with a `#` are known as
 **comments**. They don't effect the code in any way, but you can use
 them to explain what your code does.
