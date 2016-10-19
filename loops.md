@@ -227,6 +227,11 @@ how about you
 >>> 
 ```
 
+Note that `for thing in stuff:` is not same as `for (thing in stuff):`.
+Here the `in` keyword is just a part of the for loop and it has a
+different meaning than it would have if we had `thing in stuff` without
+a `for`.
+
 Right now the while loop version might seem easier to understand for
 you, but later you'll realize that for loops are much easier to work
 with than while loops and index variables, especially in large projects.
