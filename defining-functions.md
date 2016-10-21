@@ -199,6 +199,10 @@ and prints it. Maybe a custom function could also take an argument?
 >>> 
 ```
 
+Here `message` is an argument. When we call the function we'll get a
+local variable called message that will point to whatever we passed
+to `print_twice`.
+
 This function can be called in two ways:
 
 - Using a **positional argument**.
@@ -212,6 +216,9 @@ This function can be called in two ways:
     hi
     >>> 
     ```
+
+    When the function was running it had a local `message` variable
+    that pointed to `"hi"`. The function printed it twice.
 
     Positional arguments are great for simple things, but if your
     function takes many positional arguments it may be hard to tell
