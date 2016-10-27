@@ -19,7 +19,7 @@ you.
 2. Move your mouse over the blue Downloads button, but don't click it,
     Then click the button that downloads the latest version of Python.
 3. Run the installer.
-4. Select the "advanced installation" option, and make sure the py.exe
+4. Install Python like any other program. Make sure the py.exe
     launcher gets installed.
 
 ### Mac OSX
