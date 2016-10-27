@@ -95,11 +95,12 @@ On GNU/Linux or Mac OSX, type `python3` instead:
     Type "help", "copyright", "credits" or "license" for more information.
     >>> 
 
+Now you can type `exit()` and press Enter to get out of Python.
+
 You may also have an older version of Python installed, but don't remove
 it. Your system may need it, so if you replace it with your own Python
-some things might stop working.
-
-Now type `exit()` and press Enter to get out of Python.
+some things might stop working. See
+[this](https://docs.python.org/3/faq/installed.html) for more info.
 
 ## Summary
 
