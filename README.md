@@ -48,6 +48,7 @@ Parts of this tutorial that aren't ready to be added to the rest of it
 yet:
 
 - [Classes](classes.md)
+- [Exceptions](exceptions.md)
 
 Other things this tutorial comes with:
 
