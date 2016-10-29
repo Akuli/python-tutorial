@@ -38,7 +38,7 @@ C:
 ```
 
 `C:\Users\me\hello.py` is an **absolute path**. But there are also
-**relative paths**. For example, if you're in `C:\Users`, `me\hello.py`
+**relative paths**. For example, if we are in `C:\Users`, `me\hello.py`
 is same as `C:\Users\me\hello.py`. The place we are in is sometimes
 called **current directory**, **working directory** or
 **current working directory**.
@@ -67,7 +67,7 @@ Let's create a file and write a hello world to it.
 ```
 
 Doesn't seem like it did anything. But actually it created a `hello.txt`
-somewhere on your system. On Windows it's probably in `C:\Users\YourName`,
+somewhere on our system. On Windows it's probably in `C:\Users\YourName`,
 and on most other systems it should be in `/home/yourname`. You can open
 it with notepad or any other plain text editor your system comes with.
 
@@ -88,7 +88,7 @@ the current working directory.
 
 The second argument was `w`... but where the heck does that come from?
 `w` is short for write, and that just means that we'll create a new file.
-There's some other modes you can use also:
+There's some other modes we can use also:
 
 | Mode  | Short for | Meaning                                                               |
 |-------|-----------|-----------------------------------------------------------------------|
@@ -100,7 +100,7 @@ The `w` and `a` modes create a new file if it exists already, but trying
 to read from a non-existent file is an error.
 
 But what is that `with ourfile as f` crap? That's just a fancy way to make
-sure that the file gets closed, no matter what happens. As you can see,
+sure that the file gets closed, no matter what happens. As we can see,
 the file was indeed closed.
 
 ```py
@@ -115,7 +115,7 @@ to the file we opened using `file=f`.
 
 ## Reading from files
 
-After opening a file with the `r` mode you can for loop over it, just
+After opening a file with the `r` mode we can for loop over it, just
 like it was a list. So let's go ahead and read everything in the file
 we created to a list of lines.
 
@@ -130,7 +130,23 @@ we created to a list of lines.
 >>> 
 ```
 
-But why is there a `\n` at the end of our hello world?
+Trying to open a non-existent file with `w` created the file for us, but
+doing that with `r` gives us an error instead. We'll learn more about
+errors later.
+
+```py
+>>> with open('this-doesnt-exist.txt', 'r') as f:
+...     print("It's working!")
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'this-doesnt-exist.txt'
+>>> 
+```
+
+So now we have the hello world in the `lines` variable, but it's
+`['Hello World!\n']` instead of `['Hello World!']`. So what the heck did
+that `\n` doing there?
 
 `\n` means newline. Note that it needs to be a backslash, so `/n`
 doesn't have any special meaning like `\n` has. When we wrote the file
@@ -160,9 +176,9 @@ There we go, each of our lines now ends with a `\n`. When we for
 loop over the file it's divided into lines based on where the `\n`
 characters are, not based on how we printed to it.
 
-But how to get rid of that `\n`? The `rstrip`
-[string method](handy-stuff-strings.md#string-methods) is great
-for this:
+But how to get rid of that `\n`? [The rstrip string
+method](https://docs.python.org/3/library/stdtypes.html#str.rstrip) is
+great for this:
 
 ```py
 >>> stripped = []
@@ -174,9 +190,9 @@ for this:
 >>> 
 ```
 
-It's also possible to read lines one by one. Files have a
-`readline()` method that reads the next line, and returns `''`
-if we're at the end of the file.
+It's also possible to read lines one by one. Files have [a readline
+method](https://docs.python.org/3/library/io.html#io.TextIOBase.readline)
+that reads the next line, and returns `''` if we're at the end of the file.
 
 ```py
 >>> with open('hello.txt', 'r') as f:
@@ -189,8 +205,8 @@ if we're at the end of the file.
 'Hello two!\n'
 ```
 
-There's only one confusing thing about reading files. If you try
-to read it twice you'll find out that it only gets read once:
+There's only one confusing thing about reading files. If we try
+to read it twice we'll find out that it only gets read once:
 
 ```py
 >>> first = []
@@ -232,11 +248,12 @@ again and everything works.
 ```
 
 Usually it's best to just read the file once, and use the
-content you have read from it multiple times.
+content we have read from it multiple times.
 
-As you can see, files behave a lot like lists. The `join()`
-string method joins together strings from a list, but we can
-also use it to join together lines of a file:
+As we can see, files behave a lot like lists. [The join string
+method](https://docs.python.org/3/library/stdtypes.html#str.join) joins
+together strings from a list, but we can also use it to join together
+lines of a file:
 
 ```py
 >>> with open('hello.txt', 'r') as f:
@@ -247,8 +264,8 @@ also use it to join together lines of a file:
 >>> 
 ```
 
-But if you need all of the content as a string, you can just
-use the `read()` method.
+But if we need all of the content as a string, we can just use [the read
+method](https://docs.python.org/3/library/io.html#io.TextIOBase.read).
 
 ```py
 >>> with open('hello.txt', 'r') as f:
@@ -259,7 +276,7 @@ use the `read()` method.
 >>> 
 ```
 
-You can also open full paths, like `open('C:\\Users\\me\\myfile.txt', 'r')`.
+We can also open full paths, like `open('C:\\Users\\me\\myfile.txt', 'r')`.
 The reason why we need to use `\\` when we really mean `\` is that
 backslash has a special meaning. There are special characters like
 `\n`, and `\\` means an actual backslash.
@@ -285,8 +302,9 @@ True
 >>> 
 ```
 
-If you don't use Windows and your paths don't contain backslashes
-you don't need to double anything or use `r` in front of paths.
+If our program is not meant to be ran on Windows and the paths
+don't contain backslashes we don't need to double anything or use
+`r` in front of paths.
 
 ```py
 >>> print('/some/name')

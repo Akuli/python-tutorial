@@ -87,7 +87,8 @@ press Enter. You should see something like this in it:
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
 
-On GNU/Linux or Mac OSX, type `python3` instead:
+On GNU/Linux or Mac OSX, you should have a terminal application installed
+already. Run it and type `python3`:
 
     you@YourComputer:~$ python3
     Python 3.4.3 (default, Oct 14 2015, 20:28:29) 

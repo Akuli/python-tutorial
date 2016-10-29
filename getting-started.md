@@ -2,9 +2,9 @@
 
 [Launch Python](installing-python.md).
 
-The `>>>` means that Python is ready and you can enter a command. The
-basic idea is really simple: enter a command, press Enter, enter another
-command, press Enter and keep going.
+The `>>>` means that Python is ready and we can enter a command. The
+basic idea is really simple: we enter a command, press Enter, enter
+another command, press Enter and keep going.
 
 You probably don't know any Python commands yet. Let's see what happens
 if we just write something and press Enter.
@@ -56,7 +56,7 @@ instead of `3.14`. Maybe Python knows that?
 
 We didn't get an error... but `(3, 14)` is not at all what we expected!
 So from now on, let's use a dot with decimal numbers, because `3.14`
-worked just fine.
+worked just fine. Later we'll learn what `(3, 14)` is.
 
 What if we type a `#`?
 
@@ -79,14 +79,14 @@ If you're not using IDLE, the prompt will change from `>>>` to
 `...`. Just press Enter again to get it back to `>>>`.
 
 ```py
->>> #
+>>> # hello again
 ... 
 >>> 
 ```
 
 In Python, these pieces of text starting with a `#` are known as
-**comments**. They don't effect the code in any way, but you can use
-them to explain what your code does.
+**comments**. They don't change how the code works in any way, but
+we can use them to explain what our code does.
 
 ## Using Python as a calculator
 
@@ -129,7 +129,7 @@ also work the same way.
 ```
 
 Square brackets `[]` and curly brackets `{}` cannot be used to change
-the evaluation order. They do something completely else.
+the evaluation order. We'll learn more about what they do later.
 
 ```py
 >>> [1 + 2] * 3
@@ -144,12 +144,16 @@ TypeError: unsupported operand type(s) for *: 'set' and 'int'
 ## More advanced math
 
 I decided to include this in my tutorial because some people might be
-interested in this. Feel free to skip this if you're not interested.
+interested in this. Feel free to [skip this](#summary) if you're not
+interested.
 
-The `//` operator will divide and round down to an integer. For example,
-`17 / 3` is `5.666666666666667`, and so `17 // 3` is `5`.
+The `//` operator will divide and then throw away the dot and everything
+after it. For example, `17 / 3` is `5.666666666666667`, and so `17 // 3`
+is `5` because we throw away the `.666666666666667` part.
 
 ```py
+>>> 17 / 3
+5.666666666666667
 >>> 17 // 3
 5
 >>>

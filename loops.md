@@ -135,7 +135,7 @@ immediately.
 
 ## Until loops
 
-Python doesn't have until loops. If you need an until loop, use
+Python doesn't have until loops. If we need an until loop, we can use
 `while not`:
 
 ```py
@@ -283,7 +283,7 @@ of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
     for username and password and checks them, and we made users "foo"
     and "bar" with passwords "biz" and "baz". Adding a new user would
     have required adding more code that checks the username and
-    password. Add this to the beginning of your program:
+    password. Add this to the beginning of the program:
 
     ```py
     users = [

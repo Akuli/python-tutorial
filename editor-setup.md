@@ -1,9 +1,9 @@
 # Setting up an editor for programming
 
 Python comes with its IDLE, and you can use it in this tutorial. If you
-don't like using it for some reason, you need
-[PowerShell, command prompt or terminal](installing-python.md) for
-trying out things. You also need an editor for writing code that will
+don't like using it for some reason, you need [PowerShell, command prompt or
+terminal](installing-python.md#if-you-like-working-with-powershell-command-prompt-or-terminal)
+for trying out things. You also need an editor for writing code that will
 be stored in files.
 
 If you use IDLE as your editor, **it comes with everything set up for
@@ -12,7 +12,7 @@ don't, you probably need to change some settings to make your editor
 suitable for Python use.
 
 Do **not** use word processors like Microsoft Word and LibreOffice
-Write for programming. They create their own files, but you need plain
+Writer for programming. They create their own files, but you need plain
 text files for programming.
 
 Start by creating an empty file called `hello.py` and opening it with

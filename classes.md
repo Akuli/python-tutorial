@@ -5,9 +5,9 @@ tkinter GUI's before I understood how they work. Everything I did with
 classes worked, but I didn't understand how. Hopefully you'll first
 learn to understand classes, and then learn to use them.
 
-This tutorial assumes that you know how functions work and how to
-create your own functions with the `def` keyword. If you don't, I
-highly recommend learning that first, and then moving to classes.
+This tutorial assumes that you know [how functions work](using-functions.md)
+and [how to create your own functions](defining-functions.md). If you
+don't I highly recommend learning that first, and then moving to classes.
 
 ## Why should I use custom classes in my projects?
 
@@ -81,13 +81,6 @@ Let's use it to define an empty class.
 >>> 
 ```
 
-_**Note:** If you are using Python 2 I highly recommend using
-`class Website(object):` instead of `class Website:`. This creates a
-new-style class instead of an old-style class. Old-style classes are
-different than new-style classes in some ways and not supported in this
-tutorial. In Python 3, there are no old-style classes and
-`class Website(object):` does the same thing as `class Website:`._
-
 Note that I named the class `Website`, not `website`. This way we know
 that it's a class. Built-in classes use lowercase names (like `str`
 instead of `Str`) because they are faster to type, but use CapsWord
@@ -126,11 +119,17 @@ True
 >>> 
 ```
 
+As you can see, our Website is mutable, like lists are, not immutable
+like strings are. We can change the website in-place without creating a
+new Website.
+
 `url`, `founding_year` and `free_to_use` are not variables, they are
 **attributes**. More specifically, they are **instance attributes**.
-The biggest difference is that variables are accessed by their name,
-and attributes are accessed by typing a name of an object (like
-stackoverflow), then a dot and then the name of the attribute.
+The biggest difference is that we need to use a dot for setting and
+getting values of attributes, but we don't need that with variables.
+Modules also use instance attributes for accessing their content. For
+example, when we do `random.randint`, `random` is a module instance and
+`randint` is one of its attributes.
 
 If we make another Website, does it have the same `url`, `founding_year`
 and `free_to_use`?
@@ -336,7 +335,9 @@ available in the info method. We could also access them directly from
 
 But we still need to call `stackoverflow.initialize`. In Python, there's
 a "magic" method that runs when we create a new Website by calling the
-Website class. It's called `__init__` and it does nothing by default.
+Website class. It's called `__init__` and it does nothing by default. If
+our `__init__` method takes other arguments than self we can call the
+class with arguments and they will be given to `__init__`. Like this:
 
 ```py
 >>> class Website:
@@ -378,6 +379,10 @@ class MyProgram:
 program = MyProgram()
 ```
 
+You should avoid using things like `print` and `input` in the `__init__`
+method. The `__init__` method should be simple and it should just set
+things up.
+
 Usually you shouldn't use a class if you're only going to make one
 instance of it, and you don't need a class either if you're only going
 to have one method. In this example `MyProgram` has only one method and
@@ -393,10 +398,7 @@ word = input("Enter something: ")
 print("You entered " + word + ".")
 ```
 
-## Important things
-
-Here are some of the most important things covered in this tutorial.
-Make sure you understand them.
+## Summary
 
 - Object-orientated programming is programming with custom data types.
   In Python that means using classes and instances.

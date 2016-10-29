@@ -1,6 +1,6 @@
 # Modules
 
-Let's say you want to generate a random number between 1 and
+Let's say we want to generate a random number between 1 and
 3. The random module is a really easy way to do this:
 
 ```py
@@ -50,7 +50,7 @@ that opens:
 
 All of these `.py` files can be imported like we just imported
 `random.py`. In random.py, there's a like like `randint = something`,
-so you can use its randint variable with `random.randint` after
+so we can use its randint variable with `random.randint` after
 importing it.
 
 ## Where do modules come from?
@@ -191,6 +191,7 @@ The official documentation is
 [here](https://docs.python.org/3/library/random.html).
 
 ```py
+>>> import random
 >>> random.randint(1, 3)      # 1, 2 or 3
 3
 >>> colors = ['red', 'blue', 'yellow']
@@ -211,6 +212,7 @@ that are built into Python. The official documentation is
 [here](https://docs.python.org/3/library/sys.html).
 
 ```py
+>>> import sys
 >>> # special files that the print and input functions use
 >>> # stdin is short for standard input
 >>> # stdout is short for standard output
@@ -230,7 +232,7 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 >>> sys.version_info[:3]  # this is Python 3.4.2
 (3, 4, 2)
 >>> 
->>> sys.exit()  # exit out of Python, you may need a plain exit() with IDLE
+>>> sys.exit()  # exit out of Python
 ```
 
 If you use IDLE you'll notice that printing to `sys.stderr` makes
@@ -248,6 +250,9 @@ if something_went_wrong:
     print("Oh crap! Something went wrong.", file=sys.stderr)
     sys.exit(1)
 ```
+
+`sys.exit` doesn't work for getting out of IDLE's `>>>` prompt. You can
+just close the window to get out of IDLE.
 
 ### Mathematics
 
@@ -288,14 +293,14 @@ The official documentation for the time module is
 ```
 
 You are probably wondering how `time.time()` can be used and why its
-timing starts from the beginning of 1970. `time.time()` is useful
-for measuring time differences because we can save its return value
-to a variable before doing something, and then afterwards check how
-much it changed.
+timing starts from the beginning of 1970. `time.time()` is useful for
+measuring time differences because we can save its return value to a
+variable before doing something, and then afterwards check how much it
+changed. There's an example that does this in [the example
+section](#examples).
 
-If you want to know why it starts in 1970 you can read something like
+If you want to know why it starts from 1970 you can read something like
 [this](http://stackoverflow.com/questions/1090869/why-is-1-1-1970-the-epoch-time).
-
 See `help(time.strftime)` if you want to know about more format
 specifiers like `%d`, `%m` etc. that `time.strftime` can take.
 
@@ -362,8 +367,8 @@ for thing in things:
 ```
 
 Measure how long it takes for the user to answer a question.
-The `%.2f` rounds down to 2 decimals, and you can find more
-formatting tricks [here](https://pyformat.info/).
+The `%.2f` rounds to 2 decimals, and you can find more formatting
+tricks [here](https://pyformat.info/).
 
 ```py
 import time
@@ -449,7 +454,7 @@ then typing in what you want to search for.
 - [textwrap](https://docs.python.org/3/library/textwrap.html):
     break long text into multiple lines
 - [warnings](https://pymotw.com/3/warnings/):
-    like exceptions, but they don't interrupt your program
+    like exceptions, but they don't interrupt the whole program
 - [webbrowser](https://pymotw.com/3/webbrowser/):
     open a web browser from Python
 
@@ -462,9 +467,9 @@ need to install them yourself if you want to use them:
     an awesome networking library
 
 I recommend reading [the official documentation about installing
-    modules](https://docs.python.org/3/installing/). If you're using
-    GNU/Linux also read the "Installing into the system Python on Linux"
-    section at the bottom.
+modules](https://docs.python.org/3/installing/). If you're using
+GNU/Linux also read the "Installing into the system Python on Linux"
+section at the bottom.
 
 ## Summary
 

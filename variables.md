@@ -2,7 +2,7 @@
 
 ## Variables
 
-Variables are easy to understand. They simply **point to data**.
+Variables are easy to understand. They simply **point to values**.
 
 ```py
 >>> a = 1   # create a variable called a that points to 1
@@ -43,7 +43,8 @@ variable and sets the first variable to point to that value.
 >>> 
 ```
 
-Trying to access a variable that is not defined is an error.
+Trying to access a variable that is not defined creates an error
+message.
 
 ```py
 >>> thingy
@@ -61,7 +62,6 @@ need to keep in mind:
     to right.
 - Multiple variables can point to the same value, but one variable
     cannot point to multiple values.
-
 - The values that variables point to can point to other values also.
     We'll learn more about that when we'll talk about [lists](lists.md).
 
@@ -75,8 +75,8 @@ time you should use simple, lowercase variable names. You can also use
 underscores.
 
 ```py
->>> number_one = 1
->>> number_two = 2
+>>> magic_number = 123
+>>> greeting = "Hello World!"
 >>> 
 ```
 
@@ -194,7 +194,8 @@ False
 
 None is Python's "nothing" value. It behaves just like any other value,
 and it's often used as a default value for different kinds of things.
-We'll find a bunch of ways to use None later.
+Right now it might seem useless but we'll find a bunch of ways to use
+None later.
 
 None's behavior on the interactive prompt might be a bit confusing at
 first:
@@ -212,7 +213,7 @@ This is because the prompt never echoes back None. That is handy,
 because many things result in None, and it would be annoying to see
 None coming up all the time.
 
-If you want to see a None on the interactive prompt, use print:
+If we want to see a None on the interactive prompt, we can use print:
 
 ```py
 >>> print(thingy)
@@ -235,20 +236,20 @@ easy to learn.
 | `a < b`   | a is less than b                  | `1 < 2`               |
 | `a <= b`  | a is less than or equal to b      | `1 <= 2`, `1 <= 1`    |
 
-We can also combine multiple comparisons. These are not always correct,
-because a and b don't need to be Booleans. We'll learn more about that
-later.
+We can also combine multiple comparisons.
 
 | Usage     | Description                               | True example                      |
 |-----------|-------------------------------------------|-----------------------------------|
 | `a and b` | a is True and b is True                   | `1 == 1 and 2 == 2`               |
 | `a or b`  | a is True, b is True or they're both True | `False or 1 == 1`, `True or True` |
 
+This table assumes that a and b are Booleans.
+
 Another way to combine operations is chaining. For example, `a < b < c`
 does the same thing as `a < b and b < c`.
 
-`not` can be used for negations. If `value` is true, `not value` is
-False, and if `value` is false, `not value` is True.
+`not` can be used for negations. If `value` is True, `not value` is
+False, and if `value` is False, `not value` is True.
 
 There's also `is`, but don't use it instead of `==` unless you know
 what you are doing. We'll learn more about it later.

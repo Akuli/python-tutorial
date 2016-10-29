@@ -4,23 +4,23 @@
 know everything it's talking about.**
 
 As a computer user you know that computers don't have feelings. They don't
-work any faster or slower depending on if you're angry at them or if you're
+work any faster or slower depending on if we're angry at them or if we're
 happy. Computers can perform millions of calculations per second, but they
-require you to tell them exactly what to do. If they do something else than
-you want them to do the problem is usually that they don't understand your
-instructions the way you understand them.
+require us to tell them exactly what to do. If they do something else than
+we want them to do the problem is usually that they don't understand our
+instructions the way we understand them.
 
 The only big difference between programming and what you're familiar with
 already is that instead of clicking buttons to do things we write the
 instructions using a **programming language**. Most programming languages
 consist of English words, digits and some characters that have special
 meanings. This tutorial uses a programming language called Python because it's
-easy to learn and you can do many different things with it. For example, you
-can create your own applications that have buttons that people can click
+easy to learn and we can do many different things with it. For example, we
+can create our own applications that have buttons that people can click
 instead of just using applications written by others.
 
-Before we can get started with Python you need to know how to write some of
-Python's special characters with your keyboard. Unfortunately I don't know
+Before we can get started with Python we need to know how to write some of
+Python's special characters with our keyboards. Unfortunately I don't know
 which keys you need to press to produce these characters because your keyboard
 is probably different than mine. But the keyboard can tell what you
 need to press. For example, my Finnish keyboard has a key like this:

@@ -1,7 +1,7 @@
-# Defining your own functions
+# Defining custom functions
 
-It's probably been a while since you read about using functions. [Read
-about it again](using-functions.md) if you need to.
+It's probably been a while since you read about using functions.
+[Read about it again](using-functions.md) if you need to.
 
 ## Why should I use custom functions?
 
@@ -40,7 +40,13 @@ else:
     print_box("You didn't enter Python :(")
 ```
 
-That's nice, but where do we get a `print_box` function like that?
+In this tutorial we'll learn to define a `print_box` function
+that prints text in a box. We can write the code for printing the
+box once, and then use it multiple times anywhere in the program.
+
+Dividing a long program into simple functions also makes the code
+easier to work with. If there's a problem with the code we can
+test the functions one by one and find the problem easily.
 
 ## First functions
 
@@ -167,7 +173,7 @@ However, modifying a global variable in-place from a function is easy.
 
 This doesn't work if the value is of an immutable type, like string or
 integer because immutable values cannot be modified in-place.
-Fortunately, Python will tell you if something's wrong.
+Fortunately, Python will tell us if something's wrong.
 
 ```py
 >>> foo = 1
@@ -220,7 +226,7 @@ This function can be called in two ways:
     When the function was running it had a local `message` variable
     that pointed to `"hi"`. The function printed it twice.
 
-    Positional arguments are great for simple things, but if your
+    Positional arguments are great for simple things, but if our
     function takes many positional arguments it may be hard to tell
     which argument is which.
 
@@ -233,7 +239,12 @@ This function can be called in two ways:
     >>> 
     ```
 
-    Keyword arguments are great when your function needs to take many
+    The name "keyword argument" is a little bit confusing because
+    keyword arguments don't actually have anything to do with keywords
+    (`if`, `else` etc). Keyword arguments are just a way to give names
+    for our arguments.
+
+    Keyword arguments are great when our function needs to take many
     arguments, because each argument has a name and it's easy to see
     which argument is which.
 
@@ -334,8 +345,8 @@ need to:
     ```
 
     The problem is that we have a keyword argument before a positional
-    argument. Python doesn't allow this. You don't need to worry about
-    this, because if you accidentally call a function like this you
+    argument. Python doesn't allow this. We don't need to worry about
+    this, because if we accidentally call a function like this we
     will get an error message.
 
 ## Output
@@ -394,29 +405,17 @@ about the `input()` function. It asks the user to enter something, and
 then the user enters something and that value is returned. If the input
 function would print the value instead of returning it, things like
 `name = input("Name: ")` wouldn't work and assigning the result to a
-variable would be much more difficult. Printing things is fine when you
-know that you'll only need to print the result and you'll never need to
+variable would be much more difficult. Printing things is fine when we
+know that we'll only need to print the result and we'll never need to
 assign it to a variable.
 
-So if our function returns a value we can use it like this:
+If our function returns a value we can always print it, like this:
 
 ```py
 >>> def return_hi():
 ...     return "hi"
 ... 
 >>> print(return_hi())
-hi
->>> 
-```
-
-If the function prints instead we can call it and just throw away
-the None it returns:
-
-```py
->>> def print_hi():
-...     print("hi")
-... 
->>> print_hi()
 hi
 >>> 
 ```

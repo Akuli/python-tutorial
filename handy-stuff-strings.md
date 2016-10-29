@@ -25,8 +25,9 @@ We also know how to repeat them multiple times.
 >>> 
 ```
 
-Python strings are **immutable**. That's just a fancy way to say that
-they cannot be changed in-place, and you need to create a new string to
+Python strings are [immutable](https://docs.python.org/3/glossary.html#term-immutable).
+That's just a fancy way to say that
+they cannot be changed in-place, and we need to create a new string to
 change them. Even `some_string += another_string` creates a new string.
 Python will treat that as `some_string = some_string + another_string`,
 so it creates a new string but it puts it back to the same variable.
@@ -47,7 +48,7 @@ characters and the fifth place between the characters, we can do this:
 
 So the syntax is like `some_string[start:end]`.
 
-This picture shows you how the slicing works:
+This picture explains how the slicing works:
 
 ![Slicing with non-negative values](images/slicing1.png)
 
@@ -166,15 +167,13 @@ Python's strings have many useful methods. [The official documentation]
 (https://docs.python.org/3/library/stdtypes.html#string-methods) covers
 them all, but I'm going to just show some of the most commonly used ones
 briefly. Python also comes with built-in documentation about the string
-methods. You can run `help(str)` to read it.
+methods and we can run `help(str)` to read it.
 
-Remember that nothing can modify strings in-place. Most string methods
+Again, nothing can modify strings in-place. Most string methods
 return a new string, but things like `our_string = our_string.upper()`
 still work because the new string is assigned to the old variable.
 
 Here's an example with some of the most commonly used string methods:
-
-Here's some of the most commonly used string methods:
 
 ```py
 >>> our_string.upper()
@@ -187,11 +186,11 @@ True
 True
 >>> our_string.endswith('world!')  # Python is case-sensitive
 False
->>> '  hello 123 \n '.lstrip()    # left strip
-'hello 123 \n '
->>> '  hello 123 \n '.rstrip()    # right strip
+>>> '  hello 123  '.lstrip()    # left strip
+'hello 123  '
+>>> '  hello 123  '.rstrip()    # right strip
 '  hello 123'
->>> '  hello 123 \n '.strip()     # strip from both sides
+>>> '  hello 123  '.strip()     # strip from both sides
 'hello 123'
 >>> our_string.ljust(30, '-')
 'Hello World!------------------'
@@ -216,7 +215,7 @@ True
 
 ## String formatting
 
-To add a string in the middle of another string, you can do something
+To add a string in the middle of another string, we can do something
 like this:
 
 ```py
@@ -226,7 +225,7 @@ like this:
 >>> 
 ```
 
-But that gets complicated if you have many things to add.
+But that gets complicated if we have many things to add.
 
 ```py
 >>> channel = '##learnpython'
@@ -272,6 +271,26 @@ our problem:
     >>> 
     ```
 
+    In the second example we had `(name, channel, network)` on the right
+    side of the `%` sign. It was a tuple, and we'll talk more about them
+    later.
+
+    If we have a variable that may be a tuple we need to wrap it in another
+    tuple when formatting:
+
+    ```py
+    >>> thestuff = (1, 2, 3)
+    >>> "we have %s" % thestuff
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: not all arguments converted during string formatting
+    >>> "we have %s" % (thestuff,)
+    'we have (1, 2, 3)'
+    >>> 
+    ```
+
+    Here `(thestuff,)` was a tuple that contained nothing but `thestuff`.
+
 - f-strings are even less typing, but new in Python 3.6. **Use this only if
     you know that nobody will need to run your code on Python versions older
     than 3.6.** Here the f is short for "format".
@@ -315,6 +334,8 @@ If you need to know more about formatting I recommend reading
     or `help(str)` when you don't rememeber something about them.
 
 - String formatting means adding other things to the middle of a string.
+    There are multiple ways to do this in Python. You should know how to
+    use at least one of these ways.
 
 ***
 

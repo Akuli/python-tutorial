@@ -73,7 +73,7 @@ but it's not possible to create custom keywords. That's why keywords are
 usually used for "magic" things that would be difficult to do with just
 functions.
 
-Also note that if statements check the condition once only, so if you
+Also note that if statements check the condition once only, so if we
 set it to false later the if statement won't notice it.
 
 ```py
@@ -88,7 +88,7 @@ It's not raining, but this runs anyway.
 
 ## Storing code in files
 
-At this point it's easier to put your code into a file and use it
+At this point it's easier to put our code into a file and use it
 there. If you use IDLE, go to File at top left and select New File, or
 just press Ctrl+N.
 
@@ -106,13 +106,15 @@ if its_raining:
     print("It's raining!")
 ```
 
-The file extension is `.py`, which is short for Python.
+You can save the file anywhere you want, for example on your desktop.
+Give it a name that ends with `.py`, for example `rain.py`. The `.py`
+is short for Python.
 
-Now run the rain program. Most editors (including IDLE) will run your
-code when you press F5. If your editor doesn't, run it from PowerShell,
-command prompt or terminal. You probably need to first go to wherever
-you saved your file with `cd`. For example, if the file is on your
-desktop, type `cd Desktop` before running the file.
+Now we can run the rain program. Most editors (including IDLE) will
+run our code when we press F5. If your editor doesn't, run it from
+PowerShell, command prompt or terminal. You probably need to first go
+to wherever you saved your file with `cd`. For example, if the file is
+on your desktop, type `cd Desktop` before running the file.
 
 Running from IDLE looks like this:
 
@@ -206,7 +208,7 @@ else:
     print("Access denied.")
 ```
 
-The program prints different things depending on what you enter.
+The program prints different things depending on what we enter.
 
     >>> ================================ RESTART ================================
     >>>
@@ -226,7 +228,7 @@ a password from the user, but you shouldn't worry about that just yet.
 
 ## Avoiding many levels of indentation with elif
 
-If you have more than one condition to check, your code will end up
+If we have more than one condition to check, our code will end up
 looking a bit messy.
 
 ```py
@@ -251,7 +253,7 @@ else:
                     print("I don't know what", word, "means.")
 ```
 
-Instead of typing `else`, indenting more and typing an `if` you can
+Instead of typing `else`, indenting more and typing an `if` we can
 simply type `elif`, which is short for `else if`. Like this:
 
 ```py
@@ -274,6 +276,8 @@ else:
 
 ## Summary
 
+- If a code example starts with `>>>` run it on the interactive prompt.
+    If it doesn't, write it to a file and run that file.
 - Indentation is important in Python.
 - Indented code under an if statement runs if the condition is true.
 - You can also add an else statement. Indented code under it will run
