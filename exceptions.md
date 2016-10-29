@@ -70,12 +70,6 @@ exception.
 
 ```py
 >>> try:
-...     print(int('123'))
-... except ValueError:
-...     print("Oops!")
-... 
-123
->>> try:
 ...     print(int('lol'))
 ... except ValueError:
 ...     print("Oops!")
@@ -84,16 +78,41 @@ Oops!
 >>> 
 ```
 
+The except part doesn't run if the try part succeeds.
+
+```py
+>>> try:
+...     print("Hello World!")
+... except ValueError:
+...     print("What the heck? Printing failed!")
+... 
+Hello World!
+>>> 
+```
+
 ValueError is raised when something gets an invalid value, but the
 value's type is correct. In this case, `int` can take a string as an
-argument, but the string needs to contain a number, not `lol`.
-
-If the type is wrong, we will get a TypeError instead.
+argument, but the string needs to contain a number, not `lol`. If
+the type is wrong, we will get a TypeError instead.
 
 ```py
 >>> 123 + 'hello'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> 
+```
+
+Catching ValueError doesn't catch TypeErrors.
+
+```py
+>>> try:
+...     123 + 'hello'
+... except ValueError:
+...     print("wrong value")
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>> 
 ```
@@ -152,6 +171,24 @@ wrong type
 
 Seems to be working.
 
+We can catch multiple exceptions by catching a tuple of exceptions:
+
+```py
+>>> try:
+...     123 + 'hello'
+... except (ValueError, TypeError):
+...     print('wrong value or type')
+... 
+wrong value or type
+>>> try:
+...     int('lol')
+... except (ValueError, TypeError):
+...     print('wrong value or type')
+... 
+wrong value or type
+>>> 
+```
+
 Catching `Exception` will catch all errors. We'll learn more about why
 it does that in a moment.
 
@@ -203,7 +240,8 @@ There's many things that can go wrong in the `try` block. If something
 goes wrong all we have is an oops message that doesn't tell us which
 line caused the problem. This makes fixing problems a lot harder. If we
 want to catch exceptions we need to be specific about what exactly we
-want to catch instead of catching everything we can.
+want to catch and where instead of catching everything we can in the
+whole program.
 
 There's nothing wrong with doing things like this:
 
@@ -218,6 +256,8 @@ except OSError:     # we can't read the file but we can work without it
 Usually catching errors that the user has caused is also a good idea:
 
 ```py
+import sys
+
 text = input("Enter a number: ")
 try:
     number = int(text)
@@ -229,45 +269,54 @@ print("Your number doubled is %d." % (number * 2))
 
 ## Raising exceptions
 
-Sometimes you may end up doing something like this:
+Now we know how to create exceptions and how to handle errors that
+Python creates. But we can also create error messages manually. This
+is known as **raising an exception** and **throwing an exception**.
+
+Raising an exception is easy. All we need to do is to type `raise`
+and then an exception we want to raise:
 
 ```py
-if number < 0:
-    print("ERROR: number must be non-negative")
-```
-
-But that's not ideal. If there is an error, the code prints an error
-message but it still keeps running. People using your code also don't know
-which line in **their** code caused the error.
-
-Instead you can **raise an exception** yourself. Sometimes this is also
-called **throwing an exception**.
-
-```py
-if number < 0:
-    raise ValueError("number must be non-negative")
-```
-
-Let's try that on the interactive prompt, and see what that does.
-
-```py
->>> raise ValueError("number must be non-negative")
+>>> raise ValueError("lol is not a number")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-ValueError: number must be non-negative
+ValueError: lol is not a number
 >>> 
 ```
 
 Of course, we can also raise an exception from a variable.
 
 ```py
->>> oops = ValueError("number must be non-negative")
+>>> oops = ValueError("lol is not a number")
 >>> raise oops
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-ValueError: number must be non-negative
+ValueError: lol is not a number
 >>> 
 ```
+
+If we [define a function](defining-functions.md) that raises an
+exception and call it we'll notice that the error message also
+says which functions we ran to get to that error.
+
+```py
+>>> def oops():
+...     raise ValueError("oh no!")
+... 
+>>> def do_the_oops():
+...     oops()
+... 
+>>> do_the_oops()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in do_the_oops
+  File "<stdin>", line 2, in oops
+ValueError: oh no!
+>>> 
+```
+
+If our code was in a file we would also see the line of code
+that raised the error.
 
 ## When should we raise exceptions?
 
@@ -275,7 +324,7 @@ Back in [the module chapter](modules.md) we learned to display error
 messages by printing to `sys.stderr` and then calling `sys.exit(1)`, so
 when should we use that and when should we raise an exception?
 
-Exceptions are meant for **programmers**, so if we're writing a module
+Exceptions are meant for **programmers**, so if we are writing a module
 that other people will import we should probably use exceptions. For
 other errors (for example, if the **user** of the program has done
 something wrong) it's usually better to use `sys.stderr` and `sys.exit`.
@@ -348,7 +397,7 @@ older than mine, but they should be mostly similar.
 Catching an exception also catches everything that's under it in this
 tree. For example, catching `OSError` catches errors that we typically
 get when [processing files](files.md), and catching Exception catches
-all errors. You don't need to remember this tree, running
+all of these errors. You don't need to remember this tree, running
 `help('builtins')` should display a larger tree that this is a part of.
 
 ## Summary
@@ -362,3 +411,64 @@ all errors. You don't need to remember this tree, running
     is also known as throwing exceptions.
 - Raise exceptions if they are meant to be displayed for programmers and
     use `sys.stderr` and `sys.exit` otherwise.
+
+## Examples
+
+Keep asking a number from the user until it's entered correctly.
+
+```py
+while True:
+    try:
+        number = int(input("Enter a number: "))
+        break
+    except ValueError:
+        print("That's not a valid number! Try again.")
+
+print("Your number doubled is:", number * 2)
+```
+
+This program allows the user to customize the message it prints by
+modifying a file the greeting is stored in, and it can create the
+file for the user if it doesn't exist already. This example also uses
+things from [the file chapter](files.md), [the function defining
+chapter](defining-functions.md) and [the module chapter](modules.md). 
+
+```py
+# These are here so you can change them to customize the program
+# easily.
+default_greeting = "Hello World!"
+filename = "greeting.txt"
+
+
+import sys
+
+def askyesno(question):
+    while True:
+        answer = input(question + ' (y or n) ')
+        if answer == 'Y' or answer == 'y':
+            return True
+        if answer == 'N' or answer == 'n':
+            return False
+
+def greet():
+    with open(filename, 'r') as f:
+        for line in f:
+            print(line.rstrip('\n'))
+
+try:
+    greet()
+except OSError:
+    print("Cannot read '%s'!" % filename, file=sys.stderr)
+    if askyesno("Would you like to create a default greeting file?"):
+        try:
+            with open(filename, 'w') as f:
+                print(default_greeting, file=f)
+        except OSError:
+            print("Cannot create '%s' :(" % filename, file=sys.stderr)
+            sys.exit(1)  # time to give up
+        greet()
+```
+
+***
+
+You may use this tutorial at your own risk. See [LICENSE](LICENSE).
