@@ -132,7 +132,7 @@ we created to a list of lines.
 
 Trying to open a non-existent file with `w` created the file for us, but
 doing that with `r` gives us an error instead. We'll learn more about
-errors later.
+errors [later](exceptions.md).
 
 ```py
 >>> with open('this-doesnt-exist.txt', 'r') as f:
@@ -145,7 +145,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'this-doesnt-exist.txt'
 ```
 
 So now we have the hello world in the `lines` variable, but it's
-`['Hello World!\n']` instead of `['Hello World!']`. So what the heck did
+`['Hello World!\n']` instead of `['Hello World!']`. So what the heck is
 that `\n` doing there?
 
 `\n` means newline. Note that it needs to be a backslash, so `/n`
