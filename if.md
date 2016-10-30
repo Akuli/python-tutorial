@@ -280,7 +280,7 @@ else:
     If it doesn't, write it to a file and run that file.
 - Indentation is important in Python.
 - Indented code under an if statement runs if the condition is true.
-- You can also add an else statement. Indented code under it will run
+- We can also add an else statement. Indented code under it will run
     if the code under the if statement does not run.
 - elif is short for else if.
 

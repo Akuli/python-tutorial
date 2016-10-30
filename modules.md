@@ -46,7 +46,7 @@ OSX.
 You'll see a bunch of files and a few directories in the folder
 that opens:
 
-**TODO: Add a screenshot.**
+![My Python's modules.](images/modules.png)
 
 All of these `.py` files can be imported like we just imported
 `random.py`. In random.py, there's a like like `randint = something`,
@@ -175,7 +175,7 @@ module in many files, so it gets imported multiple times. If
 Python would reload the module every time it's imported,
 dividing code to multiple files would make the code run slower.
 
-If you want to load the module again, just exit out of Python and
+If we need to load the module again we can just exit out of Python and
 launch it again.
 
 ## Brief overview of the standard library
@@ -473,7 +473,7 @@ section at the bottom.
 
 ## Summary
 
-- Most modules are files on your computer, but some of them are built
+- Most modules are files on our computers, but some of them are built
     in to Python. We can use modules in our projects by importing them,
     and after that using `modulename.variable` to get a variable from
     the module.
@@ -481,8 +481,8 @@ section at the bottom.
     and os.
 - Avoid creating `.py` files that have the same name as a name of a
     module you want to use.
-- Python comes with many modules, and you can install even more modules
-    if you want to.
+- Python comes with many modules, and we can install even more modules
+    if we want to.
 
 ***
 

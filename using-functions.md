@@ -77,7 +77,7 @@ Of course, `x = print('hello')` is useless compared to `print('hello')`
 because the print function always returns None and we can do `x = None`
 without any printing.
 
-You can also print an empty line by calling print without any
+We can also print an empty line by calling print without any
 arguments:
 
 ```py
@@ -96,7 +96,7 @@ world
 >>> 
 ```
 
-If you want to print a backslash, you need to **escape** it by typing
+If we want to print a backslash, we need to **escape** it by typing
 two backslashes:
 
 [comment]: # (For some reason, GitHub's syntax highlighting doesn't)
@@ -106,8 +106,8 @@ two backslashes:
     hello\nworld
     >>> 
 
-You can also pass multiple arguments to the print function. Separate
-them with commas, and print will add spaces between them.
+We can also pass multiple arguments to the print function. We need to
+separate them with commas and print will add spaces between them.
 
 ```py
 >>> print("Hello", "World!")
@@ -139,7 +139,7 @@ screen and waited for me to type something. I typed hello and pressed
 Enter. Then input returned the hello I typed as a string and it was
 assigned to x.
 
-You may want to add a space after the `:`, like this:
+Usually we want to add a space after the `:`, like this:
 
 ```py
 >>> x = input("Enter something: ")  # now there's space between : and where i type

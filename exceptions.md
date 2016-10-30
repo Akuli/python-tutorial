@@ -401,7 +401,7 @@ all of these errors. You don't need to remember this tree, running
 `help('builtins')` should display a larger tree that this is a part of.
 
 There's also a few exceptions that are not in this tree like SystemExit
-and KeyboardInterrupt, but most of the time you shouldn't catch them.
+and KeyboardInterrupt, but most of the time we shouldn't catch them.
 Catching Exception doesn't catch them either.
 
 ## Summary

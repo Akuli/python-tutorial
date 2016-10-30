@@ -206,7 +206,7 @@ Powers are calculated before `*` and `/`, but after `()`.
 ## Summary
 
 - Errors don't matter.
-- You can enter any Python commands to the interactive `>>>` prompt, and
+- We can enter any Python commands to the interactive `>>>` prompt, and
     it will echo back the result.
 - Pieces of text starting with a `#` are comments.
 - `+`, `-`, `*` and `/` work in Python just like in math.

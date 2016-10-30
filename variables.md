@@ -71,7 +71,7 @@ without variables.
 
 Variable names can be multiple characters long. They can contain
 uppercase characters, numbers and some other characters, but most of the
-time you should use simple, lowercase variable names. You can also use
+time we should use simple, lowercase variable names. You can also use
 underscores.
 
 ```py
@@ -97,7 +97,7 @@ Variable names are case-sensitive, like many other things in Python.
 
 Python also has some words that cannot be used as variable names
 because they have a special meaning. They are called **keywords**, and
-you can run `help('keywords')` to see the full list if you want to.
+we can run `help('keywords')` to see the full list if we want to.
 We'll learn to use most of them later in this tutorial. Trying to use a
 keyword as a variable name causes a syntax error.
 
@@ -146,7 +146,7 @@ This is not limited to integers.
 >>> 
 ```
 
-Now you also understand why typing hello to the prompt didn't work in
+Now we also understand why typing hello to the prompt didn't work in
 the beginning of this tutorial. But we can assign something to a
 variable called hello and then type hello:
 
@@ -174,7 +174,7 @@ False
 ```
 
 `a == 1` is the same as `(a == 1) == True`, but `a == 1` is more
-readable, so most of the time you shouldn't write `== True` anywhere.
+readable, so most of the time we shouldn't write `== True` anywhere.
 
 ```py
 >>> a = 1
@@ -213,11 +213,27 @@ This is because the prompt never echoes back None. That is handy,
 because many things result in None, and it would be annoying to see
 None coming up all the time.
 
-If we want to see a None on the interactive prompt, we can use print:
+If we want to see a None on the interactive prompt, we can use print.
 
 ```py
 >>> print(thingy)
 None
+>>> 
+```
+
+Another confusing thing is that if we do something weird to None we get
+error messages that talk about NoneType object. The NoneType object they
+are talking about is always None.
+
+```py
+>>> None.hello    # None has no attribute 'hello'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'hello'
+>>> None()        # None is not callable
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'NoneType' object is not callable
 >>> 
 ```
 
@@ -230,20 +246,19 @@ easy to learn.
 | Usage     | Description                       | True examples         |
 |-----------|-----------------------------------|-----------------------|
 | `a == b`  | a is equal to b                   | `1 == 1`              |
-| `a != b`  | a is not equal to b               | `1 == 2`              |
+| `a != b`  | a is not equal to b               | `1 != 2`              |
 | `a > b`   | a is greater than b               | `2 > 1`               |
 | `a >= b`  | a is greater than or equal to b   | `2 >= 1`, `1 >= 1`    |
 | `a < b`   | a is less than b                  | `1 < 2`               |
 | `a <= b`  | a is less than or equal to b      | `1 <= 2`, `1 <= 1`    |
 
-We can also combine multiple comparisons.
+We can also combine multiple comparisons. This table assumes that a and
+b are Booleans.
 
 | Usage     | Description                               | True example                      |
 |-----------|-------------------------------------------|-----------------------------------|
 | `a and b` | a is True and b is True                   | `1 == 1 and 2 == 2`               |
 | `a or b`  | a is True, b is True or they're both True | `False or 1 == 1`, `True or True` |
-
-This table assumes that a and b are Booleans.
 
 Another way to combine operations is chaining. For example, `a < b < c`
 does the same thing as `a < b and b < c`.

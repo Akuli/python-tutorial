@@ -321,7 +321,7 @@ If you need to know more about formatting I recommend reading
 
     ![Slicing](images/slicing3.png)
 
-- Indexing returns one character of a string. Remember that you don't
+- Indexing returns one character of a string. Remember that we don't
     need a `:` with indexing. The indexes work like this:
 
     ![Indexing](images/indexing3.png)
