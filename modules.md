@@ -217,7 +217,7 @@ that are built into Python. The official documentation is
 >>> # stdin is short for standard input
 >>> # stdout is short for standard output
 >>> # stderr is short for standard errors
->>> print("Hello!", file=sys.stdout)
+>>> print("Hello!", file=sys.stdout)  # this is where prints go by default
 Hello!
 >>> print("Hello!", file=sys.stderr)  # use this for error messages
 Hello!

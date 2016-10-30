@@ -3,9 +3,9 @@
 In programming, a **loop** means repeating something multiple times.
 There are different kinds of loops:
 
-- **While loops** repeat something while a condition is true.
-- **Until loops** repeat something until a condition is true.
-- **For loops** repeat something for each element of a sequence.
+- [While loops](#while-loops) repeat something while a condition is true.
+- [Until loops](#until-loops) repeat something while a condition is false.
+- [For loops](#for-loops) repeat something for each element of a list.
 
 We'll talk about all of these in this tutorial.
 
@@ -230,11 +230,22 @@ how about you
 Note that `for thing in stuff:` is not same as `for (thing in stuff):`.
 Here the `in` keyword is just a part of the for loop and it has a
 different meaning than it would have if we had `thing in stuff` without
-a `for`.
+a `for`. Trying to do `for (thing in stuff):` creates an error:
+
+```py
+>>> for (thing in stuff):
+  File "<stdin>", line 1
+    for (thing in stuff):
+                        ^
+SyntaxError: invalid syntax
+>>> 
+```
 
 Right now the while loop version might seem easier to understand for
 you, but later you'll realize that for loops are much easier to work
 with than while loops and index variables, especially in large projects.
+For looping is also a little bit faster than while looping with an index
+variable.
 
 There's only one big limitation with for looping over lists. We
 shouldn't modify the list in the for loop. If we do, the results can
