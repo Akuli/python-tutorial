@@ -30,7 +30,7 @@ one variable needs to point to multiple values. An easy way to
 do this is using a list:
 
 ```py
-names = ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
+names = ['wub_wub', 'theelous3', 'Nitori', 'RubyPinch', 'go|dfish']
 ```
 
 Here the `names` variable points to a list, which then points to
