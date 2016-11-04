@@ -175,7 +175,7 @@ False
 ```
 
 If we need a new list with the same content we can use the
-`copy` method:
+`copy` method.
 
 ```py
 >>> a = [1, 2, 3]
@@ -187,6 +187,11 @@ False
 [1, 2, 3]
 >>> 
 ```
+
+If we draw a picture of our variables in this example it looks
+like this:
+
+![Different lists.](images/differentlist.png)
 
 If you're using Python 3.2 or older you can do `a[:]` instead
 of `a.copy()`. `a[:]` is a slice of the whole list, just like
