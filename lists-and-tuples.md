@@ -118,6 +118,16 @@ multiple items from another list and remove removes an item.
 >>> 
 ```
 
+We can also use slicing and indexing to change the content:
+
+```py
+>>> names = ['theelous3', 'LOL', 'RubyPinch', 'go|dfish', 'Nitori']
+>>> names[1] = 'wub_wub'   # replace LOL with wub_wub
+>>> names
+['theelous3', 'wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
+>>> 
+```
+
 As you can see, **list can be changed in-place**. In other
 words, they are **mutable**. Integers, floats, strings and many
 other built-in types can't, so they are **immutable**.
