@@ -213,6 +213,10 @@ True
 >>>
 ```
 
+The things in square brackets that the split method gave us and
+we gave to the join method were lists. We'll talk more about
+them [later](lists-and-tuples.md).
+
 ## String formatting
 
 To add a string in the middle of another string, we can do something
@@ -260,9 +264,6 @@ our problem:
     `'Hello {}.'.format(name)`. I like to use printf-formatting for simple
     things and `.format` when I need more powerful features.
 
-    **TODO:** warn readers about formatting tuples, and show experienced
-    users that dictionaries aren't a problem
-
     ```py
     >>> "Hello %s." % name
     'Hello Akuli.'
@@ -273,7 +274,7 @@ our problem:
 
     In the second example we had `(name, channel, network)` on the right
     side of the `%` sign. It was a tuple, and we'll talk more about them
-    later.
+    [later](lists-and-tuples.md#tuples).
 
     If we have a variable that may be a tuple we need to wrap it in another
     tuple when formatting:
