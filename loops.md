@@ -288,6 +288,15 @@ If you're using Python 3.2 or older you need to use `stuff[:]` instead
 of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
 `stuff[:]` is a slice of the whole list, just like `stuff[0:]`.
 
+## Summary
+
+- A loop means repeating something multiple times.
+- While loops repeat something as long as a condition is true, and
+    they check the condition only in the beginning.
+- For loops can be used for repeating something to each item in a list.
+- The `break` keyword can be used to interrupt the innermost loop at
+    any time.
+
 ## Exercises
 
 1. Back in "Using if, else and elif" we created a program that asked
