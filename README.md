@@ -36,11 +36,12 @@ everything should also work on Python 3.2 and all newer Pythons.
 10. [Loops](loops.md)
 11. [Trey Hunner: zip and enumerate](trey-hunner-zip-and-enumerate.md)
 12. [Dictionaries](dicts.md)
-13. [Files](files.md)
-14. [Defining functions](defining-functions.md)
-15. [Exceptions](exceptions.md)
-16. [Modules](modules.md)
-17. [Classes](classes.md)
+13. [Defining functions](defining-functions.md)
+14. [What is true?](what-is-true.md)
+15. [Files](files.md)
+16. [Exceptions](exceptions.md)
+17. [Modules](modules.md)
+18. [Classes](classes.md)
 
 Other things this tutorial comes with:
 
