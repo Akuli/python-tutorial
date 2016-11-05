@@ -146,21 +146,6 @@ Indexing with negative values works like this:
 
 ![Indexing with negative values](images/indexing2.png)
 
-## The in keyword
-
-We can use `in` and `not in` to check if a string contains another
-string:
-
-```py
->>> "Hello" in our_string
-True
->>> "Python" in our_string
-False
->>> "Python" not in our_string
-True
->>> 
-```
-
 ## String methods
 
 Python's strings have many useful methods. [The official documentation]
@@ -192,6 +177,8 @@ False
 '  hello 123'
 >>> '  hello 123  '.strip()     # strip from both sides
 'hello 123'
+>>> '  hello abc'.rstrip('cb')  # strip c's and b's from right
+'  hello a'
 >>> our_string.ljust(30, '-')
 'Hello World!------------------'
 >>> our_string.rjust(30, '-')
@@ -246,18 +233,6 @@ Python has multiple ways to format strings. One is not necessarily
 better than others, they are just different. Here's a few ways to solve
 our problem:
 
-- `.format()`-formatting, also known as new-style formatting. This
-    formatting style has a lot of features, but it's a little bit more
-    typing than `%s`-formatting.
-
-    ```py
-    >>> "Hello {}.".format(name)
-    'Hello Akuli.'
-    >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
-    "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>> 
-    ```
-
 - `%s`-formatting, also known as printf-formatting and old-style
     formatting. This has less features than `.format()`-formatting, but
     `'Hello %s.' % name` is shorter and faster to type than
@@ -285,6 +260,8 @@ our problem:
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     TypeError: not all arguments converted during string formatting
+    >>> "we have %s and %s" % ("hello", thestuff)
+    'we have hello and (1, 2, 3)'
     >>> "we have %s" % (thestuff,)
     'we have (1, 2, 3)'
     >>> 
@@ -292,9 +269,23 @@ our problem:
 
     Here `(thestuff,)` was a tuple that contained nothing but `thestuff`.
 
+- `.format()`-formatting, also known as new-style formatting. This
+    formatting style has a lot of features, but it's a little bit more
+    typing than `%s`-formatting.
+
+    ```py
+    >>> "Hello {}.".format(name)
+    'Hello Akuli.'
+    >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
+    "My name is Akuli and I'm on the ##learnpython channel on freenode."
+    >>> 
+    ```
+
 - f-strings are even less typing, but new in Python 3.6. **Use this only if
     you know that nobody will need to run your code on Python versions older
-    than 3.6.** Here the f is short for "format".
+    than 3.6.** Here the f is short for "format", and the content of the
+    string is same as it would be with `.format()` but we can use variables
+    directly.
 
     ```py
     >>> f"My name is {name} and I'm on the {channel} channel on {network}."
@@ -315,6 +306,67 @@ All of these formatting styles have many other features also:
 If you need to know more about formatting I recommend reading
 [this](https://pyformat.info/).
 
+## Other things
+
+We can use `in` and `not in` to check if a string contains another
+string.
+
+```py
+>>> our_string = "Hello World!"
+>>> "Hello" in our_string
+True
+>>> "Python" in our_string
+False
+>>> "Python" not in our_string
+True
+>>> 
+```
+
+We can get the length of a string with the `len` function. The name
+`len` is short for "length".
+
+```py
+>>> len(our_string)   # 12 characters
+12
+>>> len('')     # no characters
+0
+>>> len('\n')    # python thinks of \n as one character
+1
+>>> 
+```
+
+We can convert strings, integers and floats with each other with
+`str`, `int` and `float`. They aren't actually functions, but they
+behave a lot like functions. We'll learn more about what they really
+are [later](classes.md).
+
+```py
+>>> str(3.14)
+'3.14'
+>>> float('3.14')
+3.14
+>>> str(123)
+'123'
+>>> int('123')
+123
+>>> 
+```
+
+Giving an invalid string to `int` or `float` produces an error
+message.
+
+```py
+>>> int('lol')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'lol'
+>>> float('hello')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: 'hello'
+>>> 
+```
+
 ## Summary
 
 - Slicing returns a copy of a string with indexes from one index to
@@ -327,16 +379,17 @@ If you need to know more about formatting I recommend reading
 
     ![Indexing](images/indexing3.png)
 
-- The `in` keyword can be used for checking if a string contains another
-    string.
-
 - Python has many string methods. Use [the documentation]
     (https://docs.python.org/3/library/stdtypes.html#string-methods)
     or `help(str)` when you don't rememeber something about them.
-
 - String formatting means adding other things to the middle of a string.
     There are multiple ways to do this in Python. You should know how to
     use at least one of these ways.
+- The `in` keyword can be used for checking if a string contains another
+    string.
+- `len(string)` returns string's length.
+- We can use `str`, `int` and `float` to convert values to different
+	types.
 
 ***
 
