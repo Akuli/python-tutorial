@@ -181,6 +181,8 @@ Typing `[]` creates a **new** list every time.
 ```py
 >>> [] is []
 False
+>>> [1, 2, 3] is [1, 2, 3]
+False
 >>> 
 ```
 
