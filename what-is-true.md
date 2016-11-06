@@ -203,7 +203,8 @@ if value is None: ...  # best
 ## Summary
 
 - `if thing:` does the same thing as `if bool(thing):`. This also
-	works with while loops and most other things.
+	works with while loops and most other things that are usually used
+	with Booleans.
 - `bool()` of most things is True, but `bool()` values of None,
 	zero and most empty things are False.
 - Use `is` and `is not` when comparing to None, `==` and `!=` when
