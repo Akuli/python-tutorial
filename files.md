@@ -374,4 +374,4 @@ else:
 
 You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
 
-[Back to the list of contents](README.md)
+[Back to the list of contents](README.md#list-of-contents)
