@@ -63,7 +63,8 @@ need to keep in mind:
 - Multiple variables can point to the same value, but one variable
     cannot point to multiple values.
 - The values that variables point to can point to other values also.
-    We'll learn more about that when we'll talk about [lists](lists.md).
+    We'll learn more about that when we'll talk about
+    [lists](lists-and-tuples.md).
 
 Variables are an important part of most programming languages, and they
 allow programmers to write much larger programs than they could write

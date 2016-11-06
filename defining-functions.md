@@ -477,12 +477,27 @@ print("Your favorite color is %s!" % choice)
 
 ## Exercises
 
+**TODO:** more exercises.
+
 **There is a lot to learn about functions, and I don't expect you to
 learn everything at once.** However, there's also lots of free Python
 exercises about defining functions you can do. Do many of them and
 spend time with them until you're familiar with defining functions.
 
-1. Python comes with many built-in functions. Some of the simplest ones
+1. The box printing function doesn't really print a box, it prints a
+    message between two lines.
+
+        ************
+        Hello World!
+        ************
+
+    Modify it to print an actual box:
+
+        ****************
+        * Hello World! *
+        ****************
+
+2. Python comes with many built-in functions. Some of the simplest ones
     are abs, all and any. They can be used like this:
 
     - abs returns the absolute value of its only argument.
@@ -523,24 +538,7 @@ spend time with them until you're familiar with defining functions.
     other operating systems. Try the above examples with your
     functions.
 
-2. The box printing function doesn't really print a box, it prints a
-    message between two lines.
-
-        ************
-        Hello World!
-        ************
-
-    Modify it to print an actual box:
-
-        ****************
-        * Hello World! *
-        ****************
-
-3. Back in [Lists](lists.md), you needed to skip parts of the tutorial
-    and all the exercises because you didn't know how to define
-    functions. Read those parts now, and do the exercises.
-
-4. Find more exercises about defining functions online.
+2. Find more exercises about defining functions online.
 
 Answers for the first and second exercise are [here](answers.md).
 
