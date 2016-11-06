@@ -4,10 +4,10 @@ Now we understand how code like this works.
 
 ```py
 message = input("Enter something: ")
-if message != '':
-    print("You entered:", message)
-else:
+if message == '':
     print("You didn't enter anything!")
+else:
+    print("You entered:", message)
 ```
 
 But most Python programmers would write that code like this
@@ -29,6 +29,10 @@ the Boolean it ended up with was True. But when will it be true?
 
 ## Converting to Booleans
 
+The `if message:` actually did the same thing as `if bool(message)`,
+which is same as `if bool(message) == True:`. Usually we just don't
+write the `==True` part anywhere because we don't need it.
+
 We can convert things to Booleans like Python did by doing
 `bool(things)`. Let's try that with strings.
 
@@ -43,10 +47,6 @@ True
 True
 >>> 
 ```
-
-The `if message:` actually did the same thing as `if bool(message)`,
-which is same as `if bool(message) == True:`. Usually we just don't
-write the `==True` part anywhere because we don't need it.
 
 As we can see, the Boolean value of most strings is True. The
 only string that has a false Boolean value is the empty string,
@@ -109,7 +109,7 @@ True
 It's recommended to rely on the Boolean value when we're doing
 something with things like lists and tuples. This way our code
 will work even if it gets a value of a different type than we
-were expected it to get originally.
+expected it to get originally.
 
 For example, this code doesn't work right if we give it
 something else than a list. It thinks that empty tuples,
@@ -202,8 +202,10 @@ if value is None: ...  # best
 
 ## Summary
 
-- `if thing:` does the same thing as `if bool(thing):`.
-- `bool()` of most things is True, but `bool()` of None, zero and
-	most empty things are False.
+- `if thing:` does the same thing as `if bool(thing):`. This also
+	works with while loops and most other things.
+- `bool()` of most things is True, but `bool()` values of None,
+	zero and most empty things are False.
 - Use `is` and `is not` when comparing to None, `==` and `!=` when
-	comparing to numbers and rely on the Boolean value otherwise.
+	checking if a number is zero and rely on the Boolean value
+	when checking if something is empty.
