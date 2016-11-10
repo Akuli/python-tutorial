@@ -97,6 +97,11 @@ any way. You'll get an error message that tells you what's wrong and
 where. Even professional programmers do mistakes and get error messages
 all the time, and there's nothing wrong with it.
 
+If you want to know what some piece of code in this tutorial does just
+**try it and see**. It's practically impossible to break anything
+accidentally with code in this tutorial, so you are free to try out all
+the examples however you want.
+
 Even though a good tutorial is an important part about learning to
 program, you also need to learn to make your own things. Use what you
 have learned, and create something with it.
@@ -108,7 +113,7 @@ have learned, and create something with it.
     character on your keyboard and press the key, holding down shift or AltGr
     as needed.
 - Make sure you understand everything you read.
-- Don't fear mistakes.
+- Experiment with things freely and don't fear mistakes.
 - Error messages are your friends.
 - Let me know if you have trouble with this tutorial.
 - Now we're ready to [install Python](installing-python.md) and
@@ -117,3 +122,5 @@ have learned, and create something with it.
 ***
 
 You may use this tutorial at your own risk. See [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md#list-of-contents)
