@@ -145,7 +145,7 @@ None
 ```
 
 This is the same thing that happened way back when [we assigned
-print's return value to a variable](using-functions.md).
+print's return value to a variable](using-functions.md#return-values).
 
 ## What is what?
 
