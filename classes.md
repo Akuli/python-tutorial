@@ -97,8 +97,10 @@ Now we can make a Website instance by calling the class.
 >>> 
 ```
 
-We can attach more information about stackoverflow to the new Website
-instance.
+We can say that `stackoverflow` is "a Website instance", "a Website
+object" or "a Website". All of these mean the same thing.
+
+Now we can attach more information about stackoverflow to our Website.
 
 ```py
 >>> stackoverflow.url = 'http://stackoverflow.com/'
@@ -127,6 +129,7 @@ new Website.
 **attributes**. More specifically, they are **instance attributes**.
 The biggest difference is that we need to use a dot for setting and
 getting values of attributes, but we don't need that with variables.
+
 Modules also use instance attributes for accessing their content. For
 example, when we do `random.randint`, `random` is a module instance and
 `randint` is one of its attributes.
