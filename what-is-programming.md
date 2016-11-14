@@ -106,6 +106,11 @@ Even though a good tutorial is an important part about learning to
 program, you also need to learn to make your own things. Use what you
 have learned, and create something with it.
 
+## But reading is boring!
+
+Yes, I know. You can just try the code examples yourself and read the
+rest of this tutorial only if you don't understand the code.
+
 ## Summary
 
 - Now you should know what programming and programming languages are.
