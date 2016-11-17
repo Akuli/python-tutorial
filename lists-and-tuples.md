@@ -205,7 +205,7 @@ like this:
 
 ![Different lists.](images/differentlist.png)
 
-If you're using Python 3.2 or older you can do `a[:]` instead
+If you're using Python 3.2 or older you need to do `a[:]` instead
 of `a.copy()`. `a[:]` is a slice of the whole list, just like
 `a[0:]`.
 
