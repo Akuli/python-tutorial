@@ -454,7 +454,8 @@ then typing in what you want to search for.
 - [textwrap](https://docs.python.org/3/library/textwrap.html):
     break long text into multiple lines
 - [warnings](https://pymotw.com/3/warnings/):
-    like exceptions, but they don't interrupt the whole program
+    like [exceptions](exceptions.md), but they don't interrupt the
+    whole program
 - [webbrowser](https://pymotw.com/3/webbrowser/):
     open a web browser from Python
 
