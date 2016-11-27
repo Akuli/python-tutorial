@@ -274,8 +274,8 @@ Methods are "links" to the class attribute functions. So
 and when `stackoverflow.info()` is called it automatically gets
 `stackoverflow` as an argument.
 
-In other words, `Class.method(instance)` does the same thing as
-`instance.method()`. This also works with built-in classes, for
+In other words, **`Class.method(instance)` does the same thing as
+`instance.method()`**. This also works with built-in classes, for
 example `'hello'.lower()` is same as `str.lower('hello')`.
 
 ## Defining methods when defining the class
@@ -286,7 +286,7 @@ it later?
 ```py
 >>> class Website:
 ...     
-...     def info(self):     # self is a Website instance
+...     def info(self):     # self will be stackoverflow
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
