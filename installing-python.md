@@ -106,9 +106,3 @@ some things might stop working. See
 ## Summary
 
 Now you should have Python installed, and you should be able run it.
-
-***
-
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
-
-[Back to the list of contents](README.md#list-of-contents)

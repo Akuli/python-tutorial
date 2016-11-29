@@ -132,9 +132,3 @@ Read it now, then come back here and do the exercises.
     ```
 
 The answers are [here](answers.md).
-
-***
-
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
-
-[Back to the list of contents](README.md#list-of-contents)

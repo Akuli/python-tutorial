@@ -418,9 +418,3 @@ print("You entered " + word + ".")
 - `__init__` is a special method, and it's ran when a new instance of a
   class is created. It does nothing by default.
 - Don't use classes if your code is easier to read without them.
-
-***
-
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
-
-[Back to the list of contents](README.md#list-of-contents)

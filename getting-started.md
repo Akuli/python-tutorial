@@ -210,9 +210,3 @@ Powers are calculated before `*` and `/`, but after `()`.
     it will echo back the result.
 - Pieces of text starting with a `#` are comments.
 - `+`, `-`, `*` and `/` work in Python just like in math.
-
-***
-
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
-
-[Back to the list of contents](README.md#list-of-contents)

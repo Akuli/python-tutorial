@@ -541,9 +541,3 @@ spend time with them until you're familiar with defining functions.
 2. Find more exercises about defining functions online.
 
 Answers for the first and second exercise are [here](answers.md).
-
-***
-
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
-
-[Back to the list of contents](README.md#list-of-contents)

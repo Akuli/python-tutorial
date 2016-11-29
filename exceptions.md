@@ -472,7 +472,3 @@ except OSError:
             sys.exit(1)  # time to give up
         greet()
 ```
-
-***
-
-You may use this tutorial at your own risk. See [LICENSE](LICENSE).
