@@ -53,20 +53,21 @@ text appears on the screen right away when we run `print(something)`.
 
 ## Return values
 
-If we do `x = print('hello')`, what is x?
+If we do `thingy = print('hello')`, what does the `thingy` variable end
+up [pointing to](variables.md)?
 
 ```py
->>> x = print('hello')
+>>> thingy = print('hello')
 hello
->>> print(x)       # x is now None
+>>> print(thingy)       # thingy is now None
 None
 >>> 
 ```
 
-So doing `x = print('hello')` set x to None. Here's what happened,
-explained in more detail:
+So doing `thingy = print('hello')` set `thingy` to None. Here's what
+happened, explained in more detail:
 
-- In `x = print('hello')`, the right side is processed first.
+- In `thingy = print('hello')`, the right side is processed first.
 - `print('hello')` calls the print function with the argument
     `'hello'`.
 - The function runs. It shows the word hello.
@@ -75,28 +76,28 @@ explained in more detail:
     anything else.
 - Now the right side has been processed. `print('hello')` returned
     None, so we can imagine we have None instead of `print('hello')`
-    there, and the assignment now looks like `x = None`.
-- x is now None.
+    there, and the assignment now looks like `thingy = None`.
+- `thingy` is now None.
 
 Now we understand what a return value is. When we call the function,
 Python "replaces" `function(args)` with whatever the function returns.
 
 Calling a function without assigning the return value to anything (e.g.
-`print('hello')` instead of `x = print('hello')`) simply throws away
+`print('hello')` instead of `thingy = print('hello')`) simply throws away
 the return value. The interactive `>>>` prompt doesn't echo the return
 value back because it's None.
 
-Of course, `x = print('hello')` is useless compared to `print('hello')`
-because the print function always returns None and we can do `x = None`
+Of course, `thingy = print('hello')` is useless compared to `print('hello')`
+because the print function always returns None and we can do `thingy = None`
 without any printing.
 
 Not all functions return None. The input function can be used for
 getting a string from the user.
 
 ```py
->>> x = input("Enter something:")
+>>> stuff = input("Enter something:")
 Enter something:hello
->>> x
+>>> stuff
 'hello'
 >>> 
 ```
@@ -104,17 +105,17 @@ Enter something:hello
 `input("Enter something:")` showed the text `Enter something:` on the
 screen and waited for me to type something. I typed hello and pressed
 Enter. Then input returned the hello I typed as a string and it was
-assigned to x.
+assigned to `stuff`.
 
 Usually we want to add a space after the `:`, like this:
 
 ```py
->>> x = input("Enter something: ")  # now there's space between : and where i type
+>>> stuff = input("Enter something: ")  # now there's space between : and where i type
 Enter something: hello
 >>> 
 ```
 
-## More about print
+## Handy things about print
 
 We can also print an empty line by calling print without any
 arguments.
@@ -135,7 +136,7 @@ world
 >>> 
 ```
 
-If we want to print a backslash, we need to **escape** it by typing
+If we want to print a real backslash, we need to **escape** it by typing
 two backslashes.
 
 [comment]: # (For some reason, GitHub's syntax highlighting doesn't)
@@ -168,8 +169,9 @@ Unlike with `+`, the arguments don't need to be strings.
     `function(1, 2, 3)` calls a function with 1, 2 and 3 as arguments.
 - When a function is called, it does something and returns something.
 - `function(stuff)` is "replaced" with the return value in the code
-    that called it. For example, `x = function()` calls a function, and
-    then does `x = the_return_value` and the return value ends up in x.
+    that called it. For example, `stuff = function()` calls a function,
+    and then does `stuff = the_return_value` and the return value ends
+    up in x.
 - Python comes with `print` and `input`. They are built-in functions.
 
 ***
