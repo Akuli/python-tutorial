@@ -472,3 +472,11 @@ except OSError:
             sys.exit(1)  # time to give up
         greet()
 ```
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](files.md) | [Next](modules.md) |
+[Back to the list of contents](README.md#list-of-contents)

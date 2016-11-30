@@ -318,3 +318,11 @@ of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
     until the user enters them correctly.
 
 3. Can you limit the number of attempts to 3?
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](lists-and-tuples.md) | [Next](trey-hunner-zip-and-enumerate.md) |
+[Back to the list of contents](README.md#list-of-contents)

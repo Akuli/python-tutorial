@@ -35,3 +35,11 @@ learned everything.
     `"hello" + 3`? How about `"hello" * 3`?
 3. What happens if you use + between a float and an integer, like
     `0.5 + 3`? How about `0.5 * 3`?
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](getting-started.md) | [Next](variables.md) |
+[Back to the list of contents](README.md#list-of-contents)

@@ -396,3 +396,11 @@ ValueError: could not convert string to float: 'hello'
 - `len(string)` returns string's length.
 - We can use `str`, `int` and `float` to convert values to different
 	types.
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](if.md) | [Next](lists-and-tuples.md) |
+[Back to the list of contents](README.md#list-of-contents)

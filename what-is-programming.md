@@ -123,3 +123,11 @@ rest of this tutorial only if you don't understand the code.
 - Let me know if you have trouble with this tutorial.
 - Now we're ready to [install Python](installing-python.md) and
     [get started](getting-started.md)!
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](README.md) | [Next](installing-python.md) |
+[Back to the list of contents](README.md#list-of-contents)

@@ -24,3 +24,8 @@ This tutorial is not complete. It still needs:
     - "What the heck is this?" section for stuff i haven't talked about
         - regexes
         - yield
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).

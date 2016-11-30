@@ -307,3 +307,11 @@ if name in namelist:
 else:
     print("Sorry, I don't know who you are :(")
 ```
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](handy-stuff-strings.md) | [Next](loops.md) |
+[Back to the list of contents](README.md#list-of-contents)

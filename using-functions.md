@@ -171,3 +171,11 @@ Unlike with `+`, the arguments don't need to be strings.
     that called it. For example, `x = function()` calls a function, and
     then does `x = the_return_value` and the return value ends up in x.
 - Python comes with `print` and `input`. They are built-in functions.
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](variables.md) | [Next](if.md) |
+[Back to the list of contents](README.md#list-of-contents)

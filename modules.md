@@ -484,3 +484,11 @@ section at the bottom.
     module you want to use.
 - Python comes with many modules, and we can install even more modules
     if we want to.
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](exceptions.md) | [Next](classes.md) |
+[Back to the list of contents](README.md#list-of-contents)

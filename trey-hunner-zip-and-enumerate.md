@@ -132,3 +132,11 @@ Read it now, then come back here and do the exercises.
     ```
 
 The answers are [here](answers.md).
+
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
+[Previous](loops.md) | [Next](dicts.md) |
+[Back to the list of contents](README.md#list-of-contents)
