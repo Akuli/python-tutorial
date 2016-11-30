@@ -10,12 +10,20 @@ BASIC_END = """
 
 You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md#list-of-contents)
 """
 
-CHAPTER_END = BASIC_END + """
+CHAPTER_END = """
+***
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
+
 [Previous]({prev}) | [Next]({next}) |
 [Back to the list of contents](README.md#list-of-contents)
 """
+
 
 MARKDOWN_LINK_REGEX = r'\[.*\]\((.*\.md)\)'
 CHAPTER_LINK_REGEX = '^\d+\. ' + MARKDOWN_LINK_REGEX + '$'

@@ -18,11 +18,7 @@ it, there are a few ways to contact me:
 
 ***
 
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
-
-[Back to the list of contents](README.md#list-of-contents)
-
-***
-
 You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
+
+[Back to the list of contents](README.md#list-of-contents)
