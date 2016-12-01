@@ -544,6 +544,8 @@ Answers for the first and second exercise are [here](answers.md).
 
 ***
 
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
 
+[Previous](dicts.md) | [Next](what-is-true.md) |
 [Back to the list of contents](README.md#list-of-contents)

@@ -118,6 +118,29 @@ multiple items from another list and remove removes an item.
 >>> 
 ```
 
+Note that `remove` removes only the first match it finds.
+
+```py
+>>> names = ['theelous3', 'go|dfish', 'theelous3']
+>>> names.remove('theelous3')
+>>> names    # the second theelous3 is still there!
+['go|dfish', 'theelous3']
+>>> 
+```
+
+If we need to remove all matching items we can use a simple while loop.
+We'll talk more about loops [in the next chapter](loops.md).
+
+```py
+>>> names = ['theelous3', 'go|dfish', 'theelous3']
+>>> while 'theelous3' in names:
+...     names.remove('theelous3')
+... 
+>>> names
+['go|dfish']
+>>> 
+```
+
 We can also use slicing and indexing to change the content:
 
 ```py
@@ -186,7 +209,7 @@ False
 >>> 
 ```
 
-If we need a new list with the same content we can use the
+If we need **a new list with similar content** we can use the
 `copy` method.
 
 ```py
@@ -205,7 +228,7 @@ like this:
 
 ![Different lists.](images/differentlist.png)
 
-If you're using Python 3.2 or older you can do `a[:]` instead
+If you're using Python 3.2 or older you need to do `a[:]` instead
 of `a.copy()`. `a[:]` is a slice of the whole list, just like
 `a[0:]`.
 
@@ -242,7 +265,7 @@ used in places like `(1 + 2) * 3`.
 ```
 
 Tuples don't have methods like append, extend and remove
-because they can't change theirselves in-place.
+because they can't change themselves in-place.
 
 ```py
 >>> stuff = (1, 2, 3)
@@ -287,6 +310,8 @@ else:
 
 ***
 
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
 
+[Previous](handy-stuff-strings.md) | [Next](loops.md) |
 [Back to the list of contents](README.md#list-of-contents)

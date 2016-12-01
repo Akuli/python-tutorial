@@ -126,6 +126,8 @@ rest of this tutorial only if you don't understand the code.
 
 ***
 
-You may use this tutorial at your own risk. See [LICENSE](LICENSE).
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
 
+[Previous](README.md) | [Next](installing-python.md) |
 [Back to the list of contents](README.md#list-of-contents)

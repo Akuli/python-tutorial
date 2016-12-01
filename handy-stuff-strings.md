@@ -158,6 +158,12 @@ Again, nothing can modify strings in-place. Most string methods
 return a new string, but things like `our_string = our_string.upper()`
 still work because the new string is assigned to the old variable.
 
+Also note that all of these methods are used like `our_string.stuff()`,
+not like `stuff(our_string)`. The idea with that is that our string
+knows how to do all these things, like `our_string.stuff()`, we don't
+need a separate function that does these things like `stuff(our_string)`.
+We'll learn more about methods [later](classes.md).
+
 Here's an example with some of the most commonly used string methods:
 
 ```py
@@ -233,6 +239,18 @@ Python has multiple ways to format strings. One is not necessarily
 better than others, they are just different. Here's a few ways to solve
 our problem:
 
+- `.format()`-formatting, also known as new-style formatting. This
+    formatting style has a lot of features, but it's a little bit more
+    typing than `%s`-formatting.
+
+    ```py
+    >>> "Hello {}.".format(name)
+    'Hello Akuli.'
+    >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
+    "My name is Akuli and I'm on the ##learnpython channel on freenode."
+    >>> 
+    ```
+
 - `%s`-formatting, also known as printf-formatting and old-style
     formatting. This has less features than `.format()`-formatting, but
     `'Hello %s.' % name` is shorter and faster to type than
@@ -268,18 +286,6 @@ our problem:
     ```
 
     Here `(thestuff,)` was a tuple that contained nothing but `thestuff`.
-
-- `.format()`-formatting, also known as new-style formatting. This
-    formatting style has a lot of features, but it's a little bit more
-    typing than `%s`-formatting.
-
-    ```py
-    >>> "Hello {}.".format(name)
-    'Hello Akuli.'
-    >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
-    "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>> 
-    ```
 
 - f-strings are even less typing, but new in Python 3.6. **Use this only if
     you know that nobody will need to run your code on Python versions older
@@ -393,6 +399,8 @@ ValueError: could not convert string to float: 'hello'
 
 ***
 
-You may use this tutorial freely at your own risk. See [LICENSE](LICENSE).
+You may use this tutorial freely at your own risk. See
+[LICENSE](LICENSE).
 
+[Previous](if.md) | [Next](lists-and-tuples.md) |
 [Back to the list of contents](README.md#list-of-contents)
