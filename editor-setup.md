@@ -45,6 +45,17 @@ backspace and there are four spaces before the cursor.
 
 Emacs uses spaces with Python files by default.
 
+### GNU Nano
+
+Open your `~/.nanorc`.
+
+    $ nano ~/.nanorc
+
+Add these lines to it:
+
+    set tabsize 4
+    set tabstospaces
+
 ### Mousepad
 
 1. Go to *Document* at the top, then *Tab Size*.
