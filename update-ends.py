@@ -64,9 +64,8 @@ def has_end(filename, template):
     with open(filename, 'r') as f:
         # get the last linecount lines
         filelines = collections.deque(f, maxlen=linecount)
-    templatelines = template.rstrip('\n').split('\n')
 
-    for templateline, fileline in zip(templatelines, filelines):
+    for templateline, fileline in zip(template.split('\n'), filelines):
         if '{' not in templateline:
             # It doesn't contain formatting, we can do something with it.
             if templateline.strip() != fileline.strip():
