@@ -284,7 +284,7 @@ post about this](http://nedbatchelder.com/blog/201608/lists_vs_tuples.html).
 
 ## Summary
 
-- Lists are a way to point to multiple values with just one variable.
+- Lists are a way to store multiple values in one variable.
 - Lists can be changed in-place and they have methods that change them
     in-place, like append, extend and remove.
 - Slicing lists returns a **new** list, and indexing them returns an
