@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Update ends of markdown files."""
 
-import collections
 import re
 
 
