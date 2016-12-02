@@ -69,7 +69,9 @@ Let's create a file and write a hello world to it.
 Doesn't seem like it did anything. But actually it created a `hello.txt`
 somewhere on our system. On Windows it's probably in `C:\Users\YourName`,
 and on most other systems it should be in `/home/yourname`. You can open
-it with notepad or any other plain text editor your system comes with.
+it with notepad or any other plain text editor your system comes with by
+opening the folder that contains the file and then double-clicking the
+file.
 
 So how does that code work?
 
@@ -82,22 +84,21 @@ object that is assigned to the variable `f`.
 >>> 
 ```
 
-So the first argument we passed to `open` was the path we wanted to write.
+File objects are not the same thing as paths and filenames, so if we try
+to use `'hello.txt'` like we used `f` it doesn't work.
+
+The first argument we passed to `open` was the path we wanted to write.
 Our path was more like a filename than a path, so the file ended up in
 the current working directory.
 
-The second argument was `w`... but where the heck does that come from?
-`w` is short for write, and that just means that we'll create a new file.
-There's some other modes we can use also:
+The second argument was `w`. It's short for write, and that just means
+that we'll create a new file. There's some other modes we can use also:
 
 | Mode  | Short for | Meaning                                                               |
 |-------|-----------|-----------------------------------------------------------------------|
 | `r`   | read      | Read from an existing file.                                           |
 | `w`   | write     | Write to a file. **If the file exists, its old content is removed.**  |
 | `a`   | append    | Write to the end of a file, and keep the old content.                 |
-
-The `w` and `a` modes create a new file if it exists already, but trying
-to read from a non-existent file is an error.
 
 But what is that `with ourfile as f` crap? That's just a fancy way to make
 sure that the file gets closed, no matter what happens. As we can see,
@@ -130,9 +131,9 @@ we created to a list of lines.
 >>> 
 ```
 
-Trying to open a non-existent file with `w` created the file for us, but
-doing that with `r` gives us an error instead. We'll learn more about
-errors [later](exceptions.md).
+Trying to open a non-existent file with `w` or `a` creates the file for
+us, but doing that with `r` gives us an error instead. We'll learn more
+about errors [later](exceptions.md).
 
 ```py
 >>> with open('this-doesnt-exist.txt', 'r') as f:
@@ -150,11 +151,11 @@ that `\n` doing there?
 
 `\n` means newline. Note that it needs to be a backslash, so `/n`
 doesn't have any special meaning like `\n` has. When we wrote the file
-with print it actually added a `\n` to the end of it. It's good practise
+with print it actually added a `\n` to the end of it. It's recommended
 to end the content of files with a newline character, but it's not
 necessary.
 
-So how does that work if we have more than one line in the file?
+Let's see how that works if we have more than one line in the file.
 
 ```py
 >>> with open('hello.txt', 'w') as f:
@@ -206,7 +207,8 @@ that reads the next line, and returns `''` if we're at the end of the file.
 ```
 
 There's only one confusing thing about reading files. If we try
-to read it twice we'll find out that it only gets read once:
+to read the same file object twice we'll find out that it only gets read
+once:
 
 ```py
 >>> first = []
@@ -226,8 +228,8 @@ to read it twice we'll find out that it only gets read once:
 
 File objects remember their position. When we tried to read the
 file again it was already at the end, and there was nothing left
-to read. But if we open the file again, it's in the beginning
-again and everything works.
+to read. But if we open the file again, we get a new file object that
+is in the beginning and everything works.
 
 ```py
 >>> first = []
@@ -250,21 +252,7 @@ again and everything works.
 Usually it's best to just read the file once, and use the
 content we have read from it multiple times.
 
-As we can see, files behave a lot like lists. [The join string
-method](https://docs.python.org/3/library/stdtypes.html#str.join) joins
-together strings from a list, but we can also use it to join together
-lines of a file:
-
-```py
->>> with open('hello.txt', 'r') as f:
-...     full_content = ''.join(f)
-... 
->>> full_content
-'Hello one!\nHello two!\nHello three!\n'
->>> 
-```
-
-But if we need all of the content as a string, we can just use [the read
+If we need all of the content as a string, we can use [the read
 method](https://docs.python.org/3/library/io.html#io.TextIOBase.read).
 
 ```py
@@ -297,8 +285,8 @@ adding an `r` to the beginning of the string. In this case the `r`
 is short for "raw", not "read".
 
 ```py
->>> r'C:\some\name' == 'C:\\some\\name'
-True
+>>> r'C:\some\name'
+'C:\\some\\name'
 >>> 
 ```
 
@@ -311,6 +299,11 @@ don't contain backslashes we don't need to double anything or use
 /some/name
 >>> 
 ```
+
+Doing things like `open('C:\\Users\\me\\myfile.txt', 'r')` is not
+recommended because the code needs to be modified if someone wants to
+run the program on a different computer that doesn't have a
+`C:\Users\me` folder.
 
 ## Examples
 

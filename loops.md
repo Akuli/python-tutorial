@@ -297,6 +297,114 @@ of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
 - The `break` keyword can be used to interrupt the innermost loop at
     any time.
 
+## Examples
+
+Repeat something an endless amount of times.
+
+```py
+message = input("What do you want me to say? ")
+while True:
+    print(message, "!!!")
+```
+
+Ask the user to enter five things and print them.
+
+```py
+things = []
+
+print("Enter 5 things: ")
+while len(things) < 5:
+    thing = input("> ")
+    things.append(thing)
+
+print("You entered these things:")
+for thing in things:
+    print(thing)
+```
+
+Ask the user a bunch of questions.
+
+```py
+questions_and_answers = [
+    # [question, answer], ...
+    ["What is 2+4? ", "6"],
+    ["What is 2-4? ", "-2"],
+    ["What is 2*4? ", "8"],
+    ["What is 2/4? ", "0.5"],
+    # You could add more questions, but the code that asks them
+    # wouldn't need to be changed in any way.
+]
+
+for qa in questions_and_answers:
+    while True:
+        if input(qa[0]) == qa[1]:
+            print("Correct!")
+            break
+        else:
+            print("That's not what I was thinking of... Try again.")
+```
+
+Store a list of names and let the user check if the program knows
+the user.
+
+```py
+# You can add names here so the program will know them automatically
+# when it starts.
+namelist = []
+
+print("Options:")
+print("  0      Quit")
+print("  1      Check if I know you")
+print("  2      Introduce yourself to me")
+print("  3      Make me forget you")
+print("  4      Print a list of people I know")
+print()     # print an empty line
+
+while True:
+    option = input("Choose an option: ")
+
+    # Things like option == 0 don't work because option is a string
+    # and it needs to be compared with a string.
+    if option == '0':
+        print("Bye!")
+        break
+
+    elif option == '1':
+        name = input("Enter your name: ")
+        if name in namelist:
+            print("I know you! :D")
+        else:
+            print("I don't know you :/")
+
+    elif option == '2':
+        name = input("Enter your name: ")
+        if name in namelist:
+            print("I knew you already.")
+        else:
+            namelist.append(name)
+            print("Now I know you!")
+
+    elif option == '3':
+        name = input("Enter your name: ")
+        if name in namelist:
+            namelist.remove(name)
+            print("Now I don't know you.")
+        else:
+            print("I didn't know you to begin with.")
+
+    elif option == '4':
+        if len(namelist) == 0:  # len is short for length
+            print("I don't know anybody yet.")
+        else:
+            for name in namelist:
+                print("I know %s!" % name)
+
+    else:
+        print("I don't understand :(")
+
+    print()
+```
+
 ## Exercises
 
 1. Back in "Using if, else and elif" we created a program that asked
