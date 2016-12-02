@@ -163,6 +163,49 @@ Unlike with `+`, the arguments don't need to be strings.
 >>> 
 ```
 
+## Variables names and built-in things
+
+In [the previous chapter](variables.md) we learned that `if` is not a
+valid variable name because it's a keyword.
+
+```py
+>>> if = 123
+  File "<stdin>", line 1
+    if = 123
+       ^
+SyntaxError: invalid syntax
+>>> 
+```
+
+But `print` and `input` are not keywords, so can we use them as
+variable names?
+
+```py
+>>> print = "hello"
+>>> print
+'hello'
+>>> 
+```
+
+We can, but there's a problem. Now we can't even do our hello world!
+
+```py
+>>> print("Hello World!")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
+>>> 
+```
+
+The error message complains that strings aren't callable because we
+just set `print` to the string `'hello'` and now we're trying to call
+it like a function. As you can see, this is not a good idea at all.
+Most editors (including IDLE) display built-in functions with a special
+color so you don't need to worry about doing this accidentally.
+
+Exit out of Python and start it again, and `print("Hello World!")`
+should work normally.
+
 ## Summary
 
 - `function()` calls a function without any arguments, and
@@ -173,6 +216,7 @@ Unlike with `+`, the arguments don't need to be strings.
     and then does `stuff = the_return_value` and the return value ends
     up in x.
 - Python comes with `print` and `input`. They are built-in functions.
+- Avoid variable names that conflict with built-in functions.
 
 ***
 
