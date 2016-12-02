@@ -5,18 +5,14 @@ import collections
 import re
 
 
-BASIC_END = """
-***
-
+BASIC_END = """\
 You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
 [Back to the list of contents](README.md#list-of-contents)
 """
 
-CHAPTER_END = """
-***
-
+CHAPTER_END = """\
 You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
@@ -25,8 +21,8 @@ You may use this tutorial freely at your own risk. See
 """
 
 
-MARKDOWN_LINK_REGEX = r'\[.*\]\((.*\.md)\)'
-CHAPTER_LINK_REGEX = '^\d+\. ' + MARKDOWN_LINK_REGEX + '$'
+LINK_REGEX = r'\[.*\]\((.*\.md)\)'
+CHAPTER_LINK_REGEX = r'^\d+\. ' + LINK_REGEX + r'$'
 
 
 def get_filenames():
@@ -53,28 +49,32 @@ def get_filenames():
 
     # now let's find other links to markdown files
     with open('README.md', 'r') as f:
-        all_files = re.findall(MARKDOWN_LINK_REGEX, f.read())
+        all_files = re.findall(LINK_REGEX, f.read())
     others = set(all_files) - set(chapters)
 
     return chapters, others
 
 
-def has_end(filename, template):
-    linecount = template.count('\n')
+def update_end(filename, end):
+    """Add *** and end to a file if it doesn't contain them already."""
+    end = '\n***\n\n' + end
     with open(filename, 'r') as f:
-        # get the last linecount lines
-        filelines = collections.deque(f, maxlen=linecount)
-    templatelines = template.rstrip('\n').split('\n')
+        content = f.read()
+    if content.endswith(end):
+        # No need to do anything.
+        print("  Has end:", filename)
+        return
 
-    for templateline, fileline in zip(templatelines, filelines):
-        if '{' not in templateline:
-            # It doesn't contain formatting, we can do something with it.
-            if templateline.strip() != fileline.strip():
-                # It's different than what using the template would result in.
-                return False
+    if '\n***\n' in content:
+        # We need to remove the old ending first.
+        print("  Removing old end:", filename)
+        where = content.index('\n***\n')
+        with open(filename, 'w') as f:
+            f.write(content[:where])
 
-    # All lines matched if we get here.
-    return True
+    print("  Adding end:", filename)
+    with open(filename, 'a') as f:
+        f.write(end)
 
 
 def main():
@@ -85,25 +85,16 @@ def main():
     prevs = ['README.md'] + chapter_files[:-1]
     nexts = chapter_files[1:] + ['README.md']
 
-    print("Chapter files")
+    print("Chapter files:")
     for filename, prev, next in zip(chapter_files, prevs, nexts):
-        if has_end(filename, CHAPTER_END):
-            print("  Has end:", filename)
-        else:
-            print("  Adding end:", filename)
-            with open(filename, 'a') as f:
-                f.write(CHAPTER_END.format(prev=prev, next=next))
+        end = CHAPTER_END.format(prev=prev, next=next)
+        update_end(filename, end)
 
     print()
 
-    print("Other files")
+    print("Other files:")
     for filename in other_files:
-        if has_end(filename, BASIC_END):
-            print("  Has end:", filename)
-        else:
-            print("  Adding end:", filename)
-            with open(filename, 'a') as f:
-                f.write(BASIC_END)
+        update_end(filename, BASIC_END)
 
 
 if __name__ == '__main__':
