@@ -13,7 +13,7 @@ That works.
 
 ```
 Enter a number: 3
-Your number twice: 6
+Your number doubled: 6
 ```
 
 But that doesn't work if the user does not enter a number.
@@ -103,20 +103,6 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>> 
 ```
 
-Catching ValueError doesn't catch TypeErrors.
-
-```py
->>> try:
-...     123 + 'hello'
-... except ValueError:
-...     print("wrong value")
-... 
-Traceback (most recent call last):
-  File "<stdin>", line 2, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> 
-```
-
 Exceptions always interrupt the code even if we catch them. Here the
 print never runs because it's after the error but inside the `try`
 block. Everything after the try block runs normally.
@@ -171,7 +157,8 @@ wrong type
 
 Seems to be working.
 
-We can catch multiple exceptions by catching a tuple of exceptions:
+We can also also catch multiple exceptions by catching
+[a tuple](lists-and-tuples.md#tuples) of exceptions:
 
 ```py
 >>> try:
