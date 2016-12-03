@@ -425,4 +425,4 @@ You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
 [Previous](modules.md) | [Next](README.md) |
-[Back to the list of contents](README.md#list-of-contents)
+[List of contents](README.md#list-of-contents)

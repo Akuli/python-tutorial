@@ -403,4 +403,4 @@ You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
 [Previous](if.md) | [Next](lists-and-tuples.md) |
-[Back to the list of contents](README.md#list-of-contents)
+[List of contents](README.md#list-of-contents)

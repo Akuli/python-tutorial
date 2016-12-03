@@ -548,4 +548,4 @@ You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
 [Previous](dicts.md) | [Next](what-is-true.md) |
-[Back to the list of contents](README.md#list-of-contents)
+[List of contents](README.md#list-of-contents)

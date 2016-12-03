@@ -217,4 +217,4 @@ You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
 [Previous](defining-functions.md) | [Next](files.md) |
-[Back to the list of contents](README.md#list-of-contents)
+[List of contents](README.md#list-of-contents)

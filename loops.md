@@ -433,4 +433,4 @@ You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
 
 [Previous](lists-and-tuples.md) | [Next](trey-hunner-zip-and-enumerate.md) |
-[Back to the list of contents](README.md#list-of-contents)
+[List of contents](README.md#list-of-contents)
