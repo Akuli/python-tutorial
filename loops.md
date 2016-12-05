@@ -5,7 +5,7 @@ There are different kinds of loops:
 
 - [While loops](#while-loops) repeat something while a condition is true.
 - [Until loops](#until-loops) repeat something while a condition is false.
-- [For loops](#for-loops) repeat something for each element of a list.
+- [For loops](#for-loops) repeat something for each element of something.
 
 We'll talk about all of these in this tutorial.
 
@@ -149,8 +149,8 @@ print("It's raining!")
 
 ## For loops
 
-Let's say we have a list of things we want to print. To print each item
-in stuff, we could just do a bunch of prints:
+Let's say we have [a list](lists-and-tuples.md) of things we want to
+print. To print each item in it, we could just do a bunch of prints:
 
 ```py
 stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
@@ -178,7 +178,7 @@ We could also create an index variable, and use a while loop:
 
 ```py
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
->>> length_of_stuff = len(stuff)  # len(stuff) is 5
+>>> length_of_stuff = len(stuff)  # len is short for length, len(stuff) is 5
 >>> index = 0
 >>> while index < length_of_stuff:
 ...     print(stuff[index])
@@ -230,16 +230,7 @@ how about you
 Note that `for thing in stuff:` is not same as `for (thing in stuff):`.
 Here the `in` keyword is just a part of the for loop and it has a
 different meaning than it would have if we had `thing in stuff` without
-a `for`. Trying to do `for (thing in stuff):` creates an error:
-
-```py
->>> for (thing in stuff):
-  File "<stdin>", line 1
-    for (thing in stuff):
-                        ^
-SyntaxError: invalid syntax
->>> 
-```
+a `for`. Trying to do `for (thing in stuff):` creates an error.
 
 Right now the while loop version might seem easier to understand for
 you, but later you'll realize that for loops are much easier to work
