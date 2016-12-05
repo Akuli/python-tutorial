@@ -178,7 +178,7 @@ We could also create an index variable, and use a while loop:
 
 ```py
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
->>> length_of_stuff = len(stuff)  # len is short for length, len(stuff) is 5
+>>> length_of_stuff = len(stuff)
 >>> index = 0
 >>> while index < length_of_stuff:
 ...     print(stuff[index])

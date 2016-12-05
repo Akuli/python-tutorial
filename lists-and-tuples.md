@@ -53,7 +53,7 @@ There's many things [we can do with strings](handy-stuff-strings.md),
 and some of these things also work with lists.
 
 ```py
->>> len(names)   # we have 5 names
+>>> len(names)   # len is short for length, we have 5 names
 5
 >>> names + ['Akuli']   # create a new list with me in it
 ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori', 'Akuli']
