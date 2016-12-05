@@ -54,7 +54,7 @@ text appears on the screen right away when we run `print(something)`.
 ## Return values
 
 If we do `thingy = print('hello')`, what does the `thingy` variable end
-up [pointing to](variables.md)?
+up [pointing to](variables.md#variables)?
 
 ```py
 >>> thingy = print('hello')
