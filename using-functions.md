@@ -199,7 +199,7 @@ TypeError: 'str' object is not callable
 
 The error message complains that strings aren't callable because we
 just set `print` to the string `'hello'` and now we're trying to call
-it like a function. As you can see, this is not a good idea at all.
+it like a function. As you can see, **this is not a good idea** at all.
 Most editors (including IDLE) display built-in functions with a special
 color so you don't need to worry about doing this accidentally.
 
