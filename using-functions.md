@@ -51,10 +51,15 @@ Functions are easy to understand, They simply **do something when they
 are called**. Functions run immediately when we call them, so the
 text appears on the screen right away when we run `print(something)`.
 
+Sometimes people think that doing `thingy = print('hello')` means that
+Python is going to print hello every time we type `thingy`. But **this
+is not correct**! `print('hello')` runs print right away, and if we
+type `thingy` later it's not going to run `print('hello')` again.
+
 ## Return values
 
-If we do `thingy = print('hello')`, what does the `thingy` variable end
-up [pointing to](variables.md#variables)?
+Now we know that `thingy = print('hello')` doesn't store the
+`print('hello')` call in a variable. But what does it do then?
 
 ```py
 >>> thingy = print('hello')
@@ -64,10 +69,12 @@ None
 >>> 
 ```
 
-So doing `thingy = print('hello')` set `thingy` to None. Here's what
-happened, explained in more detail:
+So doing `thingy = print('hello')` set `thingy` to None.
 
-- In `thingy = print('hello')`, the right side is processed first.
+Here's what happened, explained in more detail:
+
+- When we do `thingy = print('hello')`, the right side is processed
+    first.
 - `print('hello')` calls the print function with the argument
     `'hello'`.
 - The function runs. It shows the word hello.
@@ -79,8 +86,9 @@ happened, explained in more detail:
     there, and the assignment now looks like `thingy = None`.
 - `thingy` is now None.
 
-Now we understand what a return value is. When we call the function,
-Python "replaces" `function(args)` with whatever the function returns.
+Now we understand what **a return value** is. When we call the
+function, Python "replaces" `function(arguments)` with whatever the
+function returns.
 
 Calling a function without assigning the return value to anything (e.g.
 `print('hello')` instead of `thingy = print('hello')`) simply throws away
