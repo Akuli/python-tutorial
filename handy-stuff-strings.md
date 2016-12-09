@@ -177,6 +177,10 @@ True
 True
 >>> our_string.endswith('world!')  # Python is case-sensitive
 False
+>>> our_string.replace('World', 'there')
+'Hello there!'
+>>> our_string.replace('l', 'ł', 1)   # only replace one l
+'Hełlo World!'
 >>> '  hello 123  '.lstrip()    # left strip
 'hello 123  '
 >>> '  hello 123  '.rstrip()    # right strip
