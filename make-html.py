@@ -14,7 +14,8 @@ except ImportError:
 
 def main():
     if os.path.exists('html'):
-        if input("html exists. Do you want to remove it [Y/n] ") == 'N':
+        if input("html exists. Do you want "
+                 "to remove it? [Y/n] ").upper() == 'N':
             print("Interrupt.")
             return
         if os.path.isdir('html'):
