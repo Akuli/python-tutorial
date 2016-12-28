@@ -3,14 +3,18 @@
 This tutorial is not complete. It still needs:
 
 - range somewhere
-- Better lists chapter, also introduce tuples in it
 - **More exercises and examples everywhere!**
-- explain bool(x) and why it matters
+- classes part 1:
+
+        <deniska> Akuli: I would probably add an example of refactoring
+                  a bunch of functions working with shared global data
+                  into a class because it's a pretty typical usecase
+
 - classes part 2
     - non-public `_variables` (maybe reading PEP-8 is enough to explain this?)
     - "singular" inheritance, inheritance of built-in classes
     - using super
-- no classes part 3 with multiple inheritance, it's not something people need
+    - advise to avoid multiple inheritance
 - iterables and iterators: something most Python programmers need to be
     aware of
 - last chapter: "What should I do now?" links to other resources
