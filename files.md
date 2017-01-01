@@ -303,7 +303,7 @@ don't contain backslashes we don't need to double anything or use
 Doing things like `open('C:\\Users\\me\\myfile.txt', 'r')` is not
 recommended because the code needs to be modified if someone wants to
 run the program on a different computer that doesn't have a
-`C:\Users\me` folder.
+`C:\Users\me` folder. Just use `open('myfile.txt', 'r')`.
 
 ## Examples
 
