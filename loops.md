@@ -384,7 +384,7 @@ while True:
             print("I didn't know you to begin with.")
 
     elif option == '4':
-        if len(namelist) == 0:  # len is short for length
+        if namelist == []:
             print("I don't know anybody yet.")
         else:
             for name in namelist:

@@ -20,7 +20,7 @@ They will probably support Python 3 by the time you've learned the
 basics and you may actually need them.
 
 I have tested most of the code in this tutorial on Python 3.4, but
-everything should also work on Python 3.2 and all newer Pythons.
+everything should also work on Python 3.3, 3.2 and all newer Pythons.
 
 ## List of contents
 
