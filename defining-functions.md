@@ -248,10 +248,10 @@ This function can be called in two ways:
     arguments, because each argument has a name and it's easy to see
     which argument is which.
 
-    Also note that there are no spaces around the `=` sign. That's
-    because we are not assigning to a variable, we are giving the
-    function a keyword argument and it can do whatever it wants with
-    it.
+    Also note that there are no spaces around the `=` sign. This is
+    just a small style detail that Python programmers like to do
+    because `message = "hi"` and `some_function(message="hi")` do two
+    completely different things.
 
 Personally, I would use this function with a positional argument. It
 only takes one argument, so I don't need to worry about which argument
@@ -351,8 +351,8 @@ need to:
 
 ## Output
 
-The built-in input function returns a value. Can our function return a
-value also?
+The built-in input function [returns a value](https://github.com/Akuli/python-tutorial/blob/master/using-functions.md#return-values).
+Can our function return a value also?
 
 ```py
 >>> def times_two(x):
@@ -360,12 +360,24 @@ value also?
 ... 
 >>> times_two(3)
 6
->>> times_two("hello")
-'hellohello'
+>>> times_two(5)
+10
 >>> 
 ```
 
-Yes, it can.
+Yes, it can. Now typing `times_two(3)` to the prompt does the same
+thing as typing `6` to the prompt.
+
+We can call the `times_two` function and use the result however we
+want, just like we can use built-in functions:
+
+```py
+>>> times_two(2) + times_two(3)     # calculate 4 + 6
+10
+>>> print('2 * 5 is', times_two(5))
+2 * 5 is 10
+>>> 
+```
 
 Note that **returning from a function ends it immediately**.
 
