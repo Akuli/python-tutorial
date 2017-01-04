@@ -35,7 +35,7 @@ def main():
         with open(markdownfile, 'r') as f1:
             with open(htmlfile, 'w') as f2:
                 md = f1.read()
-                md = md.replace('.md)', '.html)')
+                md = md.replace('.md', '.html')
                 html = mistune.markdown(md)
                 print(html, file=f2)
     os.rename(os.path.join('html', 'README.html'),
