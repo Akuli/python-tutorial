@@ -1,10 +1,9 @@
 # Dictionaries
 
-**TODO:** write the lists-and-tuples.md this tutorial links to.
-
 Now we know how [lists and tuples](lists-and-tuples.md) work and how
-to [for loop](loops.md#for-loops) over them. We also did an exercise
-with code like this:
+to [for loop](loops.md#for-loops) over them. If we make some kind of
+program that needs to keep track of people's usernames and passwords,
+we can use a list for that:
 
 ```py
 userlist = [
@@ -13,14 +12,14 @@ userlist = [
 ]
 ```
 
-Then to check if a username and password were correct we did
-`(username, password) in userlist`. Adding new users was also easy as
-appending to that list.
+Then to check if a username and password are correct we can do
+`(username, password) in userlist`. Or we can add a new user easily by
+appending a new `(username, password)` tuple to the userlist.
 
-What if we need to check if a username is in the users, but we don't
-need to know the password? `username in userlist` is always False
-because the user list consists of (username,password) pairs, so we need
-to for loop over the whole list:
+But what if we need to check if a username exists, but we don't know
+the password? `username in userlist` is always False because the user
+list consists of `(username, password)` pairs instead of just
+usernames, so we need to for loop over the whole userlist:
 
 ```py
 username_exists = False
@@ -32,7 +31,8 @@ if username_exists:
     # do something
 ```
 
-Getting a user's password also requires a similar loop:
+Or how about getting a user's password if we know the username? This
+also requires going through the whole list.
 
 ```py
 password = None
@@ -40,15 +40,15 @@ for user in userlist:
     if user[0] == username:
         password = user[1]
         break
-# make sure password isn't still None and do something with it
+# make sure password is not None and do something with it
 ```
 
-This works just fine because our user list only contains two users, but
-it would be slow if the userlist was bigger.
+As you can see, a list of `(username, password)` pairs is not an ideal
+way to store our usernames and passwords.
 
 ## What are dictionaries?
 
-A better way to store user information might be a dictionary.
+A better way to store user information might be a dictionary:
 
 ```py
 passwords = {
@@ -64,8 +64,8 @@ values so I named the variable `passwords`.
 
 There are a few big differences between dictionaries and lists of pairs:
 
-- Dictionaries are not ordered. There's **no guarantees** about which
-    order the username:password pairs appear in when we do something
+- Dictionaries are not ordered. There are **no guarantees** about which
+    order the `username: password` pairs appear in when we do something
     with the dictionary.
 - Checking if a key is in the dictionary is simple and fast. We don't
     need to for loop through the whole dictionary.
@@ -93,7 +93,10 @@ variable names and values are what our variables point to.
 ```
 
 So if you have trouble remembering how dictionaries work just compare
-them to variables.
+them to variables. A dictionary is a perfect way to store our usernames
+and passwords. We don't care about which order the users were added in,
+it's impossible to add multiple users with the same username and
+getting a user's password is easy.
 
 ## What can we do with dictionaries?
 
@@ -108,28 +111,36 @@ lists and dictionaries have a length.
 >>> 
 ```
 
-We can get a value of a key with `the_dict[key]`. Trying to get the
-value of a non-existing key gives us an error. We can also add new
-key:value pairs by doing `the_dict[key] = value`.
+We can get a value of a key with `the_dict[key]`. This is a lot easier
+and faster than for-looping over a list of pairs.
 
 ```py
 >>> passwords['me']
 'my password'
 >>> passwords['you']
 'your password'
+>>> 
+```
+
+Trying to get the value of a non-existing key gives us an error, but we
+can add new `key: value` pairs by doing `the_dict[key] = value`.
+
+```py
 >>> passwords['lol']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'lol'
 >>> passwords["lol"] = "lol's password"
+>>> passwords["lol"]
+"lol's password"
 >>> passwords
 {'lol': "lol's password", 'you': 'your password', 'me': 'my password'}
 >>> 
 ```
 
-For looping over a dictionary gets its keys, and checking if something's
-in the dictionary checks if the dictionary has a key like that. This can
-be confusing at first but you'll get used to this.
+For looping over a dictionary gets its keys, and checking if something
+is in the dictionary checks if the dictionary has a key like that. This
+can be confusing at first but you'll get used to this.
 
 ```py
 >>> 'me' in passwords
@@ -190,7 +201,101 @@ me: my password
 >>> 
 ```
 
-**TODO:** lists as keys vs tuples as keys.
+This is also useful for checking if the dictionary has a `key: value`
+pair.
+
+```py
+>>> ('me', 'my password') in passwords.items()  # correct username and password
+True
+>>> ('me', 'whatever') in passwords.items()    # wrong username or password
+False
+>>> 
+```
+
+## Limitations
+
+Sometimes it might be handy to use lists as dictionary keys, but it
+just doesn't work. I'm not going to explain why Python doesn't allow
+this because usually we don't need to worry about that.
+
+```py
+>>> stuff = {['a', 'b']: 'c', ['d', 'e']: 'f'}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> 
+```
+
+On the other hand, tuples work just fine:
+
+```py
+>>> stuff = {('a', 'b'): 'c', ('d', 'e'): 'f'}
+>>> stuff
+{('a', 'b'): 'c', ('d', 'e'): 'f'}
+>>> 
+```
+
+The values of a dictionary can be anything.
+
+```py
+>>> stuff = {'a': [1, 2, 3], 'b': [4, 5, 6]}
+>>> stuff
+{'a': [1, 2, 3], 'b': [4, 5, 6]}
+>>> 
+```
+
+## Summary
+
+- Dictionaries consist of `key: value` pairs.
+- Variables are stored in a dictionary with their names as keys, so
+    dictionaries behave a lot like variables:
+    - Dictionaries are not ordered.
+    - Setting or getting the value of a key is simple and fast.
+    - Dictionaries can't contain the same key more than once.
+- For-looping over a dictionary loops over its keys, and checking if
+    something is in the dictionary checks if the dictionary has a key
+    like that. The `values()` and `items()` methods return things that
+    behave like lists of values or `(key, value)` pairs instead.
+
+## Examples
+
+This program counts how many times words appear in a sentence.
+`sentence.split()` creates a list of words in the sentence, see
+`help(str.split)` for more info.
+
+```py
+sentence = input("Enter a sentence: ")
+
+counts = {}     # {word: count, ...}
+for word in sentence.split():
+    if word in counts:
+        # we have seen this word before
+        counts[word] += 1
+    else:
+        # this is the first time this word occurs
+        counts[word] = 1
+
+print()     # display an empty line
+for word, count in counts.items():
+    if count == 1:
+        # "1 times" looks weird
+        print(word, "appears once in the sentence")
+    else:
+        print(word, "appears", count, "times in the sentence")
+```
+
+Running the program might look like this:
+
+    Enter a sentence: this is a test and this is quite long because this is a test
+    
+    is appears 3 times in the sentence
+    long appears once in the sentence
+    a appears 2 times in the sentence
+    because appears once in the sentence
+    this appears 3 times in the sentence
+    quite appears once in the sentence
+    and appears once in the sentence
+    test appears 2 times in the sentence
 
 ***
 
