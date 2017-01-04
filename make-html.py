@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""Create HTML files of the tutorial."""
+
 import glob
 import shutil
 import os
@@ -7,8 +10,10 @@ import webbrowser
 try:
     import mistune
 except ImportError:
-    print("mistune isn't installed. You can install it like this:\n\n",
-          "   thispython -m pip install mistune", file=sys.stderr)
+    print("mistune isn't installed. You can install it like this:")
+    print()
+    print(">>> import pip")
+    print(">>> pip.main(['install', '--user', 'mistune'])")
     sys.exit(1)
 
 
