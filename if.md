@@ -66,7 +66,7 @@ SyntaxError: invalid syntax
 >>> 
 ```
 
-Functions like `print` need `()` after their name to work. But `if` is
+**Functions** like `print` need `()` after their name to work. But `if` is
 a keyword, not a function, so it doesn't need `()`. Python has separate
 functions and keywords because it's possible to create custom functions,
 but it's not possible to create custom keywords. That's why keywords are
@@ -286,52 +286,47 @@ else:
 
 ## Exercises
 
-1. Write a program into a file that asks the user to write a word and
+1. This program contains several problems. Copy-paste it to a file,
+    then try to run it, fix the errors you got, try to run it again and
+    keep going until it works.
+
+    ```py
+    print(Hello!)
+    something == input('Enter something: )
+    print('You entered:' something)
+    ```
+
+2. Fix this program the same way:
+
+    ```py
+    print('Hello!')
+    something = input("Enter something: ")
+    if something = 'hello':
+        print("Hello for you too!")
+    elif something = 'hi'
+        print('Hi there!')
+    else:
+        print("I don't know what," something, "means.")
+    ```
+
+3. Write a program into a file that asks the user to write a word and
     then prints that word 1000 times. For example, if the user enters
-    `hi` the program would reply `hihihihi...`.
+    `hi` the program would reply `hihihihi` and so on.
 
-2. Add spaces between the words, so the output is like `hi hi hi ...`.
+4. Add spaces between the words, so the output is like `hi hi hi` and
+    so on.
 
-3. Make something that asks the user to enter two words, and prints
+5. Make something that asks the user to enter two words, and prints
     1000 of each with spaces in between. For example, if the user
     enters `hello` and `hi` the program would print
-    `hello hi hello hi hello hi...`.
+    `hello hi hello hi hello hi` and so on.
 
-4. Make a program that asks for a password and prints `Welcome!`,
+6. Make a program that asks for a password and prints `Welcome!`,
     `Access denied` or `You didn't enter anything` depending on whether
     the user entered the correct password, a wrong password, or nothing
     at all by pressing Enter without typing anything.
 
-5. Make a program that asks for username and password and checks them.
-    Make users "foo" and "bar" with passwords "biz" and "baz".
-
-    Example output:
-
-    ```
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: foo
-    Enter your password: biz
-    Welcome foo!
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: bar
-    Enter your password: baz
-    Welcome bar!
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: spam
-    Enter your password: eggs
-    Wrong username.
-    >>> ================================ RESTART ================================
-    >>> 
-    Enter your username: foo
-    Enter your password: lol
-    Wrong password!
-    >>> 
-    ```
-
-The answers are [here](answers.md).
+The answers are [here](answers.md#if-else-and-elif).
 
 ***
 
