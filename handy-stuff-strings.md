@@ -152,7 +152,7 @@ Python's strings have many useful methods.
 [The official documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
 covers them all, but I'm going to just show some of the most commonly
 used ones briefly. Python also comes with built-in documentation about
-the string methods and we can run `help(str)` to read it. You can also
+the string methods and we can run `help(str)` to read it. We can also
 get help about one string method at a time, like `help(str.upper)`.
 
 Again, nothing can modify strings in-place. Most string methods
