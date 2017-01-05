@@ -1,6 +1,8 @@
 # Answers
 
-These are answers for exercises in the chapters. In programming, there's always more than one way to do things, so if your solution wasn't exactly like mine it's not necessarily wrong. Some Python users say that there should be only one right way, but that goal will never be fully reached.
+These are my answers for exercises in the chapters. If your solution
+isn't exactly like mine but it works just fine it's ok, and you can
+[ask me](contact-me.md) why I didn't do it like you did it.
 
 ## ThinkPython: The way of the program
 
@@ -8,16 +10,34 @@ These are answers for exercises in the chapters. In programming, there's always 
 2. With + we get an error, and with * the string is repeated multiple times.
 3. Python calculates the result and echoes it.
 
-## Using if, else and elif
+## If, else and elif
 
-1. Just ask the word and print word * 1000.
+1. Problems and solutions:
+
+    - The first line should be `print("Hello!")` or `print('Hello!')`,
+        not `print(Hello!)`. `Hello!` is a piece of text, so we need to
+        tell Python that it's a string by putting quotes around it.
+    - The second line will create an error message that says that
+        there's no variable called `something`. But we are trying to
+        create it here, so we need `=` instead of `==`. `=` is
+        assigning, `==` is comparing.
+    - The last line should have a comma between the arguments, like
+        `print('You entered:', something)`.
+
+2. The broken code has mostly the same issues as exercise 1. On the
+    last line the comma is on the wrong side. **`"bla bla,"` is a
+    string that contains a comma, but `"bla bla",` is a string and a
+    separate comma.** In this exercise, the last line should be
+    `print("I don't know what", something, "means.")`
+
+3. We can simply ask the word with input and print `word * 1000`.
 
     ```py
     word = input("Enter a word: ")
     print(word * 1000)
     ```
 
-2. Add a space to the word before printing.
+4. We can add a space to the word before we print it.
 
     ```py
     word = input("Enter a word: ")
@@ -43,7 +63,7 @@ These are answers for exercises in the chapters. In programming, there's always 
     print(yes_space * 999 + no_space)
     ```
 
-3. Like this:
+5. Like this:
 
     ```py
     first = input("Enter a word: ")
@@ -52,7 +72,7 @@ These are answers for exercises in the chapters. In programming, there's always 
     print(words * 1000)
     ```
 
-4. You can compare the word against an empty string (`""` or `''`) to
+6. We can compare the word against an empty string (`""` or `''`) to
     check if it's empty. In this example, the password is "secret".
 
     ```py
@@ -66,26 +86,8 @@ These are answers for exercises in the chapters. In programming, there's always 
         print("Access denied.")
     ```
 
-5. Simply check the username first, then the password in indented
-    blocks of code.
-
-    ```py
-    username = input("Enter your username: ")
-    password = input("Enter your password: ")
-
-    if username == "foo":
-        if password == "biz":
-            print("Welcome foo!")
-        else:
-            print("Wrong password!")
-    elif username == "bar":
-        if password == "baz":
-            print("Welcome bar!")
-        else:
-            print("Wrong password!")
-    else:
-        print("Wrong username.")
-    ```
+    This is not a good way to ask a password from the user because the
+    password isn't hidden in any way, but this is just an example.
 
 ## Loops
 
