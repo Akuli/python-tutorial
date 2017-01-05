@@ -148,11 +148,12 @@ Indexing with negative values works like this:
 
 ## String methods
 
-Python's strings have many useful methods. [The official documentation]
-(https://docs.python.org/3/library/stdtypes.html#string-methods) covers
-them all, but I'm going to just show some of the most commonly used ones
-briefly. Python also comes with built-in documentation about the string
-methods and we can run `help(str)` to read it.
+Python's strings have many useful methods.
+[The official documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
+covers them all, but I'm going to just show some of the most commonly
+used ones briefly. Python also comes with built-in documentation about
+the string methods and we can run `help(str)` to read it. You can also
+get help about one string method at a time, like `help(str.upper)`.
 
 Again, nothing can modify strings in-place. Most string methods
 return a new string, but things like `our_string = our_string.upper()`
@@ -179,8 +180,8 @@ True
 False
 >>> our_string.replace('World', 'there')
 'Hello there!'
->>> our_string.replace('l', 'ł', 1)   # only replace one l
-'Hełlo World!'
+>>> our_string.replace('o', '@', 1)   # only replace one o
+'Hell@ World!'
 >>> '  hello 123  '.lstrip()    # left strip
 'hello 123  '
 >>> '  hello 123  '.rstrip()    # right strip
