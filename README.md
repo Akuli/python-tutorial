@@ -1,9 +1,8 @@
 # Python programming tutorial
 
-[Python](https://en.wikipedia.org/wiki/Python_\(programming_language\))
-is a high-level, interactive and object-oriented programming language.
-Its simple syntax makes it easy to learn and fast to work with, so it's
-a great choice for a first programming language.
+Python is a high-level programming language. That means that it's easy
+to learn and work with, so it's a great choice for a first programming
+language.
 
 No tutorial is good for everyone. This one is aimed at people with no
 programming experience at all or very little programming experience. If
