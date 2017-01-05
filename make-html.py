@@ -215,7 +215,7 @@ def main():
     print("Ready! The files are in the html directory.")
     print("Go to html and double-click index.html to read the tutorial.")
     print()
-    if askyesno("Do you want to view the tutorial now?"):
+    if askyesno("Do you want to view the tutorial now?", default=False):
         print("Opening the tutorial...")
         webbrowser.open(os.path.join('html', 'index.html'))
 
