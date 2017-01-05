@@ -489,70 +489,42 @@ print("Your favorite color is %s!" % choice)
 
 ## Exercises
 
-**TODO:** more exercises.
+**There are many things to learn about functions, and I don't expect
+you to learn everything at once.** However, there are also many free
+exercises about defining functions you can do.
 
-**There is a lot to learn about functions, and I don't expect you to
-learn everything at once.** However, there's also lots of free Python
-exercises about defining functions you can do. Do many of them and
-spend time with them until you're familiar with defining functions.
+1. What's wrong with this code?
 
-1. The box printing function doesn't really print a box, it prints a
-    message between two lines.
+    ```py
+    def ask_name():
+        name = input("Enter your name: ")
 
-        ************
-        Hello World!
-        ************
+    ask_name()
+    print("Your name is", name)
+    ```
 
-    Modify it to print an actual box:
+2. How about this code?
 
-        ****************
-        * Hello World! *
-        ****************
+    ```py
+    def get_greeting():
+        return "Hello World!"
 
-2. Python comes with many built-in functions. Some of the simplest ones
-    are abs, all and any. They can be used like this:
+    print(get_greeting)
+    ```
 
-    - abs returns the absolute value of its only argument.
+3. Why does this print None after greeting the world?
 
-        ```py
-        >>> abs(1)
-        1
-        >>> abs(-1)
-        1
-        >>> 
-        ```
+    ```py
+    def greet(target):
+        print("Hello", target)
 
-    - any returns True if one or more of the elements of a list is true,
-        and False otherwise.
+    print(greet("World"))
+    ```
 
-        ```py
-        >>> any([True, False, True])
-        True
-        >>> any([False, False, False])
-        False
-        >>> 
-        ```
+4. Find more exercises about defining functions online.
 
-    - all returns True if all elements of a list are true, and False
-        otherwise.
-
-        ```py
-        >>> all([True, True, True])
-        True
-        >>> all([True, False, True])
-        False
-        >>> 
-        ```
-
-    Define functions `my_abs`, `my_all` and `my_any` that work the same
-    way without using the built-in functions. Then run the program with
-    IDLE, or with `py -i file.py` on Windows or `python3 -i file.py` on
-    other operating systems. Try the above examples with your
-    functions.
-
-2. Find more exercises about defining functions online.
-
-Answers for the first and second exercise are [here](answers.md).
+Answers for the first, second and third exercise are
+[here](answers.md#defining-functions).
 
 ***
 

@@ -251,39 +251,58 @@ These are answers for exercises in the chapters. In programming, there's always 
 
 ## Defining functions
 
-1. Use `-value` (it works just like `-1`) to get the negative in
-    the abs function, and for loops in the other two functions.
+1. The problem with the first example is that name is a local variable.
+    I explained how to fix this in [the output section](defining-functions.md#output):
 
     ```py
-    def my_abs(value):
-        if value < 0:
-            return -value
-        # actually, this else is useless because returning ends the
-        # function anyway
-        else:
-            return value
+    def ask_name():
+        name = input("Enter your name: ")
+        return name
+    
+    print("Your name is", ask_name())
 
-    def my_any(a_list):  # don't call this "list", see summary in the Lists chapter
-        for item in a_list:
-            if item:
-                return True    # ends the function
-        return False
+2. If you run the next example, you get something like this:
 
-    def my_all(a_list):
-        for item in a_list:
-            if not item:
-                return False
-        return True
+        <function get_greeting at 0xb73a0a04>
+
+    The problem is that we print the actual `get_greeting` function,
+    but we need to **call** it like `get_greeting()`:
+
+    ```py
+    def get_greeting():
+        return "Hello World!"
+    
+    print(get_greeting())
     ```
 
-2. Like this:
+3. See [the return or print section](defining-functions.html#return-or-print).
+
+    The greet function prints a greeting.
 
     ```py
-    def print_box(message, character='*'):
-        number_of_characters = len(message) + 4
-        print(character * number_of_characters)
-        print(character, message, character)
-        print(character * number_of_characters)
+    >>> greet("World")
+    Hello World
+    >>> 
+    ```
+
+    But it also returns None because we don't tell it to return anything else.
+
+    ```py
+    >>> return_value = greet("World")
+    Hello World
+    >>> print(return_value)
+    None
+    >>> 
+    ```
+
+    This code from the exercise does the same thing as the code above
+    does, but without a temporary `return_value` variable:
+
+    ```py
+    >>> print(greet("World"))
+    Hello World
+    None
+    >>> 
     ```
 
 ***
