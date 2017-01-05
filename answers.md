@@ -89,6 +89,69 @@ isn't exactly like mine but it works just fine it's ok, and you can
     This is not a good way to ask a password from the user because the
     password isn't hidden in any way, but this is just an example.
 
+## Handy stuff: Strings
+
+1. The program is not like you might expect it to be. It actually works
+    just fine if we run it, but there's the problem. The last line is
+    really long and it's hard to see what it does.
+
+    The solution is string formatting. At the time of writing this, I
+    recommend replacing the last line with one of these:
+
+    ```py
+    print("You entered %s, %s, %s and %s." % (word1, word2, word3, word4))
+    print("You entered {}, {}, {} and {}.".format(word1, word2, word3, word4))
+    ```
+
+    In the future when most people will have Python 3.6 or newer, you
+    can also use this:
+
+    ```py
+    print(f"You entered {word1}, {word2}, {word3} and {word4}.")
+    ```
+
+2. If we have a look at `help(str.upper)` it looks like this:
+
+        S.upper() -> str
+        
+        Return a copy of S converted to uppercase.
+
+    We have two problems. First of all, the broken code uses
+    `message.upper` instead of `message.upper()`. It also expects the
+    message to magically make itself uppercased, but strings can't be
+    changed in-place so it doesn't work.
+
+    The solution is to do `message.upper()` and save the value we got
+    from that to a variable:
+
+    ```py
+    message = input("What do you want me to say? ")
+    uppermessage = message.upper()
+    print(uppermessage, "!!!")
+    print(uppermessage, "!!!")
+    print(uppermessage, "!!!")
+    ```
+
+    Or we can reuse the same variable name:
+
+    ```py
+    message = input("What do you want me to say? ")
+    message = message.upper()
+    print(message, "!!!")
+    print(message, "!!!")
+    print(message, "!!!")
+    ```
+
+    Or we can convert the message to uppercase right away on the first
+    line:
+
+    ```py
+    message = input("What do you want me to say? ").upper()
+    print(message, "!!!")
+    print(message, "!!!")
+    print(message, "!!!")
+    ```
+
 ## Loops
 
 1. For loop over the users, each user is a list that contains a
@@ -262,6 +325,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
         return name
     
     print("Your name is", ask_name())
+    ```
 
 2. If you run the next example, you get something like this:
 

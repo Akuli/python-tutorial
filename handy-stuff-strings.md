@@ -401,6 +401,29 @@ ValueError: could not convert string to float: 'hello'
 - We can use `str`, `int` and `float` to convert values to different
 	types.
 
+## Exercises
+
+1. Fix this program.
+
+    ```py
+    print("Hello!")
+    word1 = input("Enter something: ")
+    word2 = input("Enter another thing: ")
+    word3 = input("Enter a third thing: ")
+    word4 = input("And yet another thing: ")
+    print("You entered " + word1 + ", " + word2 + ", " + word3 + " and " + word4 + ".")
+    ```
+
+2. This program is supposed to say something loudly. Fix it.
+
+    ```py
+    message = input("What do you want me to say? ")
+    message.upper
+    print(message, "!!!")
+    print(message, "!!!")
+    print(message, "!!!")
+    ```
+
 ***
 
 You may use this tutorial freely at your own risk. See
