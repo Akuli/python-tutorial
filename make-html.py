@@ -54,6 +54,19 @@ except ImportError:
 
 LINK_REGEX = r'\[.*\]\((.*\.md)\)'
 
+HTML_TEMPLATE = """\
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+  </head>
+  <body>
+    {body}
+  </body>
+</html>
+"""
+
 
 def askyesno(question, default=True):
     """Ask a yes/no question and return True or False.
@@ -89,6 +102,7 @@ class TutorialRenderer(mistune.Renderer):
 
     def __init__(self):
         super().__init__()
+        self.title = None   # will be set by header()
         self._headercounts = {}
 
     def _get_header_link(self, title):
@@ -125,6 +139,8 @@ class TutorialRenderer(mistune.Renderer):
     def header(self, text, level, raw):
         """Create a header that is also a link and a # link target."""
         # "# raw"
+        if level == 1:
+            self.title = text
         target = self._get_header_link(raw)
         content = super().header(text, level, raw)
         return '<a name="{0}" href="#{0}">{1}</a>'.format(target, content)
@@ -201,11 +217,13 @@ def main():
     for markdownfile in filelist:
         htmlfile = os.path.join('html', fix_filename(markdownfile))
         print(' ', markdownfile, '->', htmlfile)
-        with open(markdownfile, 'r') as f1:
-            with open(htmlfile, 'w') as f2:
-                md = f1.read()
-                html = mistune.markdown(md, renderer=TutorialRenderer())
-                print(html, file=f2)
+        with open(markdownfile, 'r') as f:
+            markdown = f.read()
+        renderer = TutorialRenderer()
+        body = mistune.markdown(markdown, renderer=renderer)
+        html = HTML_TEMPLATE.format(title=renderer.title, body=body)
+        with open(htmlfile, 'w') as f:
+            print(html, file=f)
 
     print("Copying other files...")
     shutil.copytree('images', os.path.join('html', 'images'))
