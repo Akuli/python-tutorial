@@ -73,12 +73,12 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```
 
 6. We can compare the word against an empty string (`""` or `''`) to
-    check if it's empty. In this example, the password is "secret".
+    check if it's empty. In this example, the password is "s3cr3t".
 
     ```py
     word = input("Enter your password: ")
 
-    if word == "secret":
+    if word == "s3cr3t":
         print("Welcome!")
     elif word == "":
         print("You didn't enter anything.")
