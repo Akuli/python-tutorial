@@ -390,8 +390,8 @@ ValueError: could not convert string to float: 'hello'
 
     ![Indexing](images/indexing3.png)
 
-- Python has many string methods. Use [the documentation]
-    (https://docs.python.org/3/library/stdtypes.html#string-methods)
+- Python has many string methods. Use
+    [the documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
     or `help(str)` when you don't rememeber something about them.
 - String formatting means adding other things to the middle of a string.
     There are multiple ways to do this in Python. You should know how to
