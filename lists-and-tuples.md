@@ -266,6 +266,18 @@ used in places like `(1 + 2) * 3`.
 >>> 
 ```
 
+It's also possible to create tuples by just separating things with
+commas and adding no parentheses. Personally I don't like this feature,
+but some people like to do it this way.
+
+```py
+>>> 1, 2, 3
+(1, 2, 3)
+>>> 'hello',
+('hello',)
+>>> 
+```
+
 Tuples don't have methods like append, extend and remove
 because they can't change themselves in-place.
 
@@ -309,6 +321,29 @@ if name in namelist:
 else:
     print("Sorry, I don't know who you are :(")
 ```
+
+## Exercises
+
+1. Fix this program.
+
+    ```py
+    print("Hello!")
+    name = input("Enter your name: "),
+    print("Your name is " + name + ".")
+    ```
+
+2. Fix this program.
+
+    ```py
+    namelist = ['wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
+    namelist = namelist.extend('theelous3')
+    if input("Enter your name: ") in namelist:
+        print("I know you!")
+    else:
+        print("I don't know you.")
+    ```
+
+The answers are [here](answers.md#lists-and-tuples).
 
 ***
 

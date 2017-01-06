@@ -152,6 +152,68 @@ isn't exactly like mine but it works just fine it's ok, and you can
     print(message, "!!!")
     ```
 
+## Lists and tuples
+
+1. When we run the program we get a weird error:
+
+        Hello!
+        Enter your name: my name
+        Traceback (most recent call last):
+          File "program.py", line 3, in <module>
+            print("Your name is " + name + ".")
+        TypeError: Can't convert 'tuple' object to str implicitly
+
+    So Python is trying to convert a tuple to a string. But
+    `"Your name is "` and `"."` are strings, so maybe `name` is a
+    tuple? Let's change the last line to just `print(name)` so our
+    program looks like this:
+
+    ```py
+    print("Hello!")
+    name = input("Enter your name: "),
+    print(name)
+    ```
+
+    Let's run it.
+
+        Hello!
+        Enter your name: my name
+        ('my name',)
+
+    `name` is indeed a tuple! The problem is the second line. Look
+    carefully, there's a comma after `input("Enter your name: ")`.
+    Python created a tuple automatically, but that's not what we
+    wanted. If we remove the comma, everything works just fine.
+
+2. Again, the code gives us a weird error message.
+
+        Enter your name: my name
+        Traceback (most recent call last):
+          File "program.py", line 3, in <module>
+            if input("Enter your name: ") in namelist:
+        TypeError: argument of type 'NoneType' is not iterable
+
+    Now we need to remember that when the error messages talk about
+    `NoneType` [they always mean None](variables.md#none). So
+    `namelist` seems to be None. Let's make the program a bit simpler
+    for working on the namelist:
+
+    ```py
+    namelist = ['wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
+    namelist = namelist.extend('theelous3')
+    print(namelist)
+    ```
+
+    Now fixing the namelist is easier, so I'll just go through the
+    problems and solutions:
+
+    - `namelist` is None. It should be `namelist.extend('theelous3')`,
+        not `namelist = namelist.extend('theelous3')`.
+    - Now the namelist is like `['wub_wub', ..., 't', 'h', 'e', 'e', ...]`.
+        Python treated `'theelous3'` like a list so it added each of its
+        characters to `namelist`. We can use `namelist.append('theelous3')`
+        or `namelist.extend(['theelous3'])` instead to solve this problem.
+
 ## Loops
 
 1. For loop over the users, each user is a list that contains a
