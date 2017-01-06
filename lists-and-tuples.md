@@ -98,9 +98,9 @@ False
 
 Lists have a few [useful
 methods](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
-Some of the most commonly used ones are append, extend and
-remove. append adds an item to the end of a list, extend adds
-multiple items from another list and remove removes an item.
+Some of the most commonly used ones are append, extend and remove.
+`append` adds an item to the end of a list, `extend` adds
+multiple items from another list and `remove` removes an item.
 
 ```py
 >>> names
