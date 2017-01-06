@@ -351,7 +351,7 @@ need to:
 
 ## Output
 
-The built-in input function [returns a value](https://github.com/Akuli/python-tutorial/blob/master/using-functions.md#return-values).
+The built-in input function [returns a value](using-functions.md#return-values).
 Can our function return a value also?
 
 ```py
