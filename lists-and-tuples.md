@@ -186,7 +186,7 @@ behave like this:
 
 This can be confusing at first, but it's actually easy to
 explain. The problem with this code example is the `b = a`
-line. If we draw a diagram of this example it looks like this:
+line. If we draw a picture of the variables it looks like this:
 
 ![Same list.](images/samelist.png)
 
@@ -218,6 +218,8 @@ If we need **a new list with similar content** we can use the
 >>> b is a
 False
 >>> b.append(4)
+>>> b
+[1, 2, 3, 4]
 >>> a
 [1, 2, 3]
 >>> 
