@@ -451,12 +451,8 @@ try:
 except OSError:
     print("Cannot read '%s'!" % filename, file=sys.stderr)
     if askyesno("Would you like to create a default greeting file?"):
-        try:
-            with open(filename, 'w') as f:
-                print(default_greeting, file=f)
-        except OSError:
-            print("Cannot create '%s' :(" % filename, file=sys.stderr)
-            sys.exit(1)  # time to give up
+        with open(filename, 'w') as f:
+            print(default_greeting, file=f)
         greet()
 ```
 
