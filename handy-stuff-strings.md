@@ -256,11 +256,11 @@ our problem:
     >>> 
     ```
 
-- `%s`-formatting, also known as printf-formatting and old-style
-    formatting. This has less features than `.format()`-formatting, but
-    `'Hello %s.' % name` is shorter and faster to type than
-    `'Hello {}.'.format(name)`. I like to use printf-formatting for simple
-    things and `.format` when I need more powerful features.
+- `%s`-formatting, also known as old-style formatting. This has less
+    features than `.format()`-formatting, but `'Hello %s.' % name` is
+    shorter and faster to type than `'Hello {}.'.format(name)`. I like
+    to use `%s` formatting for simple things and `.format` when I need
+    more powerful features.
 
     ```py
     >>> "Hello %s." % name
@@ -424,6 +424,8 @@ ValueError: could not convert string to float: 'hello'
     print(message, "!!!")
     print(message, "!!!")
     ```
+
+The answers are [here](answers.md#handy-stuff-strings).
 
 ***
 
