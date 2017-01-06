@@ -311,15 +311,14 @@ else:
 
 3. Write a program into a file that asks the user to write a word and
     then prints that word 1000 times. For example, if the user enters
-    `hi` the program would reply `hihihihi` and so on.
+    `hi` the program would reply `hihihihihihihihi` ...
 
-4. Add spaces between the words, so the output is like `hi hi hi` and
-    so on.
+4. Add spaces between the words, so the output is like `hi hi hi hi` ...
 
 5. Make something that asks the user to enter two words, and prints
     1000 of each with spaces in between. For example, if the user
     enters `hello` and `hi` the program would print
-    `hello hi hello hi hello hi` and so on.
+    `hello hi hello hi hello hi hello hi hello hi` ...
 
 6. Make a program that asks for a password and prints `Welcome!`,
     `Access denied` or `You didn't enter anything` depending on whether
