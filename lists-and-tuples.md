@@ -290,8 +290,8 @@ AttributeError: 'tuple' object has no attribute 'append'
 >>> 
 ```
 
-So, why the heck would we use tuples instead of lists? There's
-a few cases when we don't want mutability, but there's also
+So, why the heck would we use tuples instead of lists? There are
+some cases when we don't want mutability, but there are also
 cases when Python programmers just like to use tuples. If you
 want to know more about this you can read [Ned Batchelder's blog
 post about this](http://nedbatchelder.com/blog/201608/lists_vs_tuples.html).
