@@ -96,7 +96,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 ## Handy stuff: Strings
 
 1. The program is not like you might expect it to be. It actually works
-    just fine if we run it, but there's the problem. The last line is
+    just fine if we run it, but there's a problem. The last line is
     really long and it's hard to see what it does.
 
     The solution is string formatting. At the time of writing this, I
