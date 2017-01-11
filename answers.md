@@ -24,11 +24,15 @@ isn't exactly like mine but it works just fine it's ok, and you can
     - The last line should have a comma between the arguments, like
         `print('You entered:', something)`.
 
-2. The broken code has mostly the same issues as exercise 1. On the
-    last line the comma is on the wrong side. `"bla bla,"` is a string
-    that **contains** a comma, but `"bla bla",` is a string and a
-    **separate** comma. In this exercise, the last line should be
-    `print("I don't know what", something, "means.")`
+2. The broken code has mostly the same issues as exercise 1. Here are
+    the problems that excercise 1 doesn't have:
+
+    - The elif line is missing a `:` at the end.
+    - On the last line the comma is on the wrong side. `"bla bla,"` is
+        a string that **contains** a comma, but `"bla bla",` is a
+        string and a **separate** comma. In this exercise, the last
+        line should be
+        `print("I don't know what", something, "means.")`
 
 3. We can simply ask the word with input and print `word * 1000`.
 
