@@ -61,7 +61,8 @@ techniques just because you know how to use them.** Prefer the simple
 techniques from the Basics part instead when possible. Simple is better 
 than complex.
 
-1. [Iterables and iterators](advanced/iterators.md)
+1. [Magic methods](advanced/magicmethods.md)
+2. [Iterables and iterators](advanced/iterators.md)
 
 ### Other things this tutorial comes with
 
