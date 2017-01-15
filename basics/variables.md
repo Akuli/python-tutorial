@@ -16,7 +16,7 @@ Variables are easy to understand. They simply **point to values**.
 
 Let's draw a diagram of these variables.
 
-![Variable diagram](images/variables1.png)
+![Variable diagram](../images/variables1.png)
 
 We can also change the value of a variable after setting it.
 
@@ -29,7 +29,7 @@ We can also change the value of a variable after setting it.
 
 So now our diagram looks like this:
 
-![Variable diagram](images/variables2.png)
+![Variable diagram](../images/variables2.png)
 
 Setting a variable to another variable gets the value of the other
 variable and sets the first variable to point to that value.
@@ -273,7 +273,7 @@ what you are doing. We'll learn more about it later.
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](the-way-of-the-program.md) | [Next](using-functions.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

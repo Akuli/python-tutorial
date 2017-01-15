@@ -46,7 +46,7 @@ OSX.
 You'll see a bunch of files and a few directories in the folder
 that opens:
 
-![My Python's modules.](images/modules.png)
+![My Python's modules.](../images/modules.png)
 
 All of these `.py` files can be imported like we just imported
 `random.py`. In random.py, there's a like like `randint = something`,
@@ -488,7 +488,7 @@ section at the bottom.
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](exceptions.md) | [Next](classes.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

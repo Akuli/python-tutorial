@@ -156,7 +156,7 @@ NameError: name 'd' is not defined
 
 Let's draw a diagram of these variables:
 
-![Locals and globals.](images/locals-and-globals.png)
+![Locals and globals.](../images/locals-and-globals.png)
 
 However, modifying a global variable in-place from a function is easy.
 
@@ -529,7 +529,7 @@ Answers for the first, second and third exercise are
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](dicts.md) | [Next](what-is-true.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

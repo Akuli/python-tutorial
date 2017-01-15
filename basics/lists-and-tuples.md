@@ -36,7 +36,7 @@ names = ['wub_wub', 'theelous3', 'Nitori', 'RubyPinch', 'go|dfish']
 Here the `names` variable points to a list, which then points to
 strings, like this:
 
-![List of names.](images/people.png)
+![List of names.](../images/people.png)
 
 ## What can we do with lists?
 
@@ -188,7 +188,7 @@ This can be confusing at first, but it's actually easy to
 explain. The problem with this code example is the `b = a`
 line. If we draw a picture of the variables it looks like this:
 
-![Same list.](images/samelist.png)
+![Same list.](../images/samelist.png)
 
 This is when the `is` keyword comes in. It can be used to
 check if two variables point to the **same** thing.
@@ -228,7 +228,7 @@ False
 If we draw a picture of our variables in this example it looks
 like this:
 
-![Different lists.](images/differentlist.png)
+![Different lists.](../images/differentlist.png)
 
 If you're using Python 3.2 or older you need to do `a[:]` instead
 of `a.copy()`. `a[:]` is a slice of the whole list, just like
@@ -348,7 +348,7 @@ The answers are [here](answers.md#lists-and-tuples).
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](handy-stuff-strings.md) | [Next](loops.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

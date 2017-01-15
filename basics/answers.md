@@ -436,6 +436,6 @@ isn't exactly like mine but it works just fine it's ok, and you can
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#list-of-contents)
