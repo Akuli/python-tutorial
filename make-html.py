@@ -91,7 +91,7 @@ def askyesno(question, default=True):
 
 
 def mkdir_open(filename, mode):
-    """Like built-in open(), but make a directories as needed."""
+    """Like built-in open(), but make a directory as needed."""
     directory = os.path.dirname(filename)
     os.makedirs(directory, exist_ok=True)
     return open(filename, mode)
