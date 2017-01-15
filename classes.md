@@ -1,1 +1,1 @@
-This file has been moved [here](basics/files.md).
+This file has been moved [here](basics/classes.md).
