@@ -28,12 +28,13 @@
 
 """Update ends of markdown files."""
 
-import os
 import re
+
+import common
 
 
 # Markdown and HTML links use / as a path separator so there's no need 
-# for os.path, but we do need to replace it with os.sep when opening the 
+# for os.path, but we do need to replace / with os.sep when opening the 
 # files.
 BASIC_END = """\
 You may use this tutorial freely at your own risk. See
@@ -51,8 +52,7 @@ You may use this tutorial freely at your own risk. See
 """
 
 
-LINK_REGEX = r'\[.*\]\((.*\.md)\)'
-CHAPTER_LINK_REGEX = r'^\d+\. ' + LINK_REGEX + r'$'
+CHAPTER_LINK_REGEX = r'^\d+\. \[.*\]\((.*\.md)\)$'
 
 
 def get_filenames():
@@ -80,11 +80,7 @@ def get_filenames():
                     # it's a link to a chapter
                     chapters.append(match.group(1))
 
-    # now let's find other links to markdown files
-    with open('README.md', 'r') as f:
-        all_files = re.findall(LINK_REGEX, f.read())
-    others = set(all_files) - set(chapters)
-
+    others = set(common.get_markdown_files()) - set(chapters)
     return chapters, others
 
 
@@ -156,7 +152,7 @@ def main():
 
     print("Other files:")
     for filename in other_files:
-        end = BASIC_END.format(toplevel='../' * filename.count('/'))
+        end = BASIC_END.format(toplevel='../'*filename.count('/'))
         update_end(filename, end)
 
 

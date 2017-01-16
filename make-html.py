@@ -29,11 +29,12 @@
 """Create HTML files of the tutorial."""
 
 import os
-import re
 import shutil
 import string
 import sys
 import webbrowser
+
+import common
 
 try:
     import mistune
@@ -52,8 +53,6 @@ except ImportError:
     pygments = None
 
 
-LINK_REGEX = r'\[.*\]\((.*\.md)\)'
-
 HTML_TEMPLATE = """\
 <!DOCTYPE html>
 <html>
@@ -68,30 +67,8 @@ HTML_TEMPLATE = """\
 """
 
 
-def askyesno(question, default=True):
-    """Ask a yes/no question and return True or False.
-
-    The default answer is yes if default is True and no if default is
-    False.
-    """
-    if default:
-        # yes by default
-        question += ' [Y/n] '
-    else:
-        # no by default
-        question += ' [y/N] '
-    while True:
-        result = input(question).upper().strip()
-        if result == 'Y':
-            return True
-        if result == 'N':
-            return False
-        if not result:
-            return default
-
-
 def mkdir_open(filename, mode):
-    """Like built-in open(), but make a directory as needed."""
+    """Like open(), but make directories as needed."""
     directory = os.path.dirname(filename)
     os.makedirs(directory, exist_ok=True)
     return open(filename, mode)
@@ -204,12 +181,12 @@ def main():
         print()
         print("You can also continue without Pygments, but the code examples")
         print("will not be in color.")
-        if not askyesno("Continue without pygments?"):
+        if not common.askyesno("Continue without pygments?"):
             print("Interrupt.")
             return
 
     if os.path.exists('html'):
-        if not askyesno("html exists. Do you want to remove it?"):
+        if not common.askyesno("html exists. Do you want to remove it?"):
             print("Interrupt.")
             return
         if os.path.isdir('html'):
@@ -217,12 +194,8 @@ def main():
         else:
             os.remove('html')
 
-    print("Getting a list of files to generate...")
-    with open('README.md', 'r') as f:
-        filelist = re.findall(LINK_REGEX, f.read()) + ['README.md']
-
     print("Generating HTML files...")
-    for markdownfile in filelist:
+    for markdownfile in common.get_markdown_files():
         htmlfile = os.path.join('html', fix_filename(markdownfile))
         print(' ', markdownfile, '->', htmlfile)
         with open(markdownfile.replace('/', os.sep), 'r') as f:
@@ -241,7 +214,7 @@ def main():
     print("Ready! The files are in the html directory.")
     print("Go to html and double-click index.html to read the tutorial.")
     print()
-    if askyesno("Do you want to view the tutorial now?", default=False):
+    if common.askyesno("Do you want to view the tutorial now?", default=False):
         print("Opening the tutorial...")
         webbrowser.open(os.path.join('html', 'index.html'))
 
