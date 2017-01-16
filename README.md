@@ -23,31 +23,54 @@ everything should also work on Python 3.3, 3.2 and all newer Pythons.
 
 ## List of contents
 
-1. [What is programming?](what-is-programming.md)
-2. [Installing Python](installing-python.md)
-3. [Getting started with Python](getting-started.md)
-4. [ThinkPython: The way of the program](the-way-of-the-program.md)
-5. [Variables, Booleans and None](variables.md)
-6. [Using functions](using-functions.md)
-7. [If, else and elif](if.md)
-8. [Handy stuff with strings](handy-stuff-strings.md)
-9. [Lists and tuples](lists-and-tuples.md)
-10. [Loops](loops.md)
-11. [Trey Hunner: zip and enumerate](trey-hunner-zip-and-enumerate.md)
-12. [Dictionaries](dicts.md)
-13. [Defining functions](defining-functions.md)
-14. [What is true?](what-is-true.md)
-15. [Files](files.md)
-16. [Exceptions](exceptions.md)
-17. [Modules](modules.md)
-18. [Classes](classes.md)
+The tutorial consists of two sections:
 
-Other things this tutorial comes with:
+### Basics
+
+This section will get you started with using Python and you'll be able 
+to learn more about whatever you want after studying it.
+
+1. [What is programming?](basics/what-is-programming.md)
+2. [Installing Python](basics/installing-python.md)
+3. [Getting started with Python](basics/getting-started.md)
+4. [ThinkPython: The way of the program](basics/the-way-of-the-program.md)
+5. [Variables, Booleans and None](basics/variables.md)
+6. [Using functions](basics/using-functions.md)
+7. [If, else and elif](basics/if.md)
+8. [Handy stuff with strings](basics/handy-stuff-strings.md)
+9. [Lists and tuples](basics/lists-and-tuples.md)
+10. [Loops](basics/loops.md)
+11. [Trey Hunner: zip and enumerate](basics/trey-hunner-zip-and-enumerate.md)
+12. [Dictionaries](basics/dicts.md)
+13. [Defining functions](basics/defining-functions.md)
+14. [What is true?](basics/what-is-true.md)
+15. [Files](basics/files.md)
+16. [Exceptions](basics/exceptions.md)
+17. [Modules](basics/modules.md)
+18. [Classes](basics/classes.md)
+
+### Advanced
+
+If you want to learn more advanced techniques, you can also read this 
+section. Most of the techniques explained here are great when you're 
+working on a large project, and your code would be really repetitive 
+without these things.
+
+You can experient with these things freely, but please **don't use these 
+techniques just because you know how to use them.** Prefer the simple 
+techniques from the Basics part instead when possible. Simple is better 
+than complex.
+
+1. [Magic methods](advanced/magicmethods.md)
+2. [Iterables and iterators](advanced/iterators.md)
+
+### Other things this tutorial comes with
 
 - **Important:** [getting help](getting-help.md)
 - [Contact me](contact-me.md)
 - [Setting up a text editor](editor-setup.md)
-- [Answers for the exercises](answers.md)
+- Answers for excercises in [basics](basics/answers.md) and
+    [advanced](advanced/answers.md) sections
 - [The TODO list](TODO.md)
 
 ## How to read this tutorial without an internet connection

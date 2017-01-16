@@ -61,7 +61,7 @@ programming tools are not going to help you with this at all.
 Launch Python's IDLE like any other program. You should see something
 like this:
 
-![IDLE](images/idle.png)
+![IDLE](../images/idle.png)
 
 From now on, I'll instead show everything like this, so I don't have to
 take more screenshots:
@@ -110,7 +110,7 @@ Now you should have Python installed, and you should be able run it.
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](what-is-programming.md) | [Next](getting-started.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

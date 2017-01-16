@@ -50,7 +50,7 @@ So the syntax is like `some_string[start:end]`.
 
 This picture explains how the slicing works:
 
-![Slicing with non-negative values](images/slicing1.png)
+![Slicing with non-negative values](../images/slicing1.png)
 
 But what happens if we slice with negative values?
 
@@ -63,7 +63,7 @@ But what happens if we slice with negative values?
 It turns out that slicing with negative values simply starts counting
 from the end of the string.
 
-![Slicing with negative values](images/slicing2.png)
+![Slicing with negative values](../images/slicing2.png)
 
 If we don't specify the beginning it defaults to 0, and if we don't
 specify the end it defaults to the length of the string. For example, we
@@ -124,7 +124,7 @@ first character is `our_string[0]`, the second character is
 
 So string indexes work like this:
 
-![Indexing with non-negative values](images/indexing1.png)
+![Indexing with non-negative values](../images/indexing1.png)
 
 How about negative values?
 
@@ -144,7 +144,7 @@ thing as indexing with 0.
 
 Indexing with negative values works like this:
 
-![Indexing with negative values](images/indexing2.png)
+![Indexing with negative values](../images/indexing2.png)
 
 ## String methods
 
@@ -383,12 +383,12 @@ ValueError: could not convert string to float: 'hello'
 - Slicing returns a copy of a string with indexes from one index to
     another index. The indexes work like this:
 
-    ![Slicing](images/slicing3.png)
+    ![Slicing](../images/slicing3.png)
 
 - Indexing returns one character of a string. Remember that we don't
     need a `:` with indexing. The indexes work like this:
 
-    ![Indexing](images/indexing3.png)
+    ![Indexing](../images/indexing3.png)
 
 - Python has many string methods. Use
     [the documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
@@ -430,7 +430,7 @@ The answers are [here](answers.md#handy-stuff-strings).
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](if.md) | [Next](lists-and-tuples.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

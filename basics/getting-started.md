@@ -214,7 +214,7 @@ Powers are calculated before `*` and `/`, but after `()`.
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](installing-python.md) | [Next](the-way-of-the-program.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

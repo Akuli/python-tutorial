@@ -92,7 +92,7 @@ At this point it's easier to put our code into a file and use it
 there. If you use IDLE, go to File at top left and select New File, or
 just press Ctrl+N.
 
-![New File in IDLE](images/idle-new.png)
+![New File in IDLE](../images/idle-new.png)
 
 If you don't use IDLE, please take the time to
 [set up your editor correctly](editor-setup.md). When you're done your
@@ -330,7 +330,7 @@ The answers are [here](answers.md#if-else-and-elif).
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](using-functions.md) | [Next](handy-stuff-strings.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)

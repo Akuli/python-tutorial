@@ -90,9 +90,18 @@ def askyesno(question, default=True):
             return default
 
 
+def mkdir_open(filename, mode):
+    """Like built-in open(), but make a directory as needed."""
+    directory = os.path.dirname(filename)
+    os.makedirs(directory, exist_ok=True)
+    return open(filename, mode)
+
+
 def fix_filename(filename):
-    if filename == 'README.md':
-        return 'index.html'
+    if filename == 'README.md' or filename.endswith('/README.md'):
+        # 'README.md' -> 'index.html'
+        # 'some/place/README.md' -> 'some/place/index.html'
+        return filename[:-9] + 'index.html'
     if filename.endswith('.md'):
         return filename[:-3] + '.html'
     return filename
@@ -207,7 +216,6 @@ def main():
             shutil.rmtree('html')
         else:
             os.remove('html')
-    os.mkdir('html')
 
     print("Getting a list of files to generate...")
     with open('README.md', 'r') as f:
@@ -217,12 +225,12 @@ def main():
     for markdownfile in filelist:
         htmlfile = os.path.join('html', fix_filename(markdownfile))
         print(' ', markdownfile, '->', htmlfile)
-        with open(markdownfile, 'r') as f:
+        with open(markdownfile.replace('/', os.sep), 'r') as f:
             markdown = f.read()
         renderer = TutorialRenderer()
         body = mistune.markdown(markdown, renderer=renderer)
         html = HTML_TEMPLATE.format(title=renderer.title, body=body)
-        with open(htmlfile, 'w') as f:
+        with mkdir_open(htmlfile.replace('/', os.sep), 'w') as f:
             print(html, file=f)
 
     print("Copying other files...")

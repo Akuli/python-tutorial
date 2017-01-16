@@ -25,7 +25,7 @@ which keys you need to press to produce these characters because your keyboard
 is probably different than mine. But the keyboard can tell what you
 need to press. For example, my Finnish keyboard has a key like this:
 
-![A key on my keyboard.](images/key.png)
+![A key on my keyboard.](../images/key.png)
 
 Here's what the characters on this key mean:
 
@@ -127,7 +127,7 @@ rest of this tutorial only if you don't understand the code.
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
-[Previous](README.md) | [Next](installing-python.md) |
-[List of contents](README.md#list-of-contents)
+[Previous](../README.md) | [Next](installing-python.md) |
+[List of contents](../README.md#basics)

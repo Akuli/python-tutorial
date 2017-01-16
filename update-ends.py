@@ -28,22 +28,26 @@
 
 """Update ends of markdown files."""
 
+import os
 import re
 
 
+# Markdown and HTML links use / as a path separator so there's no need 
+# for os.path, but we do need to replace it with os.sep when opening the 
+# files.
 BASIC_END = """\
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE]({toplevel}LICENSE).
 
-[List of contents](README.md#list-of-contents)
+[List of contents]({toplevel}README.md#list-of-contents)
 """
 
 CHAPTER_END = """\
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous]({prev}) | [Next]({next}) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#{sectionname})
 """
 
 
@@ -54,7 +58,8 @@ CHAPTER_LINK_REGEX = r'^\d+\. ' + LINK_REGEX + r'$'
 def get_filenames():
     """Get chapter files and other files from README.
 
-    Return a two-tuple of chapter files and other files.
+    Return a two-tuple of chapter file names and other file names as 
+    iterables of strings.
     """
     chapters = []
     with open('README.md', 'r') as f:
@@ -65,13 +70,15 @@ def get_filenames():
         # now let's read the content list
         for line in f:
             line = line.strip()
+            if line.startswith('## '):
+                # end of content list
+                break
             if line:
                 # not empty line
                 match = re.search(CHAPTER_LINK_REGEX, line)
-                if match is None:
-                    # end of content list
-                    break
-                chapters.append(match.group(1))
+                if match is not None:
+                    # it's a link to a chapter
+                    chapters.append(match.group(1))
 
     # now let's find other links to markdown files
     with open('README.md', 'r') as f:
@@ -82,7 +89,12 @@ def get_filenames():
 
 
 def update_end(filename, end):
-    """Add *** and end to a file if it doesn't contain them already."""
+    """Add *** and end to a file if it doesn't have them already.
+
+    filename should be relative to the toplevel using / as a path 
+    separator.
+    """
+    filename = filename
     end = '\n***\n\n' + end
     with open(filename, 'r') as f:
         content = f.read()
@@ -108,19 +120,44 @@ def main():
 
     # make previous of first file and next of last file to just bring
     # back to README
-    prevs = ['README.md'] + chapter_files[:-1]
-    nexts = chapter_files[1:] + ['README.md']
+    prevs = ['./README.md'] + chapter_files[:-1]
+    nexts = chapter_files[1:] + ['./README.md']
 
     print("Chapter files:")
-    for filename, prev, next in zip(chapter_files, prevs, nexts):
-        end = CHAPTER_END.format(prev=prev, next=next)
-        update_end(filename, end)
+    for prevpath, thispath, nextpath in zip(prevs, chapter_files, nexts):
+        # the paths are like 'section/file.md'
+        prevsection, prevfile = prevpath.split('/')
+        thissection, thisfile = thispath.split('/')
+        nextsection, nextfile = nextpath.split('/')
+
+        # make previous and next relative to this file
+        if prevsection == thissection:
+            # they are in the same place
+            prev = prevfile
+        elif prevsection == '.':
+            # something from the top level
+            prev = '../' + prevfile
+        else:
+            # it comes from some other place
+            prev = '../' + prevpath
+
+        if nextsection == thissection:
+            next_ = nextfile
+        elif nextsection == '.':
+            next_ = '../' + nextfile
+        else:
+            next_ = '../' + nextpath
+
+        end = CHAPTER_END.format(prev=prev, next=next_,
+                                 sectionname=thissection)
+        update_end(thispath, end)
 
     print()
 
     print("Other files:")
     for filename in other_files:
-        update_end(filename, BASIC_END)
+        end = BASIC_END.format(toplevel='../' * filename.count('/'))
+        update_end(filename, end)
 
 
 if __name__ == '__main__':

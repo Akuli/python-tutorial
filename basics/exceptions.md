@@ -459,7 +459,7 @@ except OSError:
 ***
 
 You may use this tutorial freely at your own risk. See
-[LICENSE](LICENSE).
+[LICENSE](../LICENSE).
 
 [Previous](files.md) | [Next](modules.md) |
-[List of contents](README.md#list-of-contents)
+[List of contents](../README.md#basics)
