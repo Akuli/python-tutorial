@@ -256,5 +256,5 @@ are not meant to be imported.
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](../basics/classes.md) | [Next](iterators.md) |
+[Previous](functions.md) | [Next](iterators.md) |
 [List of contents](../README.md#advanced)
