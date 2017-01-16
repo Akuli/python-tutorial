@@ -80,10 +80,10 @@ should you do if you have a problem with the tutorial?
 3. If there's something you haven't seen before in the tutorial and it's
     not explained, try to find it from the previous chapters.
 4. If you still have trouble understanding the tutorial or any other problems
-    with the tutorial, please [tell me about it](contact-me.md). I want to
+    with the tutorial, please [tell me about it](../contact-me.md). I want to
     improve this tutorial so other readers won't have the same problem as you
     have.
-5. See [Getting help](getting-help.md) if you can't contact me for some
+5. See [Getting help](../getting-help.md) if you can't contact me for some
     reason.
 
 You are free to combine this tutorial with other learning resources. If this

@@ -25,7 +25,7 @@ you.
 ### Mac OSX
 
 I don't have an up-to-date copy of Mac OSX. If you would like to write
-instructions for OSX, [tell me](contact-me.md).
+instructions for OSX, [tell me](../contact-me.md).
 
 ### GNU/Linux
 

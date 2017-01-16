@@ -95,7 +95,7 @@ just press Ctrl+N.
 ![New File in IDLE](../images/idle-new.png)
 
 If you don't use IDLE, please take the time to
-[set up your editor correctly](editor-setup.md). When you're done your
+[set up your editor correctly](../editor-setup.md). When you're done your
 editor should give you four spaces every time you press tab.
 
 Create a file called `rain.py`, and type the following content into it:

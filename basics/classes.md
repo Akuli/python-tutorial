@@ -424,5 +424,5 @@ print("You entered " + word + ".")
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](modules.md) | [Next](../advanced/iterators.md) |
+[Previous](modules.md) | [Next](../advanced/magicmethods.md) |
 [List of contents](../README.md#basics)

@@ -2,7 +2,7 @@
 
 These are my answers for exercises in the chapters. If your solution
 isn't exactly like mine but it works just fine it's ok, and you can
-[ask me](contact-me.md) why I didn't do it like you did it.
+[ask me](../contact-me.md) why I didn't do it like you did it.
 
 ## ThinkPython: The way of the program
 
@@ -407,7 +407,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     print(get_greeting())
     ```
 
-3. See [the return or print section](defining-functions.html#return-or-print).
+3. See [the return or print section](defining-functions.md#return-or-print).
 
     The greet function prints a greeting.
 
