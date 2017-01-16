@@ -275,6 +275,10 @@ Or if we just want to clear a list, we can use the `clear`
 >>> 
 ```
 
+Later we'll learn that for loops are not actually limited to lists. 
+There are many other things we can for loop over. Things that can be for 
+looped over are called **iterables**.
+
 If you're using Python 3.2 or older you need to use `stuff[:]` instead
 of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
 `stuff[:]` is a slice of the whole list, just like `stuff[0:]`.
@@ -285,6 +289,7 @@ of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
 - While loops repeat something as long as a condition is true, and
     they check the condition only in the beginning.
 - For loops can be used for repeating something to each item in a list.
+- An iterable is something that can be for looped over.
 - The `break` keyword can be used to interrupt the innermost loop at
     any time.
 
