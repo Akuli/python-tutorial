@@ -96,7 +96,7 @@ def update_end(filename, end):
         content = f.read()
     if content.endswith(end):
         # No need to do anything.
-        print("  Has end:", filename)
+        print("  Has correct end:", filename)
         return
 
     if '\n***\n' in content:
