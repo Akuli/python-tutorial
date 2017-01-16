@@ -1,2 +1,5 @@
 # generated html files
 html/
+
+# python cache files
+__pycache__/
