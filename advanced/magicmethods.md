@@ -35,7 +35,7 @@ attributes by default. We'll learn more about this when we'll talk about
 
 **TODO:** write a `classes2.md`.
 
-## Custom len()
+## Custom length
 
 Let's get started by defining an object that has a length:
 
@@ -85,7 +85,7 @@ it's explained
 [here](https://docs.python.org/3/reference/datamodel.html#special-method-lookup)
 if you want to know more about it.
 
-## Custom str() and repr()
+## str() and repr()
 
 You have probably noticed that typing something to the interactive `>>>`
 prompt is not quite the same thing as printing it. For example,
@@ -117,6 +117,22 @@ hello
 >>>
 ```
 
+The `repr()` values can also be easily used with string formatting.
+Instead of this...
+
+```py
+print("message is " + repr(message))
+```
+
+...you can use one of these instead:
+
+```py
+print("message is %r" % (message,))
+print("message is {!r}".format(message))
+```
+
+## Customizing str() and repr() values
+
 As usual, `repr(thing)` does the same thing as `thing.__repr__()` and
 `str(thing)` does the same thing as `thing.__str__()`. Usually you don't
 need to and you shouldn't define `__str__` yourself because `__str__`
@@ -142,26 +158,6 @@ Here's an example that hopefully clarifies things:
 <a Website object>
 >>> print(w)
 <a Website object>
->>>
-```
-
-The `repr()` values can also be easily used with string formatting.
-Instead of this...
-
-```py
->>> message = 'hello'
->>> print("message is " + repr(message))
-message is 'hello'
->>>
-```
-
-...you can do this:
-
-```py
->>> print("message is %r" % message)
-message is 'hello'
->>> print("message is {!r}".format(message))
-message is 'hello'
 >>>
 ```
 
@@ -219,34 +215,40 @@ follow one of these styles:
 ## Other magic methods
 
 There are many more magic methods, and I don't see any reason to list
-them all here. [The official
+them all here. [The official 
 documentation](https://docs.python.org/3/reference/datamodel.html) has
-more information about magic methods if you need it. You can also just
-keep reading this tutorial, and we'll learn more about some of the most
-useful and commonly used magic methods.
+more information about magic methods if you need it. We'll go through
+using the most important magic methods in the rest of this tutorial, so
+if you just keep reading you'll learn more about them.
 
 ## When should we use magic methods?
 
-Usually magic methods are overkill. `website.has_user(user)` or
-`user in website.userlist` is way better than something weird like
-`user @ website`. People expect `website.has_user(user)` to check if
-the user has registered on the website, but nobody knows what
-`user @ website` does. Explicit is better than implicit, and simple is
-better than complex.
+There's nothing wrong with using `__init__` everywhere, but other than
+that, magic methods are usually not needed. `website.has_user(user)` and
+`user in website.userlist` are way better than something weird that we
+could do with magic methods like `user @ website`. People expect
+`website.has_user(user)` check if a user has registered on the website,
+but nobody can guess what `user @ website` does. Explicit is better than
+implicit, and simple is better than complex.
 
-On the other hand, adding informative `__repr__` methods can make a
-module much nicer to use. I recommend using `__repr__` methods in things
-that other people will import and use in their projects, but `__repr__`
-methods aren't worth it for simple scripts that aren't meant to be
-imported.
+On the other hand, using magic methods when needed can turn something
+good into something great. Especially the `__repr__` method is useful
+because people can get a good idea of what an object is by just looking
+at it on the `>>>` prompt or printing it. I recommend using `__repr__`
+methods in things that other people will import and use in their
+projects, but `__repr__` methods aren't worth it for simple scripts that
+are not meant to be imported.
 
 ## Summary
 
 - Magic methods define what instances of a class can do and how, like
     "does it have a length" or "what does it look like when I print it".
-- Python uses magic methods to implement many things internally.
+- Python uses magic methods to implement many things internally, and we
+    can customize everything by implementing the magic methods
+    ourselves.
 - Defining custom `__repr__` methods is often a good idea when making
-    things that other people will import and use in their own projects.
+    things that other people will import and use in their own projects,
+    and the `__init__` method is very useful for many things.
     Other than that, magic methods are usually not worth it.
 
 ***
