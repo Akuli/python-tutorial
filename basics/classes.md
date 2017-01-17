@@ -285,7 +285,6 @@ it later?
 
 ```py
 >>> class Website:
-...
 ...     def info(self):     # self will be stackoverflow
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
@@ -312,12 +311,10 @@ Maybe we could add a method to do that?
 
 ```py
 >>> class Website:
-...
 ...     def initialize(self, url, founding_year, free_to_use):
 ...         self.url = url
 ...         self.founding_year = founding_year
 ...         self.free_to_use = free_to_use
-...
 ...     def info(self):
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
@@ -344,12 +341,10 @@ class with arguments and they will be given to `__init__`. Like this:
 
 ```py
 >>> class Website:
-...
 ...     def __init__(self, url, founding_year, free_to_use):
 ...         self.url = url
 ...         self.founding_year = founding_year
 ...         self.free_to_use = free_to_use
-...
 ...     def info(self):
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)

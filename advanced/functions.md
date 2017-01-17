@@ -244,10 +244,10 @@ and `**kwargs`, and there's no need to avoid them.
 
 I don't recommend using keyword-only arguments with functions like our
 `print_box`. It's easy enough to guess what `print_box('hello', '-')`
-does, and there's no need to deny that. On the other hand, it's much
-harder to guess what `move('file1.txt', 'file2.txt', True, False)` does,
-so using keyword-only arguments makes sense and gets rid of the file
-deleting problem.
+does, and there's no need to deny that. It's much harder to guess what
+`move('file1.txt', 'file2.txt', True, False)` does, so using
+keyword-only arguments makes sense and also solves the file deleting
+problem.
 
 ## Summary
 
