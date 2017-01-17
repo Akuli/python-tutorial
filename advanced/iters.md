@@ -50,9 +50,9 @@ i
 >>>
 ```
 
-We can also iterate over [files](../basics/files.md), but they change
-when we do that. They remember their position, so if we iterate over
-them twice we get the content once only.
+We can also iterate over [files](../basics/files.md), but they remember
+their position and we get the content once only if we iterate over them
+twice.
 
 ```py
 >>> with open('test.txt', 'w') as f:
@@ -98,7 +98,8 @@ before, and it actually remembers its position also:
 Iterators can only be used once, so we need to create a new iterator if
 we want to do another for loop.
 
-Here's a picture that might explain this better:
+All iterators are iterables, but not all iterables are iterators. Like
+this:
 
 ![Iterables and iterators.](../images/iters.png)
 
