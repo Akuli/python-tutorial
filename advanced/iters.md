@@ -291,7 +291,7 @@ iterators** with some more features that we don't need to care about.
 The generator we got works just like other iterators:
 
 ```py
->>> c = thingy()
+>>> t = thingy()
 >>> t
 <generator object thingy at 0xb72300f4>
 >>> next(t)
