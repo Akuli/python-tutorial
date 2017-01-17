@@ -19,7 +19,7 @@ functions and how they are useful.
 ## Multiple return values
 
 Function can take multiple arguments, but they can only return one
-value. But sometimes it makes sense to remove multiple values as well:
+value. But sometimes it makes sense to return multiple values as well:
 
 ```py
 def login():
