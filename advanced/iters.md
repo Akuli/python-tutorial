@@ -290,6 +290,7 @@ iterators** with some more features that we don't need to care about.
 
 The generator we got works just like other iterators:
 
+```py
 >>> c = thingy()
 >>> t
 <generator object thingy at 0xb72300f4>
@@ -310,6 +311,7 @@ StopIteration
 2
 3
 >>>
+```
 
 This whole thing may feel kind of insane. If we add some parts between
 the yields, when do they run? How does Python know when to run what?
