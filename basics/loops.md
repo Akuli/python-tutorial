@@ -19,7 +19,7 @@ if its_raining:
     print("Oh crap, it's raining!")
 ```
 
-While loops are really similar to if statements. 
+While loops are really similar to if statements.
 
 ```py
 its_raining = True
@@ -115,7 +115,7 @@ while True:
 
 The program works like this:
 
-    Is it raining? (y=yes, n=no) who knows              
+    Is it raining? (y=yes, n=no) who knows
     Enter y or n.
     Is it raining? (y=yes, n=no) y
     It's raining!
@@ -183,13 +183,13 @@ We could also create an index variable, and use a while loop:
 >>> while index < length_of_stuff:
 ...     print(stuff[index])
 ...     index += 1
-... 
+...
 hello
 hi
 how are you doing
 im fine
 how about you
->>> 
+>>>
 ```
 
 But there's `len()` and an index variable we need to increment and a
@@ -203,13 +203,13 @@ This is when for loops come in:
 ...     # this is repeated for each element of stuff, that is, first
 ...     # for stuff[0], then for stuff[1], etc.
 ...     print(thing)
-... 
+...
 hello
 hi
 how are you doing
 im fine
 how about you
->>> 
+>>>
 ```
 
 Without the comments, that's only two simple lines, and one variable.
@@ -218,13 +218,13 @@ Much better than anything else we tried before.
 ```py
 >>> for thing in stuff:
 ...     print(thing)
-... 
+...
 hello
 hi
 how are you doing
 im fine
 how about you
->>> 
+>>>
 ```
 
 Note that `for thing in stuff:` is not same as `for (thing in stuff):`.
@@ -246,10 +246,10 @@ be surprising:
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> for thing in stuff:
 ...     stuff.remove(thing)
-... 
+...
 >>> stuff
 ['hi', 'im fine']
->>> 
+>>>
 ```
 
 Instead, we can create a copy of stuff and loop over it.
@@ -258,10 +258,10 @@ Instead, we can create a copy of stuff and loop over it.
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> for thing in stuff.copy():
 ...     stuff.remove(thing)
-... 
+...
 >>> stuff
 []
->>> 
+>>>
 ```
 
 Or if we just want to clear a list, we can use the `clear`
@@ -272,11 +272,11 @@ Or if we just want to clear a list, we can use the `clear`
 >>> stuff.clear()
 >>> stuff
 []
->>> 
+>>>
 ```
 
-Later we'll learn that for loops are not actually limited to lists. 
-There are many other things we can for loop over. Things that can be for 
+Later we'll learn that for loops are not actually limited to lists.
+There are many other things we can for loop over. Things that can be for
 looped over are called **iterables**.
 
 If you're using Python 3.2 or older you need to use `stuff[:]` instead

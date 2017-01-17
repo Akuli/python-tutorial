@@ -215,7 +215,7 @@ follow one of these styles:
 ## Other magic methods
 
 There are many more magic methods, and I don't see any reason to list
-them all here. [The official 
+them all here. [The official
 documentation](https://docs.python.org/3/reference/datamodel.html) has
 more information about magic methods if you need it. We'll go through
 using the most important magic methods in the rest of this tutorial, so

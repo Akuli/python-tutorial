@@ -27,7 +27,7 @@ The tutorial consists of two sections:
 
 ### Basics
 
-This section will get you started with using Python and you'll be able 
+This section will get you started with using Python and you'll be able
 to learn more about whatever you want after studying it.
 
 1. [What is programming?](basics/what-is-programming.md)
@@ -51,14 +51,14 @@ to learn more about whatever you want after studying it.
 
 ### Advanced
 
-If you want to learn more advanced techniques, you can also read this 
-section. Most of the techniques explained here are great when you're 
-working on a large project, and your code would be really repetitive 
+If you want to learn more advanced techniques, you can also read this
+section. Most of the techniques explained here are great when you're
+working on a large project, and your code would be really repetitive
 without these things.
 
-You can experient with these things freely, but please **don't use these 
-techniques just because you know how to use them.** Prefer the simple 
-techniques from the Basics part instead when possible. Simple is better 
+You can experient with these things freely, but please **don't use these
+techniques just because you know how to use them.** Prefer the simple
+techniques from the Basics part instead when possible. Simple is better
 than complex.
 
 1. [Advanced stuff with functions](advanced/functions.md)

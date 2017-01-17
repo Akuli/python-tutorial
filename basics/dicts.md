@@ -89,7 +89,7 @@ variable names and values are what our variables point to.
  'passwords': {'me': 'my password', 'you': 'your password'},
  ...many other things we don't need to care about...
 }
->>> 
+>>>
 ```
 
 So if you have trouble remembering how dictionaries work just compare
@@ -108,7 +108,7 @@ lists and dictionaries have a length.
 2
 >>> len(passwords)    # contains two key:value pairs
 2
->>> 
+>>>
 ```
 
 We can get a value of a key with `the_dict[key]`. This is a lot easier
@@ -119,7 +119,7 @@ and faster than for-looping over a list of pairs.
 'my password'
 >>> passwords['you']
 'your password'
->>> 
+>>>
 ```
 
 Trying to get the value of a non-existing key gives us an error, but we
@@ -135,7 +135,7 @@ KeyError: 'lol'
 "lol's password"
 >>> passwords
 {'lol': "lol's password", 'you': 'your password', 'me': 'my password'}
->>> 
+>>>
 ```
 
 For looping over a dictionary gets its keys, and checking if something
@@ -149,11 +149,11 @@ True
 False
 >>> for name in passwords:
 ...     print(name)
-... 
+...
 lol
 you
 me
->>> 
+>>>
 ```
 
 Dictionaries have a values method that we can use if we want to do
@@ -162,7 +162,7 @@ something with the values:
 ```py
 >>> passwords.values()
 dict_values(["lol's password", 'your password', 'my password'])
->>> 
+>>>
 ```
 
 The values method returned a `dict_values` object. Things like this
@@ -172,11 +172,11 @@ lists.
 ```py
 >>> for password in passwords.values():
 ...     print(password)
-... 
+...
 lol's password
 your password
 my password
->>> 
+>>>
 ```
 
 We can do things like `list(passwords.values())` if we need a real list
@@ -194,11 +194,11 @@ dict_items([('lol', "lol's password"),
             ('me', 'my password')])
 >>> for name, password in passwords.items():
 ...     print(name + ": " + password)
-... 
+...
 lol: lol's password
 you: your password
 me: my password
->>> 
+>>>
 ```
 
 This is also useful for checking if the dictionary has a `key: value`
@@ -209,7 +209,7 @@ pair.
 True
 >>> ('me', 'whatever') in passwords.items()    # wrong username or password
 False
->>> 
+>>>
 ```
 
 ## Limitations
@@ -223,7 +223,7 @@ this because usually we don't need to worry about that.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unhashable type: 'list'
->>> 
+>>>
 ```
 
 On the other hand, tuples work just fine:
@@ -232,7 +232,7 @@ On the other hand, tuples work just fine:
 >>> stuff = {('a', 'b'): 'c', ('d', 'e'): 'f'}
 >>> stuff
 {('a', 'b'): 'c', ('d', 'e'): 'f'}
->>> 
+>>>
 ```
 
 The values of a dictionary can be anything.
@@ -241,7 +241,7 @@ The values of a dictionary can be anything.
 >>> stuff = {'a': [1, 2, 3], 'b': [4, 5, 6]}
 >>> stuff
 {'a': [1, 2, 3], 'b': [4, 5, 6]}
->>> 
+>>>
 ```
 
 ## Summary
@@ -287,7 +287,7 @@ for word, count in counts.items():
 Running the program might look like this:
 
     Enter a sentence: this is a test and this is quite long because this is a test
-    
+
     is appears 3 times in the sentence
     long appears once in the sentence
     a appears 2 times in the sentence

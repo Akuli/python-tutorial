@@ -23,10 +23,10 @@ Oops! That didn't work. But like I wrote in the
 Maybe we can press Enter without typing anything?
 
 ```py
->>> 
->>> 
->>> 
->>> 
+>>>
+>>>
+>>>
+>>>
 ```
 
 That worked. How about numbers?
@@ -40,7 +40,7 @@ That worked. How about numbers?
 3.14
 >>> -12.3
 -12.3
->>> 
+>>>
 ```
 
 There we go, it echoes them back.
@@ -51,7 +51,7 @@ instead of `3.14`. Maybe Python knows that?
 ```py
 >>> 3,14
 (3, 14)
->>> 
+>>>
 ```
 
 We didn't get an error... but `(3, 14)` is not at all what we expected!
@@ -62,7 +62,7 @@ What if we type a `#`?
 
 ```py
 >>> #
->>> 
+>>>
 ```
 
 Nothing happened at all. Maybe we can type a `#` and then some text
@@ -70,7 +70,7 @@ after it?
 
 ```py
 >>> # hello there
->>> 
+>>>
 ```
 
 Again, nothing happened.
@@ -80,8 +80,8 @@ If you're not using IDLE, the prompt will change from `>>>` to
 
 ```py
 >>> # hello again
-... 
->>> 
+...
+>>>
 ```
 
 In Python, these pieces of text starting with a `#` are known as

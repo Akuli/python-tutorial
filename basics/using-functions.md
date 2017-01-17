@@ -5,7 +5,7 @@ Now we know how to make Python show text.
 ```py
 >>> 'Hello!'
 'Hello!'
->>> 
+>>>
 ```
 
 But that includes `''`. One way to show text to the user without `''`
@@ -15,7 +15,7 @@ to do with physical printers, it just means showing text on the screen.
 ```py
 >>> print('Hello!')
 Hello!
->>> 
+>>>
 ```
 
 Now we are ready for a classic example, which is also the first program
@@ -24,7 +24,7 @@ in many tutorials :)
 ```py
 >>> print("Hello World!")
 Hello World!
->>> 
+>>>
 ```
 
 But what exactly is print?
@@ -36,7 +36,7 @@ Let's see what happens if we type `print` without the `('Hello')` part.
 ```py
 >>> print
 <built-in function print>
->>> 
+>>>
 ```
 
 We could also type `print(print)`, it would do the same thing. Python
@@ -66,7 +66,7 @@ Now we know that `thingy = print('hello')` doesn't store the
 hello
 >>> print(thingy)       # thingy is now None
 None
->>> 
+>>>
 ```
 
 So doing `thingy = print('hello')` set `thingy` to None.
@@ -107,7 +107,7 @@ getting a string from the user.
 Enter something:hello
 >>> stuff
 'hello'
->>> 
+>>>
 ```
 
 `input("Enter something:")` showed the text `Enter something:` on the
@@ -120,7 +120,7 @@ Usually we want to add a space after the `:`, like this:
 ```py
 >>> stuff = input("Enter something: ")  # now there's space between : and where i type
 Enter something: hello
->>> 
+>>>
 ```
 
 ## Handy things about print
@@ -131,7 +131,7 @@ arguments.
 ```py
 >>> print()
 
->>> 
+>>>
 ```
 
 In Python, `\n` is a newline character. Printing a string that contains
@@ -141,7 +141,7 @@ a newline character also prints a newline:
 >>> print('hello\nworld')
 hello
 world
->>> 
+>>>
 ```
 
 If we want to print a real backslash, we need to **escape** it by typing
@@ -152,7 +152,7 @@ two backslashes.
 
     >>> print('hello\\nworld')
     hello\nworld
-    >>> 
+    >>>
 
 We can also pass multiple arguments to the print function. We need to
 separate them with commas and print will add spaces between them.
@@ -160,7 +160,7 @@ separate them with commas and print will add spaces between them.
 ```py
 >>> print("Hello", "World!")
 Hello World!
->>> 
+>>>
 ```
 
 Unlike with `+`, the arguments don't need to be strings.
@@ -168,7 +168,7 @@ Unlike with `+`, the arguments don't need to be strings.
 ```py
 >>> print(42, "is an integer, and the value of pi is", 3.14)
 42 is an integer, and the value of pi is 3.14
->>> 
+>>>
 ```
 
 ## Variables names and built-in things
@@ -182,7 +182,7 @@ valid variable name because it's a keyword.
     if = 123
        ^
 SyntaxError: invalid syntax
->>> 
+>>>
 ```
 
 But `print` and `input` are not keywords, so can we use them as
@@ -192,7 +192,7 @@ variable names?
 >>> print = "hello"
 >>> print
 'hello'
->>> 
+>>>
 ```
 
 We can, but there's a problem. Now we can't even do our hello world!
@@ -202,7 +202,7 @@ We can, but there's a problem. Now we can't even do our hello world!
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'str' object is not callable
->>> 
+>>>
 ```
 
 The error message complains that strings aren't callable because we

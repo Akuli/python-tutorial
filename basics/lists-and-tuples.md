@@ -46,7 +46,7 @@ Let's open the `>>>` prompt and create a name list.
 >>> names = ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
 >>> names
 ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
->>> 
+>>>
 ```
 
 There's many things [we can do with strings](handy-stuff-strings.md),
@@ -59,7 +59,7 @@ and some of these things also work with lists.
 ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori', 'Akuli']
 >>> ['theelous3', 'RubyPinch'] * 2    # repeating
 ['theelous3', 'RubyPinch', 'theelous3', 'RubyPinch']
->>> 
+>>>
 ```
 
 With strings indexing and slicing both returned a string, but
@@ -71,7 +71,7 @@ from the list if we're indexing.
 ['wub_wub', 'theelous3']
 >>> names[0]     # the first name
 'wub_wub'
->>> 
+>>>
 ```
 
 If we want to check if the program knows a name all we need to
@@ -82,7 +82,7 @@ do is to use the `in` keyword.
 False
 >>> 'RubyPinch' in names
 True
->>> 
+>>>
 ```
 
 We can't use this for checking if a list of names is a part of
@@ -93,7 +93,7 @@ our name list.
 False
 >>> ['RubyPinch'] in names
 False
->>> 
+>>>
 ```
 
 Lists have a few [useful
@@ -115,7 +115,7 @@ multiple items from another list and `remove` removes an item.
 >>> names.extend(['go|dfish', 'theelous3'])  # wb guys
 >>> names
 ['wub_wub', 'RubyPinch', 'Nitori', 'Akuli', 'go|dfish', 'theelous3']
->>> 
+>>>
 ```
 
 Note that `remove` removes only the first match it finds.
@@ -125,7 +125,7 @@ Note that `remove` removes only the first match it finds.
 >>> names.remove('theelous3')
 >>> names    # the second theelous3 is still there!
 ['go|dfish', 'theelous3']
->>> 
+>>>
 ```
 
 If we need to remove all matching items we can use a simple while loop.
@@ -135,10 +135,10 @@ We'll talk more about loops [in the next chapter](loops.md).
 >>> names = ['theelous3', 'go|dfish', 'theelous3']
 >>> while 'theelous3' in names:
 ...     names.remove('theelous3')
-... 
+...
 >>> names
 ['go|dfish']
->>> 
+>>>
 ```
 
 We can also use slicing and indexing to change the content:
@@ -148,7 +148,7 @@ We can also use slicing and indexing to change the content:
 >>> names[1] = 'wub_wub'   # replace LOL with wub_wub
 >>> names
 ['theelous3', 'wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
->>> 
+>>>
 ```
 
 As you can see, **list can be changed in-place**. In other
@@ -164,7 +164,7 @@ most mutable things because they're designed to be changed in-place.
 >>> names = names.remove('Akuli')
 >>> print(names)     # now it's None!
 None
->>> 
+>>>
 ```
 
 This is the same thing that happened way back when [we assigned
@@ -181,7 +181,7 @@ behave like this:
 >>> b.append(4)
 >>> a    # this changed also!
 [1, 2, 3, 4]
->>> 
+>>>
 ```
 
 This can be confusing at first, but it's actually easy to
@@ -196,7 +196,7 @@ check if two variables point to the **same** thing.
 ```py
 >>> a is b
 True
->>> 
+>>>
 ```
 
 Typing `[]` creates a **new** list every time.
@@ -206,7 +206,7 @@ Typing `[]` creates a **new** list every time.
 False
 >>> [1, 2, 3] is [1, 2, 3]
 False
->>> 
+>>>
 ```
 
 If we need **a new list with similar content** we can use the
@@ -222,7 +222,7 @@ False
 [1, 2, 3, 4]
 >>> a
 [1, 2, 3]
->>> 
+>>>
 ```
 
 If we draw a picture of our variables in this example it looks
@@ -247,7 +247,7 @@ with `()` instead of `[]`.
 >>> thing = ()
 >>> thing
 ()
->>> 
+>>>
 ```
 
 If we need to create a tuple that contains only one item we
@@ -263,7 +263,7 @@ used in places like `(1 + 2) * 3`.
 9
 >>> (1 + 2,) * 3
 (3, 3, 3)
->>> 
+>>>
 ```
 
 It's also possible to create tuples by just separating things with
@@ -275,7 +275,7 @@ but some people like to do it this way.
 (1, 2, 3)
 >>> 'hello',
 ('hello',)
->>> 
+>>>
 ```
 
 Tuples don't have methods like append, extend and remove
@@ -287,7 +287,7 @@ because they can't change themselves in-place.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'tuple' object has no attribute 'append'
->>> 
+>>>
 ```
 
 So, why the heck would we use tuples instead of lists? There are

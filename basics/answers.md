@@ -117,7 +117,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 2. If we have a look at `help(str.upper)` it looks like this:
 
         S.upper() -> str
-        
+
         Return a copy of S converted to uppercase.
 
     We have two problems. First of all, the broken code uses
@@ -324,11 +324,11 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```py
     >>> for pair in zip('ABC', 'abc'):
     ...     print(pair)
-    ... 
+    ...
     ('A', 'a')
     ('B', 'b')
     ('C', 'c')
-    >>> 
+    >>>
     ```
 
     Great, it works just like it works with lists. Now let's create
@@ -389,7 +389,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     def ask_name():
         name = input("Enter your name: ")
         return name
-    
+
     print("Your name is", ask_name())
     ```
 
@@ -403,7 +403,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```py
     def get_greeting():
         return "Hello World!"
-    
+
     print(get_greeting())
     ```
 
@@ -414,7 +414,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```py
     >>> greet("World")
     Hello World
-    >>> 
+    >>>
     ```
 
     But it also returns None because we don't tell it to return anything else.
@@ -424,7 +424,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     Hello World
     >>> print(return_value)
     None
-    >>> 
+    >>>
     ```
 
     This code from the exercise does the same thing as the code above
@@ -434,7 +434,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     >>> print(greet("World"))
     Hello World
     None
-    >>> 
+    >>>
     ```
 
 ***

@@ -15,7 +15,7 @@ Let's say we want to generate a random number between 1 and
 2
 >>> random.randint(1, 3)
 2
->>> 
+>>>
 ```
 
 That's cool... but how does that work?
@@ -29,7 +29,7 @@ gave us?
 ```py
 >>> random
 <module 'random' from '/usr/lib/python3.4/random.py'>
->>> 
+>>>
 ```
 
 So it's a module, and it comes from a path... but what does
@@ -92,7 +92,7 @@ Traceback (most recent call last):
   File "/home/akuli/random.py", line 4, in <module>
     print("A random number between 1 and 3:", random.randint(1, 3))
 AttributeError: 'module' object has no attribute 'randint'
->>> 
+>>>
 ```
 
 So first of all, what is that random variable?
@@ -100,7 +100,7 @@ So first of all, what is that random variable?
 ```py
 >>> random
 <module 'random' from '/home/akuli/random.py'>
->>> 
+>>>
 ```
 
 What the heck? It's a module called random... but it's not the
@@ -137,7 +137,7 @@ places that modules are searched from:
  '/home/akuli/.local/lib/python3.4/site-packages',
  '/usr/local/lib/python3.4/dist-packages',
  '/usr/lib/python3/dist-packages']
->>> 
+>>>
 ```
 
 So that's where my Python finds its modules. The first thing in my
@@ -157,21 +157,21 @@ Let's go ahead and import it, and see how it works.
 ```py
 >>> import hello
 Hello World!
->>> 
+>>>
 ```
 
 Works as expected, but what happens if we try to import it again?
 
 ```py
 >>> import hello
->>> 
+>>>
 ```
 
 Nothing happened at all.
 
 The reason why the module wasn't loaded twice is simple. In a
 large project with many files it's normal to import the same
-module in many files, so it gets imported multiple times. If 
+module in many files, so it gets imported multiple times. If
 Python would reload the module every time it's imported,
 dividing code to multiple files would make the code run slower.
 
@@ -202,7 +202,7 @@ The official documentation is
 >>> random.shuffle(colors)    # mix the color list in-place
 >>> colors
 ['yellow', 'red', 'blue']
->>> 
+>>>
 ```
 
 ### Things that are built into Python
@@ -225,13 +225,13 @@ Hello!
 hello
 >>> line
 'hello\n'
->>> 
+>>>
 >>> # information about Python's version, behaves like a tuple
 >>> sys.version_info
 sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 >>> sys.version_info[:3]  # this is Python 3.4.2
 (3, 4, 2)
->>> 
+>>>
 >>> sys.exit()  # exit out of Python
 ```
 
@@ -274,7 +274,7 @@ sys. The official documentation is
 90.0
 >>> math.sin(math.pi/2)      # sin of 90 degrees or 1/2 π radians
 1.0
->>> 
+>>>
 ```
 
 ### Time-related things
@@ -289,7 +289,7 @@ The official documentation for the time module is
 1474896325.2394648
 >>> time.strftime('%d.%m.%Y %H:%M:%S')  # format current time nicely
 '26.09.2016 16:33:58'
->>> 
+>>>
 ```
 
 You are probably wondering how `time.time()` can be used and why its
@@ -316,7 +316,7 @@ is running on. The official documentation is
 >>> os.getcwd()        # short for "get current working directory"
 '/home/akuli'
 >>> os.mkdir('stuff')  # create a folder, short for "make directory"
->>> 
+>>>
 >>> os.path.isfile('hello.txt')  # check if it's a file
 True
 >>> os.path.isfile('stuff')
@@ -329,7 +329,7 @@ True
 True
 >>> os.path.exists('stuff')
 True
->>> 
+>>>
 >>> # this joins with '\\' on windows and '/' on most other systems
 >>> path = os.path.join('stuff', 'hello-world.txt')
 >>> path
@@ -337,10 +337,10 @@ True
 >>> with open(path, 'w') as f:
 ...     # now this goes to the stuff folder we created
 ...     print("Hello World!", file=f)
-... 
+...
 >>> os.listdir('stuff')  # create a list of everything in stuff
 ['hello-world.txt']
->>> 
+>>>
 ```
 
 ## Examples
@@ -432,7 +432,7 @@ while True:
 ## More modules!
 
 Python's standard library has many awesome modules and I just
-can't tell about each and every module I use here. Here's some of 
+can't tell about each and every module I use here. Here's some of
 my favorite modules from the standard library. Don't study them
 one by one, but look into them when you think you might need them.
 When reading the documentation it's usually easiest to find what

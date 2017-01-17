@@ -62,8 +62,8 @@ Let's create a file and write a hello world to it.
 ```py
 >>> with open('hello.txt', 'w') as f:
 ...     print("Hello World!", file=f)
-... 
->>> 
+...
+>>>
 ```
 
 Doesn't seem like it did anything. But actually it created a `hello.txt`
@@ -81,7 +81,7 @@ object that is assigned to the variable `f`.
 ```py
 >>> f
 <_io.TextIOWrapper name='hello.txt' mode='w' encoding='UTF-8'>
->>> 
+>>>
 ```
 
 File objects are not the same thing as paths and filenames, so if we try
@@ -107,7 +107,7 @@ the file was indeed closed.
 ```py
 >>> f.closed
 True
->>> 
+>>>
 ```
 
 When we had opened the file we could just print to it. The print is just
@@ -125,10 +125,10 @@ we created to a list of lines.
 >>> with open('hello.txt', 'r') as f:
 ...     for line in f:
 ...         lines.append(line)
-... 
+...
 >>> lines
 ['Hello World!\n']
->>> 
+>>>
 ```
 
 Trying to open a non-existent file with `w` or `a` creates the file for
@@ -138,11 +138,11 @@ about errors [later](exceptions.md).
 ```py
 >>> with open('this-doesnt-exist.txt', 'r') as f:
 ...     print("It's working!")
-... 
+...
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 FileNotFoundError: [Errno 2] No such file or directory: 'this-doesnt-exist.txt'
->>> 
+>>>
 ```
 
 So now we have the hello world in the `lines` variable, but it's
@@ -162,15 +162,15 @@ Let's see how that works if we have more than one line in the file.
 ...     print("Hello one!", file=f)
 ...     print("Hello two!", file=f)
 ...     print("Hello three!", file=f)
-... 
+...
 >>> lines = []
 >>> with open('hello.txt', 'r') as f:
 ...     for line in f:
 ...         lines.append(line)
-... 
+...
 >>> lines
 ['Hello one!\n', 'Hello two!\n', 'Hello three!\n']
->>> 
+>>>
 ```
 
 There we go, each of our lines now ends with a `\n`. When we for
@@ -185,10 +185,10 @@ great for this:
 >>> stripped = []
 >>> for line in lines:
 ...     stripped.append(line.rstrip('\n'))
-... 
+...
 >>> stripped
 ['Hello one!', 'Hello two!', 'Hello three!']
->>> 
+>>>
 ```
 
 It's also possible to read lines one by one. Files have [a readline
@@ -199,7 +199,7 @@ that reads the next line, and returns `''` if we're at the end of the file.
 >>> with open('hello.txt', 'r') as f:
 ...     first_line = f.readline()
 ...     second_line = f.readline()
-... 
+...
 >>> first_line
 'Hello one!\n'
 >>> second_line
@@ -218,12 +218,12 @@ once:
 ...         first.append(line)
 ...     for line in f:
 ...         second.append(line)
-... 
+...
 >>> first
 ['Hello one!\n', 'Hello two!\n', 'Hello three!\n']
 >>> second
 []
->>> 
+>>>
 ```
 
 File objects remember their position. When we tried to read the
@@ -237,16 +237,16 @@ is in the beginning and everything works.
 >>> with open('hello.txt', 'r') as f:
 ...     for line in f:
 ...         first.append(line)
-... 
+...
 >>> with open('hello.txt', 'r') as f:
 ...     for line in f:
 ...         second.append(line)
-... 
+...
 >>> first
 ['Hello one!\n', 'Hello two!\n', 'Hello three!\n']
 >>> second
 ['Hello one!\n', 'Hello two!\n', 'Hello three!\n']
->>> 
+>>>
 ```
 
 Usually it's best to just read the file once, and use the
@@ -258,10 +258,10 @@ method](https://docs.python.org/3/library/io.html#io.TextIOBase.read).
 ```py
 >>> with open('hello.txt', 'r') as f:
 ...     full_content = f.read()
-... 
+...
 >>> full_content
 'Hello one!\nHello two!\nHello three!\n'
->>> 
+>>>
 ```
 
 We can also open full paths, like `open('C:\\Users\\me\\myfile.txt', 'r')`.
@@ -277,7 +277,7 @@ C:\some
 ame
 >>> print('C:\\some\\name')
 C:\some\name
->>> 
+>>>
 ```
 
 Another way to create paths is to tell Python to escape them by
@@ -287,7 +287,7 @@ is short for "raw", not "read".
 ```py
 >>> r'C:\some\name'
 'C:\\some\\name'
->>> 
+>>>
 ```
 
 If our program is not meant to be ran on Windows and the paths
@@ -297,7 +297,7 @@ don't contain backslashes we don't need to double anything or use
 ```py
 >>> print('/some/name')
 /some/name
->>> 
+>>>
 ```
 
 Doing things like `open('C:\\Users\\me\\myfile.txt', 'r')` is not

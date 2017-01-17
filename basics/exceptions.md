@@ -41,7 +41,7 @@ message and keep going.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: invalid literal for int() with base 10: 'lol'
->>> 
+>>>
 ```
 
 Exceptions are [classes](classes.md).
@@ -49,7 +49,7 @@ Exceptions are [classes](classes.md).
 ```py
 >>> ValueError
 <class 'ValueError'>
->>> 
+>>>
 ```
 
 We can also create exceptions. We won't get an error message by doing
@@ -59,7 +59,7 @@ that, but we'll use this for displaying our own error messages later.
 >>> the_problem = ValueError('oh no')
 >>> the_problem
 ValueError('oh no',)
->>> 
+>>>
 ```
 
 ## Catching exceptions
@@ -73,9 +73,9 @@ exception.
 ...     print(int('lol'))
 ... except ValueError:
 ...     print("Oops!")
-... 
+...
 Oops!
->>> 
+>>>
 ```
 
 The except part doesn't run if the try part succeeds.
@@ -85,9 +85,9 @@ The except part doesn't run if the try part succeeds.
 ...     print("Hello World!")
 ... except ValueError:
 ...     print("What the heck? Printing failed!")
-... 
+...
 Hello World!
->>> 
+>>>
 ```
 
 ValueError is raised when something gets an invalid value, but the
@@ -100,7 +100,7 @@ the type is wrong, we will get a TypeError instead.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> 
+>>>
 ```
 
 Exceptions always interrupt the code even if we catch them. Here the
@@ -113,9 +113,9 @@ block. Everything after the try block runs normally.
 ...     print("This doesn't get printed.")
 ... except TypeError:
 ...     print("Oops!")
-... 
+...
 Oops!
->>> 
+>>>
 ```
 
 Does an `except ValueError` also catch TypeErrors?
@@ -125,11 +125,11 @@ Does an `except ValueError` also catch TypeErrors?
 ...     print(123 + 'hello')
 ... except ValueError:
 ...     print("Oops!")
-... 
+...
 Traceback (most recent call last):
   File "<stdin>", line 2, in <module>
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> 
+>>>
 ```
 
 No, it doesn't. But maybe we could except for both ValueError and
@@ -142,7 +142,7 @@ TypeError?
 ...     print('wrong value')
 ... except TypeError:
 ...     print('wrong type')
-... 
+...
 wrong value
 >>> try:
 ...     123 + 'hello'
@@ -150,9 +150,9 @@ wrong value
 ...     print('wrong value')
 ... except TypeError:
 ...     print('wrong type')
-... 
+...
 wrong type
->>> 
+>>>
 ```
 
 Seems to be working.
@@ -165,15 +165,15 @@ We can also also catch multiple exceptions by catching
 ...     123 + 'hello'
 ... except (ValueError, TypeError):
 ...     print('wrong value or type')
-... 
+...
 wrong value or type
 >>> try:
 ...     int('lol')
 ... except (ValueError, TypeError):
 ...     print('wrong value or type')
-... 
+...
 wrong value or type
->>> 
+>>>
 ```
 
 Catching `Exception` will catch all errors. We'll learn more about why
@@ -184,15 +184,15 @@ it does that in a moment.
 ...     123 + 'hello'
 ... except Exception:
 ...     print("Oops!")
-... 
+...
 Oops!
 >>> try:
 ...     int('lol')
 ... except Exception:
 ...     print("Oops!")
-... 
+...
 Oops!
->>> 
+>>>
 ```
 
 It's also possible to catch an exception and store it in a variable.
@@ -204,12 +204,12 @@ Here we are catching an exception that Python created and storing it in
 ...     123 + 'hello'
 ... except TypeError as e:
 ...     our_error = e
-... 
+...
 >>> our_error
 TypeError("unsupported operand type(s) for +: 'int' and 'str'",)
 >>> type(our_error)
 <class 'TypeError'>
->>> 
+>>>
 ```
 
 ## When should we catch exceptions?
@@ -268,7 +268,7 @@ and then an exception we want to raise:
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: lol is not a number
->>> 
+>>>
 ```
 
 Of course, we can also raise an exception from a variable.
@@ -279,7 +279,7 @@ Of course, we can also raise an exception from a variable.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: lol is not a number
->>> 
+>>>
 ```
 
 If we [define a function](defining-functions.md) that raises an
@@ -289,17 +289,17 @@ says which functions we ran to get to that error.
 ```py
 >>> def oops():
 ...     raise ValueError("oh no!")
-... 
+...
 >>> def do_the_oops():
 ...     oops()
-... 
+...
 >>> do_the_oops()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 2, in do_the_oops
   File "<stdin>", line 2, in oops
 ValueError: oh no!
->>> 
+>>>
 ```
 
 If our code was in a file we would also see the line of code
@@ -422,7 +422,7 @@ This program allows the user to customize the message it prints by
 modifying a file the greeting is stored in, and it can create the
 file for the user if it doesn't exist already. This example also uses
 things from [the file chapter](files.md), [the function defining
-chapter](defining-functions.md) and [the module chapter](modules.md). 
+chapter](defining-functions.md) and [the module chapter](modules.md).
 
 ```py
 # These are here so you can change them to customize the program

@@ -54,7 +54,7 @@ The `pass` keyword does nothing.
 
 ```py
 >>> pass
->>> 
+>>>
 ```
 
 Let's use it to define a function that does nothing.
@@ -62,10 +62,10 @@ Let's use it to define a function that does nothing.
 ```py
 >>> def do_nothing():
 ...     pass
-... 
+...
 >>> do_nothing
 <function do_nothing at 0x7f56b74e9598>
->>> 
+>>>
 ```
 
 Seems to be working so far, we have a function. Actually it's just
@@ -74,7 +74,7 @@ what happens if we call it.
 
 ```py
 >>> do_nothing()
->>> 
+>>>
 ```
 
 There we go. It did nothing at all.
@@ -84,10 +84,10 @@ Maybe we could just do something in the function instead?
 ```py
 >>> def print_hi():
 ...     print("Hi!")
-... 
+...
 >>> print_hi()
 Hi!
->>> 
+>>>
 ```
 
 It's working. How about printing a variable in the function?
@@ -95,11 +95,11 @@ It's working. How about printing a variable in the function?
 ```py
 >>> def print_message():
 ...     print(message)
-... 
+...
 >>> message = "Hello World!"
 >>> print_message()
 Hello World!
->>> 
+>>>
 ```
 
 Again, it works. How about setting a variable in the function?
@@ -107,14 +107,14 @@ Again, it works. How about setting a variable in the function?
 ```py
 >>> def get_username():
 ...     username = input("Username: ")
-... 
+...
 >>> get_username()
 Username: me
 >>> username
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'username' is not defined
->>> 
+>>>
 ```
 
 That was weird! Why didn't that work?
@@ -131,10 +131,10 @@ program, even in functions.
 >>> c = "hello"
 >>> def print_abc():
 ...     print(a, b, c)
-... 
+...
 >>> print_abc()
 1 hi hello
->>> 
+>>>
 ```
 
 But there are also **local variables**. They exist only **inside**
@@ -144,14 +144,14 @@ functions, and they are deleted when the function exits.
 >>> def thingy():
 ...     d = "hello again, i'm a local variable"
 ...     print('inside thingy:', d)
-... 
+...
 >>> thingy()
 inside thingy: hello again, i'm a local variable
 >>> d
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'd' is not defined
->>> 
+>>>
 ```
 
 Let's draw a diagram of these variables:
@@ -164,11 +164,11 @@ However, modifying a global variable in-place from a function is easy.
 >>> stuff = ['global stuff']
 >>> def add_stuff():
 ...     stuff.append('local stuff')
-... 
+...
 >>> add_stuff()
 >>> stuff
 ['global stuff', 'local stuff']
->>> 
+>>>
 ```
 
 This doesn't work if the value is of an immutable type, like string or
@@ -179,13 +179,13 @@ Fortunately, Python will tell us if something's wrong.
 >>> foo = 1
 >>> def bar():
 ...     foo += 1
-... 
+...
 >>> bar()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 2, in bar
 UnboundLocalError: local variable 'foo' referenced before assignment
->>> 
+>>>
 ```
 
 ## Input
@@ -201,8 +201,8 @@ and prints it. Maybe a custom function could also take an argument?
 >>> def print_twice(message):
 ...     print(message)
 ...     print(message)
-... 
->>> 
+...
+>>>
 ```
 
 Here `message` is an argument. When we call the function we'll get a
@@ -220,7 +220,7 @@ This function can be called in two ways:
     >>> print_twice("hi")
     hi
     hi
-    >>> 
+    >>>
     ```
 
     When the function was running it had a local `message` variable
@@ -236,7 +236,7 @@ This function can be called in two ways:
     >>> print_twice(message="hi")
     hi
     hi
-    >>> 
+    >>>
     ```
 
     The name "keyword argument" is a little bit confusing because
@@ -357,12 +357,12 @@ Can our function return a value also?
 ```py
 >>> def times_two(x):
 ...     return x * 2
-... 
+...
 >>> times_two(3)
 6
 >>> times_two(5)
 10
->>> 
+>>>
 ```
 
 Yes, it can. Now typing `times_two(3)` to the prompt does the same
@@ -376,7 +376,7 @@ want, just like we can use built-in functions:
 10
 >>> print('2 * 5 is', times_two(5))
 2 * 5 is 10
->>> 
+>>>
 ```
 
 Note that **returning from a function ends it immediately**.
@@ -385,9 +385,9 @@ Note that **returning from a function ends it immediately**.
 >>> def return_before_print():
 ...     return None
 ...     print("This never gets printed.")
-... 
+...
 >>> return_before_print()
->>> 
+>>>
 ```
 
 If we don't have any return statements or we have a return statement
@@ -396,15 +396,15 @@ that doesn't specify what to return, our function will return None.
 ```py
 >>> def return_none_1():
 ...     pass
-... 
+...
 >>> def return_none_2():
 ...     return
-... 
+...
 >>> print(return_none_1())
 None
 >>> print(return_none_2())
 None
->>> 
+>>>
 ```
 
 ## Return or print?
@@ -426,10 +426,10 @@ If our function returns a value we can always print it, like this:
 ```py
 >>> def return_hi():
 ...     return "hi"
-... 
+...
 >>> print(return_hi())
 hi
->>> 
+>>>
 ```
 
 ## Examples

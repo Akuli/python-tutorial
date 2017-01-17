@@ -91,10 +91,10 @@ On GNU/Linux or Mac OSX, you should have a terminal application installed
 already. Run it and type `python3`:
 
     you@YourComputer:~$ python3
-    Python 3.4.3 (default, Oct 14 2015, 20:28:29) 
+    Python 3.4.3 (default, Oct 14 2015, 20:28:29)
     [GCC 4.8.4] on linux
     Type "help", "copyright", "credits" or "license" for more information.
-    >>> 
+    >>>
 
 Now you can type `exit()` and press Enter to get out of Python.
 

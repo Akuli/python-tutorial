@@ -1,10 +1,10 @@
 # Setting up an editor for programming
 
-Python comes with its IDLE, and you can use it in this tutorial. If you 
-don't like using it for some reason, you need [PowerShell, command 
-prompt or 
-terminal](basics/installing-python.md#if-you-like-working-with-powershell-command-prompt-or-terminal) 
-for trying out things. You also need an editor for writing code that 
+Python comes with its IDLE, and you can use it in this tutorial. If you
+don't like using it for some reason, you need [PowerShell, command
+prompt or
+terminal](basics/installing-python.md#if-you-like-working-with-powershell-command-prompt-or-terminal)
+for trying out things. You also need an editor for writing code that
 will be stored in files.
 
 If you use IDLE as your editor, **it comes with everything set up for

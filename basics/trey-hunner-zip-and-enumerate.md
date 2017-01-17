@@ -13,7 +13,7 @@ assigning values to multiple variables at once. It works like this:
 1
 >>> b
 2
->>> 
+>>>
 ```
 
 We can use `()` and `[]` around these values however we want and
@@ -26,7 +26,7 @@ everything will still work the same way. `[]` creates a list, and
 1
 >>> b
 2
->>> 
+>>>
 ```
 
 We can also have `[]` or `()` on one side but not on the other
@@ -38,7 +38,7 @@ side.
 1
 >>> b
 2
->>> 
+>>>
 ```
 
 Python created a tuple automatically.
@@ -46,7 +46,7 @@ Python created a tuple automatically.
 ```py
 >>> 1, 2
 (1, 2)
->>> 
+>>>
 ```
 
 If we're for looping over a list with pairs of values in it we
@@ -57,11 +57,11 @@ could do this:
 >>> for pair in items:
 ...     a, b = pair
 ...     print(a, b)
-... 
+...
 a 1
 b 2
 c 3
->>> 
+>>>
 ```
 
 Or we can tell the for loop to unpack it for us.
@@ -69,11 +69,11 @@ Or we can tell the for loop to unpack it for us.
 ```py
 >>> for a, b in items:
 ...     print(a, b)
-... 
+...
 a 1
 b 2
 c 3
->>> 
+>>>
 ```
 
 Now you're ready to read [this awesome looping

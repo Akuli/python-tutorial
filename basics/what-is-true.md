@@ -45,7 +45,7 @@ True
 True
 >>> bool('False')    # this isn't special in any way
 True
->>> 
+>>>
 ```
 
 As we can see, the Boolean value of most strings is True. The
@@ -55,7 +55,7 @@ only string that has a false Boolean value is the empty string,
 ```py
 >>> bool('')
 False
->>> 
+>>>
 ```
 
 Most other things are also treated as False if they're empty and
@@ -74,7 +74,7 @@ False
 True
 >>> bool({})
 False
->>> 
+>>>
 ```
 
 None and zero are also falsy, but positive and negative numbers
@@ -91,7 +91,7 @@ False
 True
 >>> bool(-1)
 True
->>> 
+>>>
 ```
 
 Most other things are also treated as True.
@@ -101,7 +101,7 @@ Most other things are also treated as True.
 True
 >>> bool(print)
 True
->>> 
+>>>
 ```
 
 ## When and why should we use Boolean values of things?
@@ -122,7 +122,7 @@ empty lists:
 ...         print("It's empty!")
 ...     else:
 ...         print("It's not empty.")
-... 
+...
 >>> is_this_empty([1, 2, 3])
 It's not empty.
 >>> is_this_empty([])
@@ -133,7 +133,7 @@ It's not empty.
 It's not empty.
 >>> is_this_empty({})
 It's not empty.
->>> 
+>>>
 ```
 
 We could improve the code by checking against different empty
@@ -145,8 +145,8 @@ things.
 ...         print("It's empty!")
 ...     else:
 ...         print("It's not empty.")
-... 
->>> 
+...
+>>>
 ```
 
 But Python has many other data types that can be empty and we
@@ -160,8 +160,8 @@ work with all of them:
 ...         print("It's not empty.")
 ...     else:
 ...         print("It's empty!")
-... 
->>> 
+...
+>>>
 ```
 
 There's also cases when we should not rely on the Boolean value.

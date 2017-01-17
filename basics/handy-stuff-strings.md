@@ -6,7 +6,7 @@ Python strings are just pieces of text.
 >>> our_string = "Hello World!"
 >>> our_string
 'Hello World!'
->>> 
+>>>
 ```
 
 So far we know how to add them together.
@@ -14,7 +14,7 @@ So far we know how to add them together.
 ```py
 >>> "I said: " + our_string
 'I said: Hello World!'
->>> 
+>>>
 ```
 
 We also know how to repeat them multiple times.
@@ -22,7 +22,7 @@ We also know how to repeat them multiple times.
 ```py
 >>> our_string * 3
 'Hello World!Hello World!Hello World!'
->>> 
+>>>
 ```
 
 Python strings are [immutable](https://docs.python.org/3/glossary.html#term-immutable).
@@ -43,7 +43,7 @@ characters and the fifth place between the characters, we can do this:
 ```py
 >>> our_string[2:5]
 'llo'
->>> 
+>>>
 ```
 
 So the syntax is like `some_string[start:end]`.
@@ -57,7 +57,7 @@ But what happens if we slice with negative values?
 ```py
 >>> our_string[-5:-2]
 'orl'
->>> 
+>>>
 ```
 
 It turns out that slicing with negative values simply starts counting
@@ -74,7 +74,7 @@ can get everything except the first or last character like this:
 'ello World!'
 >>> our_string[:-1]
 'Hello World'
->>> 
+>>>
 ```
 
 Remember that strings can't be changed in-place.
@@ -84,7 +84,7 @@ Remember that strings can't be changed in-place.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'str' object does not support item assignment
->>> 
+>>>
 ```
 
 There's also a step argument we can give to our slices, but I'm not
@@ -97,7 +97,7 @@ So now we know how slicing works. But what happens if we forget the `:`?
 ```py
 >>> our_string[1]
 'e'
->>> 
+>>>
 ```
 
 That's interesting. We got a string that is only one character long. But
@@ -119,7 +119,7 @@ first character is `our_string[0]`, the second character is
 'l'
 >>> our_string[4]
 'o'
->>> 
+>>>
 ```
 
 So string indexes work like this:
@@ -131,7 +131,7 @@ How about negative values?
 ```py
 >>> our_string[-1]
 '!'
->>> 
+>>>
 ```
 
 We got the last character.
@@ -224,7 +224,7 @@ like this:
 >>> name = 'Akuli'
 >>> 'My name is ' + name + '.'
 'My name is Akuli.'
->>> 
+>>>
 ```
 
 But that gets complicated if we have many things to add.
@@ -234,7 +234,7 @@ But that gets complicated if we have many things to add.
 >>> network = 'freenode'
 >>> "My name is " + name + " and I'm on the " + channel + " channel on " + network + "."
 "My name is Akuli and I'm on the ##learnpython channel on freenode."
->>> 
+>>>
 ```
 
 Instead it's recommended to use string formatting. It means putting
@@ -253,7 +253,7 @@ our problem:
     'Hello Akuli.'
     >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
     "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>> 
+    >>>
     ```
 
 - `%s`-formatting, also known as old-style formatting. This has less
@@ -267,7 +267,7 @@ our problem:
     'Hello Akuli.'
     >>> "My name is %s and I'm on the %s channel on %s." % (name, channel, network)
     "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>> 
+    >>>
     ```
 
     In the second example we had `(name, channel, network)` on the right
@@ -287,7 +287,7 @@ our problem:
     'we have hello and (1, 2, 3)'
     >>> "we have %s" % (thestuff,)
     'we have (1, 2, 3)'
-    >>> 
+    >>>
     ```
 
     Here `(thestuff,)` was a tuple that contained nothing but `thestuff`.
@@ -311,7 +311,7 @@ All of these formatting styles have many other features also:
 'Three zeros and number one: 0001'
 >>> 'Three zeros and number one: %04d' % 1
 'Three zeros and number one: 0001'
->>> 
+>>>
 ```
 
 If you need to know more about formatting I recommend reading
@@ -330,7 +330,7 @@ True
 False
 >>> "Python" not in our_string
 True
->>> 
+>>>
 ```
 
 We can get the length of a string with the `len` function. The name
@@ -343,7 +343,7 @@ We can get the length of a string with the `len` function. The name
 0
 >>> len('\n')    # python thinks of \n as one character
 1
->>> 
+>>>
 ```
 
 We can convert strings, integers and floats with each other with
@@ -360,7 +360,7 @@ are [later](classes.md).
 '123'
 >>> int('123')
 123
->>> 
+>>>
 ```
 
 Giving an invalid string to `int` or `float` produces an error
@@ -375,7 +375,7 @@ ValueError: invalid literal for int() with base 10: 'lol'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: could not convert string to float: 'hello'
->>> 
+>>>
 ```
 
 ## Summary

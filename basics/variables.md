@@ -24,7 +24,7 @@ We can also change the value of a variable after setting it.
 >>> a = 2    # make a point to 2 instead of 1
 >>> a
 2
->>> 
+>>>
 ```
 
 So now our diagram looks like this:
@@ -40,7 +40,7 @@ variable and sets the first variable to point to that value.
 >>> a = 5
 >>> b      # b didn't change when a changed
 1
->>> 
+>>>
 ```
 
 Trying to access a variable that is not defined creates an error
@@ -51,7 +51,7 @@ message.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'thingy' is not defined
->>> 
+>>>
 ```
 
 Variables are simple to understand, but there's a few details that we
@@ -78,7 +78,7 @@ underscores.
 ```py
 >>> magic_number = 123
 >>> greeting = "Hello World!"
->>> 
+>>>
 ```
 
 Variable names are case-sensitive, like many other things in Python.
@@ -108,7 +108,7 @@ keyword as a variable name causes a syntax error.
     if = 123
        ^
 SyntaxError: invalid syntax
->>> 
+>>>
 ```
 
 When assigning something to a variable using a `=`, the right side of
@@ -121,7 +121,7 @@ back to the same variable on the left side.
 >>> a = a + 1
 >>> a
 2
->>> 
+>>>
 ```
 
 To do something to a variable (for example, to add something to it) we
@@ -133,7 +133,7 @@ can also use `+=`, `-=`, `*=` and `/=` instead of `+`, `-`, `*` and
 >>> a -= 2          # a = a - 2
 >>> a *= 2          # a = a * 2
 >>> a /= 2          # a = a / 2
->>> 
+>>>
 ```
 
 This is not limited to integers.
@@ -144,7 +144,7 @@ This is not limited to integers.
 >>> a += 'world'
 >>> a
 'hellohellohelloworld'
->>> 
+>>>
 ```
 
 Now we also understand why typing hello to the prompt didn't work in
@@ -155,7 +155,7 @@ variable called hello and then type hello:
 >>> hello = 'hello there'
 >>> hello
 'hello there'
->>> 
+>>>
 ```
 
 ## Booleans
@@ -171,7 +171,7 @@ True
 >>> a = 2
 >>> a == 1
 False
->>> 
+>>>
 ```
 
 `a == 1` is the same as `(a == 1) == True`, but `a == 1` is more
@@ -188,7 +188,7 @@ True
 False
 >>> (a == 1) == True
 False
->>> 
+>>>
 ```
 
 ## None
@@ -204,7 +204,7 @@ first:
 ```py
 >>> thingy = None
 >>> thingy
->>> 
+>>>
 ```
 
 That was weird! We set thingy to None, but typing `thingy` didn't echo
@@ -219,7 +219,7 @@ If we want to see a None on the interactive prompt, we can use print.
 ```py
 >>> print(thingy)
 None
->>> 
+>>>
 ```
 
 Another confusing thing is that if we do something weird to None we get
@@ -235,7 +235,7 @@ AttributeError: 'NoneType' object has no attribute 'hello'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'NoneType' object is not callable
->>> 
+>>>
 ```
 
 ## Other comparing operators

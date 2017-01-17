@@ -23,13 +23,13 @@ That's when `if` comes in.
 >>> its_raining = True
 >>> if its_raining:
 ...     print("It's raining!")
-... 
+...
 It's raining!
 >>> its_raining = False
 >>> if its_raining:
 ...     print("It's raining!")        # nothing happens
-... 
->>> 
+...
+>>>
 ```
 
 The prompt changed from `>>>` to `...`. It meant that Python was
@@ -48,9 +48,9 @@ example code looks more like this:
 >>> if its_raining:
         print("It's raining!")
 
-        
+
 It's raining!
->>> 
+>>>
 ```
 
 But why is that `if its_raining` instead of `if(its_raining)`?
@@ -63,7 +63,7 @@ Earlier we learned that `if` is a **keyword**.
     if = 123
        ^
 SyntaxError: invalid syntax
->>> 
+>>>
 ```
 
 **Functions** like `print` need `()` after their name to work. But `if` is
@@ -118,10 +118,10 @@ on your desktop, type `cd Desktop` before running the file.
 
 Running from IDLE looks like this:
 
-    >>> 
+    >>>
     ========================= RESTART: /some/place/rain.py =========================
     It's raining!
-    >>> 
+    >>>
 
 And running from the Windows PowerShell or command prompt looks like
 this:
@@ -129,14 +129,14 @@ this:
     C:\Users\You> cd Desktop
     C:\Users\You\Desktop> py rain.py
     It's raining!
-    C:\Users\You\Desktop> 
+    C:\Users\You\Desktop>
 
 Running from a terminal looks like this:
 
     you@YourComputer:~$ cd Desktop
     you@YourComputer:~/Desktop$ python3 rain.py
     It's raining!
-    you@YourComputer:~/Desktop$ 
+    you@YourComputer:~/Desktop$
 
 From now on, **if a code example starts with `>>>` run it on the
 interactive prompt, and if it doesn't, write it to a file and run the

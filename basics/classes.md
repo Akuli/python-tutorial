@@ -22,7 +22,7 @@ Python comes with a lot of classes that you are already familiar with.
 <class 'list'>
 >>> dict
 <class 'dict'>
->>> 
+>>>
 ```
 
 Calling these classes as if they were functions makes a new **instance**
@@ -38,7 +38,7 @@ string.
 []
 >>> dict()
 {}
->>> 
+>>>
 ```
 
 We can also get an instance's class with `type()`:
@@ -52,7 +52,7 @@ We can also get an instance's class with `type()`:
 <class 'list'>
 >>> type({})
 <class 'dict'>
->>> 
+>>>
 ```
 
 Let's say you make a program that processes data about websites. With a
@@ -67,7 +67,7 @@ In Python, `pass` does nothing.
 
 ```py
 >>> pass
->>> 
+>>>
 ```
 
 Let's use it to define an empty class.
@@ -75,10 +75,10 @@ Let's use it to define an empty class.
 ```py
 >>> class Website:
 ...     pass
-... 
+...
 >>> Website
 <class '__main__.Website'>
->>> 
+>>>
 ```
 
 Note that I named the class `Website`, not `website`. This way we know
@@ -94,7 +94,7 @@ Now we can make a Website instance by calling the class.
 <__main__.Website object at 0x7f36e4c456d8>
 >>> type(stackoverflow)
 <class '__main__.Website'>
->>> 
+>>>
 ```
 
 We can say that `stackoverflow` is "a Website instance", "a Website
@@ -106,7 +106,7 @@ Now we can attach more information about stackoverflow to our Website.
 >>> stackoverflow.url = 'http://stackoverflow.com/'
 >>> stackoverflow.founding_year = 2008
 >>> stackoverflow.free_to_use = True
->>> 
+>>>
 ```
 
 We can also access the information easily.
@@ -118,7 +118,7 @@ We can also access the information easily.
 2008
 >>> stackoverflow.free_to_use
 True
->>> 
+>>>
 ```
 
 As you can see, our Website is mutable, like lists are, not immutable
@@ -143,7 +143,7 @@ and `free_to_use`?
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'Website' object has no attribute 'url'
->>> 
+>>>
 ```
 
 It doesn't. We'd need to define the attributes for effbot also.
@@ -159,7 +159,7 @@ handy way to see which attributes the instance contains.
  'url': 'http://stackoverflow.com/'}
 >>> effbot.__dict__
 {}
->>> 
+>>>
 ```
 
 ## Class attributes
@@ -171,7 +171,7 @@ instead of doing that to an instance?
 >>> Website.is_online = True
 >>> Website.is_online
 True
->>> 
+>>>
 ```
 
 Seems to be working, but what happened to the instances?
@@ -181,7 +181,7 @@ Seems to be working, but what happened to the instances?
 True
 >>> effbot.is_online
 True
->>> 
+>>>
 ```
 
 What was that? Setting `Website.is_online` to a value also set
@@ -198,7 +198,7 @@ the `Website` class.
  'url': 'http://stackoverflow.com/'}
 >>> effbot.__dict__
 {}
->>> 
+>>>
 ```
 
 `Website.is_online` is `Website`'s class attribute, and in Python you can
@@ -216,12 +216,12 @@ Let's define a function that prints information about a website.
 ...     print("URL:", website.url)
 ...     print("Founding year:", website.founding_year)
 ...     print("Free to use:", website.free_to_use)
-... 
+...
 >>> website_info(stackoverflow)
 URL: http://stackoverflow.com/
 Founding year: 2008
 Free to use: True
->>> 
+>>>
 ```
 
 Seems to be working. We should be able to get information about all
@@ -234,7 +234,7 @@ Website class?
 URL: http://stackoverflow.com/
 Founding year: 2008
 Free to use: True
->>> 
+>>>
 ```
 
 It's working, but `Website.info(stackoverflow)` is a lot of typing, so
@@ -245,7 +245,7 @@ wouldn't `stackoverflow.info()` be much better?
 URL: http://stackoverflow.com/
 Founding year: 2008
 Free to use: True
->>> 
+>>>
 ```
 
 What the heck happened? We didn't define a `stackoverflow.info`, it just
@@ -262,7 +262,7 @@ But is `stackoverflow.info` the same thing as `Website.info`?
 <function website_info at 0x7f36e4c39598>
 >>> stackoverflow.info
 <bound method website_info of <__main__.Website object at 0x7f36e4c456d8>>
->>> 
+>>>
 ```
 
 It's not.
@@ -285,12 +285,12 @@ it later?
 
 ```py
 >>> class Website:
-...     
+...
 ...     def info(self):     # self will be stackoverflow
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
-... 
+...
 >>> stackoverflow = Website()
 >>> stackoverflow.url = 'http://stackoverflow.com/'
 >>> stackoverflow.founding_year = 2008
@@ -299,7 +299,7 @@ it later?
 URL: http://stackoverflow.com/
 Founding year: 2008
 Free to use: True
->>> 
+>>>
 ```
 
 It's working. The `self` argument in `Website.info` was `stackoverflow`.
@@ -312,24 +312,24 @@ Maybe we could add a method to do that?
 
 ```py
 >>> class Website:
-...     
+...
 ...     def initialize(self, url, founding_year, free_to_use):
 ...         self.url = url
 ...         self.founding_year = founding_year
 ...         self.free_to_use = free_to_use
-...     
+...
 ...     def info(self):
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
-... 
+...
 >>> stackoverflow = Website()
 >>> stackoverflow.initialize('http://stackoverflow.com/', 2008, True)
 >>> stackoverflow.info()
 URL: http://stackoverflow.com/
 Founding year: 2008
 Free to use: True
->>> 
+>>>
 ```
 
 That works. The attributes we defined in the initialize method are also
@@ -344,23 +344,23 @@ class with arguments and they will be given to `__init__`. Like this:
 
 ```py
 >>> class Website:
-...     
+...
 ...     def __init__(self, url, founding_year, free_to_use):
 ...         self.url = url
 ...         self.founding_year = founding_year
 ...         self.free_to_use = free_to_use
-...     
+...
 ...     def info(self):
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
-... 
+...
 >>> stackoverflow = Website('http://stackoverflow.com/', 2008, True)
 >>> stackoverflow.info()
 URL: http://stackoverflow.com/
 Founding year: 2008
 Free to use: True
->>> 
+>>>
 ```
 
 Classes have many other magic methods too, but I'm not going to cover
