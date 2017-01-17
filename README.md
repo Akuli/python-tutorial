@@ -63,7 +63,7 @@ than complex.
 
 1. [Advanced stuff with functions](advanced/functions.md)
 2. [Magic methods](advanced/magicmethods.md)
-3. [Iterables and iterators](advanced/iterators.md)
+3. [Iterables, iterators and generators](advanced/iters.md)
 
 ### Other things this tutorial comes with
 
