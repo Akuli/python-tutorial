@@ -37,7 +37,6 @@ def needs_stripping(file):
             line = line.rstrip('\n')
             if line != line.rstrip():
                 # contains trailing whitespace other than '\n'
-                print(repr(line))
                 return True
     return False
 

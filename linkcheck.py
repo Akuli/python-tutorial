@@ -26,7 +26,20 @@
 
 # For more information, please refer to <http://unlicense.org>
 
-"""Check for broken links."""
+"""Check for broken links.
+
+This finds links like this...
+
+    [click here](some-file.md)
+    [or here](../some/path/another-file.md)
+    ![here's an image](../images/some-cool-image.png)
+
+...but not like this:
+
+    [some website](http://github.com/)
+    [another website](https://github.com/)
+    [local header](#some-header)
+"""
 
 # The markdown files use posix-style paths, so we need posixpath for
 # processing them. See help('posixpath').
@@ -38,32 +51,61 @@ import re
 import common
 
 
-Link = collections.namedtuple('Link', 'text target markdown lineno file')
+class Link:
 
+    def __init__(self, regexmatch, filepath, lineno):
+        # The .group(0) is not perfect, but it's good enough.
+        self.markdown = regexmatch.group(0)
+        self.text = regexmatch.group(1)
+        self.target = regexmatch.group(2)
+        self.filepath = filepath
+        self.lineno = lineno
+        self.status = None
 
-def check_link(link):
-    """Check if the link's target exists.
-
-    Return an error message string or "ok".
-    """
-    if link.target.startswith(('http://', 'https://')):
-        # Checking for http(s) links can be added later, but currently 
-        # it's not needed.
-        return "ok"
-    path = posixpath.join(posixpath.dirname(link.file), link.target)
-    realpath = path.replace('/', os.sep)
-    if not os.path.exists(realpath):
-        return "doesn't exist"
-    if path.endswith('/'):
-        # A directory.
-        if os.path.isdir(realpath):
+    def _get_status(self):
+        if self.target.startswith(('http://', 'https://')):
+            # Checking for http(s) links can be added later, but 
+            # currently it's not needed.
             return "ok"
-        return "not a directory"
-    else:
-        # A file.
-        if os.path.isfile(realpath):
-            return "ok"
-        return "not a file"
+
+        target = self.target
+        if '#' in target:
+            where = target.index('#')
+            if where == 0:
+                # It's a link to a title in the same file, we need to 
+                # skip it.
+                return "ok"
+            target = target[:where]
+
+        path = posixpath.join(posixpath.dirname(self.filepath), target)
+        realpath = path.replace('/', os.sep)
+
+        if not os.path.exists(realpath):
+            return "doesn't exist"
+        if target.endswith('/'):
+            # A directory.
+            if os.path.isdir(directory):
+                return "ok"
+            return "not a directory"
+        else:
+            # A file.
+            if os.path.isfile(realpath):
+                return "ok"
+            return "not a file"
+
+    def check(self):
+        """Check if the link's target is like it should be.
+
+        Return an error message string or "ok". The return value is also 
+        assigned to the status attribute.
+        """
+        self.status = self._get_status()
+        return self.status
+
+    def print_status(self):
+        print("  file {0.filepath}, line {0.lineno}: {0.status}".format(self))
+        print("    " + self.markdown)
+        print()
 
 
 def main():
@@ -72,35 +114,22 @@ def main():
     for path in common.get_markdown_files():
         with open(path.replace('/', os.sep), 'r') as f:
             for match, lineno in common.find_links(f):
-                target = match.group(2)
-                if '#' in target:
-                    where = target.index('#')
-                    target = target[:where]
-                link = Link(
-                    text=match.group(1),
-                    target=target,
-                    markdown=match.group(0),
-                    lineno=lineno,
-                    file=path)
-                links.append(link)
+                links.append(Link(match, path, lineno))
+    print("  found", len(links), "links")
 
     print("Checking for broken links...")
-    broken = []     # [(Link, check result), ...]
+    brokens = 0
     for link in links:
-        result = check_link(link)
-        if result != "ok":
-            broken.append((link, result))
+        if link.check() != "ok":
+            link.print_status()
+            brokens += 1
 
-    if broken:
-        print("\n*** %d/%d links seem to be broken! ***\n"
-              % (len(broken), len(links)))
-        for link, error in broken:
-            print("  file {0.file}, line {0.lineno}: {1}"
-                  .format(link, error))
-            print("   ", link.markdown.replace('\n', ' '))
-            print()
+    if brokens == 0:
+        print("All links seem to be OK.")
+    elif brokens == 1:
+        print("1 link is broken!")
     else:
-        print("All", len(links), "links seem to be OK.")
+        print(brokens, "links are broken!")
 
 
 if __name__ == '__main__':

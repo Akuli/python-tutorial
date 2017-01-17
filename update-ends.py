@@ -28,29 +28,21 @@
 
 """Update ends of markdown files."""
 
+# Markdown and HTML links use / as a path separator so we need posixpath 
+# for parsing them and we do need to replace / with os.sep when opening 
+# the files.
+import posixpath
 import re
 
 import common
 
 
-# Markdown and HTML links use / as a path separator so there's no need 
-# for os.path, but we do need to replace / with os.sep when opening the 
-# files.
-BASIC_END = """\
+END_TEMPLATE = """\
 You may use this tutorial freely at your own risk. See
-[LICENSE]({toplevel}LICENSE).
+[LICENSE]({license}).
 
-[List of contents]({toplevel}README.md#list-of-contents)
+{extralinks}[List of contents]({readme}#{readmeheader})
 """
-
-CHAPTER_END = """\
-You may use this tutorial freely at your own risk. See
-[LICENSE](../LICENSE).
-
-[Previous]({prev}) | [Next]({next}) |
-[List of contents](../README.md#{sectionname})
-"""
-
 
 CHAPTER_LINK_REGEX = r'^\d+\. \[.*\]\((.*\.md)\)$'
 
@@ -122,9 +114,9 @@ def main():
     print("Chapter files:")
     for prevpath, thispath, nextpath in zip(prevs, chapter_files, nexts):
         # the paths are like 'section/file.md'
-        prevsection, prevfile = prevpath.split('/')
-        thissection, thisfile = thispath.split('/')
-        nextsection, nextfile = nextpath.split('/')
+        prevsection, prevfile = posixpath.split(prevpath)
+        thissection, thisfile = posixpath.split(thispath)
+        nextsection, nextfile = posixpath.split(nextpath)
 
         # make previous and next relative to this file
         if prevsection == thissection:
@@ -132,27 +124,36 @@ def main():
             prev = prevfile
         elif prevsection == '.':
             # something from the top level
-            prev = '../' + prevfile
+            prev = posixpath.join('..', prevfile)
         else:
             # it comes from some other place
-            prev = '../' + prevpath
+            prev = posixpath.join('..', prevpath)
 
         if nextsection == thissection:
             next_ = nextfile
         elif nextsection == '.':
-            next_ = '../' + nextfile
+            next_ = posixpath.join('..', nextfile)
         else:
-            next_ = '../' + nextpath
+            next_ = posixpath.join('..', nextpath)
 
-        end = CHAPTER_END.format(prev=prev, next=next_,
-                                 sectionname=thissection)
+        extralinks = "[Previous](%s) | [Next](%s) |\n" % (prev, next_)
+        end = END_TEMPLATE.format(
+            license='../LICENSE', readme='../README.md',
+            extralinks=extralinks, readmeheader=thissection)
         update_end(thispath, end)
 
     print()
 
     print("Other files:")
     for filename in other_files:
-        end = BASIC_END.format(toplevel='../'*filename.count('/'))
+        # move to the top level as needed
+        parts = ['..'] * filename.count('/')
+        licenseparts = parts + ['LICENSE']
+        readmeparts = parts + ['README.md']
+        end = END_TEMPLATE.format(
+            license=posixpath.join(*licenseparts),
+            readme=posixpath.join(*readmeparts),
+            extralinks="", readmeheader='list-of-contents')
         update_end(filename, end)
 
 
