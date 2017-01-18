@@ -43,10 +43,8 @@ This finds links like this...
 
 # The markdown files use posix-style paths, so we need posixpath for
 # processing them. See help('posixpath').
-import collections
 import os
 import posixpath
-import re
 
 import common
 
@@ -64,7 +62,7 @@ class Link:
 
     def _get_status(self):
         if self.target.startswith(('http://', 'https://')):
-            # Checking for http(s) links can be added later, but 
+            # Checking for http(s) links can be added later, but
             # currently it's not needed.
             return "ok"
 
@@ -72,7 +70,7 @@ class Link:
         if '#' in target:
             where = target.index('#')
             if where == 0:
-                # It's a link to a title in the same file, we need to 
+                # It's a link to a title in the same file, we need to
                 # skip it.
                 return "ok"
             target = target[:where]
@@ -84,7 +82,7 @@ class Link:
             return "doesn't exist"
         if target.endswith('/'):
             # A directory.
-            if os.path.isdir(directory):
+            if os.path.isdir(realpath):
                 return "ok"
             return "not a directory"
         else:
@@ -96,7 +94,7 @@ class Link:
     def check(self):
         """Check if the link's target is like it should be.
 
-        Return an error message string or "ok". The return value is also 
+        Return an error message string or "ok". The return value is also
         assigned to the status attribute.
         """
         self.status = self._get_status()

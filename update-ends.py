@@ -28,9 +28,10 @@
 
 """Update ends of markdown files."""
 
-# Markdown and HTML links use / as a path separator so we need posixpath 
-# for parsing them and we do need to replace / with os.sep when opening 
+# Markdown and HTML links use / as a path separator so we need posixpath
+# for parsing them and we do need to replace / with os.sep when opening
 # the files.
+import os
 import posixpath
 import re
 
@@ -50,7 +51,7 @@ CHAPTER_LINK_REGEX = r'^\d+\. \[.*\]\((.*\.md)\)$'
 def get_filenames():
     """Get chapter files and other files from README.
 
-    Return a two-tuple of chapter file names and other file names as 
+    Return a two-tuple of chapter file names and other file names as
     iterables of strings.
     """
     chapters = []
@@ -79,12 +80,12 @@ def get_filenames():
 def update_end(filename, end):
     """Add *** and end to a file if it doesn't have them already.
 
-    filename should be relative to the toplevel using / as a path 
+    filename should be relative to the toplevel using / as a path
     separator.
     """
-    filename = filename
+    real_filename = filename.replace('/', os.sep)
     end = '\n***\n\n' + end
-    with open(filename, 'r') as f:
+    with open(real_filename, 'r') as f:
         content = f.read()
     if content.endswith(end):
         # No need to do anything.
@@ -95,11 +96,11 @@ def update_end(filename, end):
         # We need to remove the old ending first.
         print("  Removing old end:", filename)
         where = content.index('\n***\n')
-        with open(filename, 'w') as f:
+        with open(real_filename, 'w') as f:
             f.write(content[:where])
 
     print("  Adding end:", filename)
-    with open(filename, 'a') as f:
+    with open(real_filename, 'a') as f:
         f.write(end)
 
 
@@ -108,34 +109,15 @@ def main():
 
     # make previous of first file and next of last file to just bring
     # back to README
-    prevs = ['./README.md'] + chapter_files[:-1]
-    nexts = chapter_files[1:] + ['./README.md']
+    prevs = ['README.md'] + chapter_files[:-1]
+    nexts = chapter_files[1:] + ['README.md']
 
     print("Chapter files:")
     for prevpath, thispath, nextpath in zip(prevs, chapter_files, nexts):
-        # the paths are like 'section/file.md'
-        prevsection, prevfile = posixpath.split(prevpath)
-        thissection, thisfile = posixpath.split(thispath)
-        nextsection, nextfile = posixpath.split(nextpath)
-
-        # make previous and next relative to this file
-        if prevsection == thissection:
-            # they are in the same place
-            prev = prevfile
-        elif prevsection == '.':
-            # something from the top level
-            prev = posixpath.join('..', prevfile)
-        else:
-            # it comes from some other place
-            prev = posixpath.join('..', prevpath)
-
-        if nextsection == thissection:
-            next_ = nextfile
-        elif nextsection == '.':
-            next_ = posixpath.join('..', nextfile)
-        else:
-            next_ = posixpath.join('..', nextpath)
-
+        # thispath is always like 'section/file.md', never e.g. 'README.md'
+        thissection, thisfile = thispath.split('/')
+        prev = posixpath.relpath(prevpath, thissection)
+        next_ = posixpath.relpath(nextpath, thissection)
         extralinks = "[Previous](%s) | [Next](%s) |\n" % (prev, next_)
         end = END_TEMPLATE.format(
             license='../LICENSE', readme='../README.md',

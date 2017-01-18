@@ -30,7 +30,6 @@
 
 import itertools
 import re
-import sys
 
 
 _LINK_REGEX = r'\[(.*?)\]\((.*?)\)'
@@ -44,12 +43,12 @@ def find_links(file):
     # don't yield same link twice
     seen = set()
 
-    # we need to loop over the file two lines at a time to support 
+    # we need to loop over the file two lines at a time to support
     # multi-line (actually two-line) links, so this is kind of a mess
     firsts, seconds = itertools.tee(file)
     next(seconds)  # first line is never second line
 
-    # we want 1-based indexing instead of 0-based and one-line links get 
+    # we want 1-based indexing instead of 0-based and one-line links get
     # caught from linepair[1], so we need to start at two
     for lineno, linepair in enumerate(zip(firsts, seconds), start=2):
         lines = linepair[0] + linepair[1]
@@ -68,7 +67,7 @@ def get_markdown_files():
     with open('README.md', 'r') as f:
         for match, lineno in find_links(f):
             target = match.group(2)
-            # Currently the README doesn't link to itself, but I don't 
+            # Currently the README doesn't link to itself, but I don't
             # want to break things if it will in the future.
             if target.endswith('.md') and target != 'README.md':
                 yield target
