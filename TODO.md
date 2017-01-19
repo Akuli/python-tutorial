@@ -4,6 +4,7 @@ This tutorial is not complete. It still needs:
 
 - range somewhere
 - **More exercises and examples everywhere!**
+    - especially "fix this" exercises
 - classes part 1:
 
         <deniska> Akuli: I would probably add an example of refactoring
@@ -11,13 +12,12 @@ This tutorial is not complete. It still needs:
                   into a class because it's a pretty typical usecase
 
 - classes part 2
-    - non-public `_variables` (maybe reading PEP-8 is enough to explain this?)
+    - non-public `_variables`
     - "singular" inheritance, inheritance of built-in classes
     - using super
     - advise to avoid multiple inheritance
-- iterables and iterators: something most Python programmers need to be
-    aware of
 - last chapter: "What should I do now?" links to other resources
+    - first of all: read zen and pep8
     - GUI programming tutorials
         - easygui
         - tkinter in effbot (warn the readers about star imports)
@@ -27,7 +27,6 @@ This tutorial is not complete. It still needs:
     - David Beazley's metaprogramming and other talks
     - "What the heck is this?" section for stuff i haven't talked about
         - regexes
-        - yield
 
 ***
 
