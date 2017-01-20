@@ -67,8 +67,9 @@ HTML_TEMPLATE = """\
 """
 
 
-def mkdir_open(filename, mode):
-    """Like open(), but make directories as needed."""
+def mkdir_slashfix_open(filename, mode):
+    """Like common.slashfix_open(), but make directories as needed."""
+    filename = common.slashfix(filename)
     directory = os.path.dirname(filename)
     os.makedirs(directory, exist_ok=True)
     return open(filename, mode)
@@ -198,12 +199,12 @@ def main():
     for markdownfile in common.get_markdown_files():
         htmlfile = os.path.join('html', fix_filename(markdownfile))
         print(' ', markdownfile, '->', htmlfile)
-        with open(markdownfile.replace('/', os.sep), 'r') as f:
+        with common.slashfix_open(markdownfile, 'r') as f:
             markdown = f.read()
         renderer = TutorialRenderer()
         body = mistune.markdown(markdown, renderer=renderer)
         html = HTML_TEMPLATE.format(title=renderer.title, body=body)
-        with mkdir_open(htmlfile.replace('/', os.sep), 'w') as f:
+        with mkdir_slashfix_open(htmlfile, 'w') as f:
             print(html, file=f)
 
     print("Copying other files...")

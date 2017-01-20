@@ -28,13 +28,11 @@
 
 """Strip trailing whitespace from markdown files."""
 
-import os
-
 import common
 
 
-def needs_stripping(realfile):
-    with open(realfile, 'r') as f:
+def needs_stripping(file):
+    with common.slashfix_open(file, 'r') as f:
         for line in f:
             line = line.rstrip('\n')
             if line != line.rstrip():
@@ -43,12 +41,12 @@ def needs_stripping(realfile):
     return False
 
 
-def strip(realfile):
+def strip(file):
     lines = []
-    with open(realfile, 'r') as f:
+    with common.slashfix_open(file, 'r') as f:
         for line in f:
             lines.append(line.rstrip())
-    with open(realfile, 'w') as f:
+    with common.slashfix_open(file, 'w') as f:
         for line in lines:
             print(line, file=f)
 
@@ -56,10 +54,9 @@ def strip(realfile):
 def main():
     print("Stripping trailing whitespace...")
     for file in common.get_markdown_files():
-        realfile = file.replace('/', os.sep)
-        if needs_stripping(realfile):
-            strip(realfile)
-            print("  Was stripped:", file)
+        if needs_stripping(file):
+            print("  Stripping:", file)
+            strip(file)
         else:
             print("  No trailing whitespace:", file)
 

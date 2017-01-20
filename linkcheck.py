@@ -110,7 +110,7 @@ def main():
     print("Searching links...")
     links = []
     for path in common.get_markdown_files():
-        with open(path.replace('/', os.sep), 'r') as f:
+        with common.slashfix_open(path, 'r') as f:
             for match, lineno in common.find_links(f):
                 links.append(Link(match, path, lineno))
     print("  found", len(links), "links")

@@ -28,10 +28,6 @@
 
 """Update ends of markdown files."""
 
-# Markdown and HTML links use / as a path separator so we need posixpath
-# for parsing them and we do need to replace / with os.sep when opening
-# the files.
-import os
 import posixpath
 import re
 
@@ -83,9 +79,8 @@ def update_end(filename, end):
     filename should be relative to the toplevel using / as a path
     separator.
     """
-    real_filename = filename.replace('/', os.sep)
     end = '\n***\n\n' + end
-    with open(real_filename, 'r') as f:
+    with common.slashfix_open(filename, 'r') as f:
         content = f.read()
     if content.endswith(end):
         # No need to do anything.
@@ -96,11 +91,11 @@ def update_end(filename, end):
         # We need to remove the old ending first.
         print("  Removing old end:", filename)
         where = content.index('\n***\n')
-        with open(real_filename, 'w') as f:
+        with common.slashfix_open(filename, 'w') as f:
             f.write(content[:where])
 
     print("  Adding end:", filename)
-    with open(real_filename, 'a') as f:
+    with common.slashfix_open(filename, 'a') as f:
         f.write(end)
 
 

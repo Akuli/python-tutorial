@@ -26,9 +26,15 @@
 
 # For more information, please refer to <http://unlicense.org>
 
-"""Things that other scripts import and use."""
+"""Things that other scripts import and use.
+
+The markdown files use / as a path separator. That's why they need the
+posixpath module for processing paths, but they use functions in this
+file when actually opening files.
+"""
 
 import itertools
+import os
 import re
 
 
@@ -93,3 +99,13 @@ def askyesno(question, default=True):
             return False
         if not result:
             return default
+
+
+def slashfix(path):
+    """Replace / with os.sep."""
+    return path.replace('/', os.sep)
+
+
+def slashfix_open(file, mode):
+    """An easy way to use slashfix() and open() together."""
+    return open(slashfix(file), mode)
