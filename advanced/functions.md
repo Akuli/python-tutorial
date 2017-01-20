@@ -114,16 +114,16 @@ now kwargs is {'b': 2, 'a': 1}
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: thing() takes 0 positional arguments but 2 were given
->>> def print_box(message, border='*'):
+>>> def print_box(message, border):
 ...     print(border * len(message))
 ...     print(message)
 ...     print(border * len(message))
 ...
->>> kwargs = {'message': "Hello World!", 'border': '-'}
+>>> kwargs = {'message': "Hello World!", 'border': '*'}
 >>> print_box(**kwargs)
-------------
+************
 Hello World!
-------------
+************
 >>>
 ```
 
@@ -209,24 +209,30 @@ def move(source, destination, *, overwrite=False, backup=False):
 ```
 
 The `*` between `destination` and `overwrite` means that `overwrite` and
-`backup` must be given as keyword arguments.
+`backup` must be given as keyword arguments. The basic idea is really
+simple: now it's impossible to overwrite by doing `move('file1.txt',
+'file2.txt', True)` and the overwrite must be always given like
+`overwrite=True`.
 
 ```py
->>> move('file1.txt', 'file2.txt', overwrite=True)
-deleting file2.txt
+>>> move('file1.txt', 'file2.txt')
 moving file1.txt to file2.txt
 >>> move('file1.txt', 'file2.txt', True)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: move() takes 2 positional arguments but 3 were given
+>>> move('file1.txt', 'file2.txt', 'file3.txt')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: move() takes 2 positional arguments but 3 were given
+>>> move('file1.txt', 'file2.txt', overwrite='file3.txt')
+deleting file2.txt
+moving file1.txt to file2.txt
 >>>
 ```
 
-As you can see, our new move function also forces everyone to use it
-like `move('file1.txt', 'file2.txt', overwrite=True)` instead of
-`move('file1.txt', 'file2.txt', True)`. That's good because it's hard to
-guess what a positional `True` does, but it's easy to guess what
-`overwrite=True` does.
+Doing `overwrite='file3.txt'` doesn't make much sense and it's easy to
+notice that something's wrong.
 
 ## When should we use these things?
 
@@ -246,8 +252,7 @@ I don't recommend using keyword-only arguments with functions like our
 `print_box`. It's easy enough to guess what `print_box('hello', '-')`
 does, and there's no need to deny that. It's much harder to guess what
 `move('file1.txt', 'file2.txt', True, False)` does, so using
-keyword-only arguments makes sense and also solves the file deleting
-problem.
+keyword-only arguments makes sense.
 
 ## Summary
 
@@ -258,8 +263,8 @@ problem.
     dictionaries and keyword arguments.
 - Adding a `*` in a function definition makes all arguments after it
     keyword-only. This is useful when using positional arguments would
-    look implicit, like the True and False in `move('file1.txt',
-    'file2.txt', True, False)`.
+    look implicit, like the True and False in
+    `move('file1.txt', 'file2.txt', True, False)`.
 
 ***
 
