@@ -220,84 +220,33 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 ## Loops
 
-1. For loop over the users, each user is a list that contains a
-    username and a password.
+1. The problem is that `things` is a string because we converted it to a
+    string with `str`, so the for loop loops over the characters `[`,
+    `1`, `,` and so on. Replace `str([1, 2, 3, 4, 5])` with
+    `[1, 2, 3, 4, 5]`.
+
+2. The code appends each list in `before` to `after`, so the `number`
+    variable actually pointed to a list like `[1, 2]`. An easy solution
+    is to just write two for loops inside each other:
 
     ```py
-    users = [
-        ['foo', 'biz'],
-        ['bar', 'baz'],
-    ]
-
-    username = input("Username: ")
-    password = input("Password: ")
-
-    logged_in = False
-    for user in users:
-        if username == user[0] and password == user[1]:
-            logged_in = True
-            break
-
-    if logged_in:
-        print("Welcome, " + username + "!")
-    else:
-        print("Wrong username or password.")
+    before = [[1, 2], [3, 4], [5, 6]]
+    after = []
+    for sublist in before:
+        for number in sublist:
+            after.append(number)
+    print(after)
     ```
 
-2. Just put the whole thing in a `while True:`. Remember that a break
-    will always break the innermost loop it's in.
+    Lists also have an extend method that appends each item from another
+    list, so we can also use that:
 
     ```py
-    users = [
-        ['foo', 'biz'],
-        ['bar', 'baz'],
-    ]
-
-    while True:
-        username = input("Username: ")
-        password = input("Password: ")
-
-        logged_in = False
-        for user in users:
-            if username == user[0] and password == user[1]:
-                logged_in = True
-                break   # break the for loop
-
-        if logged_in:
-            print("Welcome, " + username + "!")
-            break   # break the while loop
-        else:
-            print("Wrong username or password.")
-    ```
-
-3. Add a for loop that works as an attempt counter.
-
-    ```py
-    users = [
-        ['foo', 'biz'],
-        ['bar', 'baz'],
-    ]
-
-    for attempts_left in [3, 2, 1, 0]:
-        if attempts_left == 0:
-            print("No attempts left!")
-            break   # break the outer for loop
-
-        print(attempts_left, "attempts left.")
-        username = input("Username: ")
-        password = input("Password: ")
-
-        logged_in = False
-        for user in users:
-            if username == user[0] and password == user[1]:
-                logged_in = True
-                break   # break the inner for loop
-
-        if logged_in:
-            print("Welcome, " + username + "!")
-            break   # break the outer for loop
-        else:
-            print("Wrong username or password.")
+    before = [[1, 2], [3, 4], [5, 6]]
+    after = []
+    for sublist in before:
+        after.extend(sublist)
+    print(after)
     ```
 
 ## Trey Hunner: zip and enumerate

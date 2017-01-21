@@ -238,6 +238,31 @@ with than while loops and index variables, especially in large projects.
 For looping is also a little bit faster than while looping with an index
 variable.
 
+For loops are not actually limited to lists. We can for loop over many
+other things also, including strings and
+[tuples](lists-and-tuples.md#tuples). For looping over a tuple gives us
+its items, and for looping over a string gives us its characters as
+strings of length one.
+
+```py
+>>> for short_string in 'abc':
+...     print(short_string)
+...
+a
+b
+c
+>>> for item in (1, 2, 3):
+...     print(item)
+...
+1
+2
+3
+>>>
+```
+
+If we can for loop over something, then that something is **iterable**.
+Lists, tuples and strings are all iterable.
+
 There's only one big limitation with for looping over lists. We
 shouldn't modify the list in the for loop. If we do, the results can
 be surprising:
@@ -274,10 +299,6 @@ Or if we just want to clear a list, we can use the `clear`
 []
 >>>
 ```
-
-Later we'll learn that for loops are not actually limited to lists.
-There are many other things we can for loop over. Things that can be for
-looped over are called **iterables**.
 
 If you're using Python 3.2 or older you need to use `stuff[:]` instead
 of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
@@ -403,25 +424,25 @@ while True:
 
 ## Exercises
 
-1. Back in "Using if, else and elif" we created a program that asked
-    for username and password and checks them, and we made users "foo"
-    and "bar" with passwords "biz" and "baz". Adding a new user would
-    have required adding more code that checks the username and
-    password. Add this to the beginning of the program:
+1. This code is supposed to print each number between 1 and 5. Fix it.
 
     ```py
-    users = [
-        ['foo', 'biz'],
-        ['bar', 'baz'],
-    ]
+    things = str([1, 2, 3, 4, 5])
+    for thing in things:
+        print(thing)
     ```
 
-    Then rewrite the rest of the program using a for loop.
+2. This code is supposed to print `[1, 2, 3, 4, 5, 6]`. Fix it.
 
-2. Make the program ask the username and password over and over again
-    until the user enters them correctly.
+    ```py
+    before = [[1, 2], [3, 4], [5, 6]]
+    after = []
+    for number in before:
+        after.append(number)
+    print(after)
+    ```
 
-3. Can you limit the number of attempts to 3?
+The answers are [here](answers.md#loops)
 
 ***
 
