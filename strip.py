@@ -52,13 +52,12 @@ def strip(file):
 
 
 def main():
-    print("Stripping trailing whitespace...")
     for file in common.get_markdown_files():
         if needs_stripping(file):
-            print("  Stripping:", file)
+            print("Stripping", file)
             strip(file)
         else:
-            print("  No trailing whitespace:", file)
+            print("No trailing whitespace in", file)
 
 
 if __name__ == '__main__':
