@@ -46,7 +46,7 @@ Lists and strings don't change when we iterate over them.
 h
 i
 >>> word
-'hello'
+'hi'
 >>>
 ```
 
