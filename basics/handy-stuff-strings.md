@@ -400,7 +400,7 @@ ValueError: could not convert string to float: 'hello'
     string.
 - `len(string)` returns string's length.
 - We can use `str`, `int` and `float` to convert values to different
-	types.
+    types.
 
 ## Exercises
 

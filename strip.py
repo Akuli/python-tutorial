@@ -31,12 +31,15 @@
 import common
 
 
+def fix(line):
+    return line.rstrip().expandtabs(4)
+
+
 def needs_stripping(file):
     with common.slashfix_open(file, 'r') as f:
         for line in f:
             line = line.rstrip('\n')
-            if line != line.rstrip():
-                # contains trailing whitespace other than '\n'
+            if line != fix(line):
                 return True
     return False
 
@@ -45,7 +48,11 @@ def strip(file):
     lines = []
     with common.slashfix_open(file, 'r') as f:
         for line in f:
-            lines.append(line.rstrip())
+            line = line.rstrip('\n')
+            # it's important to do as much as possible here because the
+            # file may be lost if writing fails, that's why fix() is
+            # here
+            lines.append(fix(line))
     with common.slashfix_open(file, 'w') as f:
         for line in lines:
             print(line, file=f)
@@ -57,7 +64,7 @@ def main():
             print("Stripping", file)
             strip(file)
         else:
-            print("No trailing whitespace in", file)
+            print("No trailing whitespace or tabs in", file)
 
 
 if __name__ == '__main__':
