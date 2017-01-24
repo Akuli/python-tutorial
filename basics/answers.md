@@ -249,6 +249,29 @@ isn't exactly like mine but it works just fine it's ok, and you can
     print(after)
     ```
 
+3. The code has some empty lines in it, and they divide it nicely into
+    three parts. All of these parts have some problems, so I'll go
+    through them one by one.
+
+    The first part makes a variable called `input`. The problem is that
+    now the rest of the program [can't use the input
+    function](using-functions.md#variables-names-and-builtin-things). It
+    doesn't really matter here because the rest of the program doesn't
+    use it anyway, but I still recommend using some other variable name,
+    like `inputlist`.
+
+    The second part runs `numbers = []` three times. It was probably
+    meant to be ran once before the loop started, like this:
+
+    ```py
+    numbers = []
+    for string in inputlist:
+        numbers.append(int(string))
+    ```
+
+    The third part calculates `result + n` but throws away the result.
+    It was probably supposed to do `result += n` instead.
+
 ## Trey Hunner: zip and enumerate
 
 1. Read some lines with `input` into a list and then enumerate it.

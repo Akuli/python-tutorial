@@ -442,6 +442,23 @@ while True:
     print(after)
     ```
 
+3.  This program is supposed to convert everything in a list to integers
+    and then calculate their sum. It should print 6 because `1 + 2 + 3`
+    is 6. Fix the program.
+
+    ```py
+    input = ['1', '2', '3']
+
+    for string in input:
+        numbers = []
+        numbers.append(int(string))
+
+    result = 0
+    for n in numbers:
+        result + n
+    print("their sum is", result)
+    ```
+
 The answers are [here](answers.md#loops)
 
 ***
