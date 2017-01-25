@@ -269,7 +269,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
         numbers.append(int(string))
     ```
 
-    The third part calculates `result + n` but throws away the result.
+    The third part calculates `result + n` but throws away the value.
     It was probably supposed to do `result += n` instead.
 
 ## Trey Hunner: zip and enumerate
