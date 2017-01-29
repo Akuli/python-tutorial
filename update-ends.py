@@ -109,27 +109,23 @@ def main():
 
     print("Chapter files:")
     for prevpath, thispath, nextpath in zip(prevs, chapter_files, nexts):
-        # thispath is always like 'section/file.md', never e.g. 'README.md'
-        thissection, thisfile = thispath.split('/')
-        prev = posixpath.relpath(prevpath, thissection)
-        next_ = posixpath.relpath(nextpath, thissection)
+        where = posixpath.dirname(thispath)
+        prev = posixpath.relpath(prevpath, where)
+        next_ = posixpath.relpath(nextpath, where)
         extralinks = "[Previous](%s) | [Next](%s) |\n" % (prev, next_)
         end = END_TEMPLATE.format(
             license='../LICENSE', readme='../README.md',
-            extralinks=extralinks, readmeheader=thissection)
+            extralinks=extralinks, readmeheader=where)
         update_end(thispath, end)
 
     print()
 
     print("Other files:")
     for filename in other_files:
-        # move to the top level as needed
-        parts = ['..'] * filename.count('/')
-        licenseparts = parts + ['LICENSE']
-        readmeparts = parts + ['README.md']
+        where = posixpath.dirname(filename)
         end = END_TEMPLATE.format(
-            license=posixpath.join(*licenseparts),
-            readme=posixpath.join(*readmeparts),
+            readme=posixpath.relpath('README.md', where),
+            license=posixpath.relpath('LICENSE', where),
             extralinks="", readmeheader='list-of-contents')
         update_end(filename, end)
 

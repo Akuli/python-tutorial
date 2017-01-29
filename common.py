@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # This is free and unencumbered software released into the public
 # domain.
 
@@ -67,7 +65,8 @@ def find_links(file):
 def get_markdown_files():
     """Yield the names of all markdown files in this tutorial.
 
-    This assumes that the README contains links to everything.
+    This assumes that the README contains links to everything. The
+    yielded paths use / as the path separator.
     """
     yield 'README.md'
     with open('README.md', 'r') as f:

@@ -29,6 +29,7 @@
 """Create HTML files of the tutorial."""
 
 import os
+import posixpath
 import shutil
 import string
 import sys
@@ -69,14 +70,14 @@ HTML_TEMPLATE = """\
 
 def mkdir_slashfix_open(filename, mode):
     """Like common.slashfix_open(), but make directories as needed."""
-    filename = common.slashfix(filename)
-    directory = os.path.dirname(filename)
+    real_filename = common.slashfix(filename)
+    directory = os.path.dirname(real_filename)
     os.makedirs(directory, exist_ok=True)
-    return open(filename, mode)
+    return open(real_filename, mode)
 
 
 def fix_filename(filename):
-    if filename == 'README.md' or filename.endswith('/README.md'):
+    if posixpath.basename(filename) == 'README.md':
         # 'README.md' -> 'index.html'
         # 'some/place/README.md' -> 'some/place/index.html'
         return filename[:-9] + 'index.html'
@@ -156,8 +157,7 @@ class TutorialRenderer(mistune.Renderer):
             else:
                 lexer = pygments.lexers.PythonLexer()
             formatter = pygments.formatters.HtmlFormatter(
-                style='tango',
-                noclasses=True)
+                style='tango', noclasses=True)
             return pygments.highlight(code, lexer, formatter)
         # we can't highlight it
         return super().block_code(code, lang)
@@ -197,7 +197,7 @@ def main():
 
     print("Generating HTML files...")
     for markdownfile in common.get_markdown_files():
-        htmlfile = os.path.join('html', fix_filename(markdownfile))
+        htmlfile = posixpath.join('html', fix_filename(markdownfile))
         print(' ', markdownfile, '->', htmlfile)
         with common.slashfix_open(markdownfile, 'r') as f:
             markdown = f.read()
