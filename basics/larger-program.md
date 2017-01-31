@@ -33,10 +33,9 @@ Our program will need to do several different things:
 
 Now everything seems much easier. We know how to do each of these steps
 one by one, but doing it all at once would be difficult. In situations
-like this **it's important to [define
-functions](defining-functions.md)**. We are going to write a
-`read_questions` function, an `ask_questions` function and a `stats`
-function.
+like this it's important to [define functions](defining-functions.md).
+We are going to write a `read_questions` function, an `ask_questions`
+function and a `stats` function.
 
 Let's start with the function that reads the question file:
 
@@ -109,7 +108,7 @@ Wrong! The correct answer is input.
 ['text asking function']
 >>> stats(correct, wrong, answers)
 
-*** STATS ***
+**** STATS ****
 
 You answered 1 questions right and 1 questions wrong.
 These would have been the correct answers:
@@ -147,8 +146,8 @@ if __name__ == '__main__':
 ```
 
 The `__name__` variable is set differently depending on how we run the
-file, and **it's `'__main__'` when we run the file directly instead of
-importing**. So if we run the file normally it asks us the words, and if
+file, and it's `'__main__'` when we run the file directly instead of
+importing. So if we run the file normally it asks us the words, and if
 we import it instead we can still run the functions one by one. If you
 want to know more about `__name__` just make a file that prints it and
 run it in different ways.
