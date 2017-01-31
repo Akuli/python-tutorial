@@ -216,5 +216,5 @@ if value is None: ...  # best
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](defining-functions.md) | [Next](files.md) |
+[Previous](larger-program.md) | [Next](files.md) |
 [List of contents](../README.md#basics)
