@@ -7,8 +7,8 @@ language.
 No tutorial is good for everyone. This one is aimed at people with no
 programming experience at all or very little programming experience. If
 you have programmed a lot in the past using some other language you
-probably want to read
-[the official tutorial](https://docs.python.org/3/tutorial/) instead.
+probably want to read [the official
+tutorial](https://docs.python.org/3/tutorial/) instead.
 
 This tutorial was written in Python 3, and you need Python 3 or newer to
 be able to run the example code yourself. Python 2 is getting outdated
@@ -43,11 +43,12 @@ to learn more about whatever you want after studying it.
 11. [Trey Hunner: zip and enumerate](basics/trey-hunner-zip-and-enumerate.md)
 12. [Dictionaries](basics/dicts.md)
 13. [Defining functions](basics/defining-functions.md)
-14. [What is true?](basics/what-is-true.md)
-15. [Files](basics/files.md)
-16. [Exceptions](basics/exceptions.md)
-17. [Modules](basics/modules.md)
-18. [Classes](basics/classes.md)
+14. [Writing a larger program](basics/larger-program.md)
+15. [What is true?](basics/what-is-true.md)
+16. [Files](basics/files.md)
+17. [Exceptions](basics/exceptions.md)
+18. [Modules](basics/modules.md)
+19. [Classes](basics/classes.md)
 
 ### Advanced
 
@@ -74,7 +75,18 @@ than complex.
     [advanced](advanced/answers.md) sections
 - [The TODO list](TODO.md)
 
-## How to read this tutorial without an internet connection
+## Frequently asked questions
+
+### How can I thank you for writing and sharing this tutorial?
+
+You can star this tutorial. Starring is free for you, but it tells me
+and other people that you like this tutorial.
+
+Go [here](https://github.com/Akuli/python-tutorial) if you aren't here
+already and click the "Star" button in the top right corner. You will be
+asked to create a GitHub account if you don't already have one.
+
+### How can I read this tutorial without an Internet connection?
 
 1. Go [here](https://github.com/Akuli/python-tutorial) if you aren't
     here already.
