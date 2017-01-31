@@ -4,7 +4,7 @@
 
 Now we know what True and False are.
 
-```pythonthon
+```python
 >>> 1 == 1
 True
 >>> 1 == 2
