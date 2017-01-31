@@ -31,9 +31,11 @@ posixpath module for processing paths, but they use functions in this
 file when actually opening files.
 """
 
+import contextlib
 import itertools
 import os
 import re
+import shutil
 
 
 _LINK_REGEX = r'\[(.*?)\]\((.*?)\)'
@@ -108,3 +110,17 @@ def slashfix(path):
 def slashfix_open(file, mode):
     """An easy way to use slashfix() and open() together."""
     return open(slashfix(file), mode)
+
+
+@contextlib.contextmanager
+def backup(filename):
+    """A context manager that backs up a file."""
+    shutil.copy(filename, filename + '.backup')
+    try:
+        yield
+    except Exception:
+        # It failed, we need to restore from the backup.
+        shutil.copy(filename + '.backup', filename)
+    else:
+        # Everything's fine, we can safely get rid of the backup.
+        os.remove(filename + '.backup')

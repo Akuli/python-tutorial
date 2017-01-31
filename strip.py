@@ -45,23 +45,21 @@ def needs_stripping(file):
 
 
 def strip(file):
+    real_file = common.slashfix(file)
     lines = []
-    with common.slashfix_open(file, 'r') as f:
+    with open(real_file, 'r') as f:
         for line in f:
-            line = line.rstrip('\n')
-            # it's important to do as much as possible here because the
-            # file may be lost if writing fails, that's why fix() is
-            # here
-            lines.append(fix(line))
-    with common.slashfix_open(file, 'w') as f:
-        for line in lines:
-            print(line, file=f)
+            lines.append(fix(line.rstrip('\n')))
+    with common.backup(real_file):
+        with open(real_file, 'w') as f:
+            for line in lines:
+                print(line, file=f)
 
 
 def main():
     for file in common.get_markdown_files():
         if needs_stripping(file):
-            print("Stripping", file)
+            print("Stripping", file, "...")
             strip(file)
         else:
             print("No trailing whitespace or tabs in", file)
