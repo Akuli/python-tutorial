@@ -150,7 +150,7 @@ class TutorialRenderer(mistune.Renderer):
 
     def block_code(self, code, lang=None):
         """Highlight Python code blocks with Pygments if it's installed."""
-        if lang == 'py' and pygments is not None:
+        if lang == 'python' and pygments is not None:
             # we can highlight it
             if code.startswith('>>> '):
                 lexer = pygments.lexers.PythonConsoleLexer()

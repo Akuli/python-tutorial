@@ -4,7 +4,7 @@ Now we know [how to define functions](../basics/defining-functions.md).
 Functions can take arguments, and they will end up with local variables
 that have the same name. Like this:
 
-```py
+```python
 def print_box(message, border='*'):
     print(border * (len(message) + 4))
     print(border, message, border)
@@ -21,7 +21,7 @@ functions and how they are useful.
 Function can take multiple arguments, but they can only return one
 value. But sometimes it makes sense to return multiple values as well:
 
-```py
+```python
 def login():
     username = input("Username: ")
     password = input("Password: ")
@@ -31,7 +31,7 @@ def login():
 The best solution is to return a tuple of values, and just unpack that
 wherever the function is called:
 
-```py
+```python
 def login():
     ...
     return username, password
@@ -51,7 +51,7 @@ class](../basics/classes.md) instead and store the values like
 
 Sometimes you might see code like this:
 
-```py
+```python
 def thing(*args, **kwargs):
     ...
 ```
@@ -59,7 +59,7 @@ def thing(*args, **kwargs):
 Functions like this are actually quite easy to understand. Let's make a
 function that takes `*args` and prints it.
 
-```py
+```python
 >>> def thing(*args):
 ...     print("now args is", args)
 ...
@@ -79,7 +79,7 @@ variable name we wanted instead of `args`.
 
 Our function with nothing but `*args` takes no keyword arguments:
 
-```py
+```python
 >>> thing(a=1)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -92,7 +92,7 @@ them to a function by adding a `*`. Actually it doesn't need to be a
 list or a tuple, anything [iterable](../basics/loops.md#summary) will
 work.
 
-```py
+```python
 >>> stuff = ['hello', 'world', 'test']
 >>> print(*stuff)
 hello world test
@@ -104,7 +104,7 @@ hello world test
 `**kwargs` is the same thing as `*args`, but with keyword arguments
 instead of positional arguments.
 
-```py
+```python
 >>> def thing(**kwargs):
 ...     print('now kwargs is', kwargs)
 ...
@@ -130,7 +130,7 @@ Hello World!
 Sometimes it's handy to capture all arguments our function takes. We can
 combine `*args` and `**kwargs` easily:
 
-```py
+```python
 >>> def thing(*args, **kwargs):
 ...     print("now args is", args, "and kwargs is", kwargs)
 ...
@@ -142,7 +142,7 @@ now args is (1, 2) and kwargs is {'b': 4, 'a': 3}
 This is often used for calling a function from another "fake function"
 that represents it. We'll find uses for this later.
 
-```py
+```python
 >>> def fake_print(*args, **kwargs):
 ...     print(*args, **kwargs)
 ...
@@ -163,7 +163,7 @@ moving if it exists already or a `backup` argument that makes it do a
 backup of the file just in case the moving fails. So our function would
 look like this:
 
-```py
+```python
 def move(source, destination, overwrite=False, backup=False):
     if overwrite:
         print("deleting", destination)
@@ -174,7 +174,7 @@ def move(source, destination, overwrite=False, backup=False):
 
 Then we can move files like this:
 
-```py
+```python
 >>> move('file1.txt', 'file2.txt')
 moving file1.txt to file2.txt
 >>> move('file1.txt', 'file2.txt', overwrite=True)
@@ -186,7 +186,7 @@ moving file1.txt to file2.txt
 This works just fine, but if we accidentally give the function three
 filenames, bad things will happen:
 
-```py
+```python
 >>> move('file1.txt', 'file2.txt', 'file3.txt')
 deleting file2.txt
 moving file1.txt to file2.txt
@@ -203,7 +203,7 @@ True](../basics/what-is-true.md) and deleted the file. That's not nice.
 The solution is to change our move function so that `overwrite` and
 `backup` are keyword-only:
 
-```py
+```python
 def move(source, destination, *, overwrite=False, backup=False):
     ...
 ```
@@ -214,7 +214,7 @@ simple: now it's impossible to overwrite by doing `move('file1.txt',
 'file2.txt', True)` and the overwrite must be always given like
 `overwrite=True`.
 
-```py
+```python
 >>> move('file1.txt', 'file2.txt')
 moving file1.txt to file2.txt
 >>> move('file1.txt', 'file2.txt', True)

@@ -4,7 +4,7 @@
 
 Sometimes we may end up doing something like this.
 
-```py
+```python
 name1 = 'wub_wub'
 name2 = 'theelous3'
 name3 = 'RubyPinch'
@@ -29,7 +29,7 @@ better to store all names in one variable. This means that our
 one variable needs to point to multiple values. An easy way to
 do this is using a list:
 
-```py
+```python
 names = ['wub_wub', 'theelous3', 'Nitori', 'RubyPinch', 'go|dfish']
 ```
 
@@ -42,7 +42,7 @@ strings, like this:
 
 Let's open the `>>>` prompt and create a name list.
 
-```py
+```python
 >>> names = ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
 >>> names
 ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
@@ -52,7 +52,7 @@ Let's open the `>>>` prompt and create a name list.
 There's many things [we can do with strings](handy-stuff-strings.md),
 and some of these things also work with lists.
 
-```py
+```python
 >>> len(names)   # len is short for length, we have 5 names
 5
 >>> names + ['Akuli']   # create a new list with me in it
@@ -66,7 +66,7 @@ With strings indexing and slicing both returned a string, but
 with lists we get a new list when we're slicing and an element
 from the list if we're indexing.
 
-```py
+```python
 >>> names[:2]    # first two names
 ['wub_wub', 'theelous3']
 >>> names[0]     # the first name
@@ -77,7 +77,7 @@ from the list if we're indexing.
 If we want to check if the program knows a name all we need to
 do is to use the `in` keyword.
 
-```py
+```python
 >>> 'lol' in names
 False
 >>> 'RubyPinch' in names
@@ -88,7 +88,7 @@ True
 We can't use this for checking if a list of names is a part of
 our name list.
 
-```py
+```python
 >>> ['RubyPinch', 'go|dfish'] in names
 False
 >>> ['RubyPinch'] in names
@@ -102,7 +102,7 @@ Some of the most commonly used ones are append, extend and remove.
 `append` adds an item to the end of a list, `extend` adds
 multiple items from another list and `remove` removes an item.
 
-```py
+```python
 >>> names
 ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
 >>> names.remove('theelous3')  # sorry theelous3
@@ -120,7 +120,7 @@ multiple items from another list and `remove` removes an item.
 
 Note that `remove` removes only the first match it finds.
 
-```py
+```python
 >>> names = ['theelous3', 'go|dfish', 'theelous3']
 >>> names.remove('theelous3')
 >>> names    # the second theelous3 is still there!
@@ -131,7 +131,7 @@ Note that `remove` removes only the first match it finds.
 If we need to remove all matching items we can use a simple while loop.
 We'll talk more about loops [in the next chapter](loops.md).
 
-```py
+```python
 >>> names = ['theelous3', 'go|dfish', 'theelous3']
 >>> while 'theelous3' in names:
 ...     names.remove('theelous3')
@@ -143,7 +143,7 @@ We'll talk more about loops [in the next chapter](loops.md).
 
 We can also use slicing and indexing to change the content:
 
-```py
+```python
 >>> names = ['theelous3', 'LOL', 'RubyPinch', 'go|dfish', 'Nitori']
 >>> names[1] = 'wub_wub'   # replace LOL with wub_wub
 >>> names
@@ -160,7 +160,7 @@ and then set the result back to the same variable, like
 `message = message.strip()`. This just doesn't work right with
 most mutable things because they're designed to be changed in-place.
 
-```py
+```python
 >>> names = names.remove('Akuli')
 >>> print(names)     # now it's None!
 None
@@ -175,7 +175,7 @@ print's return value to a variable](using-functions.md#return-values).
 After working with lists a while you'll find out that they
 behave like this:
 
-```py
+```python
 >>> a = [1, 2, 3]
 >>> b = a
 >>> b.append(4)
@@ -193,7 +193,7 @@ line. If we draw a picture of the variables it looks like this:
 This is when the `is` keyword comes in. It can be used to
 check if two variables point to the **same** thing.
 
-```py
+```python
 >>> a is b
 True
 >>>
@@ -201,7 +201,7 @@ True
 
 Typing `[]` creates a **new** list every time.
 
-```py
+```python
 >>> [] is []
 False
 >>> [1, 2, 3] is [1, 2, 3]
@@ -212,7 +212,7 @@ False
 If we need **a new list with similar content** we can use the
 `copy` method.
 
-```py
+```python
 >>> a = [1, 2, 3]
 >>> b = a.copy()
 >>> b is a
@@ -240,7 +240,7 @@ Tuples are a lot like lists, but they're immutable so they
 can't be changed in-place. We create them like lists, but
 with `()` instead of `[]`.
 
-```py
+```python
 >>> thing = (1, 2, 3)
 >>> thing
 (1, 2, 3)
@@ -254,7 +254,7 @@ If we need to create a tuple that contains only one item we
 need to use `(item,)` instead of `(item)` because `(item)` is
 used in places like `(1 + 2) * 3`.
 
-```py
+```python
 >>> (3)
 3
 >>> (3,)
@@ -270,7 +270,7 @@ It's also possible to create tuples by just separating things with
 commas and adding no parentheses. Personally I don't like this feature,
 but some people like to do it this way.
 
-```py
+```python
 >>> 1, 2, 3
 (1, 2, 3)
 >>> 'hello',
@@ -281,7 +281,7 @@ but some people like to do it this way.
 Tuples don't have methods like append, extend and remove
 because they can't change themselves in-place.
 
-```py
+```python
 >>> stuff = (1, 2, 3)
 >>> stuff.append(4)
 Traceback (most recent call last):
@@ -312,7 +312,7 @@ post about this](http://nedbatchelder.com/blog/201608/lists_vs_tuples.html).
 Here's the same program we had in the beginning of this tutorial, but
 using a list:
 
-```py
+```python
 namelist = ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
 
 name = input("Enter your name: ")
@@ -326,7 +326,7 @@ else:
 
 1. Fix this program.
 
-    ```py
+    ```python
     print("Hello!")
     name = input("Enter your name: "),
     print("Your name is " + name + ".")
@@ -334,7 +334,7 @@ else:
 
 2. Fix this program.
 
-    ```py
+    ```python
     namelist = ['wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
     namelist = namelist.extend('theelous3')
     if input("Enter your name: ") in namelist:

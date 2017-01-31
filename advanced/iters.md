@@ -2,7 +2,7 @@
 
 So far we have used for loops with many different kinds of things.
 
-```py
+```python
 >>> for name in ['theelous3', 'RubyPinch', 'go|dfish']:
 ...     print(name)
 ...
@@ -24,7 +24,7 @@ over the list `['a', 'b', 'c']`. If we can iterate over something, then
 that something is **iterable**. For example, strings and lists are
 iterable, but integers and floats are not.
 
-```py
+```python
 >>> for thing in 123:
 ...     print(thing)
 ...
@@ -38,7 +38,7 @@ TypeError: 'int' object is not iterable
 
 Lists and strings don't change when we iterate over them.
 
-```py
+```python
 >>> word = 'hi'
 >>> for character in word:
 ...     print(character)
@@ -54,7 +54,7 @@ We can also iterate over [files](../basics/files.md), but they remember
 their position and we get the content once only if we iterate over them
 twice.
 
-```py
+```python
 >>> with open('test.txt', 'w') as f:
 ...     print("one", file=f)
 ...     print("two", file=f)
@@ -77,7 +77,7 @@ twice.
 We have also used [enumerate](../basics/trey-hunner-zip-and-enumerate.md)
 before, and it actually remembers its position also:
 
-```py
+```python
 >>> e = enumerate('hello')
 >>> for pair in e:
 ...     print(pair)
@@ -109,7 +109,7 @@ Iterators have a magic method called `__next__`, and there's a built-in
 function called `next()` for calling that. Calling `next()` on an
 iterator gets the next value and moves it forward. Like this:
 
-```py
+```python
 >>> e = enumerate('abc')
 >>> e.__next__()
 (0, 'a')
@@ -122,7 +122,7 @@ iterator gets the next value and moves it forward. Like this:
 
 There's also a built-in `next()` function that does the same thing:
 
-```py
+```python
 >>> e = enumerate('abc')
 >>> next(e)
 (0, 'a')
@@ -137,7 +137,7 @@ Here `e` remembers its position, and every time we call `next(e)` it
 gives us the next element and moves forward. When it has no more values
 to give us, calling `next(e)` raises a StopIteration:
 
-```py
+```python
 >>> next(e)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -150,14 +150,14 @@ and it's best to just try to get a value from it and catch
 StopIteration. That's actually what for looping over an iterator does.
 For example, this code...
 
-```py
+```python
 for pair in enumerate('hello'):
     print(pair)
 ```
 
 ...does roughly the same thing as this code:
 
-```py
+```python
 e = enumerate('hello')
 while True:
     try:
@@ -178,7 +178,7 @@ Now we know what iterating over an iterator does. But how about
 iterating over a list or a string? They are not iterators, so we can't
 call `next()` on them:
 
-```py
+```python
 >>> next('abc')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -189,7 +189,7 @@ TypeError: 'str' object is not an iterator
 There's a built-in function called `iter()` that converts anything
 iterable to an iterator.
 
-```py
+```python
 >>> i = iter('abc')
 >>> i
 <str_iterator object at 0x7f987b860160>
@@ -208,7 +208,7 @@ StopIteration
 
 Calling `iter()` on anything non-iterable gives us an error.
 
-```py
+```python
 >>> iter(123)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -219,7 +219,7 @@ TypeError: 'int' object is not iterable
 If we try to convert an iterator to an iterator using `iter()` we just
 get back the same iterator.
 
-```py
+```python
 >>> e = enumerate('abc')
 >>> iter(e) is e
 True
@@ -228,14 +228,14 @@ True
 
 So code like this...
 
-```py
+```python
 for thing in stuff:
     print(thing)
 ```
 
 ...works roughly like this:
 
-```py
+```python
 iterator = iter(stuff)
 while True:
     try:
@@ -254,7 +254,7 @@ much simpler way to implement iterators. Let's make a function that
 creates an iterator that behaves like `iter([1, 2, 3])` using the
 `yield` keyword:
 
-```py
+```python
 >>> def thingy():
 ...     yield 1
 ...     yield 2
@@ -266,7 +266,7 @@ creates an iterator that behaves like `iter([1, 2, 3])` using the
 We can only `yield` inside a function, yielding elsewhere raises an
 error.
 
-```py
+```python
 >>> yield 'hi'
   File "<stdin>", line 1
 SyntaxError: 'yield' outside function
@@ -275,7 +275,7 @@ SyntaxError: 'yield' outside function
 
 Let's try out our thingy function and see how it works.
 
-```py
+```python
 >>> thingy()
 <generator object thingy at 0xb723d9b4>
 >>>
@@ -290,7 +290,7 @@ iterators** with some more features that we don't need to care about.
 
 The generator we got works just like other iterators:
 
-```py
+```python
 >>> t = thingy()
 >>> t
 <generator object thingy at 0xb72300f4>
@@ -318,7 +318,7 @@ the yields, when do they run? How does Python know when to run what?
 
 Let's find out.
 
-```py
+```python
 >>> def printygen():
 ...     print("starting")
 ...     yield 1
@@ -336,7 +336,7 @@ That's weird! We called it, but it didn't print "starting"!
 
 Let's see what happens if we call `next()` on it.
 
-```py
+```python
 >>> got = next(p)
 starting
 >>> got
@@ -354,7 +354,7 @@ still there just like they were when we left.
 A similar thing happens here. Our function is running, but it's just
 stuck at the yield and waiting for us to call `next()` on it again.
 
-```py
+```python
 >>> next(p)
 between 1 and 2
 2
@@ -382,7 +382,7 @@ for loops work.
 that making a list of them would be too slow or the list wouldn't fit in
 the computer's memory. So instead of this...
 
-```py
+```python
 def get_things():
     result = []
     # code that appends things to result
@@ -391,14 +391,14 @@ def get_things():
 
 ...we can do this:
 
-```py
+```python
 def get_things():
     # code that yields stuff
 ```
 
 Both of these functions can be used like this:
 
-```py
+```python
 for thing in get_things():
     # do something with thing
 ```
@@ -406,7 +406,7 @@ for thing in get_things():
 It's actually possible to create an iterator that yields an infinite
 number of things:
 
-```py
+```python
 >>> def count():
 ...     current = 1
 ...     while True:

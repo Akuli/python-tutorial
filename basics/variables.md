@@ -4,7 +4,7 @@
 
 Variables are easy to understand. They simply **point to values**.
 
-```py
+```python
 >>> a = 1   # create a variable called a that points to 1
 >>> b = 2   # create another variable
 >>> a       # get the value that the variable points to
@@ -20,7 +20,7 @@ Let's draw a diagram of these variables.
 
 We can also change the value of a variable after setting it.
 
-```py
+```python
 >>> a = 2    # make a point to 2 instead of 1
 >>> a
 2
@@ -34,7 +34,7 @@ So now our diagram looks like this:
 Setting a variable to another variable gets the value of the other
 variable and sets the first variable to point to that value.
 
-```py
+```python
 >>> a = 1
 >>> b = a  # this makes b point to 1, not a
 >>> a = 5
@@ -46,7 +46,7 @@ variable and sets the first variable to point to that value.
 Trying to access a variable that is not defined creates an error
 message.
 
-```py
+```python
 >>> thingy
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -75,7 +75,7 @@ uppercase characters, numbers and some other characters, but most of the
 time we should use simple, lowercase variable names. You can also use
 underscores.
 
-```py
+```python
 >>> magic_number = 123
 >>> greeting = "Hello World!"
 >>>
@@ -83,7 +83,7 @@ underscores.
 
 Variable names are case-sensitive, like many other things in Python.
 
-```py
+```python
 >>> thing = 1
 >>> THING = 2
 >>> thIng = 3
@@ -102,7 +102,7 @@ we can run `help('keywords')` to see the full list if we want to.
 We'll learn to use most of them later in this tutorial. Trying to use a
 keyword as a variable name causes a syntax error.
 
-```py
+```python
 >>> if = 123
   File "<stdin>", line 1
     if = 123
@@ -116,7 +116,7 @@ the `=` is always executed before the left side. This means that we can
 do something with a variable on the right side, then assign the result
 back to the same variable on the left side.
 
-```py
+```python
 >>> a = 1
 >>> a = a + 1
 >>> a
@@ -128,7 +128,7 @@ To do something to a variable (for example, to add something to it) we
 can also use `+=`, `-=`, `*=` and `/=` instead of `+`, `-`, `*` and
 `/`. The "advanced" `%=`, `//=` and `**=` also work.
 
-```py
+```python
 >>> a += 2          # a = a + 2
 >>> a -= 2          # a = a - 2
 >>> a *= 2          # a = a * 2
@@ -138,7 +138,7 @@ can also use `+=`, `-=`, `*=` and `/=` instead of `+`, `-`, `*` and
 
 This is not limited to integers.
 
-```py
+```python
 >>> a = 'hello'
 >>> a *= 3
 >>> a += 'world'
@@ -151,7 +151,7 @@ Now we also understand why typing hello to the prompt didn't work in
 the beginning of this tutorial. But we can assign something to a
 variable called hello and then type hello:
 
-```py
+```python
 >>> hello = 'hello there'
 >>> hello
 'hello there'
@@ -164,7 +164,7 @@ There are two Boolean values, True and False. In Python, and in many
 other programming languages, `=` is assigning and `==` is comparing.
 `a = 1` sets a to 1, and `a == 1` checks if a equals 1.
 
-```py
+```python
 >>> a = 1
 >>> a == 1
 True
@@ -177,7 +177,7 @@ False
 `a == 1` is the same as `(a == 1) == True`, but `a == 1` is more
 readable, so most of the time we shouldn't write `== True` anywhere.
 
-```py
+```python
 >>> a = 1
 >>> a == 1
 True
@@ -201,7 +201,7 @@ None later.
 None's behavior on the interactive prompt might be a bit confusing at
 first:
 
-```py
+```python
 >>> thingy = None
 >>> thingy
 >>>
@@ -216,7 +216,7 @@ None coming up all the time.
 
 If we want to see a None on the interactive prompt, we can use print.
 
-```py
+```python
 >>> print(thingy)
 None
 >>>
@@ -226,7 +226,7 @@ Another confusing thing is that if we do something weird to None we get
 error messages that talk about NoneType object. The NoneType object they
 are talking about is always None.
 
-```py
+```python
 >>> None.hello    # None has no attribute 'hello'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>

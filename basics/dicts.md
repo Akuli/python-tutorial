@@ -5,7 +5,7 @@ to [for loop](loops.md#for-loops) over them. If we make some kind of
 program that needs to keep track of people's usernames and passwords,
 we can use a list for that:
 
-```py
+```python
 userlist = [
     ('me', 'my password'),
     ('you', 'your password'),
@@ -21,7 +21,7 @@ the password? `username in userlist` is always False because the user
 list consists of `(username, password)` pairs instead of just
 usernames, so we need to for loop over the whole userlist:
 
-```py
+```python
 username_exists = False
 for user in userlist:
     if user[0] == username:
@@ -34,7 +34,7 @@ if username_exists:
 Or how about getting a user's password if we know the username? This
 also requires going through the whole list.
 
-```py
+```python
 password = None
 for user in userlist:
     if user[0] == username:
@@ -50,7 +50,7 @@ way to store our usernames and passwords.
 
 A better way to store user information might be a dictionary:
 
-```py
+```python
 passwords = {
     'me': 'my password',
     'you': 'your password',
@@ -83,7 +83,7 @@ Variables are actually stored in a dictionary. We can get that
 dictionary with the globals function. In this dictionary, keys are
 variable names and values are what our variables point to.
 
-```py
+```python
 >>> globals()
 {'userlist': [('me', 'my password'), ('you', 'your password')],
  'passwords': {'me': 'my password', 'you': 'your password'},
@@ -103,7 +103,7 @@ getting a user's password is easy.
 Dictionaries have some similarities with lists. For example, both
 lists and dictionaries have a length.
 
-```py
+```python
 >>> len(userlist)     # contains two elements
 2
 >>> len(passwords)    # contains two key:value pairs
@@ -114,7 +114,7 @@ lists and dictionaries have a length.
 We can get a value of a key with `the_dict[key]`. This is a lot easier
 and faster than for-looping over a list of pairs.
 
-```py
+```python
 >>> passwords['me']
 'my password'
 >>> passwords['you']
@@ -125,7 +125,7 @@ and faster than for-looping over a list of pairs.
 Trying to get the value of a non-existing key gives us an error, but we
 can add new `key: value` pairs by doing `the_dict[key] = value`.
 
-```py
+```python
 >>> passwords['lol']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -142,7 +142,7 @@ For looping over a dictionary gets its keys, and checking if something
 is in the dictionary checks if the dictionary has a key like that. This
 can be confusing at first but you'll get used to this.
 
-```py
+```python
 >>> 'me' in passwords
 True
 >>> 'my password' in passwords
@@ -159,7 +159,7 @@ me
 Dictionaries have a values method that we can use if we want to do
 something with the values:
 
-```py
+```python
 >>> passwords.values()
 dict_values(["lol's password", 'your password', 'my password'])
 >>>
@@ -169,7 +169,7 @@ The values method returned a `dict_values` object. Things like this
 behave a lot like lists and usually we don't need to convert them to
 lists.
 
-```py
+```python
 >>> for password in passwords.values():
 ...     print(password)
 ...
@@ -187,7 +187,7 @@ it because the dictionary itself behaves a lot like a list of keys.
 If we need both keys and values we can use the items method with the
 `for first, second in thing` trick.
 
-```py
+```python
 >>> passwords.items()
 dict_items([('lol', "lol's password"),
             ('you', 'your password'),
@@ -204,7 +204,7 @@ me: my password
 This is also useful for checking if the dictionary has a `key: value`
 pair.
 
-```py
+```python
 >>> ('me', 'my password') in passwords.items()  # correct username and password
 True
 >>> ('me', 'whatever') in passwords.items()    # wrong username or password
@@ -218,7 +218,7 @@ Sometimes it might be handy to use lists as dictionary keys, but it
 just doesn't work. I'm not going to explain why Python doesn't allow
 this because usually we don't need to worry about that.
 
-```py
+```python
 >>> stuff = {['a', 'b']: 'c', ['d', 'e']: 'f'}
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -228,7 +228,7 @@ TypeError: unhashable type: 'list'
 
 On the other hand, tuples work just fine:
 
-```py
+```python
 >>> stuff = {('a', 'b'): 'c', ('d', 'e'): 'f'}
 >>> stuff
 {('a', 'b'): 'c', ('d', 'e'): 'f'}
@@ -237,7 +237,7 @@ On the other hand, tuples work just fine:
 
 The values of a dictionary can be anything.
 
-```py
+```python
 >>> stuff = {'a': [1, 2, 3], 'b': [4, 5, 6]}
 >>> stuff
 {'a': [1, 2, 3], 'b': [4, 5, 6]}
@@ -263,7 +263,7 @@ This program counts how many times words appear in a sentence.
 `sentence.split()` creates a list of words in the sentence, see
 `help(str.split)` for more info.
 
-```py
+```python
 sentence = input("Enter a sentence: ")
 
 counts = {}     # {word: count, ...}

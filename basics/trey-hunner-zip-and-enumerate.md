@@ -7,7 +7,7 @@ do a lot more.
 To be able to understand for loop tricks we need to first know
 assigning values to multiple variables at once. It works like this:
 
-```py
+```python
 >>> a, b = 1, 2
 >>> a
 1
@@ -20,7 +20,7 @@ We can use `()` and `[]` around these values however we want and
 everything will still work the same way. `[]` creates a list, and
 `()` creates a tuple.
 
-```py
+```python
 >>> [a, b] = (1, 2)
 >>> a
 1
@@ -32,7 +32,7 @@ everything will still work the same way. `[]` creates a list, and
 We can also have `[]` or `()` on one side but not on the other
 side.
 
-```py
+```python
 >>> (a, b) = 1, 2
 >>> a
 1
@@ -43,7 +43,7 @@ side.
 
 Python created a tuple automatically.
 
-```py
+```python
 >>> 1, 2
 (1, 2)
 >>>
@@ -52,7 +52,7 @@ Python created a tuple automatically.
 If we're for looping over a list with pairs of values in it we
 could do this:
 
-```py
+```python
 >>> items = [('a', 1), ('b', 2), ('c', 3)]
 >>> for pair in items:
 ...     a, b = pair
@@ -66,7 +66,7 @@ c 3
 
 Or we can tell the for loop to unpack it for us.
 
-```py
+```python
 >>> for a, b in items:
 ...     print(a, b)
 ...
@@ -111,7 +111,7 @@ Read it now, then come back here and do the exercises.
 
     Start your program like this:
 
-    ```py
+    ```python
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
     ```

@@ -3,7 +3,7 @@
 In [the class tutorial](../basics/classes.md) we learned to define a
 class like this:
 
-```py
+```python
 class Website:
 
     def __init__(self, url, founding_year, free_to_use):
@@ -39,7 +39,7 @@ attributes by default. We'll learn more about this when we'll talk about
 
 Let's get started by defining an object that has a length:
 
-```py
+```python
 >>> class Thing:
 ...     def __len__(self):
 ...         return 5
@@ -62,7 +62,7 @@ customized with magic methods.
 Note that magic methods like `__len__` need to be defined in the class,
 just attaching an attribute called `__len__` doesn't work:
 
-```py
+```python
 >>> class EmptyThing:
 ...     pass
 ...
@@ -91,7 +91,7 @@ You have probably noticed that typing something to the interactive `>>>`
 prompt is not quite the same thing as printing it. For example,
 strings behave like this:
 
-```py
+```python
 >>> 'hello'
 'hello'
 >>> print('hello')
@@ -105,7 +105,7 @@ magic methods. `print('hello')` does the same thing as
 `print(str('hello'))`, and typing `'hello'` without a print does roughly
 the same thing as `print(repr('hello'))`.
 
-```py
+```python
 >>> repr('hello')   # a string that literally contains 'hello'
 "'hello'"
 >>> str('hello')    # same as just 'hello'
@@ -120,13 +120,13 @@ hello
 The `repr()` values can also be easily used with string formatting.
 Instead of this...
 
-```py
+```python
 print("message is " + repr(message))
 ```
 
 ...you can use one of these instead:
 
-```py
+```python
 print("message is %r" % (message,))
 print("message is {!r}".format(message))
 ```
@@ -140,7 +140,7 @@ defaults to `__repr__`.
 
 Here's an example that hopefully clarifies things:
 
-```py
+```python
 >>> class Website:
 ...     def __repr__(self):
 ...         return '<a Website object>'
@@ -167,7 +167,7 @@ follow one of these styles:
 1. A piece of code that describes how another, similar object can be
     created.
 
-    ```py
+    ```python
     >>> class Website:
     ...     def __init__(self, name, founding_year):
     ...         self.name = name
@@ -186,7 +186,7 @@ follow one of these styles:
 
 2. A description of the object wrapped between `<` and `>`.
 
-    ```py
+    ```python
     >>> class Website:
     ...     def __init__(self, name, founding_year):
     ...         self.name = name
@@ -205,7 +205,7 @@ follow one of these styles:
     you can by showing the `__init__` arguments. Python's built-in
     things also use this style more:
 
-    ```py
+    ```python
     >>> import random
     >>> random
     <module 'random' from '/some/path/random.py'>

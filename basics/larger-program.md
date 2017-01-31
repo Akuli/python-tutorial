@@ -39,7 +39,7 @@ function and a `stats` function.
 
 Let's start with the function that reads the question file:
 
-```py
+```python
 def read_questions(filename):
     answers = {}
     with open(questionfile, 'r') as f:
@@ -57,7 +57,7 @@ this tutorial if you didn't create it already.
 
 **TODO:** Instructions for using the -i switch.
 
-```py
+```python
 >>> read_questions('questions.txt')
 {'text displaying function': 'print', 'text asking function': 'input'}
 >>>
@@ -70,7 +70,7 @@ reasons why we write functions.
 Next we'll write the rest of the functions the same way, first writing
 and then testing and fixing. Here are my versions of them:
 
-```py
+```python
 def ask_questions(answers):
     correct = []
     wrong = []
@@ -95,7 +95,7 @@ def stats(correct, wrong, answers):
 
 Let's try them out.
 
-```py
+```python
 >>> answers = read_questions('questions.txt')
 >>> correct, wrong = ask_questions(answers)
 text displaying function = print
@@ -130,7 +130,7 @@ runs the program using other functions. Our main function consists of
 mostly the same pieces of code that we just tried out on the `>>>`
 prompt.
 
-```py
+```python
 def main():
     filename = input("Name of the question file: ")
     answers = read_questions(filename)
@@ -140,7 +140,7 @@ def main():
 
 The last thing we need to add is these two lines:
 
-```py
+```python
 if __name__ == '__main__':
     main()
 ```
@@ -154,7 +154,7 @@ run it in different ways.
 
 Now the whole program looks like this:
 
-```py
+```python
 def read_questions(filename):
     answers = {}
     with open(questionfile, 'r') as f:

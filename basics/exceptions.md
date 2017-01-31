@@ -3,7 +3,7 @@
 So far we have made programs that ask the user to enter a string, and
 we also know how to convert that to an integer.
 
-```py
+```python
 text = input("Enter something: ")
 number = int(text)
 print("Your number doubled:", number*2)
@@ -18,7 +18,7 @@ Your number doubled: 6
 
 But that doesn't work if the user does not enter a number.
 
-```py
+```python
 Enter a number: lol
 Traceback (most recent call last):
   File "/some/place/file.py", line 2, in <module>
@@ -36,7 +36,7 @@ in our program. If an exception occurs, the program will stop and we
 get an error message. The interactive prompt will display an error
 message and keep going.
 
-```py
+```python
 >>> int('lol')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -46,7 +46,7 @@ ValueError: invalid literal for int() with base 10: 'lol'
 
 Exceptions are [classes](classes.md).
 
-```py
+```python
 >>> ValueError
 <class 'ValueError'>
 >>>
@@ -55,7 +55,7 @@ Exceptions are [classes](classes.md).
 We can also create exceptions. We won't get an error message by doing
 that, but we'll use this for displaying our own error messages later.
 
-```py
+```python
 >>> the_problem = ValueError('oh no')
 >>> the_problem
 ValueError('oh no',)
@@ -68,7 +68,7 @@ If we need to try to do something and see if we get an exception, we
 can use `try` and `except`. This is also known as **catching** the
 exception.
 
-```py
+```python
 >>> try:
 ...     print(int('lol'))
 ... except ValueError:
@@ -80,7 +80,7 @@ Oops!
 
 The except part doesn't run if the try part succeeds.
 
-```py
+```python
 >>> try:
 ...     print("Hello World!")
 ... except ValueError:
@@ -95,7 +95,7 @@ value's type is correct. In this case, `int` can take a string as an
 argument, but the string needs to contain a number, not `lol`. If
 the type is wrong, we will get a TypeError instead.
 
-```py
+```python
 >>> 123 + 'hello'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -107,7 +107,7 @@ Exceptions always interrupt the code even if we catch them. Here the
 print never runs because it's after the error but inside the `try`
 block. Everything after the try block runs normally.
 
-```py
+```python
 >>> try:
 ...     123 + 'hello'
 ...     print("This doesn't get printed.")
@@ -120,7 +120,7 @@ Oops!
 
 Does an `except ValueError` also catch TypeErrors?
 
-```py
+```python
 >>> try:
 ...     print(123 + 'hello')
 ... except ValueError:
@@ -135,7 +135,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 No, it doesn't. But maybe we could except for both ValueError and
 TypeError?
 
-```py
+```python
 >>> try:
 ...     int('lol')
 ... except ValueError:
@@ -160,7 +160,7 @@ Seems to be working.
 We can also also catch multiple exceptions by catching
 [a tuple](lists-and-tuples.md#tuples) of exceptions:
 
-```py
+```python
 >>> try:
 ...     123 + 'hello'
 ... except (ValueError, TypeError):
@@ -179,7 +179,7 @@ wrong value or type
 Catching `Exception` will catch all errors. We'll learn more about why
 it does that in a moment.
 
-```py
+```python
 >>> try:
 ...     123 + 'hello'
 ... except Exception:
@@ -199,7 +199,7 @@ It's also possible to catch an exception and store it in a variable.
 Here we are catching an exception that Python created and storing it in
 `our_error`.
 
-```py
+```python
 >>> try:
 ...     123 + 'hello'
 ... except TypeError as e:
@@ -216,7 +216,7 @@ TypeError("unsupported operand type(s) for +: 'int' and 'str'",)
 
 Never do things like this:
 
-```py
+```python
 try:
     # many lines of code
 except Exception:
@@ -232,7 +232,7 @@ whole program.
 
 There's nothing wrong with doing things like this:
 
-```py
+```python
 try:
     with open('some file', 'r') as f:
         content = f.read()
@@ -242,7 +242,7 @@ except OSError:     # we can't read the file but we can work without it
 
 Usually catching errors that the user has caused is also a good idea:
 
-```py
+```python
 import sys
 
 text = input("Enter a number: ")
@@ -263,7 +263,7 @@ is known as **raising an exception** and **throwing an exception**.
 Raising an exception is easy. All we need to do is to type `raise`
 and then an exception we want to raise:
 
-```py
+```python
 >>> raise ValueError("lol is not a number")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -273,7 +273,7 @@ ValueError: lol is not a number
 
 Of course, we can also raise an exception from a variable.
 
-```py
+```python
 >>> oops = ValueError("lol is not a number")
 >>> raise oops
 Traceback (most recent call last):
@@ -286,7 +286,7 @@ If we [define a function](defining-functions.md) that raises an
 exception and call it we'll notice that the error message also
 says which functions we ran to get to that error.
 
-```py
+```python
 >>> def oops():
 ...     raise ValueError("oh no!")
 ...
@@ -407,7 +407,7 @@ Catching Exception doesn't catch them either.
 
 Keep asking a number from the user until it's entered correctly.
 
-```py
+```python
 while True:
     try:
         number = int(input("Enter a number: "))
@@ -424,7 +424,7 @@ file for the user if it doesn't exist already. This example also uses
 things from [the file chapter](files.md), [the function defining
 chapter](defining-functions.md) and [the module chapter](modules.md).
 
-```py
+```python
 # These are here so you can change them to customize the program
 # easily.
 default_greeting = "Hello World!"

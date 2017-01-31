@@ -36,14 +36,14 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 3. We can simply ask the word with input and print `word * 1000`.
 
-    ```py
+    ```python
     word = input("Enter a word: ")
     print(word * 1000)
     ```
 
 4. We can add a space to the word before we print it.
 
-    ```py
+    ```python
     word = input("Enter a word: ")
     word += " "
     print(word * 1000)
@@ -51,7 +51,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
     We can also add the space right away on the first line:
 
-    ```py
+    ```python
     word = input("Enter a word: ") + " "
     print(word * 1000)
     ```
@@ -61,7 +61,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     end, but it doesn't matter. If we really want to get rid of the
     space, we can do something like this instead:
 
-    ```py
+    ```python
     no_space = input("Enter a word: ")
     yes_space = no_space + " "
     print(yes_space * 999 + no_space)
@@ -69,7 +69,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 5. Like this:
 
-    ```py
+    ```python
     first = input("Enter a word: ")
     second = input("Enter another word: ")
     words = first + " " + second + " "
@@ -79,7 +79,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 6. We can compare the word against an empty string (`""` or `''`) to
     check if it's empty. In this example, the password is "s3cr3t".
 
-    ```py
+    ```python
     word = input("Enter your password: ")
 
     if word == "s3cr3t":
@@ -102,7 +102,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     The solution is string formatting. At the time of writing this, I
     recommend replacing the last line with one of these:
 
-    ```py
+    ```python
     print("You entered %s, %s, %s and %s." % (word1, word2, word3, word4))
     print("You entered {}, {}, {} and {}.".format(word1, word2, word3, word4))
     ```
@@ -110,7 +110,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     In the future when most people will have Python 3.6 or newer, you
     can also use this:
 
-    ```py
+    ```python
     print(f"You entered {word1}, {word2}, {word3} and {word4}.")
     ```
 
@@ -128,7 +128,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     The solution is to do `message.upper()` and save the value we got
     from that to a variable:
 
-    ```py
+    ```python
     message = input("What do you want me to say? ")
     uppermessage = message.upper()
     print(uppermessage, "!!!")
@@ -138,7 +138,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
     Or we can reuse the same variable name:
 
-    ```py
+    ```python
     message = input("What do you want me to say? ")
     message = message.upper()
     print(message, "!!!")
@@ -149,7 +149,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     Or we can convert the message to uppercase right away on the first
     line:
 
-    ```py
+    ```python
     message = input("What do you want me to say? ").upper()
     print(message, "!!!")
     print(message, "!!!")
@@ -172,7 +172,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     tuple? Let's change the last line to just `print(name)` so our
     program looks like this:
 
-    ```py
+    ```python
     print("Hello!")
     name = input("Enter your name: "),
     print(name)
@@ -202,7 +202,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     `namelist` seems to be None. Let's make the program a bit simpler
     for working on the namelist:
 
-    ```py
+    ```python
     namelist = ['wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
     namelist = namelist.extend('theelous3')
     print(namelist)
@@ -229,7 +229,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     variable actually pointed to a list like `[1, 2]`. An easy solution
     is to just write two for loops inside each other:
 
-    ```py
+    ```python
     before = [[1, 2], [3, 4], [5, 6]]
     after = []
     for sublist in before:
@@ -241,7 +241,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     Lists also have an extend method that appends each item from another
     list, so we can also use that:
 
-    ```py
+    ```python
     before = [[1, 2], [3, 4], [5, 6]]
     after = []
     for sublist in before:
@@ -263,7 +263,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     The second part runs `numbers = []` three times. It was probably
     meant to be ran once before the loop started, like this:
 
-    ```py
+    ```python
     numbers = []
     for string in inputlist:
         numbers.append(int(string))
@@ -276,7 +276,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 1. Read some lines with `input` into a list and then enumerate it.
 
-    ```py
+    ```python
     print("Enter something, and press Enter without typing anything",
           "when you're done.")
 
@@ -293,7 +293,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 2. Let's start by trying out `zip` with strings:
 
-    ```py
+    ```python
     >>> for pair in zip('ABC', 'abc'):
     ...     print(pair)
     ...
@@ -306,7 +306,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     Great, it works just like it works with lists. Now let's create
     the letter printing program:
 
-    ```py
+    ```python
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -318,7 +318,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     need to combine `zip` and `enumerate`. One way to do this is
     to pass a `zip` result to `enumerate`, like this:
 
-    ```py
+    ```python
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -330,7 +330,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     We can also save the zip result to a variable. I would
     probably do this.
 
-    ```py
+    ```python
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -343,7 +343,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     Another alternative is to pass an `enumerate` result to `zip`. This is
     a bit more complicated, so I wouldn't do it this way.
 
-    ```py
+    ```python
     uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -357,7 +357,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 1. The problem with the first example is that name is a local variable.
     I explained how to fix this in [the output section](defining-functions.md#output):
 
-    ```py
+    ```python
     def ask_name():
         name = input("Enter your name: ")
         return name
@@ -372,7 +372,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     The problem is that we print the actual `get_greeting` function,
     but we need to **call** it like `get_greeting()`:
 
-    ```py
+    ```python
     def get_greeting():
         return "Hello World!"
 
@@ -383,7 +383,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
     The greet function prints a greeting.
 
-    ```py
+    ```python
     >>> greet("World")
     Hello World
     >>>
@@ -391,7 +391,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
     But it also returns None because we don't tell it to return anything else.
 
-    ```py
+    ```python
     >>> return_value = greet("World")
     Hello World
     >>> print(return_value)
@@ -402,7 +402,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     This code from the exercise does the same thing as the code above
     does, but without a temporary `return_value` variable:
 
-    ```py
+    ```python
     >>> print(greet("World"))
     Hello World
     None

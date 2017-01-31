@@ -3,7 +3,7 @@
 Let's say we want to generate a random number between 1 and
 3. The random module is a really easy way to do this:
 
-```py
+```python
 >>> import random
 >>> random.randint(1, 3)
 3
@@ -26,7 +26,7 @@ The first line in the example, `import random`, was an
 **import statement.** But what is that random thing that it
 gave us?
 
-```py
+```python
 >>> random
 <module 'random' from '/usr/lib/python3.4/random.py'>
 >>>
@@ -57,7 +57,7 @@ importing it.
 
 Create a `random.py` file with the following content:
 
-```py
+```python
 import random
 
 print("A random number between 1 and 3:", random.randint(1, 3))
@@ -65,7 +65,7 @@ print("A random number between 1 and 3:", random.randint(1, 3))
 
 Now run the program.
 
-```py
+```python
 Traceback (most recent call last):
   File "random.py", line 1, in <module>
     import random
@@ -85,7 +85,7 @@ to check what's wrong. If you use IDLE, just run the file normally.
 We should end up with the same error message, and then a `>>>`.
 Like this:
 
-```py
+```python
 Traceback (most recent call last):
   File "random.py", line 1, in <module>
     import random
@@ -97,7 +97,7 @@ AttributeError: 'module' object has no attribute 'randint'
 
 So first of all, what is that random variable?
 
-```py
+```python
 >>> random
 <module 'random' from '/home/akuli/random.py'>
 >>>
@@ -125,7 +125,7 @@ into Python. Actually the whole module is built-in, so there's no
 `sys.py` anywhere. The sys module has a list that contains all
 places that modules are searched from:
 
-```py
+```python
 >>> import sys
 >>> sys
 <module 'sys' (built-in)>
@@ -148,13 +148,13 @@ working directory.
 
 Let's create a file called `hello.py` that contains a classic greeting:
 
-```py
+```python
 print("Hello World!")
 ```
 
 Let's go ahead and import it, and see how it works.
 
-```py
+```python
 >>> import hello
 Hello World!
 >>>
@@ -162,7 +162,7 @@ Hello World!
 
 Works as expected, but what happens if we try to import it again?
 
-```py
+```python
 >>> import hello
 >>>
 ```
@@ -190,7 +190,7 @@ about that in the official documentation.
 The official documentation is
 [here](https://docs.python.org/3/library/random.html).
 
-```py
+```python
 >>> import random
 >>> random.randint(1, 3)      # 1, 2 or 3
 3
@@ -211,7 +211,7 @@ The module name "sys" is short for "system", and it contains things
 that are built into Python. The official documentation is
 [here](https://docs.python.org/3/library/sys.html).
 
-```py
+```python
 >>> import sys
 >>> # special files that the print and input functions use
 >>> # stdin is short for standard input
@@ -243,7 +243,7 @@ the program succeeded, and everything's fine. If our program has an
 error we should print an error message to `sys.stderr` and then call
 `sys.exit(1)`. Like this:
 
-```py
+```python
 if something_went_wrong:
     # of course, we need to make real error messages more
     # informative than this example is
@@ -260,7 +260,7 @@ There's no math.py anywhere, math is a built-in module like
 sys. The official documentation is
 [here](https://docs.python.org/3/library/math.html).
 
-```py
+```python
 >>> import math
 >>> math
 <module 'math' (built-in)>
@@ -282,7 +282,7 @@ sys. The official documentation is
 The official documentation for the time module is
 [here](https://docs.python.org/3/library/time.html).
 
-```py
+```python
 >>> import time
 >>> time.sleep(1)   # wait one second
 >>> time.time()     # return time in seconds since beginning of the year 1970
@@ -311,7 +311,7 @@ handy functions for interacting with the operating system that Python
 is running on. The official documentation is
 [here](https://docs.python.org/3/library/os.html).
 
-```py
+```python
 >>> import os
 >>> os.getcwd()        # short for "get current working directory"
 '/home/akuli'
@@ -347,7 +347,7 @@ True
 
 Mix a list of things.
 
-```py
+```python
 import random
 
 print("Enter things to mix, and press Enter without typing",
@@ -370,7 +370,7 @@ Measure how long it takes for the user to answer a question.
 The `%.2f` rounds to 2 decimals, and you can find more formatting
 tricks [here](https://pyformat.info/).
 
-```py
+```python
 import time
 
 start = time.time()
@@ -386,7 +386,7 @@ else:
 
 Wait a given number of seconds.
 
-```py
+```python
 import sys
 import time
 
@@ -404,7 +404,7 @@ print("Done!")
 
 Check what a path points to.
 
-```py
+```python
 import os
 import sys
 

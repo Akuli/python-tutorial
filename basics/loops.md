@@ -13,7 +13,7 @@ We'll talk about all of these in this tutorial.
 
 Now we know how if statements work.
 
-```py
+```python
 its_raining = True
 if its_raining:
     print("Oh crap, it's raining!")
@@ -21,7 +21,7 @@ if its_raining:
 
 While loops are really similar to if statements.
 
-```py
+```python
 its_raining = True
 while its_raining:
     print("Oh crap, it's raining!")
@@ -58,7 +58,7 @@ have ended and the program would have printed `It's not raining anymore`.
 
 Let's actually create a program that does just that:
 
-```py
+```python
 its_raining = True
 while its_raining:
     print("It's raining!")
@@ -87,7 +87,7 @@ Running the program may look like this:
 The while loop doesn't check the condition all the time, it only checks
 it in the beginning.
 
-```py
+```python
 >>> its_raining = True
 >>> while its_raining:
 ...     its_raining = False
@@ -101,7 +101,7 @@ We can also interrupt a loop even if the condition is still true using
 the `break` keyword. In this case, we'll set condition to True and rely
 on nothing but `break` to end the loop.
 
-```py
+```python
 while True:
     answer = input("Is it raining? (y=yes, n=no) ")
     if answer == 'y':
@@ -125,7 +125,7 @@ The program works like this:
 Unlike setting the condition to False, breaking the loop ends it
 immediately.
 
-```py
+```python
 >>> while True:
 ...     break
 ...     print("This is never printed.")
@@ -138,7 +138,7 @@ immediately.
 Python doesn't have until loops. If we need an until loop, we can use
 `while not`:
 
-```py
+```python
 raining = False
 while not raining:
     print("It's not raining.")
@@ -152,7 +152,7 @@ print("It's raining!")
 Let's say we have [a list](lists-and-tuples.md) of things we want to
 print. To print each item in it, we could just do a bunch of prints:
 
-```py
+```python
 stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 
 print(stuff[0])
@@ -176,7 +176,7 @@ stuff, we'll get an error saying "list index out of range".
 
 We could also create an index variable, and use a while loop:
 
-```py
+```python
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> length_of_stuff = len(stuff)
 >>> index = 0
@@ -198,7 +198,7 @@ just for printing each item.
 
 This is when for loops come in:
 
-```py
+```python
 >>> for thing in stuff:
 ...     # this is repeated for each element of stuff, that is, first
 ...     # for stuff[0], then for stuff[1], etc.
@@ -215,7 +215,7 @@ how about you
 Without the comments, that's only two simple lines, and one variable.
 Much better than anything else we tried before.
 
-```py
+```python
 >>> for thing in stuff:
 ...     print(thing)
 ...
@@ -244,7 +244,7 @@ other things also, including strings and
 its items, and for looping over a string gives us its characters as
 strings of length one.
 
-```py
+```python
 >>> for short_string in 'abc':
 ...     print(short_string)
 ...
@@ -267,7 +267,7 @@ There's only one big limitation with for looping over lists. We
 shouldn't modify the list in the for loop. If we do, the results can
 be surprising:
 
-```py
+```python
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> for thing in stuff:
 ...     stuff.remove(thing)
@@ -279,7 +279,7 @@ be surprising:
 
 Instead, we can create a copy of stuff and loop over it.
 
-```py
+```python
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> for thing in stuff.copy():
 ...     stuff.remove(thing)
@@ -292,7 +292,7 @@ Instead, we can create a copy of stuff and loop over it.
 Or if we just want to clear a list, we can use the `clear`
 [list method](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists):
 
-```py
+```python
 >>> stuff = ['hello', 'hi', 'how are you doing', 'im fine', 'how about you']
 >>> stuff.clear()
 >>> stuff
@@ -318,7 +318,7 @@ of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
 
 Repeat something an endless amount of times.
 
-```py
+```python
 message = input("What do you want me to say? ")
 while True:
     print(message, "!!!")
@@ -326,7 +326,7 @@ while True:
 
 Ask the user to enter five things and print them.
 
-```py
+```python
 things = []
 
 print("Enter 5 things: ")
@@ -341,7 +341,7 @@ for thing in things:
 
 Ask the user a bunch of questions.
 
-```py
+```python
 questions_and_answers = [
     # [question, answer], ...
     ["What is 2+4? ", "6"],
@@ -364,7 +364,7 @@ for qa in questions_and_answers:
 Store a list of names and let the user check if the program knows
 the user.
 
-```py
+```python
 # You can add names here so the program will know them automatically
 # when it starts.
 namelist = []
@@ -426,7 +426,7 @@ while True:
 
 1. This code is supposed to print each number between 1 and 5. Fix it.
 
-    ```py
+    ```python
     things = str([1, 2, 3, 4, 5])
     for thing in things:
         print(thing)
@@ -434,7 +434,7 @@ while True:
 
 2. This code is supposed to print `[1, 2, 3, 4, 5, 6]`. Fix it.
 
-    ```py
+    ```python
     before = [[1, 2], [3, 4], [5, 6]]
     after = []
     for number in before:
@@ -446,7 +446,7 @@ while True:
     and then calculate their sum. It should print 6 because `1 + 2 + 3`
     is 6. Fix the program.
 
-    ```py
+    ```python
     input = ['1', '2', '3']
 
     for string in input:

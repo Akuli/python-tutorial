@@ -2,7 +2,7 @@
 
 Now we know how to make Python show text.
 
-```py
+```python
 >>> 'Hello!'
 'Hello!'
 >>>
@@ -12,7 +12,7 @@ But that includes `''`. One way to show text to the user without `''`
 is with the print function. In Python, printing doesn't have anything
 to do with physical printers, it just means showing text on the screen.
 
-```py
+```python
 >>> print('Hello!')
 Hello!
 >>>
@@ -21,7 +21,7 @@ Hello!
 Now we are ready for a classic example, which is also the first program
 in many tutorials :)
 
-```py
+```python
 >>> print("Hello World!")
 Hello World!
 >>>
@@ -33,7 +33,7 @@ But what exactly is print?
 
 Let's see what happens if we type `print` without the `('Hello')` part.
 
-```py
+```python
 >>> print
 <built-in function print>
 >>>
@@ -61,7 +61,7 @@ type `thingy` later it's not going to run `print('hello')` again.
 Now we know that `thingy = print('hello')` doesn't store the
 `print('hello')` call in a variable. But what does it do then?
 
-```py
+```python
 >>> thingy = print('hello')
 hello
 >>> print(thingy)       # thingy is now None
@@ -102,7 +102,7 @@ without any printing.
 Not all functions return None. The input function can be used for
 getting a string from the user.
 
-```py
+```python
 >>> stuff = input("Enter something:")
 Enter something:hello
 >>> stuff
@@ -117,7 +117,7 @@ assigned to `stuff`.
 
 Usually we want to add a space after the `:`, like this:
 
-```py
+```python
 >>> stuff = input("Enter something: ")  # now there's space between : and where i type
 Enter something: hello
 >>>
@@ -128,7 +128,7 @@ Enter something: hello
 We can also print an empty line by calling print without any
 arguments.
 
-```py
+```python
 >>> print()
 
 >>>
@@ -137,7 +137,7 @@ arguments.
 In Python, `\n` is a newline character. Printing a string that contains
 a newline character also prints a newline:
 
-```py
+```python
 >>> print('hello\nworld')
 hello
 world
@@ -157,7 +157,7 @@ two backslashes.
 We can also pass multiple arguments to the print function. We need to
 separate them with commas and print will add spaces between them.
 
-```py
+```python
 >>> print("Hello", "World!")
 Hello World!
 >>>
@@ -165,7 +165,7 @@ Hello World!
 
 Unlike with `+`, the arguments don't need to be strings.
 
-```py
+```python
 >>> print(42, "is an integer, and the value of pi is", 3.14)
 42 is an integer, and the value of pi is 3.14
 >>>
@@ -176,7 +176,7 @@ Unlike with `+`, the arguments don't need to be strings.
 In [the previous chapter](variables.md) we learned that `if` is not a
 valid variable name because it's a keyword.
 
-```py
+```python
 >>> if = 123
   File "<stdin>", line 1
     if = 123
@@ -188,7 +188,7 @@ SyntaxError: invalid syntax
 But `print` and `input` are not keywords, so can we use them as
 variable names?
 
-```py
+```python
 >>> print = "hello"
 >>> print
 'hello'
@@ -197,7 +197,7 @@ variable names?
 
 We can, but there's a problem. Now we can't even do our hello world!
 
-```py
+```python
 >>> print("Hello World!")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>

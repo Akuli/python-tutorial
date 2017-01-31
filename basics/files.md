@@ -59,7 +59,7 @@ is same as `/home/me/hello.py`.
 
 Let's create a file and write a hello world to it.
 
-```py
+```python
 >>> with open('hello.txt', 'w') as f:
 ...     print("Hello World!", file=f)
 ...
@@ -78,7 +78,7 @@ So how does that code work?
 First of all, we open a path with `open`, and it gives us a Python file
 object that is assigned to the variable `f`.
 
-```py
+```python
 >>> f
 <_io.TextIOWrapper name='hello.txt' mode='w' encoding='UTF-8'>
 >>>
@@ -104,7 +104,7 @@ But what is that `with ourfile as f` crap? That's just a fancy way to make
 sure that the file gets closed, no matter what happens. As we can see,
 the file was indeed closed.
 
-```py
+```python
 >>> f.closed
 True
 >>>
@@ -120,7 +120,7 @@ After opening a file with the `r` mode we can for loop over it, just
 like it was a list. So let's go ahead and read everything in the file
 we created to a list of lines.
 
-```py
+```python
 >>> lines = []
 >>> with open('hello.txt', 'r') as f:
 ...     for line in f:
@@ -135,7 +135,7 @@ Trying to open a non-existent file with `w` or `a` creates the file for
 us, but doing that with `r` gives us an error instead. We'll learn more
 about errors [later](exceptions.md).
 
-```py
+```python
 >>> with open('this-doesnt-exist.txt', 'r') as f:
 ...     print("It's working!")
 ...
@@ -157,7 +157,7 @@ necessary.
 
 Let's see how that works if we have more than one line in the file.
 
-```py
+```python
 >>> with open('hello.txt', 'w') as f:
 ...     print("Hello one!", file=f)
 ...     print("Hello two!", file=f)
@@ -181,7 +181,7 @@ But how to get rid of that `\n`? [The rstrip string
 method](https://docs.python.org/3/library/stdtypes.html#str.rstrip) is
 great for this:
 
-```py
+```python
 >>> stripped = []
 >>> for line in lines:
 ...     stripped.append(line.rstrip('\n'))
@@ -195,7 +195,7 @@ It's also possible to read lines one by one. Files have [a readline
 method](https://docs.python.org/3/library/io.html#io.TextIOBase.readline)
 that reads the next line, and returns `''` if we're at the end of the file.
 
-```py
+```python
 >>> with open('hello.txt', 'r') as f:
 ...     first_line = f.readline()
 ...     second_line = f.readline()
@@ -210,7 +210,7 @@ There's only one confusing thing about reading files. If we try
 to read the same file object twice we'll find out that it only gets read
 once:
 
-```py
+```python
 >>> first = []
 >>> second = []
 >>> with open('hello.txt', 'r') as f:
@@ -231,7 +231,7 @@ file again it was already at the end, and there was nothing left
 to read. But if we open the file again, we get a new file object that
 is in the beginning and everything works.
 
-```py
+```python
 >>> first = []
 >>> second = []
 >>> with open('hello.txt', 'r') as f:
@@ -255,7 +255,7 @@ content we have read from it multiple times.
 If we need all of the content as a string, we can use [the read
 method](https://docs.python.org/3/library/io.html#io.TextIOBase.read).
 
-```py
+```python
 >>> with open('hello.txt', 'r') as f:
 ...     full_content = f.read()
 ...
@@ -284,7 +284,7 @@ Another way to create paths is to tell Python to escape them by
 adding an `r` to the beginning of the string. In this case the `r`
 is short for "raw", not "read".
 
-```py
+```python
 >>> r'C:\some\name'
 'C:\\some\\name'
 >>>
@@ -294,7 +294,7 @@ If our program is not meant to be ran on Windows and the paths
 don't contain backslashes we don't need to double anything or use
 `r` in front of paths.
 
-```py
+```python
 >>> print('/some/name')
 /some/name
 >>>
@@ -309,7 +309,7 @@ run the program on a different computer that doesn't have a
 
 This program prints the contents of files:
 
-```py
+```python
 while True:
     filename = input("Filename or path, or nothing at all to exit: ")
     if filename == '':
@@ -326,7 +326,7 @@ This program stores the user's username and password in a file.
 Plain text files are definitely not a good way to store usernames
 and passwords, but this is just an example.
 
-```py
+```python
 # Ask repeatedly until the user answers 'y' or 'n'.
 while True:
     answer = input("Have you been here before? (y/n) ")

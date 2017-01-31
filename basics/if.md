@@ -4,7 +4,7 @@
 
 Now we know what True and False are.
 
-```python
+```pythonthon
 >>> 1 == 1
 True
 >>> 1 == 2
@@ -19,7 +19,7 @@ True
 But what if we want to execute different code depending on something?
 That's when `if` comes in.
 
-```py
+```python
 >>> its_raining = True
 >>> if its_raining:
 ...     print("It's raining!")
@@ -43,7 +43,7 @@ just press space a few times.
 IDLE does this a bit differently, so if you use IDLE, running the
 example code looks more like this:
 
-```py
+```python
 >>> its_raining = True
 >>> if its_raining:
         print("It's raining!")
@@ -57,7 +57,7 @@ But why is that `if its_raining` instead of `if(its_raining)`?
 
 Earlier we learned that `if` is a **keyword**.
 
-```py
+```python
 >>> if = 123
   File "<stdin>", line 1
     if = 123
@@ -76,7 +76,7 @@ functions.
 Also note that if statements check the condition once only, so if we
 set it to false later the if statement won't notice it.
 
-```py
+```python
 >>> its_raining = True
 >>> if its_raining:
 ...     its_raining = False
@@ -100,7 +100,7 @@ editor should give you four spaces every time you press tab.
 
 Create a file called `rain.py`, and type the following content into it:
 
-```py
+```python
 its_raining = True
 if its_raining:
     print("It's raining!")
@@ -147,7 +147,7 @@ file**.
 What if we want to print a different message if it's not raining? We
 could do something like this:
 
-```py
+```python
 its_raining = True                  # you can change this to False
 its_not_raining = not its_raining   # False if its_raining, True otherwise
 
@@ -162,7 +162,7 @@ value of `its_raining` is.
 
 We can also add `not its_raining` directly to the second if statement:
 
-```py
+```python
 its_raining = True
 
 if its_raining:
@@ -173,7 +173,7 @@ if not its_raining:
 
 But we can make it even better by using `else`.
 
-```py
+```python
 its_raining = True
 
 if its_raining:
@@ -185,7 +185,7 @@ else:
 The else part simply runs when the if statement doesn't run. It doesn't
 check the condition again.
 
-```py
+```python
 >>> its_raining = True
 >>> if its_raining:
 ...     its_raining = False
@@ -198,7 +198,7 @@ check the condition again.
 By combining `else` with the input function we can make a program that
 asks for a password and checks if it's correct.
 
-```py
+```python
 print("Hello!")
 password = input("Enter your password: ")
 
@@ -231,7 +231,7 @@ a password from the user, but you shouldn't worry about that just yet.
 If we have more than one condition to check, our code will end up
 looking a bit messy.
 
-```py
+```python
 print("Hello!")
 word = input("Enter something: ")
 
@@ -256,7 +256,7 @@ else:
 Instead of typing `else`, indenting more and typing an `if` we can
 simply type `elif`, which is short for `else if`. Like this:
 
-```py
+```python
 print("Hello!")
 word = input("Enter something: ")
 
@@ -290,7 +290,7 @@ else:
     then try to run it, fix the errors you got, try to run it again and
     keep going until it works.
 
-    ```py
+    ```python
     print(Hello!)
     something == input('Enter something: )
     print('You entered:' something)
@@ -298,7 +298,7 @@ else:
 
 2. Fix this program the same way:
 
-    ```py
+    ```python
     print('Hello!')
     something = input("Enter something: ")
     if something = 'hello':

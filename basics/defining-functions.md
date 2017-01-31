@@ -7,7 +7,7 @@ It's probably been a while since you read about using functions.
 
 Have a look at this code:
 
-```py
+```python
 print("************")
 print("Hello World!")
 print("************")
@@ -30,7 +30,7 @@ else:
 
 Then compare it to this code:
 
-```py
+```python
 print_box("Hello World!")
 print_box("Enter a word:")
 word = input()
@@ -52,14 +52,14 @@ test the functions one by one and find the problem easily.
 
 The `pass` keyword does nothing.
 
-```py
+```python
 >>> pass
 >>>
 ```
 
 Let's use it to define a function that does nothing.
 
-```py
+```python
 >>> def do_nothing():
 ...     pass
 ...
@@ -72,7 +72,7 @@ Seems to be working so far, we have a function. Actually it's just
 a value that is assigned to a variable called `do_nothing`. Let's see
 what happens if we call it.
 
-```py
+```python
 >>> do_nothing()
 >>>
 ```
@@ -81,7 +81,7 @@ There we go. It did nothing at all.
 
 Maybe we could just do something in the function instead?
 
-```py
+```python
 >>> def print_hi():
 ...     print("Hi!")
 ...
@@ -92,7 +92,7 @@ Hi!
 
 It's working. How about printing a variable in the function?
 
-```py
+```python
 >>> def print_message():
 ...     print(message)
 ...
@@ -104,7 +104,7 @@ Hello World!
 
 Again, it works. How about setting a variable in the function?
 
-```py
+```python
 >>> def get_username():
 ...     username = input("Username: ")
 ...
@@ -125,7 +125,7 @@ So far we have used nothing but **global variables**. They are called
 globals because the same variables are available anywhere in our
 program, even in functions.
 
-```py
+```python
 >>> a = 1
 >>> b = "hi"
 >>> c = "hello"
@@ -140,7 +140,7 @@ program, even in functions.
 But there are also **local variables**. They exist only **inside**
 functions, and they are deleted when the function exits.
 
-```py
+```python
 >>> def thingy():
 ...     d = "hello again, i'm a local variable"
 ...     print('inside thingy:', d)
@@ -160,7 +160,7 @@ Let's draw a diagram of these variables:
 
 However, modifying a global variable in-place from a function is easy.
 
-```py
+```python
 >>> stuff = ['global stuff']
 >>> def add_stuff():
 ...     stuff.append('local stuff')
@@ -175,7 +175,7 @@ This doesn't work if the value is of an immutable type, like string or
 integer because immutable values cannot be modified in-place.
 Fortunately, Python will tell us if something's wrong.
 
-```py
+```python
 >>> foo = 1
 >>> def bar():
 ...     foo += 1
@@ -197,7 +197,7 @@ think they are.
 Let's think about what the print function does. It takes an argument
 and prints it. Maybe a custom function could also take an argument?
 
-```py
+```python
 >>> def print_twice(message):
 ...     print(message)
 ...     print(message)
@@ -216,7 +216,7 @@ This function can be called in two ways:
     This is the recommended way for functions that take only one or two
     arguments. I would do this in my code.
 
-    ```py
+    ```python
     >>> print_twice("hi")
     hi
     hi
@@ -232,7 +232,7 @@ This function can be called in two ways:
 
 - Using a **keyword argument**:
 
-    ```py
+    ```python
     >>> print_twice(message="hi")
     hi
     hi
@@ -259,7 +259,7 @@ is which.
 
 Now it's time to solve our box printing problem:
 
-```py
+```python
 def print_box(message):
     print('*' * len(message))
     print(message)
@@ -273,7 +273,7 @@ printing stars?
 
 We could change our `print_box` function to take two arguments:
 
-```py
+```python
 def print_box(message, character):
     print(character * len(message))
     print(message)
@@ -283,7 +283,7 @@ def print_box(message, character):
 Then we could change our existing code to always call `print_box` with
 a star as the second argument:
 
-```py
+```python
 print_box("Hello World", "*")
 ...
 ```
@@ -291,7 +291,7 @@ print_box("Hello World", "*")
 But we don't need to change our existing code. We can make the second
 argument **optional** by giving it a default value.
 
-```py
+```python
 def print_box(message, character='*'):
     print(character * len(message))
     print(message)
@@ -303,13 +303,13 @@ different character in two ways:
 
 - Using a positional argument.
 
-    ```py
+    ```python
     print_box("Hello World!")
     ```
 
 - Using a keyword argument.
 
-    ```py
+    ```python
     print_box(message="Hello World!")
     ```
 
@@ -318,13 +318,13 @@ need to:
 
 - Using two positional arguments.
 
-    ```py
+    ```python
     print_box("Enter a word:", "?")
     ```
 
 - Using two keyword arguments.
 
-    ```py
+    ```python
     print_box(message="Enter a word:", character="?")
     print_box(character="?", message="Enter a word:")
     ```
@@ -334,13 +334,13 @@ need to:
     I would probably do this. If an argument has a default value, I
     like to use a keyword argument to change it if needed.
 
-    ```py
+    ```python
     print_box("Enter a word:", character="?")
     ```
 
     However, this doesn't work:
 
-    ```py
+    ```python
     print_box(character="?", "Enter a word:")
     ```
 
@@ -354,7 +354,7 @@ need to:
 The built-in input function [returns a value](using-functions.md#return-values).
 Can our function return a value also?
 
-```py
+```python
 >>> def times_two(x):
 ...     return x * 2
 ...
@@ -371,7 +371,7 @@ thing as typing `6` to the prompt.
 We can call the `times_two` function and use the result however we
 want, just like we can use built-in functions:
 
-```py
+```python
 >>> times_two(2) + times_two(3)     # calculate 4 + 6
 10
 >>> print('2 * 5 is', times_two(5))
@@ -381,7 +381,7 @@ want, just like we can use built-in functions:
 
 Note that **returning from a function ends it immediately**.
 
-```py
+```python
 >>> def return_before_print():
 ...     return None
 ...     print("This never gets printed.")
@@ -393,7 +393,7 @@ Note that **returning from a function ends it immediately**.
 If we don't have any return statements or we have a return statement
 that doesn't specify what to return, our function will return None.
 
-```py
+```python
 >>> def return_none_1():
 ...     pass
 ...
@@ -423,7 +423,7 @@ assign it to a variable.
 
 If our function returns a value we can always print it, like this:
 
-```py
+```python
 >>> def return_hi():
 ...     return "hi"
 ...
@@ -436,7 +436,7 @@ hi
 
 Ask yes/no questions.
 
-```py
+```python
 def ask_yes_no(prompt):
     while True:
         answer = input(prompt + ' (y or n) ')
@@ -454,7 +454,7 @@ else:
 
 Ask questions with multiple answers.
 
-```py
+```python
 def ask_until_correct(prompt, correct_options,
                       error_message="I don't know what you meant."):
     while True:
@@ -495,7 +495,7 @@ exercises about defining functions you can do.
 
 1. What's wrong with this code?
 
-    ```py
+    ```python
     def ask_name():
         name = input("Enter your name: ")
 
@@ -505,7 +505,7 @@ exercises about defining functions you can do.
 
 2. How about this code?
 
-    ```py
+    ```python
     def get_greeting():
         return "Hello World!"
 
@@ -514,7 +514,7 @@ exercises about defining functions you can do.
 
 3. Why does this print None after greeting the world?
 
-    ```py
+    ```python
     def greet(target):
         print("Hello", target)
 

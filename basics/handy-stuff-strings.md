@@ -2,7 +2,7 @@
 
 Python strings are just pieces of text.
 
-```py
+```python
 >>> our_string = "Hello World!"
 >>> our_string
 'Hello World!'
@@ -11,7 +11,7 @@ Python strings are just pieces of text.
 
 So far we know how to add them together.
 
-```py
+```python
 >>> "I said: " + our_string
 'I said: Hello World!'
 >>>
@@ -19,7 +19,7 @@ So far we know how to add them together.
 
 We also know how to repeat them multiple times.
 
-```py
+```python
 >>> our_string * 3
 'Hello World!Hello World!Hello World!'
 >>>
@@ -40,7 +40,7 @@ Slicing is really simple. It just means getting a part of the string.
 For example, to get all characters between the second place between the
 characters and the fifth place between the characters, we can do this:
 
-```py
+```python
 >>> our_string[2:5]
 'llo'
 >>>
@@ -54,7 +54,7 @@ This picture explains how the slicing works:
 
 But what happens if we slice with negative values?
 
-```py
+```python
 >>> our_string[-5:-2]
 'orl'
 >>>
@@ -69,7 +69,7 @@ If we don't specify the beginning it defaults to 0, and if we don't
 specify the end it defaults to the length of the string. For example, we
 can get everything except the first or last character like this:
 
-```py
+```python
 >>> our_string[1:]
 'ello World!'
 >>> our_string[:-1]
@@ -79,7 +79,7 @@ can get everything except the first or last character like this:
 
 Remember that strings can't be changed in-place.
 
-```py
+```python
 >>> our_string[:5] = 'Howdy'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -94,7 +94,7 @@ going to talk about it now.
 
 So now we know how slicing works. But what happens if we forget the `:`?
 
-```py
+```python
 >>> our_string[1]
 'e'
 >>>
@@ -108,7 +108,7 @@ Programming starts at zero. Indexing strings also starts at zero. The
 first character is `our_string[0]`, the second character is
 `our_string[1]`, and so on.
 
-```py
+```python
 >>> our_string[0]
 'H'
 >>> our_string[1]
@@ -128,7 +128,7 @@ So string indexes work like this:
 
 How about negative values?
 
-```py
+```python
 >>> our_string[-1]
 '!'
 >>>
@@ -167,7 +167,7 @@ We'll learn more about methods [later](classes.md).
 
 Here's an example with some of the most commonly used string methods:
 
-```py
+```python
 >>> our_string.upper()
 'HELLO WORLD!'
 >>> our_string.lower()
@@ -220,7 +220,7 @@ them [later](lists-and-tuples.md).
 To add a string in the middle of another string, we can do something
 like this:
 
-```py
+```python
 >>> name = 'Akuli'
 >>> 'My name is ' + name + '.'
 'My name is Akuli.'
@@ -229,7 +229,7 @@ like this:
 
 But that gets complicated if we have many things to add.
 
-```py
+```python
 >>> channel = '##learnpython'
 >>> network = 'freenode'
 >>> "My name is " + name + " and I'm on the " + channel + " channel on " + network + "."
@@ -248,7 +248,7 @@ our problem:
     formatting style has a lot of features, but it's a little bit more
     typing than `%s`-formatting.
 
-    ```py
+    ```python
     >>> "Hello {}.".format(name)
     'Hello Akuli.'
     >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
@@ -262,7 +262,7 @@ our problem:
     to use `%s` formatting for simple things and `.format` when I need
     more powerful features.
 
-    ```py
+    ```python
     >>> "Hello %s." % name
     'Hello Akuli.'
     >>> "My name is %s and I'm on the %s channel on %s." % (name, channel, network)
@@ -277,7 +277,7 @@ our problem:
     If we have a variable that may be a tuple we need to wrap it in another
     tuple when formatting:
 
-    ```py
+    ```python
     >>> thestuff = (1, 2, 3)
     >>> "we have %s" % thestuff
     Traceback (most recent call last):
@@ -298,7 +298,7 @@ our problem:
     string is same as it would be with `.format()` but we can use variables
     directly.
 
-    ```py
+    ```python
     >>> f"My name is {name} and I'm on the {channel} channel on {network}."
     "My name is Akuli and I'm on the ##learnpython channel on freenode."
     >>>
@@ -306,7 +306,7 @@ our problem:
 
 All of these formatting styles have many other features also:
 
-```py
+```python
 >>> 'Three zeros and number one: {:04d}'.format(1)
 'Three zeros and number one: 0001'
 >>> 'Three zeros and number one: %04d' % 1
@@ -322,7 +322,7 @@ If you need to know more about formatting I recommend reading
 We can use `in` and `not in` to check if a string contains another
 string.
 
-```py
+```python
 >>> our_string = "Hello World!"
 >>> "Hello" in our_string
 True
@@ -336,7 +336,7 @@ True
 We can get the length of a string with the `len` function. The name
 `len` is short for "length".
 
-```py
+```python
 >>> len(our_string)   # 12 characters
 12
 >>> len('')     # no characters
@@ -351,7 +351,7 @@ We can convert strings, integers and floats with each other with
 behave a lot like functions. We'll learn more about what they really
 are [later](classes.md).
 
-```py
+```python
 >>> str(3.14)
 '3.14'
 >>> float('3.14')
@@ -366,7 +366,7 @@ are [later](classes.md).
 Giving an invalid string to `int` or `float` produces an error
 message.
 
-```py
+```python
 >>> int('lol')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -406,7 +406,7 @@ ValueError: could not convert string to float: 'hello'
 
 1. Fix this program.
 
-    ```py
+    ```python
     print("Hello!")
     word1 = input("Enter something: ")
     word2 = input("Enter another thing: ")
@@ -417,7 +417,7 @@ ValueError: could not convert string to float: 'hello'
 
 2. This program is supposed to say something loudly. Fix it.
 
-    ```py
+    ```python
     message = input("What do you want me to say? ")
     message.upper
     print(message, "!!!")

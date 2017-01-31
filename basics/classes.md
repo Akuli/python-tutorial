@@ -13,7 +13,7 @@ don't I highly recommend learning that first, and then moving to classes.
 
 Python comes with a lot of classes that you are already familiar with.
 
-```py
+```python
 >>> str
 <class 'str'>
 >>> int
@@ -29,7 +29,7 @@ Calling these classes as if they were functions makes a new **instance**
 of them. For example, `str()` makes a `str` instance, also known as a
 string.
 
-```py
+```python
 >>> str()
 ''
 >>> int()
@@ -43,7 +43,7 @@ string.
 
 We can also get an instance's class with `type()`:
 
-```py
+```python
 >>> type('')
 <class 'str'>
 >>> type(0)
@@ -65,14 +65,14 @@ own object types like this is called **object-orientated programming**.
 
 In Python, `pass` does nothing.
 
-```py
+```python
 >>> pass
 >>>
 ```
 
 Let's use it to define an empty class.
 
-```py
+```python
 >>> class Website:
 ...     pass
 ...
@@ -88,7 +88,7 @@ names for your classes.
 
 Now we can make a Website instance by calling the class.
 
-```py
+```python
 >>> stackoverflow = Website()
 >>> stackoverflow
 <__main__.Website object at 0x7f36e4c456d8>
@@ -102,7 +102,7 @@ object" or "a Website". All of these mean the same thing.
 
 Now we can attach more information about stackoverflow to our Website.
 
-```py
+```python
 >>> stackoverflow.url = 'http://stackoverflow.com/'
 >>> stackoverflow.founding_year = 2008
 >>> stackoverflow.free_to_use = True
@@ -111,7 +111,7 @@ Now we can attach more information about stackoverflow to our Website.
 
 We can also access the information easily.
 
-```py
+```python
 >>> stackoverflow.url
 'http://stackoverflow.com/'
 >>> stackoverflow.founding_year
@@ -137,7 +137,7 @@ example, when we do `random.randint`, `random` is a module instance and
 If we make another Website, does it have the same `url`, `founding_year`
 and `free_to_use`?
 
-```py
+```python
 >>> effbot = Website()
 >>> effbot.url
 Traceback (most recent call last):
@@ -152,7 +152,7 @@ The attributes are stored in a dictionary called `__dict__`. It's not
 recommended to use it for code that needs to be reliable, but it's a
 handy way to see which attributes the instance contains.
 
-```py
+```python
 >>> stackoverflow.__dict__
 {'free_to_use': True,
  'founding_year': 2008,
@@ -167,7 +167,7 @@ handy way to see which attributes the instance contains.
 What happens if we set an attribute of the `Website` class to some value
 instead of doing that to an instance?
 
-```py
+```python
 >>> Website.is_online = True
 >>> Website.is_online
 True
@@ -176,7 +176,7 @@ True
 
 Seems to be working, but what happened to the instances?
 
-```py
+```python
 >>> stackoverflow.is_online
 True
 >>> effbot.is_online
@@ -191,7 +191,7 @@ Actually, `is_online` is still not in stackoverflow's or effbot's
 `__dict__`. stackoverflow and effbot get that attribute directly from
 the `Website` class.
 
-```py
+```python
 >>> stackoverflow.__dict__
 {'free_to_use': True,
  'founding_year': 2008,
@@ -211,7 +211,7 @@ this. Use instance attributes instead, e.g. `stackoverflow.is_online = True`.
 
 Let's define a function that prints information about a website.
 
-```py
+```python
 >>> def website_info(website):
 ...     print("URL:", website.url)
 ...     print("Founding year:", website.founding_year)
@@ -228,7 +228,7 @@ Seems to be working. We should be able to get information about all
 websites, so maybe we should attach the `website_info` function to the
 Website class?
 
-```py
+```python
 >>> Website.info = website_info
 >>> Website.info(stackoverflow)
 URL: http://stackoverflow.com/
@@ -240,7 +240,7 @@ Free to use: True
 It's working, but `Website.info(stackoverflow)` is a lot of typing, so
 wouldn't `stackoverflow.info()` be much better?
 
-```py
+```python
 >>> stackoverflow.info()
 URL: http://stackoverflow.com/
 Founding year: 2008
@@ -257,7 +257,7 @@ argument, which we didn't give it when we called `stackoverflow.info()`!
 
 But is `stackoverflow.info` the same thing as `Website.info`?
 
-```py
+```python
 >>> Website.info
 <function website_info at 0x7f36e4c39598>
 >>> stackoverflow.info
@@ -283,7 +283,7 @@ example `'hello'.lower()` is same as `str.lower('hello')`.
 Maybe we could define a method when we make the class instead of adding
 it later?
 
-```py
+```python
 >>> class Website:
 ...     def info(self):     # self will be stackoverflow
 ...         print("URL:", self.url)
@@ -309,7 +309,7 @@ the official style guide recommens it also.
 We still need to set `url`, `founding_year` and `free_to_use` manually.
 Maybe we could add a method to do that?
 
-```py
+```python
 >>> class Website:
 ...     def initialize(self, url, founding_year, free_to_use):
 ...         self.url = url
@@ -339,7 +339,7 @@ Website class. It's called `__init__` and it does nothing by default. If
 our `__init__` method takes other arguments than self we can call the
 class with arguments and they will be given to `__init__`. Like this:
 
-```py
+```python
 >>> class Website:
 ...     def __init__(self, url, founding_year, free_to_use):
 ...         self.url = url
@@ -365,7 +365,7 @@ them in this tutorial.
 
 Don't do this:
 
-```py
+```python
 class MyProgram:
 
     def __init__(self):
@@ -390,7 +390,7 @@ Make functions instead, or just write your code without any functions if
 it's short enough for that. This program does the same thing and it's
 much more readable:
 
-```py
+```python
 print("Hello!")
 word = input("Enter something: ")
 print("You entered " + word + ".")

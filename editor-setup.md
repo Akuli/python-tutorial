@@ -103,7 +103,7 @@ so your editor also needs to run the programs in Python 3 or newer.
 If you are unsure which Python your editor runs, create a test file
 with the following contents:
 
-```py
+```python
 import sys
 print(sys.version)
 ```
@@ -117,7 +117,7 @@ If the version starts with 2, it's too old.
     are using Windows, run `python` on a terminal and enter these
     commands:
 
-    ```py
+    ```python
     >>> import sys
     >>> print(sys.executable)
     ```
