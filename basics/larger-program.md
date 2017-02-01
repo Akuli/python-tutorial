@@ -42,7 +42,7 @@ Let's start with the function that reads the question file:
 ```python
 def read_questions(filename):
     answers = {}
-    with open(questionfile, 'r') as f:
+    with open(filename, 'r') as f:
         for line in f:
             line = line.strip()
             if line != '':
@@ -157,7 +157,7 @@ Now the whole program looks like this:
 ```python
 def read_questions(filename):
     answers = {}
-    with open(questionfile, 'r') as f:
+    with open(filename, 'r') as f:
         for line in f:
             line = line.strip()
             if line != '':
