@@ -105,9 +105,8 @@ this:
 
 ## Iterating manually
 
-Iterators have a magic method called `__next__`, and there's a built-in
-function called `next()` for calling that. Calling `next()` on an
-iterator gets the next value and moves it forward. Like this:
+Iterators have a magic method called `__next__` that gets next value and
+moves the iterator forward.
 
 ```python
 >>> e = enumerate('abc')
@@ -146,9 +145,11 @@ StopIteration
 ```
 
 There is usually not a good way to check if the iterator is at the end,
-and it's best to just try to get a value from it and catch
-StopIteration. That's actually what for looping over an iterator does.
-For example, this code...
+and it's best to just try to get a value from it and
+[catch](../basics/exceptions.md#catching-exceptions) StopIteration.
+
+That's actually what for loops do. For example,
+this code...
 
 ```python
 for pair in enumerate('hello'):
@@ -170,7 +171,7 @@ while True:
 ```
 
 The for loop version is much simpler to write and I wrote the while loop
-version just to explain what the for loop does.
+version just to show how the for loop works.
 
 ## Converting to iterators
 
@@ -282,13 +283,15 @@ Let's try out our thingy function and see how it works.
 ```
 
 What the heck? We don't return anything from the function, but it still
-doesn't return None! Putting a `yield` anywhere in a function makes it
-return **generators** instead of returning anything. **Generators are
-iterators** with some more features that we don't need to care about.
+doesn't return None!
+
+Putting a `yield` anywhere in a function makes it return **generators**.
+**Generators are iterators** with some more features that we don't need
+to care about.
 
 ![Generators.](../images/generators.png)
 
-The generator we got works just like other iterators:
+The generators that thingy gives us work just like other iterators:
 
 ```python
 >>> t = thingy()
@@ -373,10 +376,10 @@ Here's a drawing of what's going on:
 
 ![A picture of printygen.](../images/freeze-melt.png)
 
-The good news is that **usually we don't need to worry about when the
-parts between the yields run**. Actually we don't even need to use
-`iter()` or `next()` most of the time, but I think it's nice to know how
-for loops work.
+The good news is that **usually we don't need to worry about when
+exactly the parts between the yields run**. Actually we don't even need
+to use `iter()` and `next()` most of the time, but I think it's nice to
+know how for loops work.
 
 `yield` is useful when we want the function to output so many things
 that making a list of them would be too slow or the list wouldn't fit in
@@ -426,8 +429,8 @@ number of things:
 ```
 
 [The itertools module](https://docs.python.org/3/library/itertools.html)
-contains many useful functions like this. For example,
-`itertools.count(1)` does the same thing as our `count()`.
+contains many useful things like this. For example, `itertools.count(1)`
+does the same thing as our `count()`.
 
 ## Summary
 
@@ -435,11 +438,10 @@ contains many useful functions like this. For example,
 - An iterator is an iterable that remembers its position.
 - For loops create an iterator of the iterable and call its `__next__`
     method until it raises a StopIteration.
-- Functions that contain yields return generators. Iterating the
-    generator runs the function bit by bit and gives us the values it
-    yields.
-- The itertools module contains many useful functions that return
-    iterators.
+- Functions that contain yields return generators. Calling `next()` on a
+  generator runs it to the next yield and gives us the value it yielded.
+- [The itertools module](https://docs.python.org/3/library/itertools.html)
+  contains many useful iterator-related things.
 
 ***
 

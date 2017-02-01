@@ -214,7 +214,7 @@ TypeError("unsupported operand type(s) for +: 'int' and 'str'",)
 
 ## When should we catch exceptions?
 
-Never do things like this:
+Do **not** do things like this:
 
 ```python
 try:
@@ -225,9 +225,9 @@ except Exception:
 
 There's many things that can go wrong in the `try` block. If something
 goes wrong all we have is an oops message that doesn't tell us which
-line caused the problem. This makes fixing problems a lot harder. If we
-want to catch exceptions we need to be specific about what exactly we
-want to catch and where instead of catching everything we can in the
+line caused the problem. This makes fixing the program really annoying.
+If we want to catch exceptions we need to be specific about what exactly
+we want to catch and where instead of catching everything we can in the
 whole program.
 
 There's nothing wrong with doing things like this:
@@ -311,16 +311,16 @@ Back in [the module chapter](modules.md) we learned to display error
 messages by printing to `sys.stderr` and then calling `sys.exit(1)`, so
 when should we use that and when should we raise an exception?
 
-Exceptions are meant for **programmers**, so if we are writing a module
-that other people will import we should probably use exceptions. For
-other errors (for example, if the **user** of the program has done
-something wrong) it's usually better to use `sys.stderr` and `sys.exit`.
+Exceptions are meant for **programmers**, so if we are writing something
+that other people will import we should use exceptions. If our program
+is working like it should be and the **user** has done something wrong,
+it's usually better to use `sys.stderr` and `sys.exit`.
 
 ## Exception hierarchy
 
-Exceptions are organized like this. I made this tree diagram with
-[this program](https://github.com/Akuli/classtree/) on Python 3.4. You
-may have more or less exceptions than I have if your Python is newer or
+Exceptions are organized like this. I made this tree with [this
+program](https://github.com/Akuli/classtree/) on Python 3.4. You may
+have more or less exceptions than I have if your Python is newer or
 older than mine, but they should be mostly similar.
 
     Exception
@@ -387,9 +387,9 @@ get when [processing files](files.md), and catching Exception catches
 all of these errors. You don't need to remember this tree, running
 `help('builtins')` should display a larger tree that this is a part of.
 
-There's also a few exceptions that are not in this tree like SystemExit
-and KeyboardInterrupt, but most of the time we shouldn't catch them.
-Catching Exception doesn't catch them either.
+There are also a few exceptions that are not in this tree like
+SystemExit and KeyboardInterrupt, but most of the time we shouldn't
+catch them. Catching Exception doesn't catch them either.
 
 ## Summary
 
