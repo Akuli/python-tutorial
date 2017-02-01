@@ -44,8 +44,34 @@ username, password = login()
 That gets kind of messy if there are more than three values to return,
 but I have never needed to return more than three values. If you think
 you need to return four or more values you probably want to use [a
-class](../basics/classes.md) instead and store the values like
-`self.thing = stuff`.
+class](../basics/classes.md) instead.
+
+For example, instead of this...
+
+```python
+def get_new_info(username):
+    print("Changing user information of %s." % username)
+    username = input("New username: ")
+    password = input("New password: ")
+    fullname = input("Full name: ")
+    phonenumber = input("Phone number: ")
+    return username, password, fullname, phonenumber
+```
+
+...you could do this:
+
+```python
+class User:
+    # you probably want to make many other user related things too, add
+    # them here
+
+    def change_info(self):
+        print("Changing user information of %s." % self.username)
+        self.username = input("New username: ")
+        self.password = input("New password: ")
+        self.fullname = input("Full name: ")
+        self.phonenumber = input("Phone number: ")
+```
 
 ## \*args
 
@@ -240,19 +266,15 @@ There's nothing wrong with returning a tuple from a function, and you
 are free to do that whenever you need it.
 
 We don't need `*args` and `**kwargs` for most of the functions we write.
-Often functions just do something and arguments are a way to change how
-they do that, and by not taking `*args` or `**kwargs` we can make sure
-that we'll get an error if the function gets an invalid argument.
-
 When we need to make something that takes whatever arguments it's given
 or call a function with arguments that come from a list we need `*args`
 and `**kwargs`, and there's no need to avoid them.
 
 I don't recommend using keyword-only arguments with functions like our
-`print_box`. It's easy enough to guess what `print_box('hello', '-')`
-does, and there's no need to deny that. It's much harder to guess what
-`move('file1.txt', 'file2.txt', True, False)` does, so using
-keyword-only arguments makes sense.
+`print_box`. It's easy enough to guess or remember what
+`print_box('hello', '-')` does, and there's no need to deny that. It's
+much harder to remember what `move('file1.txt', 'file2.txt', True, False)`
+does, so using keyword-only arguments makes sense.
 
 ## Summary
 
