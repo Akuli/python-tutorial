@@ -45,7 +45,7 @@ def read_questions(filename):
     with open(questionfile, 'r') as f:
         for line in f:
             line = line.strip()
-            if line:    # ignore empty lines
+            if line != '':
                 question, answer = line.split('=')
                 answers[question.strip()] = answer.strip()
     return answers
@@ -160,7 +160,7 @@ def read_questions(filename):
     with open(questionfile, 'r') as f:
         for line in f:
             line = line.strip()
-            if line:    # ignore empty lines
+            if line != '':
                 question, answer = line.split('=')
                 answers[question.strip()] = answer.strip()
     return answers
