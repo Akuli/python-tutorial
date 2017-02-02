@@ -85,7 +85,7 @@ it's explained
 [here](https://docs.python.org/3/reference/datamodel.html#special-method-lookup)
 if you want to know more about it.
 
-## str() and repr()
+## String representations
 
 You have probably noticed that typing something to the interactive `>>>`
 prompt is not quite the same thing as printing it. For example,
@@ -99,46 +99,32 @@ hello
 >>>
 ```
 
-Typing `'hello'` without a print displayed it with quotes, but printing
-it displayed it without the quotes. Both of these can be customized with
-magic methods. `print('hello')` does the same thing as
-`print(str('hello'))`, and typing `'hello'` without a print does roughly
-the same thing as `print(repr('hello'))`.
+If you want to print something the way it's displayed on the `>>>`
+prompt you can use the `repr()` function. Here "repr" is short for
+"representation".
 
 ```python
->>> repr('hello')   # a string that literally contains 'hello'
-"'hello'"
->>> str('hello')    # same as just 'hello'
-'hello'
->>> print(repr('hello'))
-'hello'
->>> print(str('hello'))
-hello
+>>> message = 'hello'
+>>> print("the message is", repr(message))
+the message is 'hello'
 >>>
 ```
 
-The `repr()` values can also be easily used with string formatting.
-Instead of this...
+Combining `repr()` with [string
+formatting](../basics/handy-stuff-strings.md#string-formatting) is also
+easy. `%` formatting has a `%r` formatter, and `.format()` formatting
+has a `!r` flag.
 
 ```python
-print("message is " + repr(message))
+>>> print("the message is %r" % (message,))
+the message is 'hello'
+>>> print("the message is {!r}".format(message))
+the message is 'hello'
+>>>
 ```
 
-...you can use one of these instead:
-
-```python
-print("message is %r" % (message,))
-print("message is {!r}".format(message))
-```
-
-## Customizing str() and repr() values
-
-As usual, `repr(thing)` does the same thing as `thing.__repr__()` and
-`str(thing)` does the same thing as `thing.__str__()`. Usually you don't
-need to and you shouldn't define `__str__` yourself because `__str__`
-defaults to `__repr__`.
-
-Here's an example that hopefully clarifies things:
+The `__repr__` magic method can be used to customize this. For example,
+we can do this:
 
 ```python
 >>> class Website:
@@ -148,15 +134,11 @@ Here's an example that hopefully clarifies things:
 >>> w = Website()
 >>> w.__repr__()
 '<a Website object>'
->>> repr(w)
-'<a Website object>'
->>> w.__str__()
-'<a Website object>'
 >>> str(w)
 '<a Website object>'
->>> w
-<a Website object>
 >>> print(w)
+<a Website object>
+>>> w
 <a Website object>
 >>>
 ```
