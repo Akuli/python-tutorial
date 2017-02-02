@@ -122,3 +122,6 @@ deque(['theelous3', 'Nitori', 'RubyPinch'])
 
 Deques are often used as queues. It means that items are always added to 
 one end and popped from the other end.
+
+
+**TODO:** add some of ChainMap, Counter, OrderedDict, defaultdict, deque, sets
