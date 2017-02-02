@@ -1,23 +1,49 @@
 # What is programming?
 
-**Feel free to [skip this part](#how-to-read-this-tutorial) if you already
-know everything it's talking about.**
+**Feel free to [skip this part](#how-to-read-this-tutorial) if you
+already know everything it's talking about.**
 
-As a computer user you know that computers don't have feelings. They don't
-work any faster or slower depending on if we're angry at them or if we're
-happy. Computers can perform millions of calculations per second, but they
-require us to tell them exactly what to do. If they do something else than
-we want them to do the problem is usually that they don't understand our
-instructions the way we understand them.
+As a computer user you know that computers don't have feelings. They
+don't work any faster or slower depending on if we're angry at them or
+if we're happy. Computers can perform millions of calculations per
+second, but they require us to tell them exactly what to do. If they do
+something else than we want them to do the problem is usually that they
+don't understand our instructions the way we understand them.
 
-The only big difference between programming and what you're familiar with
-already is that instead of clicking buttons to do things we write the
-instructions using a **programming language**. Most programming languages
-consist of English words, digits and some characters that have special
-meanings. This tutorial uses a programming language called Python because it's
-easy to learn and we can do many different things with it. For example, we
-can create our own applications that have buttons that people can click
-instead of just using applications written by others.
+The only big difference between programming and what you're familiar
+with already is that instead of clicking buttons to do things we write
+the instructions using a **programming language**. Most programming
+languages consist of English words, digits and some characters that have
+special meanings.
+
+Unlike people often think, **programming is not complicated**. Large
+programs are always made of small, simple pieces, and those pieces are
+written one by one. Programming languages are made to be used by humans,
+so if there's an easy way to do something and a difficult way to do
+something, you should use the easier way.
+
+## What do I need?
+
+First of all, **you don't need to be good at math**. Some programmers
+are good at math, some are not. Programming and math are two separate
+things and being good or bad at one doesn't mean you are automatically
+good or bad at the other.
+
+You also don't need a powerful computer. I could do almost all of my
+programming on a 12-year-old computer if I needed to. Fast computers are
+nice to work with, but you don't need them.
+
+Programming takes time like all hobbies do. Some people learn it
+quickly, and some people don't. I don't expect you to read this tutorial
+in a couple hours and then master everything it's talking about. Take
+your time with things, and remember that I learned to program slowly.
+
+## Getting started
+
+This tutorial uses a programming language called Python because it's
+easy to learn and we can do many different things with it. For example,
+we can create our own applications that have buttons that people can
+click instead of just using applications written by others.
 
 Before we can get started with Python we need to know how to write some of
 Python's special characters with our keyboards. Unfortunately I don't know
@@ -114,6 +140,8 @@ rest of this tutorial only if you don't understand the code.
 ## Summary
 
 - Now you should know what programming and programming languages are.
+- You don't need to be good at math and you don't need a new computer.
+- Complicated programs consist of simple pieces.
 - You don't need to remember how to type different characters. Just find the
     character on your keyboard and press the key, holding down shift or AltGr
     as needed.
