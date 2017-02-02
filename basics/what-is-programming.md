@@ -16,11 +16,11 @@ the instructions using a **programming language**. Most programming
 languages consist of English words, digits and some characters that have
 special meanings.
 
-Unlike people often think, **programming is not complicated**. Large
-programs are always made of small, simple pieces, and those pieces are
-written one by one. Programming languages are made to be used by humans,
-so if there's an easy way to do something and a difficult way to do
-something, you should use the easier way.
+Unlike people often think, programming is not complicated. Large
+programs are always made of **small, simple pieces**, and those pieces
+are written one by one. Programming languages are made to be used by
+humans, so if there's an easy way to do something and a difficult way to
+do something, you should use the easier way.
 
 ## What do I need?
 
