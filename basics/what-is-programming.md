@@ -73,7 +73,7 @@ their meanings later.
 | Character | Names                                 |
 |-----------|---------------------------------------|
 | `+`       | plus                                  |
-| `-`       | minus, dash, hyphen                   |
+| `-`       | minus, dash                           |
 | `_`       | underscore                            |
 | `*`       | star, asterisk                        |
 | `/`       | forwardslash (it's leaning forward)   |
