@@ -1,25 +1,22 @@
 # Python programming tutorial
 
-Python is a high-level programming language. That means that it's easy
-to learn and work with, so it's a great choice for a first programming
-language.
+**If you like this tutorial, please [give it a
+star](#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).**
 
-No tutorial is good for everyone. This one is aimed at people with no
-programming experience at all or very little programming experience. If
-you have programmed a lot in the past using some other language you
-probably want to read [the official
+This is a Python 3 programming tutorial for beginners. If you have never
+programmed before click [here](basics/what-is-programming.md) to find
+out what programming is like and get started.
+
+This tutorial is aimed at people with no programming experience at all
+or very little programming experience. If you have programmed a lot in
+the past using some other language you may want to read [the official
 tutorial](https://docs.python.org/3/tutorial/) instead.
 
-This tutorial was written in Python 3, and you need Python 3 or newer to
-be able to run the example code yourself. Python 2 is getting outdated
-all the time, and more and more projects are moving to Python 3. There
-are a few popular libraries that don't support Python 3 that well at the
-time of writing this, but you don't need to worry about that just yet.
-They will probably support Python 3 by the time you've learned the
-basics and you may actually need them.
-
-I have tested most of the code in this tutorial on Python 3.4, but
-everything should also work on Python 3.3, 3.2 and all newer Pythons.
+You can use Python 3.2 or any newer Python with this tutorial. Don't use
+Python 2. If you write a Python 2 program now someone will need to port
+it to Python 3 later, so it's best to just write Python 3 to begin with.
+Python 3 code will work just fine in Python 4, so you don't need to
+worry about that.
 
 ## List of contents
 
