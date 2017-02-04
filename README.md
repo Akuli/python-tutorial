@@ -1,8 +1,5 @@
 # Python programming tutorial
 
-**If you like this tutorial, please [give it a
-star](#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).**
-
 This is a Python 3 programming tutorial for beginners. If you have never
 programmed before click [here](basics/what-is-programming.md) to find
 out what programming is like and get started.
@@ -112,6 +109,9 @@ have helped me with it:
 - [theelous3](https://github.com/theelous3): Small improvements and fixes.
 
 ***
+
+If you like this tutorial, please [give it a
+star](README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 
 You may use this tutorial freely at your own risk. See
 [LICENSE](LICENSE).
