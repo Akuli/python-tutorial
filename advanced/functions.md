@@ -296,5 +296,5 @@ star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](../basics/classes.md) | [Next](magicmethods.md) |
+[Previous](datatypes.md) | [Next](magicmethods.md) |
 [List of contents](../README.md#advanced)

@@ -33,10 +33,10 @@ You also don't need a powerful computer. I could do almost all of my
 programming on a 12-year-old computer if I needed to. Fast computers are
 nice to work with, but you don't need them.
 
-Programming takes time like all hobbies do. Some people learn it 
-quickly, and some people don't. I don't expect you to read this tutorial 
-in a couple hours and then master everything it's talking about. Take 
-your time with things, and remember that I learned to program slowly. 
+Programming takes time like all hobbies do. Some people learn it
+quickly, and some people don't. I don't expect you to read this tutorial
+in a couple hours and then master everything it's talking about. Take
+your time with things, and remember that I learned to program slowly.
 
 ## Getting started
 
@@ -105,9 +105,9 @@ should you do if you have a problem with the tutorial?
 2. Read the code and the explanation for it again.
 3. If there's something you haven't seen before in the tutorial and it's
     not explained, try to find it from the previous chapters.
-4. If you can't find what you're looking for or you still have trouble 
-   understanding the tutorial or any other problems with the tutorial, 
-   please [tell me about it](../contact-me.md). I want to improve this 
+4. If you can't find what you're looking for or you still have trouble
+   understanding the tutorial or any other problems with the tutorial,
+   please [tell me about it](../contact-me.md). I want to improve this
    tutorial so other readers won't have the same problem as you have.
 5. See [Getting help](../getting-help.md) if you can't contact me for some
     reason.
