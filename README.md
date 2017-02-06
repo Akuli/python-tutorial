@@ -59,9 +59,10 @@ techniques just because you know how to use them.** Prefer the simple
 techniques from the Basics part instead when possible. Simple is better
 than complex.
 
-1. [Advanced stuff with functions](advanced/functions.md)
-2. [Magic methods](advanced/magicmethods.md)
-3. [Iterables, iterators and generators](advanced/iters.md)
+1. [Handy data types](advanced/datatypes.md)
+2. [Advanced stuff with functions](advanced/functions.md)
+3. [Magic methods](advanced/magicmethods.md)
+4. [Iterables, iterators and generators](advanced/iters.md)
 
 ### Other things this tutorial comes with
 
