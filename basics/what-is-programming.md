@@ -125,8 +125,9 @@ all the time, and there's nothing wrong with it.
 
 If you want to know what some piece of code in this tutorial does just
 **try it and see**. It's practically impossible to break anything
-accidentally with code in this tutorial, so you are free to try out all
-the examples however you want and change them to do whatever you want.
+accidentally with the things you will learn by reading this tutorial,
+so you are free to try out all the examples however you want and change
+them to do whatever you want.
 
 Even though a good tutorial is an important part about learning to
 program, you also need to learn to make your own things. Use what you
