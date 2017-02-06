@@ -35,13 +35,15 @@ import common
 
 
 END_TEMPLATE = """\
-If you like this tutorial, please [give it a
-star]({readme}#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
+If you have trouble with this tutorial please [tell me about
+it]({toplevel}/contact-me.md) and I'll make this tutorial better. If you
+like this tutorial, please [give it a
+star]({toplevel}/README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 
 You may use this tutorial freely at your own risk. See
-[LICENSE]({license}).
+[LICENSE]({toplevel}/LICENSE).
 
-{extralinks}[List of contents]({readme}#{readmeheader})
+{extralinks}[List of contents]({toplevel}/README.md#{readmeheader})
 """
 
 CHAPTER_LINK_REGEX = r'^\d+\. \[.*\]\((.*\.md)\)$'
@@ -112,13 +114,13 @@ def main():
 
     print("Chapter files:")
     for prevpath, thispath, nextpath in zip(prevs, chapter_files, nexts):
+        # all paths should be like 'section/file.md'
         where = posixpath.dirname(thispath)
         prev = posixpath.relpath(prevpath, where)
         next_ = posixpath.relpath(nextpath, where)
         extralinks = "[Previous](%s) | [Next](%s) |\n" % (prev, next_)
         end = END_TEMPLATE.format(
-            license='../LICENSE', readme='../README.md',
-            extralinks=extralinks, readmeheader=where)
+            toplevel='..', extralinks=extralinks, readmeheader=where)
         update_end(thispath, end)
 
     print()
@@ -127,8 +129,7 @@ def main():
     for filename in other_files:
         where = posixpath.dirname(filename)
         end = END_TEMPLATE.format(
-            readme=posixpath.relpath('README.md', where),
-            license=posixpath.relpath('LICENSE', where),
+            toplevel=posixpath.relpath('.', where),
             extralinks="", readmeheader='list-of-contents')
         update_end(filename, end)
 

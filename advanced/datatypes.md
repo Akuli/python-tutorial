@@ -13,7 +13,7 @@ types can do a lot of the work for you.
 > If it looks like a duck and quacks like a duck, it must be a duck.
 
 Many things in this tutorial are not really something but they behave
-like something. For example, we'll learn about many things that behave
+like something. For example, we'll learn about many classes that behave
 like dictionaries. They are not dictionaries, but we can use them just
 like if they were dictionaries. This programming style is known as
 **duck-typing**.
@@ -110,6 +110,8 @@ things we can do with sets:
 {'Nitori', 'theelous3', 'go|dfish', 'RubyPinch'}
 >>> a ^ b      # names in a or b, but not both
 {'RubyPinch', 'Nitori', 'go|dfish'}
+>>> a - b      # names in a but not in b
+{'go|dfish', 'RubyPinch'}
 >>>
 ```
 
@@ -388,7 +390,9 @@ code on Python versions older than 3.5.**
 
 ***
 
-If you like this tutorial, please [give it a
+If you have trouble with this tutorial please [tell me about
+it](../contact-me.md) and I'll make this tutorial better. If you
+like this tutorial, please [give it a
 star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 
 You may use this tutorial freely at your own risk. See
