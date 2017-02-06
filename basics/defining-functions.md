@@ -190,6 +190,9 @@ UnboundLocalError: local variable 'foo' referenced before assignment
 
 ## Input
 
+**Note:** This section has nothing to do with the `input` function that
+is used like `word = input("enter something: ")`.
+
 So far our functions seem to be really isolated from the rest of our
 code, and it sucks! But they really are not as isolated as you might
 think they are.
