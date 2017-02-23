@@ -2,78 +2,81 @@
 
 Now we know how [lists and tuples](lists-and-tuples.md) work and how
 to [for loop](loops.md#for-loops) over them. If we make some kind of
-program that needs to keep track of people's usernames and passwords,
+program that needs to keep track of people's names and favorite pets,
 we can use a list for that:
 
 ```python
-userlist = [
-    ('me', 'my password'),
-    ('you', 'your password'),
+names_and_pets = [
+    ('horusr', 'cats'),
+    ('caisa64', 'cats and dogs'),
+    ('__Myst__', 'cats'),
 ]
 ```
 
-Then to check if a username and password are correct we can do
-`(username, password) in userlist`. Or we can add a new user easily by
-appending a new `(username, password)` tuple to the userlist.
+Then to check if cats are horusr's favorite pets we can do
+`('horusr', 'cats') in names_and_pets`. Or we can add new people's
+favorite pets easily by appending new `(name, pets)` tuples to the list.
 
-But what if we need to check if a username exists, but we don't know
-the password? `username in userlist` is always False because the user
-list consists of `(username, password)` pairs instead of just
-usernames, so we need to for loop over the whole userlist:
+But what if we need to check if we know anything about someone's
+favorite pets? `'caisa64' in names_and_pets` is always False because the
+pet list consists of `(name, pets)` pairs instead of just names, so we
+need to for loop over the whole pet list:
 
 ```python
-username_exists = False
-for user in userlist:
-    if user[0] == username:
-        username_exists = True
+found_caisa64 = False
+for pair in names_and_pets:
+    if pair[0] == 'caisa64':
+        found_caisa64 = True
         break
-if username_exists:
+if found_caisa64:
     # do something
 ```
 
-Or how about getting a user's password if we know the username? This
+Or what if we need to find out what caisa64's favorite pets are? That
 also requires going through the whole list.
 
 ```python
-password = None
-for user in userlist:
-    if user[0] == username:
-        password = user[1]
+pets = None
+for pair in names_and_pets:
+    if pair[0] == 'caisa64':
+        pets = pair[1]
         break
-# make sure password is not None and do something with it
+# make sure pets is not None and do something with it
 ```
 
-As you can see, a list of `(username, password)` pairs is not an ideal
-way to store our usernames and passwords.
+As you can see, a list of `(name, pets)` pairs is not an ideal
+way to store names and favorite pets.
 
 ## What are dictionaries?
 
-A better way to store user information might be a dictionary:
+A better way to store information about favorite pets might be a
+dictionary:
 
 ```python
-passwords = {
-    'me': 'my password',
-    'you': 'your password',
+favorite_pets = {
+    'horusr': 'cats',
+    'caisa64': 'cats and dogs',
+    '__Myst__': 'cats',
 }
 ```
 
-Here `'me'` and `'you'` are **keys** in the dictionary, and
-`'my password'` and `'your password'` are their **values**. Dictionaries
-are often named by their values. This dictionary has passwords as its
-values so I named the variable `passwords`.
+Here `'horusr'` and `'caisa64'` are **keys** in the dictionary, and
+`'cats'` and `'cats and docs'` are their **values**. Dictionaries are
+often named by their values. This dictionary has favorite pets as its
+values so I named the variable `favorite_pets`.
 
 There are a few big differences between dictionaries and lists of pairs:
 
 - Dictionaries are not ordered. There are **no guarantees** about which
-    order the `username: password` pairs appear in when we do something
+    order the `name: pets` pairs appear in when we do something
     with the dictionary.
 - Checking if a key is in the dictionary is simple and fast. We don't
     need to for loop through the whole dictionary.
 - Getting the value of a key is also simple and fast.
 - We can't have the same key in the dictionary multiple times, but
     multiple different keys can have the same value. This means that
-    **multiple users can't have the same name, but they can have the
-    same passwords**.
+    **multiple people can't have the same name, but they can have the
+    same favorite pets**.
 
 But wait... this is a lot like variables are! Our variables are not
 ordered, getting a value of a variable is fast and easy and we can't
@@ -85,18 +88,22 @@ variable names and values are what our variables point to.
 
 ```python
 >>> globals()
-{'userlist': [('me', 'my password'), ('you', 'your password')],
- 'passwords': {'me': 'my password', 'you': 'your password'},
+{'names_and_pets': [('horusr', 'cats'),
+                    ('caisa64', 'cats and dogs'),
+                    ('__Myst__', 'cats')],
+ 'favorite_pets': {'__Myst__': 'cats',
+                   'caisa64': 'cats and dogs',
+                   'horusr': 'cats'},
  ...many other things we don't need to care about...
 }
 >>>
 ```
 
 So if you have trouble remembering how dictionaries work just compare
-them to variables. A dictionary is a perfect way to store our usernames
-and passwords. We don't care about which order the users were added in,
-it's impossible to add multiple users with the same username and
-getting a user's password is easy.
+them to variables. A dictionary is a perfect way to store these names
+and favorite pets. We don't care about which order the names and pets
+were added in, it's impossible to add the same name multiple times and
+getting someone's favorite pets is easy.
 
 ## What can we do with dictionaries?
 
@@ -104,9 +111,9 @@ Dictionaries have some similarities with lists. For example, both
 lists and dictionaries have a length.
 
 ```python
->>> len(userlist)     # contains two elements
+>>> len(names_and_pets)     # contains two elements
 2
->>> len(passwords)    # contains two key:value pairs
+>>> len(favorite_pets)    # contains two key:value pairs
 2
 >>>
 ```
@@ -115,26 +122,38 @@ We can get a value of a key with `the_dict[key]`. This is a lot easier
 and faster than for-looping over a list of pairs.
 
 ```python
->>> passwords['me']
-'my password'
->>> passwords['you']
-'your password'
+>>> favorite_pets['caisa64']
+'cats and dogs'
+>>> favorite_pets['__Myst__']
+'cats'
 >>>
 ```
 
-Trying to get the value of a non-existing key gives us an error, but we
-can add new `key: value` pairs by doing `the_dict[key] = value`.
+Trying to get the value of a non-existing key gives us an error.
 
 ```python
->>> passwords['lol']
+>>> favorite_pets['Akuli']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-KeyError: 'lol'
->>> passwords["lol"] = "lol's password"
->>> passwords["lol"]
-"lol's password"
->>> passwords
-{'lol': "lol's password", 'you': 'your password', 'me': 'my password'}
+KeyError: 'Akuli'
+>>>
+```
+
+But we can add new `key: value` pairs or change the values of existing
+keys by doing `the_dict[key] = value`.
+
+```python
+>>> favorite_pets['Akuli'] = 'penguins'
+>>> favorite_pets['Akuli']
+'penguins'
+>>> favorite_pets['Akuli'] = 'dogs'
+>>> favorite_pets['Akuli']
+'dogs'
+>>> favorite_pets
+{'__Myst__': 'cats',
+ 'Akuli': 'dogs',
+ 'horusr': 'cats',
+ 'caisa64': 'cats and dogs'}
 >>>
 ```
 
@@ -143,16 +162,17 @@ is in the dictionary checks if the dictionary has a key like that. This
 can be confusing at first but you'll get used to this.
 
 ```python
->>> 'me' in passwords
+>>> 'Akuli' in favorite_pets
 True
->>> 'my password' in passwords
+>>> 'dogs' in favorite_pets
 False
->>> for name in passwords:
+>>> for name in favorite_pets:
 ...     print(name)
 ...
-lol
-you
-me
+caisa64
+Akuli
+__Myst__
+horusr
 >>>
 ```
 
@@ -160,8 +180,8 @@ Dictionaries have a values method that we can use if we want to do
 something with the values:
 
 ```python
->>> passwords.values()
-dict_values(["lol's password", 'your password', 'my password'])
+>>> favorite_pets.values()
+dict_values(['dogs', 'cats', 'cats and dogs', 'cats'])
 >>>
 ```
 
@@ -170,17 +190,18 @@ behave a lot like lists and usually we don't need to convert them to
 lists.
 
 ```python
->>> for password in passwords.values():
-...     print(password)
+>>> for pets in favorite_pets.values():
+...     print(pets)
 ...
-lol's password
-your password
-my password
+dogs
+cats
+cats and dogs
+cats
 >>>
 ```
 
-We can do things like `list(passwords.values())` if we need a real list
-for some reason, but doing that can slow down our program if the
+We can do things like `list(favorite_pets.values())` if we need a real
+list for some reason, but doing that can slow down our program if the
 dictionary is big. There's also a keys method, but usually we don't need
 it because the dictionary itself behaves a lot like a list of keys.
 
@@ -188,16 +209,18 @@ If we need both keys and values we can use the items method with the
 `for first, second in thing` trick.
 
 ```python
->>> passwords.items()
-dict_items([('lol', "lol's password"),
-            ('you', 'your password'),
-            ('me', 'my password')])
->>> for name, password in passwords.items():
-...     print(name + ": " + password)
+>>> favorite_pets.items()
+dict_items([('Akuli', 'dogs'),
+            ('__Myst__', 'cats'),
+            ('caisa64', 'cats and dogs'),
+            ('horusr', 'cats')])
+>>> for name, pets in favorite_pets.items():
+...     print("{} are {}'s favorite pets".format(pets, name))
 ...
-lol: lol's password
-you: your password
-me: my password
+dogs are Akuli's favorite pets
+cats are __Myst__'s favorite pets
+cats and dogs are caisa64's favorite pets
+cats are horusr's favorite pets
 >>>
 ```
 
@@ -205,9 +228,9 @@ This is also useful for checking if the dictionary has a `key: value`
 pair.
 
 ```python
->>> ('me', 'my password') in passwords.items()  # correct username and password
+>>> ('horusr', 'cats') in favorite_pets.items()
 True
->>> ('me', 'whatever') in passwords.items()    # wrong username or password
+>>> ('horusr', 'dogs') in favorite_pets.items()
 False
 >>>
 ```
@@ -296,6 +319,8 @@ Running the program might look like this:
     quite appears once in the sentence
     and appears once in the sentence
     test appears 2 times in the sentence
+
+**TODO:** Exercises.
 
 ***
 
