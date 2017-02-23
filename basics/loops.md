@@ -192,7 +192,7 @@ how about you
 >>>
 ```
 
-But there's `len()` and an index variable we need to increment and a
+But we have `len()` and an index variable we need to increment and a
 while loop and many other things to worry about. That's a lot of work
 just for printing each item.
 
@@ -432,7 +432,8 @@ while True:
         print(thing)
     ```
 
-2. This code is supposed to print `[1, 2, 3, 4, 5, 6]`. Fix it.
+2. This code is supposed to print `[1, 2, 3, 4, 5, 6]`. Fix it without 
+    changing the `before` list.
 
     ```python
     before = [[1, 2], [3, 4], [5, 6]]
