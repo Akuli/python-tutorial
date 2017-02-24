@@ -49,7 +49,7 @@ that opens:
 ![My Python's modules.](../images/modules.png)
 
 All of these `.py` files can be imported like we just imported
-`random.py`. In random.py, there's a like like `randint = something`,
+`random.py`. In random.py, there's a line like `randint = something`,
 so we can use its randint variable with `random.randint` after
 importing it.
 
