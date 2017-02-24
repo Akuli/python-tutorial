@@ -432,7 +432,7 @@ while True:
         print(thing)
     ```
 
-2. This code is supposed to print `[1, 2, 3, 4, 5, 6]`. Fix it without 
+2. This code is supposed to print `[1, 2, 3, 4, 5, 6]`. Fix it without
     changing the `before` list.
 
     ```python
@@ -460,7 +460,16 @@ while True:
     print("their sum is", result)
     ```
 
-The answers are [here](answers.md#loops)
+4. This program is supposed to print `[1, 2, 3]`. Fix it.
+
+    ```python
+    numbers = ['1', '2', '3']
+    for number in number:
+        number = int(number)
+    print(numbers)
+    ```
+
+The answers are [here](answers.md#loops).
 
 ***
 

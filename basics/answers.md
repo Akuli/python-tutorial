@@ -272,6 +272,23 @@ isn't exactly like mine but it works just fine it's ok, and you can
     The third part calculates `result + n` but throws away the value.
     It was probably supposed to do `result += n` instead.
 
+4. If you run this program you'll notice that nothing happened to the
+    numbers list. The reason is that the `number` variable only works
+    one way. It gets its values from the `numbers` list, but changing it
+    doesn't change the `numbers` list. In general, `thing = stuff`
+    changes the `thing` variable, and that's it. It doesn't change
+    anything else.
+
+    An easy solution is to just create a new list:
+
+    ```python
+    numbers = ['1', '2', '3']
+    converted_numbers = []
+    for number in numbers:
+        converted_numbers.append(int(number))
+    print(converted_numbers)
+    ```
+
 ## Trey Hunner: zip and enumerate
 
 1. Read some lines with `input` into a list and then enumerate it.
