@@ -163,9 +163,9 @@ underscores. For example, these variable names are good:
 Don't use variable names like this, **these variables are _bad_**:
 
 ```python
->>> magicNumber = 3.14
->>> Greeting = "Hello there!"
->>> x = "Hello again!"
+>>> magicNumber = 3.14          # looks weird
+>>> Greeting = "Hello there!"   # also looks weird
+>>> x = "Hello again!"          # what the heck is x?
 >>>
 ```
 
