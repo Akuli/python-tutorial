@@ -54,32 +54,21 @@ NameError: name 'thingy' is not defined
 >>>
 ```
 
-Variables are simple to understand, but there's a few details that we
+Variables are simple to understand, but there are a few details that we
 need to keep in mind:
 
 - Variables always point to a value, **they never point to other
-    variables**. That's why the arrows in our diagrams always go left
-    to right.
+  variables**. That's why the arrows in our diagrams always go left
+  to right.
 - Multiple variables can point to the same value, but one variable
-    cannot point to multiple values.
+  cannot point to multiple values.
 - The values that variables point to can point to other values also.
-    We'll learn more about that when we'll talk about
-    [lists](lists-and-tuples.md).
+  We'll learn more about that when we'll talk about
+  [lists](lists-and-tuples.md).
 
 Variables are an important part of most programming languages, and they
 allow programmers to write much larger programs than they could write
 without variables.
-
-Variable names can be multiple characters long. They can contain
-uppercase characters, numbers and some other characters, but most of the
-time we should use simple, lowercase variable names. You can also use
-underscores.
-
-```python
->>> magic_number = 123
->>> greeting = "Hello World!"
->>>
-```
 
 Variable names are case-sensitive, like many other things in Python.
 
@@ -96,7 +85,7 @@ Variable names are case-sensitive, like many other things in Python.
 >>>
 ```
 
-Python also has some words that cannot be used as variable names
+There are also words that cannot be used as variable names
 because they have a special meaning. They are called **keywords**, and
 we can run `help('keywords')` to see the full list if we want to.
 We'll learn to use most of them later in this tutorial. Trying to use a
@@ -157,6 +146,36 @@ variable called hello and then type hello:
 'hello there'
 >>>
 ```
+
+## Good and bad variable names
+
+Variable names can be multiple characters long. They can contain
+uppercase characters, numbers and some other characters, but most of the
+time we should use simple, lowercase variable names. We can also use
+underscores. For example, these variable names are good:
+
+```python
+>>> magic_number = 123
+>>> greeting = "Hello World!"
+>>>
+```
+
+Don't use variable names like this, **these variables are _bad_**:
+
+```python
+>>> magicNumber = 3.14
+>>> Greeting = "Hello there!"
+>>> x = "Hello again!"
+>>>
+```
+
+All of these variables work just fine, but other Python programmers
+don't want you to use them. Most Python code doesn't use variable names
+that contain UpperCase letters like `magicNumber` and `Greeting`, so
+other people reading your code will think it looks weird if you use
+them. The problem with `x` is that it's too short, and people have no
+idea what it is. Remember that mathematicians like figuring out what x
+is, but programmers hate that.
 
 ## Booleans
 
@@ -224,7 +243,8 @@ None
 
 Another confusing thing is that if we do something weird to None we get
 error messages that talk about NoneType object. The NoneType object they
-are talking about is always None.
+are talking about is always None. We'll learn more about what attributes
+and calling are later.
 
 ```python
 >>> None.hello    # None has no attribute 'hello'
@@ -240,16 +260,15 @@ TypeError: 'NoneType' object is not callable
 
 ## Other comparing operators
 
-So far we've used `==`, but there are other operators also. At this
-point, this list probably looks awfully long, but it's actually pretty
-easy to learn.
+So far we've used `==`, but there are other operators also. This list
+probably looks awfully long, but it's actually quite easy to learn.
 
 | Usage     | Description                       | True examples         |
 |-----------|-----------------------------------|-----------------------|
 | `a == b`  | a is equal to b                   | `1 == 1`              |
 | `a != b`  | a is not equal to b               | `1 != 2`              |
-| `a > b`   | a is greater than b               | `2 > 1`               |
-| `a >= b`  | a is greater than or equal to b   | `2 >= 1`, `1 >= 1`    |
+| `a > b`   | a is bigger than b                | `2 > 1`               |
+| `a >= b`  | a is bigger than or equal to b    | `2 >= 1`, `1 >= 1`    |
 | `a < b`   | a is less than b                  | `1 < 2`               |
 | `a <= b`  | a is less than or equal to b      | `1 <= 2`, `1 <= 1`    |
 
@@ -261,14 +280,23 @@ b are Booleans.
 | `a and b` | a is True and b is True                   | `1 == 1 and 2 == 2`               |
 | `a or b`  | a is True, b is True or they're both True | `False or 1 == 1`, `True or True` |
 
-Another way to combine operations is chaining. For example, `a < b < c`
-does the same thing as `a < b and b < c`.
-
 `not` can be used for negations. If `value` is True, `not value` is
 False, and if `value` is False, `not value` is True.
 
 There's also `is`, but don't use it instead of `==` unless you know
 what you are doing. We'll learn more about it later.
+
+## Summary
+
+- Variables have a name and a value. We can create or change variables
+  with `name = value`.
+- `thing += stuff` does the same thing as `thing = thing + stuff`.
+- Use lowercase variable names and remember that programmers hate
+  figuring out what x is.
+- `=` means assigning and `==` means comparing.
+- True and False are Booleans. Comparing values results in a Boolean.
+- None is a value that we'll find useful later. When error messages say
+  `NoneType object` they mean None.
 
 ***
 
