@@ -464,7 +464,7 @@ while True:
 
     ```python
     numbers = ['1', '2', '3']
-    for number in number:
+    for number in numbers:
         number = int(number)
     print(numbers)
     ```
