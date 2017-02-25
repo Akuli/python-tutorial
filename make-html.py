@@ -28,19 +28,20 @@
 
 """Create HTML files of the tutorial."""
 
+import argparse
 import os
 import posixpath
 import shutil
 import string
 import sys
+import textwrap
 import webbrowser
-
-import common
 
 try:
     import mistune
 except ImportError:
-    print("mistune isn't installed. You can install it like this:")
+    print("mistune isn't installed.", file=sys.stderr)
+    print("You can install it like this:")
     print()
     print(">>> import pip")
     print(">>> pip.main(['install', '--user', 'mistune'])")
@@ -49,9 +50,12 @@ except ImportError:
 try:
     import pygments.formatters
     import pygments.lexers
+    import pygments.styles
 except ImportError:
     # we can work without pygments, but we won't get colors
     pygments = None
+
+import common
 
 
 HTML_TEMPLATE = """\
@@ -60,6 +64,7 @@ HTML_TEMPLATE = """\
   <head>
     <meta charset="UTF-8">
     <title>{title}</title>
+    <link rel="stylesheet" type="text/css" href="{stylefile}">
   </head>
   <body>
     {body}
@@ -77,19 +82,23 @@ def mkdir_slashfix_open(filename, mode):
 
 
 def fix_filename(filename):
-    if posixpath.basename(filename) == 'README.md':
-        # 'README.md' -> 'index.html'
-        # 'some/place/README.md' -> 'some/place/index.html'
-        return filename[:-9] + 'index.html'
+    renames = [('README.md', 'index.html'),
+               ('LICENSE', 'LICENSE.txt')]
+    for before, after in renames:
+        if posixpath.basename(filename) == before:
+            # BEFORE -> AFTER
+            # some/place/BEFORE -> some/place/AFTER
+            return filename[:-len(before)] + after
     if filename.endswith('.md'):
-        return filename[:-3] + '.html'
+        filename = filename[:-3] + '.html'
     return filename
 
 
 class TutorialRenderer(mistune.Renderer):
 
-    def __init__(self):
+    def __init__(self, pygments_style):
         super().__init__()
+        self.pygments_style = pygments_style
         self.title = None   # will be set by header()
         self._headercounts = {}
 
@@ -157,7 +166,7 @@ class TutorialRenderer(mistune.Renderer):
             else:
                 lexer = pygments.lexers.PythonLexer()
             formatter = pygments.formatters.HtmlFormatter(
-                style='tango', noclasses=True)
+                style=self.pygments_style, noclasses=True)
             return pygments.highlight(code, lexer, formatter)
         # we can't highlight it
         return super().block_code(code, lang)
@@ -173,51 +182,96 @@ class TutorialRenderer(mistune.Renderer):
         return result.replace('<table>', '<table border="1">', 1)
 
 
+def wrap_text(text):
+    """Like textwrap.fill, but respects newlines."""
+    result = []
+    for part in text.split('\n'):
+        result.append(textwrap.fill(part))
+    return '\n'.join(result)
+
+
 def main():
+    desc = ("Create HTML files of the tutorial.\n\n"
+            "The files have light text on a dark background by "
+            "default, and you can edit html-style.css to change that.")
+    if pygments is not None:
+        desc += (
+            " Editing the style file doesn't change the colors of the "
+            "code examples, but you can use the --pygments-style "
+            "option. Search for 'pygments style gallery' online or see "
+            "https://help.farbox.com/pygments.html to get an idea of "
+            "what different styles look like.")
+
+    parser = argparse.ArgumentParser(
+        description=wrap_text(desc),
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument(
+        '-o', '--outdir', default='html',
+        help="write the HTML files here, defaults to %(default)r")
+    if pygments is not None:
+        parser.add_argument(
+            '--pygments-style', metavar='STYLE', default='native',
+            choices=list(pygments.styles.get_all_styles()),
+            help=("the Pygments color style (see above), "
+                  "%(default)r by default"))
+    args = parser.parse_args()
+
     if pygments is None:
         print("Pygments isn't installed. You can install it like this:")
         print()
         print(">>> import pip")
-        print(">>> pip.main(['install', '--user', 'Pygments'])")
+        print(">>> pip.main(['install', '--user', 'pygments'])")
         print()
         print("You can also continue without Pygments, but the code examples")
-        print("will not be in color.")
+        print("will not be colored.")
         if not common.askyesno("Continue without pygments?"):
             print("Interrupt.")
             return
 
-    if os.path.exists('html'):
-        if not common.askyesno("html exists. Do you want to remove it?"):
+    if os.path.exists(args.outdir):
+        if not common.askyesno("%s exists. Do you want to remove it?"
+                               % args.outdir):
             print("Interrupt.")
             return
-        if os.path.isdir('html'):
-            shutil.rmtree('html')
+        if os.path.isdir(args.outdir):
+            shutil.rmtree(args.outdir)
         else:
-            os.remove('html')
+            os.remove(args.outdir)
 
     print("Generating HTML files...")
     for markdownfile in common.get_markdown_files():
-        htmlfile = posixpath.join('html', fix_filename(markdownfile))
-        print(' ', markdownfile, '->', htmlfile)
+        fixed_markdownfile = fix_filename(markdownfile)
+        htmlfile = posixpath.join(args.outdir, fixed_markdownfile)
+        print('  %-30.30s  -->  %-30.30s' % (markdownfile, htmlfile), end='\r')
+
         with common.slashfix_open(markdownfile, 'r') as f:
             markdown = f.read()
-        renderer = TutorialRenderer()
+        renderer = TutorialRenderer(args.pygments_style)
         body = mistune.markdown(markdown, renderer=renderer)
-        html = HTML_TEMPLATE.format(title=renderer.title, body=body)
+        stylefile = posixpath.relpath(
+            'style.css', posixpath.dirname(fixed_markdownfile))
+
+        html = HTML_TEMPLATE.format(
+            title=renderer.title,
+            body=body,
+            stylefile=stylefile,
+        )
         with mkdir_slashfix_open(htmlfile, 'w') as f:
             print(html, file=f)
+    print()
 
     print("Copying other files...")
-    shutil.copytree('images', os.path.join('html', 'images'))
-    shutil.copy('LICENSE', os.path.join('html', 'LICENSE'))
+    shutil.copytree('images', os.path.join(args.outdir, 'images'))
+    shutil.copy('LICENSE', os.path.join(args.outdir, 'LICENSE.txt'))
+    shutil.copy('html-style.css', os.path.join(args.outdir, 'style.css'))
 
     print("\n*********************\n")
-    print("Ready! The files are in the html directory.")
-    print("Go to html and double-click index.html to read the tutorial.")
+    print("Ready! The files are in %r." % args.outdir)
+    print("You can go there and double-click index.html to read the tutorial.")
     print()
     if common.askyesno("Do you want to view the tutorial now?", default=False):
         print("Opening the tutorial...")
-        webbrowser.open(os.path.join('html', 'index.html'))
+        webbrowser.open(os.path.join(args.outdir, 'index.html'))
 
 
 if __name__ == '__main__':

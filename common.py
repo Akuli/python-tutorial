@@ -34,6 +34,7 @@ file when actually opening files.
 import contextlib
 import itertools
 import os
+import posixpath
 import re
 import shutil
 
@@ -73,9 +74,9 @@ def get_markdown_files():
     yield 'README.md'
     with open('README.md', 'r') as f:
         for match, lineno in find_links(f):
-            target = match.group(2)
-            # Currently the README doesn't link to itself, but I don't
-            # want to break things if it will in the future.
+            target = posixpath.normpath(match.group(2))
+            # Currently he README links to itself, but we don't want to
+            # break things if it will be modified not to link in the future.
             if target.endswith('.md') and target != 'README.md':
                 yield target
 
@@ -92,6 +93,7 @@ def askyesno(question, default=True):
     else:
         # no by default
         question += ' [y/N] '
+
     while True:
         result = input(question).upper().strip()
         if result == 'Y':
@@ -100,6 +102,7 @@ def askyesno(question, default=True):
             return False
         if not result:
             return default
+        print("Please type y, n or nothing at all.")
 
 
 def slashfix(path):
