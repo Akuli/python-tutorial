@@ -83,17 +83,39 @@ asked to create a GitHub account if you don't already have one.
 
 ### How can I read this tutorial without an Internet connection?
 
+Currently (Feb. 2017) this tutorial is updated often, so it's best to
+read this tutorial on GitHub to make sure you are reading the latest
+version. But you can also download this tutorial and read it without
+Internet if you need to, like this:
+
 1. Go [here](https://github.com/Akuli/python-tutorial) if you aren't
     here already.
 2. Click the big green "Clone or download" button in the top right of
     the page, then click "Download ZIP".
 
-    ![Download ZIP](images/download-me.png)
+    ![The Download ZIP button.](images/download-me.png)
 
-3. Extract the ZIP and open it. Unfortunately I don't have any more
-    specific instructions because how exactly this is done depends on
-    which operating system you run.
-4. Run `make-html.py` and follow the instructions.
+3. Open the ZIP, then drag and drop `python-tutorial-master` to your
+    desktop.
+4. [Install Python and open a command prompt or
+    terminal](basics/installing-python-md). If you are using Windows,
+    run these commands:
+
+    ```
+    cd Desktop
+    python-tutorial-master
+    py make-html.py
+    ```
+
+    Use these commands instead on Linux and Mac OSX:
+
+    ```
+    cd Desktop
+    cd python-tutorial-master
+    python3 make-html.py
+    ```
+
+5. Follow the instructions you see on the terminal or command prompt.
 
 If you have git and you know how to use it, you can also clone the
 repository instead of downloading a zip and extracting it. An advantage
@@ -108,6 +130,8 @@ have helped me with it:
 - [SpiritualForest](https://github.com/SpiritualForest): Lots of typing
     error fixes.
 - [theelous3](https://github.com/theelous3): Small improvements and fixes.
+
+**TODO:** add the names of all beginners who have told me what they struggled with.
 
 ***
 
