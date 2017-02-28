@@ -66,7 +66,6 @@ than complex.
 
 - **Important:** [getting help](getting-help.md)
 - [Contact me](contact-me.md)
-- [Setting up a text editor](editor-setup.md)
 - Answers for excercises in [basics](basics/answers.md) and
     [advanced](advanced/answers.md) sections
 - [The TODO list](TODO.md)
