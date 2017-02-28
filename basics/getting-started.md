@@ -58,39 +58,11 @@ We didn't get an error... but `(3, 14)` is not at all what we expected!
 So from now on, let's use a dot with decimal numbers, because `3.14`
 worked just fine. Later we'll learn what `(3, 14)` is.
 
-What if we type a `#`?
-
-```python
->>> #
->>>
-```
-
-Nothing happened at all. Maybe we can type a `#` and then some text
-after it?
-
-```python
->>> # hello there
->>>
-```
-
-Again, nothing happened.
-
-If you're not using IDLE, the prompt will change from `>>>` to
-`...`. Just press Enter again to get it back to `>>>`.
-
-```python
->>> # hello again
-...
->>>
-```
-
-In Python, these pieces of text starting with a `#` are known as
-**comments**. They don't change how the code works in any way, but
-we can use them to explain what our code does.
-
 ## Using Python as a calculator
 
-Maybe we could type mathematical statements?
+**WARNING:** This part contains boring math. Be careful!
+
+Let's type some math stuff into Python and see what it does.
 
 ```python
 >>> 17 + 3
@@ -106,19 +78,22 @@ Maybe we could type mathematical statements?
 
 It's working, Python just calculates the result and echoes it back.
 
-The spaces between numbers and operators don't affect anything, they
-just make the code easier to read when they are used correctly.
+I added a space on both sides of `+`, `-`, `*` and `/`. Everything would
+work without those spaces too:
 
 ```python
->>> 14 + 2 + 1
-17
->>> 14            +2+ 1
-17
+>>> 4 + 2 + 1
+7
+>>> 4+2+1
+7
 >>>
 ```
 
-The evaluation order is similar to math. The parentheses `(` and `)`
-also work the same way.
+However, I recommend always adding the spaces because they make the code
+easier to read.
+
+Things are calculated in the same order as in math. The parentheses `(`
+and `)` also work the same way.
 
 ```python
 >>> 1 + 2 * 3        # 2 * 3 is calculated first
@@ -128,78 +103,33 @@ also work the same way.
 >>>
 ```
 
-Square brackets `[]` and curly brackets `{}` cannot be used to change
-the evaluation order. We'll learn more about what they do later.
+Python also supports many other kinds of calculations, but most of the
+time you don't need them. Actually you don't need even these
+calculations most of the time, but these calculations are probably
+enough when you need to calculate something.
+
+## Comments
+
+We can also type a `#` and then whatever we want after that. These bits
+of text are known as **comments**, and we'll find uses for them later.
 
 ```python
->>> [1 + 2] * 3
-[3, 3, 3]
->>> {1 + 2} * 3
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for *: 'set' and 'int'
+>>> 1 + 2     # can you guess what the result is?
+3
 >>>
 ```
 
-## More advanced math
+Again, I put a space after the `#` and multiple spaces before it just to
+make things easier to read.
 
-I decided to include this in my tutorial because some people might be
-interested in this. Feel free to [skip this](#summary) if you're not
-interested.
-
-The `//` operator will divide and then throw away the dot and everything
-after it. For example, `17 / 3` is `5.666666666666667`, and so `17 // 3`
-is `5` because we throw away the `.666666666666667` part.
+If we write comment on a line with no code on it, the prompt changes
+from `>>>` to `...`. To be honest, I have no idea why it does that and I
+think it would be better if it would just stay as `>>>`. The prompt goes
+back to `>>>` when we press Enter again.
 
 ```python
->>> 17 / 3
-5.666666666666667
->>> 17 // 3
-5
->>>
-```
-
-The `%` operator gets the division remainder.
-
-```python
->>> 17 % 3
-2
->>>
-```
-
-For example, if there were 17 apples that should be given evenly to 3
-people, everyone would get 5 apples and there would be 2 apples left
-over.
-
-```python
->>> 17 // 3
-5
->>> 17 % 3
-2
->>>
-```
-
-This is also useful for converting time from minutes to seconds. 500
-seconds is 8 minutes and 20 seconds.
-
-```python
->>> 500 // 60
-8
->>> 500 % 60
-20
->>>
-```
-
-`**` can be used to raise to a power, so 3² in math is `3**2` in Python.
-Powers are calculated before `*` and `/`, but after `()`.
-
-```python
->>> 2 ** 3
-8
->>> 2 * 3 ** 2      # 3 ** 2 is calculated first
-18
->>> (2 * 3) ** 2    # 2 * 3 is calculated first
-36
+>>> # hello there
+...
 >>>
 ```
 
@@ -208,8 +138,8 @@ Powers are calculated before `*` and `/`, but after `()`.
 - Errors don't matter.
 - We can enter any Python commands to the interactive `>>>` prompt, and
     it will echo back the result.
-- Pieces of text starting with a `#` are comments.
 - `+`, `-`, `*` and `/` work in Python just like in math.
+- Pieces of text starting with a `#` are comments.
 
 ***
 

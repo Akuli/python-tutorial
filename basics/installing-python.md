@@ -18,8 +18,7 @@ Let's get started!
 
 ### Windows
 
-Use the official Python installer, it will install Python and IDLE for
-you.
+Installing Python on Windows is a lot like installing any other program.
 
 1. Go to [the official Python website](https://www.python.org/).
 2. Move your mouse over the blue Downloads button, but don't click it.

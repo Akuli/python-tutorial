@@ -76,11 +76,13 @@ AttributeError: 'module' object has no attribute 'randint'
 
 But what was that? Why didn't it work?
 
+**TODO:** update the `-i` instructions.
+
 Let's go ahead and check what's wrong. If you don't use IDLE, you'll
 need to pass the `-i` option to Python, so if you would normally run
-`python3 random.py` you should now do `python3 -i random.py`. This
-will run the file and then give you a `>>>` prompt that we can use
-to check what's wrong. If you use IDLE, just run the file normally.
+`python3 random.py` you should now do `python3 -i random.py`. This will
+run the file and then give you a `>>>` prompt that we can use to check
+what's wrong. If you use IDLE, just run the file normally.
 
 We should end up with the same error message, and then a `>>>`.
 Like this:
@@ -211,12 +213,11 @@ The module name "sys" is short for "system", and it contains things
 that are built into Python. The official documentation is
 [here](https://docs.python.org/3/library/sys.html).
 
+`sys.stdin`, `sys.stdout` and `sys.stderr` are [file objects](files.md),
+just like the file objects that `open()` gives us.
+
 ```python
 >>> import sys
->>> # special files that the print and input functions use
->>> # stdin is short for standard input
->>> # stdout is short for standard output
->>> # stderr is short for standard errors
 >>> print("Hello!", file=sys.stdout)  # this is where prints go by default
 Hello!
 >>> print("Hello!", file=sys.stderr)  # use this for error messages
@@ -235,8 +236,7 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 >>> sys.exit()  # exit out of Python
 ```
 
-If you use IDLE you'll notice that printing to `sys.stderr` makes
-the message show up in red instead of the normal blue.
+**TODO:** why stderr instead of stdout.
 
 `sys.exit()` does the same thing as `sys.exit(0)`. The zero means that
 the program succeeded, and everything's fine. If our program has an
@@ -250,9 +250,6 @@ if something_went_wrong:
     print("Oh crap! Something went wrong.", file=sys.stderr)
     sys.exit(1)
 ```
-
-`sys.exit` doesn't work for getting out of IDLE's `>>>` prompt. You can
-just close the window to get out of IDLE.
 
 ### Mathematics
 

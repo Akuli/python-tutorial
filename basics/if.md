@@ -40,19 +40,6 @@ An important thing to notice is that the line with a print is
 **indented**. You can press the tab key, or if it doesn't work
 just press space a few times.
 
-IDLE does this a bit differently, so if you use IDLE, running the
-example code looks more like this:
-
-```python
->>> its_raining = True
->>> if its_raining:
-        print("It's raining!")
-
-
-It's raining!
->>>
-```
-
 But why is that `if its_raining` instead of `if(its_raining)`?
 
 Earlier we learned that `if` is a **keyword**.
@@ -66,12 +53,12 @@ SyntaxError: invalid syntax
 >>>
 ```
 
-**Functions** like `print` need `()` after their name to work. But `if` is
-a keyword, not a function, so it doesn't need `()`. Python has separate
-functions and keywords because it's possible to create custom functions,
-but it's not possible to create custom keywords. That's why keywords are
-usually used for "magic" things that would be difficult to do with just
-functions.
+**Functions** like `print` need `()` after their name to work. But `if`
+is **a keyword**, not a function, so it doesn't need `()`. Python has
+separate functions and keywords because it's possible to create custom
+functions, but it's not possible to create custom keywords. That's why
+keywords are usually used for "magic" things that would be difficult to
+do with just functions.
 
 Also note that if statements check the condition once only, so if we
 set it to false later the if statement won't notice it.
@@ -85,62 +72,6 @@ set it to false later the if statement won't notice it.
 It's not raining, but this runs anyway.
 >>>
 ```
-
-## Storing code in files
-
-At this point it's easier to put our code into a file and use it
-there. If you use IDLE, go to File at top left and select New File, or
-just press Ctrl+N.
-
-![New File in IDLE](../images/idle-new.png)
-
-If you don't use IDLE, please take the time to
-[set up your editor correctly](../editor-setup.md). When you're done your
-editor should give you four spaces every time you press tab.
-
-Create a file called `rain.py`, and type the following content into it:
-
-```python
-its_raining = True
-if its_raining:
-    print("It's raining!")
-```
-
-You can save the file anywhere you want, for example on your desktop.
-Give it a name that ends with `.py`, for example `rain.py`. The `.py`
-is short for Python.
-
-Now we can run the rain program. Most editors (including IDLE) will
-run our code when we press F5. If your editor doesn't, run it from
-PowerShell, command prompt or terminal. You probably need to first go
-to wherever you saved your file with `cd`. For example, if the file is
-on your desktop, type `cd Desktop` before running the file.
-
-Running from IDLE looks like this:
-
-    >>>
-    ========================= RESTART: /some/place/rain.py =========================
-    It's raining!
-    >>>
-
-And running from the Windows PowerShell or command prompt looks like
-this:
-
-    C:\Users\You> cd Desktop
-    C:\Users\You\Desktop> py rain.py
-    It's raining!
-    C:\Users\You\Desktop>
-
-Running from a terminal looks like this:
-
-    you@YourComputer:~$ cd Desktop
-    you@YourComputer:~/Desktop$ python3 rain.py
-    It's raining!
-    you@YourComputer:~/Desktop$
-
-From now on, **if a code example starts with `>>>` run it on the
-interactive prompt, and if it doesn't, write it to a file and run the
-file**.
 
 ## Using else
 
@@ -156,6 +87,9 @@ if its_raining:
 if its_not_raining:
     print("It's not raining.")
 ```
+
+Note that this code example doesn't start with `>>>`, so you should
+[save it to a file and run the file](editor-setup.md).
 
 Now our program will print a different value depending on what the
 value of `its_raining` is.
@@ -208,19 +142,19 @@ else:
     print("Access denied.")
 ```
 
-The program prints different things depending on what we enter.
+The program prints different things depending on what we enter:
 
-    >>> ================================ RESTART ================================
-    >>>
-    Hello!
-    Enter your password: secret
-    Welcome!
-    >>> ================================ RESTART ================================
-    >>>
-    Hello!
-    Enter your password: lol
-    Access denied.
-    >>>
+```
+Hello!
+Enter your password: secret
+Welcome!
+```
+
+```
+Hello!
+Enter your password: lol
+Access denied.
+```
 
 Using the input function for passwords doesn't work very well because
 we can't hide the password with asterisks. There are better ways to get

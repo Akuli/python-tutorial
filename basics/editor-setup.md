@@ -223,6 +223,9 @@ you need to keep in mind when reading the rest of this tutorial:
     but code in a file does nothing to the result. For example, typing
     `1 + 2` to the `>>>` prompt makes it echo `3`, but we need to do
     `print(1 + 2)` if we want to do the same thing in a file.
+- The editor doesn't replace the `>>>` prompt. The prompt is good for
+    trying things out quickly, and the editor is better when we want to
+    write longer programs.
 
 ## You're done!
 
