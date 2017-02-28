@@ -21,9 +21,9 @@ like if they were dictionaries. This programming style is known as
 ## Sets
 
 Let's say we have a program that keeps track of peoples' names. We can
-store the names in [a list](../basics/lists.md), and adding a new name
-is easy as appending to that list. Lists remember their order and it's
-possible to add the same thing multiple times.
+store the names in [a list](../basics/lists-and-tuples.md), and adding a
+new name is easy as appending to that list. Lists remember their order
+and it's possible to add the same thing multiple times.
 
 ```python
 >>> names = ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']

@@ -39,7 +39,7 @@ import re
 import shutil
 
 
-_LINK_REGEX = r'\[(.*?)\]\((.*?)\)'
+_LINK_REGEX = r'!?\[(.*?)\]\((.*?)\)'
 
 
 def find_links(file):

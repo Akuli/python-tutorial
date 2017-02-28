@@ -232,3 +232,16 @@ you need to keep in mind when reading the rest of this tutorial:
 This probably felt like a lot of work, but don't worry, there will be no
 more things like this in the future. Now we have installed and set up
 all the tools we need and we can continue learning Python.
+
+***
+
+If you have trouble with this tutorial please [tell me about
+it](../contact-me.md) and I'll make this tutorial better. If you
+like this tutorial, please [give it a
+star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
+
+You may use this tutorial freely at your own risk. See
+[LICENSE](../LICENSE).
+
+[Previous](using-functions.md) | [Next](if.md) |
+[List of contents](../README.md#basics)

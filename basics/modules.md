@@ -1,7 +1,7 @@
 # Modules
 
-Let's say we want to generate a random number between 1 and
-3. The random module is a really easy way to do this:
+Let's say we want to generate a random number between 1 and 3.
+The random module is a really easy way to do this:
 
 ```python
 >>> import random
@@ -492,5 +492,5 @@ star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](exceptions.md) | [Next](classes.md) |
+[Previous](files.md) | [Next](exceptions.md) |
 [List of contents](../README.md#basics)

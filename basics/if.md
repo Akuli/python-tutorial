@@ -271,5 +271,5 @@ star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](using-functions.md) | [Next](handy-stuff-strings.md) |
+[Previous](editor-setup.md) | [Next](handy-stuff-strings.md) |
 [List of contents](../README.md#basics)

@@ -424,5 +424,5 @@ star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](modules.md) | [Next](../advanced/datatypes.md) |
+[Previous](exceptions.md) | [Next](../advanced/datatypes.md) |
 [List of contents](../README.md#basics)
