@@ -6,6 +6,12 @@ need to try out the code examples. You can use a website like
 installing Python. That way you don't need to open a web browser just
 to write code, and you can work without an Internet connection.
 
+It doesn't matter which operating system you use because Python runs
+great on Windows, Mac OSX, Linux and many other operating systems.
+However, installing and launching Python are done differently on
+different operating systems, so just follow your operating system's
+instructions.
+
 Let's get started!
 
 ## Downloading and installing Python
@@ -16,92 +22,55 @@ Use the official Python installer, it will install Python and IDLE for
 you.
 
 1. Go to [the official Python website](https://www.python.org/).
-2. Move your mouse over the blue Downloads button, but don't click it,
-    Then click the button that downloads the latest version of Python.
+2. Move your mouse over the blue Downloads button, but don't click it.
+   Then click the button that downloads the latest version of Python.
 3. Run the installer.
-4. Install Python like any other program. Make sure the py.exe
-    launcher gets installed.
+4. Make sure that the launcher gets installed and click Install Now.
+
+    ![The py.exe launcher.](../images/py-exe.png)
 
 ### Mac OSX
 
-I don't have an up-to-date copy of Mac OSX. If you would like to write
-instructions for OSX, [tell me](../contact-me.md).
+At the time of writing this, Macs don't come with a Python 3 and you
+need to install it yourself. It should be like installing any other
+program, but unfortunately I don't have better instructions because I
+don't have an up-to-date Mac and I have never installed Python on a Mac.
+If you would like to write better instructions, [tell
+me](../contact-me.md).
 
-### GNU/Linux
+### Linux
 
-You already have Python, there's no need to download anything.
-
-If you want to use IDLE (see below), install it. The name of the
-package is `idle3` on Debian-based distributions, like Ubuntu and Linux
-Mint, and you can install it with a software manager like any other
-program. On other distributions you can just search for idle using the
-distribution's package manager.
+You already have Python 3, **there's no need to install anything**. You
+may also have Python 2, but don't try to remove it. Some of your
+programs are probably written in Python 2, so removing Python 2 would
+break them.
 
 ## Running Python
 
-Now you have Python installed. There are several ways to run Python:
+Next we'll learn to run Python on a PowerShell or terminal. There are
+several other ways to run Python, but if you learn this way now it's
+going to make things easier later.
 
-1. Directly from PowerShell, command prompt or terminal.
-2. Using IDLE.
-3. Using something else.
+### Windows
 
-I'm not going to focus on the third option in this tutorial, but if you
-know how to use Python with something else than PowerShell, command
-prompt, a terminal or IDLE it's fine. Do whatever you want.
+1. Open a PowerShell from your start menu or start screen.
+2. Type `py` and press Enter. You should see something like this:
 
-### If you are not an advanced user and you have no idea what PowerShell, command prompt and terminal are
+    ![Python running in a PowerShell window.](../images/powershell.png)
 
-Use IDLE. Experienced Python users will say that IDLE is garbage, but
-don't listen to them. These people want you to use "better"
-alternatives with more features, but that's exactly what you don't want
-as a beginner. You should spend as little time as possible learning
-your tools, and as much time as possible learning Python. Advanced
-programming tools are not going to help you with this at all.
+### Other operating systems
 
-Launch Python's IDLE like any other program. You should see something
-like this:
+1. Open a terminal. How exactly this is done depends on your operating
+    system, but most operating systems have some way to search for
+    programs. Search for a program called terminal and launch it.
+2. Type `python3` and press Enter. You should see something like this:
 
-![IDLE](../images/idle.png)
+    ![Running Python on my terminal.](../images/terminal.png)
 
-From now on, I'll instead show everything like this, so I don't have to
-take more screenshots:
+    Your terminal probably looks different than mine, it's OK.
 
-    Python 3.4.3 (default, Oct 14 2015, 20:28:29)
-    [GCC 4.8.4] on linux
-    Type "copyright", "credits" or "license()" for more information.
-    >>>
-
-The exact content of your Python's welcome message is probably different
-than mine, it's ok.
-
-### If you like working with PowerShell, command prompt or terminal
-
-On Windows. you should be able to run Python from a PowerShell window,
-or a command prompt window if you don't have PowerShell. Open one of
-these programs from the start menu or start screen, type there `py` and
-press Enter. You should see something like this in it:
-
-    C:\Users\You> py
-    Python 3.4.4 (v3.4.4:737efcadf5a6, Dec 20 2015, 19:28:18)
-    [MSC v.1600 32 bit (Intel)] on win32
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>>
-
-On GNU/Linux or Mac OSX, you should have a terminal application installed
-already. Run it and type `python3`:
-
-    you@YourComputer:~$ python3
-    Python 3.4.3 (default, Oct 14 2015, 20:28:29)
-    [GCC 4.8.4] on linux
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>>
-
-Now you can type `exit()` and press Enter to get out of Python.
-
-You may also have an older version of Python installed, but don't remove
-it. Your system may need it, so if you replace it with your own Python
-some things might stop working. See
-[this](https://docs.python.org/3/faq/installed.html) for more info.
+Now you can type `exit()` and press Enter to get out of Python. Or you
+can just close the PowerShell or Terminal window.
 
 ## Summary
 
