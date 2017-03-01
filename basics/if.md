@@ -162,8 +162,7 @@ a password from the user, but you shouldn't worry about that just yet.
 
 ## Avoiding many levels of indentation with elif
 
-If we have more than one condition to check, our code will end up
-looking a bit messy.
+If we have more than one condition to check, we could do this:
 
 ```python
 print("Hello!")
@@ -187,6 +186,11 @@ else:
                     print("I don't know what", word, "means.")
 ```
 
+This code is a mess. We need to indent more every time we want to check
+for more words. Here we check for 5 different words, so we have 5 levels
+of indentation. If we would need to check 30 words, the code would
+become really wide and it would be hard to work with.
+
 Instead of typing `else`, indenting more and typing an `if` we can
 simply type `elif`, which is short for `else if`. Like this:
 
@@ -207,6 +211,41 @@ elif word == "gday m8":
 else:
     print("I don't know what", word, "means.")
 ```
+
+Now the program is shorter and much easier to read.
+
+Note that the `elif` parts only run if nothing before them matches, and
+the `else` runs only when none of the `elifs` match. If we would have
+used `if` instead, all possible values would be always checked and the
+`else` part would run always except when word is `"gday m8"`. This is
+why we use `elif` instead of `if`.
+
+For example, this program prints only `hello`...
+
+```python
+if 1 == 1:
+    print("hello")
+elif 1 == 2:
+    print("this is weird")
+else:
+    print("world")
+```
+
+...but this prints `hello` *and* `world`:
+
+```python
+if 1 == 1:
+    print("hello")
+if 1 == 2:
+    print("this is weird")
+else:
+    print("world")
+```
+
+Now the `else` belongs to the `if 1 == 2` part and **it has nothing to
+do with the `if 1 == 1` part**. On the other hand, the elif version
+chained the multiple ifs together and the `else` belonged to all of
+them.
 
 ## Summary
 
