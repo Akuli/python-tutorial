@@ -100,20 +100,16 @@ class TutorialRenderer(mistune.Renderer):
         super().__init__()
         self.pygments_style = pygments_style
         self.title = None   # will be set by header()
-        self._headercounts = {}
 
     def _get_header_link(self, title):
         """Return a github-style link target for a title.
 
-        >>> r = TutorialRenderer()
-        >>> r._get_header_link('Hello there!')
+        >>> TutorialRenderer()._get_header_link('Hello there!')
         'hello-there'
-        >>> r._get_header_link('Hello there!')
-        'hello-there-1'
-        >>> r._get_header_link('Hello there!')
-        'hello-there-2'
-        >>>
         """
+        # This doesn't handle multiple titles with the same text in the
+        # same file, but usually that's not a problem. GitHub makes
+        # links like the-title, the-title-1, the-title-2 etc.
         result = ''
         for character in title:
             if character in string.whitespace:
@@ -122,16 +118,7 @@ class TutorialRenderer(mistune.Renderer):
                 pass
             else:
                 result += character.lower()
-
-        if result not in self._headercounts:
-            # this title appears in this file for the first time
-            self._headercounts[result] = 1
-            return result
-        # there has been already a link with the same text on this page,
-        # we need to do thetitle, thetitle-1, thetitle-2, etc.
-        real_result = '%s-%d' % (result, self._headercounts[result])
-        self._headercounts[result] += 1
-        return real_result
+        return result
 
     def header(self, text, level, raw):
         """Create a header that is also a link and a # link target."""
