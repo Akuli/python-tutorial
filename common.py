@@ -37,6 +37,7 @@ import os
 import posixpath
 import re
 import shutil
+import string
 
 
 _LINK_REGEX = r'!?\[(.*?)\]\((.*?)\)'
@@ -127,3 +128,23 @@ def backup(filename):
     else:
         # Everything's fine, we can safely get rid of the backup.
         os.remove(filename + '.backup')
+
+
+def header_link(title):
+    """Return a github-style link target for a title.
+
+    >>> header_link('Hello there!')
+    'hello-there'
+    """
+    # This doesn't handle multiple titles with the same text in the
+    # same file, but usually that's not a problem. GitHub makes
+    # links like the-title, the-title-1, the-title-2 etc.
+    result = ''
+    for character in title:
+        if character in string.whitespace:
+            result += '-'
+        elif character in string.punctuation:
+            pass
+        else:
+            result += character.lower()
+    return result
