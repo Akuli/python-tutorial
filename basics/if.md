@@ -244,7 +244,7 @@ else:
 
 Now the `else` belongs to the `if 1 == 2` part and **it has nothing to
 do with the `if 1 == 1` part**. On the other hand, the elif version
-chained the multiple ifs together and the `else` belonged to all of
+**grouped the multiple ifs together** and the `else` belonged to all of
 them.
 
 ## Summary
