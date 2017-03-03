@@ -32,7 +32,6 @@ import argparse
 import os
 import posixpath
 import shutil
-import string
 import sys
 import textwrap
 import webbrowser

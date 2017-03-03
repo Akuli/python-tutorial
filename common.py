@@ -69,17 +69,33 @@ def find_links(file):
 def get_markdown_files():
     """Yield the names of all markdown files in this tutorial.
 
-    This assumes that the README contains links to everything. The
-    yielded paths use / as the path separator.
+    The yielded paths use / as the path separator.
     """
-    yield 'README.md'
-    with open('README.md', 'r') as f:
-        for match, lineno in find_links(f):
-            target = posixpath.normpath(match.group(2))
-            # Currently he README links to itself, but we don't want to
-            # break things if it will be modified not to link in the future.
-            if target.endswith('.md') and target != 'README.md':
-                yield target
+    for root, dirs, files in os.walk('.'):
+        for file in files:
+            if not file.endswith('.md'):
+                continue
+            path = os.path.normpath(os.path.join(root, file))
+            yield path.replace(os.sep, '/')
+
+
+def header_link(title):
+    """Return a github-style link target for a title.
+
+    >>> header_link('Hello there!')
+    'hello-there'
+    """
+    # This doesn't do the-title-1, the-title-2 etc. with multiple titles
+    # with same text, but usually this doesn't matter.
+    result = ''
+    for character in title:
+        if character in string.whitespace:
+            result += '-'
+        elif character in string.punctuation:
+            pass
+        else:
+            result += character.lower()
+    return result
 
 
 def askyesno(question, default=True):
