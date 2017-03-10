@@ -2,6 +2,12 @@
 
 This tutorial is not complete. It still needs:
 
+- replacement for the thinkpython linking file
+    - what is a type and why it matters
+        - also add `type()` calls to other places, especially when
+          introducing tuples (thanks kodec), functions and modules
+    - `3.14` and `'3.14'`
+    - `# 'hello'` and `'# hello'`
 - range somewhere
 - **More exercises and examples everywhere!**
     - especially "fix this" exercises
@@ -18,6 +24,7 @@ This tutorial is not complete. It still needs:
     - advise to avoid multiple inheritance
 - last chapter: "What should I do now?" links to other resources
     - first of all: read zen and pep8
+        - explanation of the zen, especially the "one right way" myth
     - GUI programming tutorials
         - easygui
         - tkinter in effbot (warn the readers about star imports)
