@@ -18,7 +18,9 @@ NameError: name 'hello' is not defined
 ```
 
 Oops! That didn't work. But like I wrote in the
-[introduction](what-is-programming.md), **errors don't matter**.
+[introduction](what-is-programming.md), error messages are our friends.
+This error message tells us what's wrong and where, and we'll learn what
+"name 'hello' is not defined" means [later](variables.md).
 
 Maybe we can press Enter without typing anything?
 
@@ -135,7 +137,7 @@ back to `>>>` when we press Enter again.
 
 ## Summary
 
-- Errors don't matter.
+- Again, error messages are your friends.
 - We can enter any Python commands to the interactive `>>>` prompt, and
     it will echo back the result.
 - `+`, `-`, `*` and `/` work in Python just like in math.
