@@ -148,7 +148,7 @@ rest of this tutorial only if you don't understand the code.
     as needed.
 - Make sure you understand everything you read.
 - Experiment with things freely and don't fear mistakes.
-- Error messages are your friends.
+- Error messages are our friends.
 - Let me know if you have trouble with this tutorial.
 - Now we're ready to [install Python](installing-python.md) and
     [get started](getting-started.md)!
