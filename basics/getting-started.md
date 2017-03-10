@@ -62,8 +62,8 @@ worked just fine. Later we'll learn what `(3, 14)` is.
 
 ## Using Python as a calculator
 
-<font color="red">**WARNING:**</font> This part contains boring math. Be
-careful!
+**<span style="color:blue">WARNING:</span>** This part contains boring
+math. Be careful!
 
 Let's type some math stuff into Python and see what it does.
 
