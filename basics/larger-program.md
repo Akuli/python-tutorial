@@ -74,6 +74,7 @@ and then testing and fixing. Here are my versions of them:
 def ask_questions(answers):
     correct = []
     wrong = []
+
     for question, answer in answers.items():
         if input(question + ' = ').strip() == answer:
             print("Correct!")
@@ -81,19 +82,26 @@ def ask_questions(answers):
         else:
             print("Wrong! The correct answer is %s." % answer)
             wrong.append(question)
+
     return (correct, wrong)
+
 
 def stats(correct, wrong, answers):
     print("\n**** STATS ****\n")
     print("You answered", len(correct), "questions correctly and",
           len(wrong), "questions wrong.")
+
     if wrong:
         print("These would have been the correct answers:")
         for question in wrong:
             print(' ', question, '=', answers[question])
 ```
 
-Let's try them out.
+Note that these functions have some empty lines in them and there are
+two empty lines between the functions. This makes the code a bit longer,
+but it's a lot easier to read this way.
+
+Let's try out the functions.
 
 ```python
 >>> answers = read_questions('questions.txt')
@@ -165,9 +173,11 @@ def read_questions(filename):
                 answers[question.strip()] = answer.strip()
     return answers
 
+
 def ask_questions(answers):
     correct = []
     wrong = []
+
     for question, answer in answers.items():
         if input('%s = ' % question).strip() == answer:
             print("Correct!")
@@ -175,16 +185,20 @@ def ask_questions(answers):
         else:
             print("Wrong! The correct answer is %s." % answer)
             wrong.append(question)
+
     return (correct, wrong)
+
 
 def stats(correct, wrong, answers):
     print("\n**** STATS ****\n")
     print("You answered", len(correct), "questions correctly and",
           len(wrong), "questions wrong.")
+
     if wrong:
         print("These would have been the correct answers:")
         for question in wrong:
             print(' ', question, '=', answers[question])
+
 
 def main():
     filename = input("Name of the question file: ")
