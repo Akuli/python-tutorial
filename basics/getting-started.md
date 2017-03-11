@@ -62,7 +62,9 @@ worked just fine. Later we'll learn what `(3, 14)` is.
 
 ## Using Python as a calculator
 
-**WARNING:** This part contains boring math. Be careful!
+```diff
+-WARNING: This part contains boring math. Be careful!
+```
 
 Let's type some math stuff into Python and see what it does.
 
