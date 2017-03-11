@@ -55,7 +55,7 @@ True
 
 We can also convert anything [iterable](../basics/loops.md#summary) to a
 set [by calling the
-class](../basics/classes.md#why-should-i-use-custom-classes-in-my-projects).
+class](../basics/classes.md#what-are-classes).
 
 ```python
 >>> set('hello')
