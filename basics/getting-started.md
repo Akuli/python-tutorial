@@ -60,6 +60,31 @@ We didn't get an error... but `(3, 14)` is not at all what we expected!
 So from now on, let's use a dot with decimal numbers, because `3.14`
 worked just fine. Later we'll learn what `(3, 14)` is.
 
+## Comments
+
+We can also type a `#` and then whatever we want after that. These bits
+of text are known as **comments**, and we'll find uses for them later.
+
+```python
+>>> 1 + 2     # can you guess what the result is?
+3
+>>>
+```
+
+Again, I put a space after the `#` and multiple spaces before it just to
+make things easier to read.
+
+If we write comment on a line with no code on it, the prompt changes
+from `>>>` to `...`. To be honest, I have no idea why it does that and I
+think it would be better if it would just stay as `>>>`. The prompt goes
+back to `>>>` when we press Enter again.
+
+```python
+>>> # hello there
+...
+>>>
+```
+
 ## Using Python as a calculator
 
 ```diff
@@ -111,31 +136,6 @@ Python also supports many other kinds of calculations, but most of the
 time you don't need them. Actually you don't need even these
 calculations most of the time, but these calculations are probably
 enough when you need to calculate something.
-
-## Comments
-
-We can also type a `#` and then whatever we want after that. These bits
-of text are known as **comments**, and we'll find uses for them later.
-
-```python
->>> 1 + 2     # can you guess what the result is?
-3
->>>
-```
-
-Again, I put a space after the `#` and multiple spaces before it just to
-make things easier to read.
-
-If we write comment on a line with no code on it, the prompt changes
-from `>>>` to `...`. To be honest, I have no idea why it does that and I
-think it would be better if it would just stay as `>>>`. The prompt goes
-back to `>>>` when we press Enter again.
-
-```python
->>> # hello there
-...
->>>
-```
 
 ## Summary
 
