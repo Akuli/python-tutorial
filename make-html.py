@@ -135,8 +135,29 @@ class TutorialRenderer(mistune.Renderer):
             formatter = pygments.formatters.HtmlFormatter(
                 style=self.pygments_style, noclasses=True)
             return pygments.highlight(code, lexer, formatter)
-        # we can't highlight it
-        return super().block_code(code, lang)
+
+        elif lang == 'diff':
+            # http://stackoverflow.com/a/39413824
+            result = []
+            for line in code.split('\n'):
+                line = line.strip()
+                if not line:
+                    continue
+
+                if line.startswith('+'):
+                    result.append('<p><font color="green">%s</font></p>'
+                                  % line.strip('+'))
+                elif line.startswith('-'):
+                    result.append('<p><font color="red">%s</font></p>'
+                                  % line.strip('-'))
+                else:
+                    result.append('<p>%s</p>' % line)
+
+            return '\n'.join(result)
+
+        else:
+            # we can't highlight it
+            return super().block_code(code, lang)
 
     def image(self, src, title, text):
         """Return an image inside a link."""
