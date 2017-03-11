@@ -222,7 +222,7 @@ moving file1.txt to file2.txt
 Oh crap, that's not what we wanted at all. We have just lost the
 original `file2.txt`!
 
-The problem was that now `overwrite` was `'file2.txt'`, and the
+The problem was that now `overwrite` was `'file3.txt'`, and the
 `if overwrite` part [treated the string as
 True](../basics/what-is-true.md) and deleted the file. That's not nice.
 
