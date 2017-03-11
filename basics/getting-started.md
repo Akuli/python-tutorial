@@ -139,8 +139,8 @@ back to `>>>` when we press Enter again.
 
 ## Summary
 
-[comment]: # (the first line in this summary is exactly same as in
-what-is-programming.md, and it's supposed to be like this)
+[comment]: # (the first line in this summary is exactly same as in)
+[comment]: # (what-is-programming.md, and it's supposed to be like this)
 
 - Error messages are our friends.
 - We can enter any Python commands to the interactive `>>>` prompt, and
