@@ -34,7 +34,7 @@ wherever the function is called:
 ```python
 def login():
     ...
-    return username, password
+    return (username, password)
 
 
 username, password = login()
@@ -55,7 +55,7 @@ def get_new_info(username):
     password = input("New password: ")
     fullname = input("Full name: ")
     phonenumber = input("Phone number: ")
-    return username, password, fullname, phonenumber
+    return (username, password, fullname, phonenumber)
 ```
 
 ...you could do this:
