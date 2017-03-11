@@ -5,10 +5,6 @@ tkinter GUI's before I understood how they work. Everything I did with
 classes worked, but I didn't understand how. Hopefully you'll first
 learn to understand classes, and then learn to use them.
 
-This tutorial assumes that you know [how functions work](using-functions.md)
-and [how to create your own functions](defining-functions.md). If you
-don't I highly recommend learning that first, and then moving to classes.
-
 ## Why should I use custom classes in my projects?
 
 Python comes with a lot of classes that you are already familiar with.
@@ -89,34 +85,34 @@ names for your classes.
 Now we can make a Website instance by calling the class.
 
 ```python
->>> stackoverflow = Website()
->>> stackoverflow
+>>> github = Website()
+>>> github
 <__main__.Website object at 0x7f36e4c456d8>
->>> type(stackoverflow)
+>>> type(github)
 <class '__main__.Website'>
 >>>
 ```
 
-We can say that `stackoverflow` is "a Website instance", "a Website
+We can say that `github` is "a Website instance", "a Website
 object" or "a Website". All of these mean the same thing.
 
-Now we can attach more information about stackoverflow to our Website.
+Now we can attach more information about github to our Website.
 
 ```python
->>> stackoverflow.url = 'http://stackoverflow.com/'
->>> stackoverflow.founding_year = 2008
->>> stackoverflow.free_to_use = True
+>>> github.url = 'https://github.com/'
+>>> github.founding_year = 2008
+>>> github.free_to_use = True
 >>>
 ```
 
 We can also access the information easily.
 
 ```python
->>> stackoverflow.url
-'http://stackoverflow.com/'
->>> stackoverflow.founding_year
+>>> github.url
+'https://github.com/'
+>>> github.founding_year
 2008
->>> stackoverflow.free_to_use
+>>> github.free_to_use
 True
 >>>
 ```
@@ -153,10 +149,10 @@ recommended to use it for code that needs to be reliable, but it's a
 handy way to see which attributes the instance contains.
 
 ```python
->>> stackoverflow.__dict__
+>>> github.__dict__
 {'free_to_use': True,
  'founding_year': 2008,
- 'url': 'http://stackoverflow.com/'}
+ 'url': 'https://github.com/'}
 >>> effbot.__dict__
 {}
 >>>
@@ -177,7 +173,7 @@ True
 Seems to be working, but what happened to the instances?
 
 ```python
->>> stackoverflow.is_online
+>>> github.is_online
 True
 >>> effbot.is_online
 True
@@ -185,17 +181,17 @@ True
 ```
 
 What was that? Setting `Website.is_online` to a value also set
-`stackoverflow.is_online` and `effbot.is_online` to that value!
+`github.is_online` and `effbot.is_online` to that value!
 
-Actually, `is_online` is still not in stackoverflow's or effbot's
-`__dict__`. stackoverflow and effbot get that attribute directly from
+Actually, `is_online` is still not in github's or effbot's
+`__dict__`. github and effbot get that attribute directly from
 the `Website` class.
 
 ```python
->>> stackoverflow.__dict__
+>>> github.__dict__
 {'free_to_use': True,
  'founding_year': 2008,
- 'url': 'http://stackoverflow.com/'}
+ 'url': 'https://github.com/'}
 >>> effbot.__dict__
 {}
 >>>
@@ -203,13 +199,14 @@ the `Website` class.
 
 `Website.is_online` is `Website`'s class attribute, and in Python you can
 access class attributes through instances also, so in this case
-`stackoverflow.is_online` points to `Website.is_online`. That can be
+`github.is_online` points to `Website.is_online`. That can be
 confusing, which is why it's not recommended to use class attributes like
-this. Use instance attributes instead, e.g. `stackoverflow.is_online = True`.
+this. Use instance attributes instead, e.g. `github.is_online = True`.
 
 ## Functions and methods
 
-Let's define a function that prints information about a website.
+Let's [define a function](defining-functions.md) that prints information
+about a website.
 
 ```python
 >>> def website_info(website):
@@ -217,8 +214,8 @@ Let's define a function that prints information about a website.
 ...     print("Founding year:", website.founding_year)
 ...     print("Free to use:", website.free_to_use)
 ...
->>> website_info(stackoverflow)
-URL: http://stackoverflow.com/
+>>> website_info(github)
+URL: https://github.com/
 Founding year: 2008
 Free to use: True
 >>>
@@ -230,49 +227,49 @@ Website class?
 
 ```python
 >>> Website.info = website_info
->>> Website.info(stackoverflow)
-URL: http://stackoverflow.com/
+>>> Website.info(github)
+URL: https://github.com/
 Founding year: 2008
 Free to use: True
 >>>
 ```
 
-It's working, but `Website.info(stackoverflow)` is a lot of typing, so
-wouldn't `stackoverflow.info()` be much better?
+It's working, but `Website.info(github)` is a lot of typing, so
+wouldn't `github.info()` be much better?
 
 ```python
->>> stackoverflow.info()
-URL: http://stackoverflow.com/
+>>> github.info()
+URL: https://github.com/
 Founding year: 2008
 Free to use: True
 >>>
 ```
 
-What the heck happened? We didn't define a `stackoverflow.info`, it just
+What the heck happened? We didn't define a `github.info`, it just
 magically worked!
 
-`Website.info` is our `website_info` function, so `stackoverflow.info`
+`Website.info` is our `website_info` function, so `github.info`
 should also be the same function. But `Website.info` takes a `website`
-argument, which we didn't give it when we called `stackoverflow.info()`!
+argument, which we didn't give it when we called `github.info()`!
 
-But is `stackoverflow.info` the same thing as `Website.info`?
+But is `github.info` the same thing as `Website.info`?
 
 ```python
 >>> Website.info
 <function website_info at 0x7f36e4c39598>
->>> stackoverflow.info
+>>> github.info
 <bound method website_info of <__main__.Website object at 0x7f36e4c456d8>>
 >>>
 ```
 
 It's not.
 
-Instead, `stackoverflow.info` is a **method**. If we set a function as a
+Instead, `github.info` is a **method**. If we set a function as a
 class attribute, the instances will have a method with the same name.
 Methods are "links" to the class attribute functions. So
-`Website.info(stackoverflow)` does the same thing as `stackoverflow.info()`,
-and when `stackoverflow.info()` is called it automatically gets
-`stackoverflow` as an argument.
+`Website.info(github)` does the same thing as `github.info()`,
+and when `github.info()` is called it automatically gets
+`github` as an argument.
 
 In other words, **`Class.method(instance)` does the same thing as
 `instance.method()`**. This also works with built-in classes, for
@@ -285,23 +282,23 @@ it later?
 
 ```python
 >>> class Website:
-...     def info(self):     # self will be stackoverflow
+...     def info(self):     # self will be github
 ...         print("URL:", self.url)
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
 ...
->>> stackoverflow = Website()
->>> stackoverflow.url = 'http://stackoverflow.com/'
->>> stackoverflow.founding_year = 2008
->>> stackoverflow.free_to_use = True
->>> stackoverflow.info()
-URL: http://stackoverflow.com/
+>>> github = Website()
+>>> github.url = 'https://github.com/'
+>>> github.founding_year = 2008
+>>> github.free_to_use = True
+>>> github.info()
+URL: https://github.com/
 Founding year: 2008
 Free to use: True
 >>>
 ```
 
-It's working. The `self` argument in `Website.info` was `stackoverflow`.
+It's working. The `self` argument in `Website.info` was `github`.
 You could call it something else too such as `me`, `this` or `instance`,
 but use `self` instead. Other Python users have gotten used to it, and
 the official style guide recommens it also.
@@ -320,10 +317,10 @@ Maybe we could add a method to do that?
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
 ...
->>> stackoverflow = Website()
->>> stackoverflow.initialize('http://stackoverflow.com/', 2008, True)
->>> stackoverflow.info()
-URL: http://stackoverflow.com/
+>>> github = Website()
+>>> github.initialize('https://github.com/', 2008, True)
+>>> github.info()
+URL: https://github.com/
 Founding year: 2008
 Free to use: True
 >>>
@@ -331,9 +328,9 @@ Free to use: True
 
 That works. The attributes we defined in the initialize method are also
 available in the info method. We could also access them directly from
-`stackoverflow`, for example with `stackoverflow.url`.
+`github`, for example with `github.url`.
 
-But we still need to call `stackoverflow.initialize`. In Python, there's
+But we still need to call `github.initialize`. In Python, there's
 a "magic" method that runs when we create a new Website by calling the
 Website class. It's called `__init__` and it does nothing by default. If
 our `__init__` method takes other arguments than self we can call the
@@ -350,9 +347,9 @@ class with arguments and they will be given to `__init__`. Like this:
 ...         print("Founding year:", self.founding_year)
 ...         print("Free to use:", self.free_to_use)
 ...
->>> stackoverflow = Website('http://stackoverflow.com/', 2008, True)
->>> stackoverflow.info()
-URL: http://stackoverflow.com/
+>>> github = Website('https://github.com/', 2008, True)
+>>> github.info()
+URL: https://github.com/
 Founding year: 2008
 Free to use: True
 >>>
