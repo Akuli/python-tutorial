@@ -1,9 +1,9 @@
 /* This file is used by the HTML files that make-html.py creates. 
    Customize this if you want to create HTML files with different
-   colors. See also make-html.py's --pygments-theme option. */
+   colors. See also make-html.py's --pygments-style option. */
 body {
     color: white;
-    background-color: #333333;
+    background-color: #222222;
 }
 a {
     color: orange;

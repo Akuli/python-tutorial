@@ -49,12 +49,26 @@ except ImportError:
 try:
     import pygments.formatters
     import pygments.lexers
+    import pygments.style
     import pygments.styles
+    import pygments.token
 except ImportError:
     # we can work without pygments, but we won't get colors
     pygments = None
 
 import common
+
+
+if pygments is not None:
+    class TutorialStyle(pygments.style.Style):
+        background_color = '#111111'
+        styles = {
+            pygments.token.Comment: 'italic #336666',
+            pygments.token.Keyword: 'bold #6699cc',
+            pygments.token.Name.Builtin: '#9966ff',
+            pygments.token.String: '#ffff33',
+            pygments.token.Name.Exception: 'bold #ff0000',
+        }
 
 
 HTML_TEMPLATE = """\
@@ -129,9 +143,9 @@ class TutorialRenderer(mistune.Renderer):
         if lang == 'python' and pygments is not None:
             # we can highlight it
             if code.startswith('>>> '):
-                lexer = pygments.lexers.PythonConsoleLexer()
+                lexer = pygments.lexers.PythonConsoleLexer(python3=True)
             else:
-                lexer = pygments.lexers.PythonLexer()
+                lexer = pygments.lexers.Python3Lexer()
             formatter = pygments.formatters.HtmlFormatter(
                 style=self.pygments_style, noclasses=True)
             return pygments.highlight(code, lexer, formatter)
@@ -198,10 +212,10 @@ def main():
         help="write the HTML files here, defaults to %(default)r")
     if pygments is not None:
         parser.add_argument(
-            '--pygments-style', metavar='STYLE', default='native',
+            '--pygments-style', metavar='STYLE', default=TutorialStyle,
             choices=list(pygments.styles.get_all_styles()),
             help=("the Pygments color style (see above), "
-                  "%(default)r by default"))
+                  "defaults to a custom style"))
     args = parser.parse_args()
 
     if pygments is None:
@@ -215,6 +229,7 @@ def main():
         if not common.askyesno("Continue without pygments?"):
             print("Interrupt.")
             return
+        args.pygments_style = None
 
     if os.path.exists(args.outdir):
         if not common.askyesno("%s exists. Do you want to remove it?"
@@ -228,8 +243,8 @@ def main():
 
     print("Generating HTML files...")
     for markdownfile in common.get_markdown_files():
-        fixed_markdownfile = fix_filename(markdownfile)
-        htmlfile = posixpath.join(args.outdir, fixed_markdownfile)
+        fixed_file = fix_filename(markdownfile)
+        htmlfile = posixpath.join(args.outdir, fixed_file)
         print('  %-30.30s  -->  %-30.30s' % (markdownfile, htmlfile), end='\r')
 
         with common.slashfix_open(markdownfile, 'r') as f:
@@ -237,7 +252,7 @@ def main():
         renderer = TutorialRenderer(args.pygments_style)
         body = mistune.markdown(markdown, renderer=renderer)
         stylefile = posixpath.relpath(
-            'style.css', posixpath.dirname(fixed_markdownfile))
+            'style.css', posixpath.dirname(fixed_file))
 
         html = HTML_TEMPLATE.format(
             title=renderer.title,
