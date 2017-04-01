@@ -300,10 +300,6 @@ Or if we just want to clear a list, we can use the `clear`
 >>>
 ```
 
-If you're using Python 3.2 or older you need to use `stuff[:]` instead
-of `stuff.copy()` and `stuff[:] = []` instead of `stuff.clear()`.
-`stuff[:]` is a slice of the whole list, just like `stuff[0:]`.
-
 ## Summary
 
 - A loop means repeating something multiple times.

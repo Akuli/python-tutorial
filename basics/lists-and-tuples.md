@@ -230,10 +230,6 @@ like this:
 
 ![Different lists.](../images/differentlist.png)
 
-If you're using Python 3.2 or older you need to do `a[:]` instead
-of `a.copy()`. `a[:]` is a slice of the whole list, just like
-`a[0:]`.
-
 ## Tuples
 
 Tuples are a lot like lists, but they're immutable so they
