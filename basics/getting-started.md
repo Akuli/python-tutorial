@@ -62,8 +62,9 @@ worked just fine. Later we'll learn what `(3, 14)` is.
 
 ## Comments
 
-We can also type a `#` and then whatever we want after that. These bits
-of text are known as **comments**, and we'll find uses for them later.
+**Comments are text that does nothing.** They can be created by typing a
+`#` and then some text after it, and they are useful when our code would
+be hard to understand without them.
 
 ```python
 >>> 1 + 2     # can you guess what the result is?
@@ -74,7 +75,7 @@ of text are known as **comments**, and we'll find uses for them later.
 Again, I put a space after the `#` and multiple spaces before it just to
 make things easier to read.
 
-If we write comment on a line with no code on it, the prompt changes
+If we write a comment on a line with no code on it, the prompt changes
 from `>>>` to `...`. To be honest, I have no idea why it does that and I
 think it would be better if it would just stay as `>>>`. The prompt goes
 back to `>>>` when we press Enter again.
@@ -83,6 +84,56 @@ back to `>>>` when we press Enter again.
 >>> # hello there
 ...
 >>>
+```
+
+## Strings
+
+Strings are small pieces of text that we can use in our programs. We can
+create strings by simply writing some text in quotes.
+
+```python
+>>> 'hello'
+'hello'
+>>> 'this is a test'
+'this is a test'
+>>> 
+```
+
+String's can also be written using "double quotes" instead of 'single quotes'.
+This is useful when the string needs to contain single quotes.
+
+```python
+>>> "hello there"
+'hello there'
+>>> "it's sunny"
+"it's sunny"
+>>> 
+```
+
+It's also possible to add single quotes and double quotes into the same
+string, but most of the time we don't need to do that so I'm not going
+to talk about it now.
+
+It doesn't matter which quotes you use when the string doesn't need to
+contain any quotes. If you think that one of the quote types looks nicer
+than the other or you find it faster to type, go ahead and use that.
+
+Strings can be joined together easily with `+` or repeated with `*`:
+
+```python
+>>> "hello" + "world"
+'helloworld'
+>>> "hello" * 3
+'hellohellohello'
+>>> 
+```
+
+Note that a `#` inside a string doesn't create a comment.
+
+```python
+>>> "strings can contain # characters"
+'strings can contain # characters'
+>>> 
 ```
 
 ## Using Python as a calculator
@@ -146,7 +197,9 @@ enough when you need to calculate something.
 - We can enter any Python commands to the interactive `>>>` prompt, and
     it will echo back the result.
 - `+`, `-`, `*` and `/` work in Python just like in math.
-- Pieces of text starting with a `#` are comments.
+- Pieces of text starting with a `#` are comments and pieces of text in
+    quotes are strings.
+- You can use single quotes and double quotes however you want.
 
 ***
 
