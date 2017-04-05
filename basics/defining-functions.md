@@ -68,9 +68,14 @@ Let's use it to define a function that does nothing.
 >>>
 ```
 
-Seems to be working so far, we have a function. Actually it's just
-a value that is assigned to a variable called `do_nothing`. Let's see
-what happens if we call it.
+Seems to be working so far, we have a function. It's just a value that
+is assigned to a variable called `do_nothing`.
+
+The `pass` is needed here because without it, Python doesn't know when
+the function ends and it gives us a syntax error. We don't need the
+`pass` when our functions contain something else.
+
+Let's see what happens if we call our function.
 
 ```python
 >>> do_nothing()

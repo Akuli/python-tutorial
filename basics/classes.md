@@ -77,6 +77,9 @@ Let's use it to define an empty class.
 >>>
 ```
 
+The `pass` is needed here, just like [when defining functions that do
+nothing](defining-functions.md#first-functions).
+
 Note that I named the class `Website`, not `website`. This way we know
 that it's a class. Built-in classes use lowercase names (like `str`
 instead of `Str`) because they are faster to type, but use CapsWord
