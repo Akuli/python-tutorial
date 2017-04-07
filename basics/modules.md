@@ -53,6 +53,11 @@ All of these `.py` files can be imported like we just imported
 so we can use its randint variable with `random.randint` after
 importing it.
 
+You're probably wondering how a computer can generate random numbers.
+The random module does different things on different operating systems,
+but on most systems it reads random noise that several programs on the
+computer produce and creates random numbers based on that.
+
 ## Where do modules come from?
 
 Create a `random.py` file with the following content:
@@ -97,7 +102,7 @@ AttributeError: 'module' object has no attribute 'randint'
 >>>
 ```
 
-So first of all, what is that random variable?
+So first of all, what is that `random` variable?
 
 ```python
 >>> random
@@ -285,7 +290,7 @@ The official documentation for the time module is
 >>> time.time()     # return time in seconds since beginning of the year 1970
 1474896325.2394648
 >>> time.strftime('%d.%m.%Y %H:%M:%S')  # format current time nicely
-'26.09.2016 16:33:58'
+'07.04.2017 19:08:33'
 >>>
 ```
 
@@ -481,6 +486,8 @@ section at the bottom.
     module you want to use.
 - Python comes with many modules, and we can install even more modules
     if we want to.
+
+**TODO:** exercises
 
 ***
 
