@@ -99,8 +99,8 @@ create strings by simply writing some text in quotes.
 >>> 
 ```
 
-String's can also be written using "double quotes" instead of 'single quotes'.
-This is useful when the string needs to contain single quotes.
+Strings can also be written with "double quotes" instead of 'single
+quotes'. This is useful when we need to put quotes inside the string.
 
 ```python
 >>> "hello there"
@@ -180,6 +180,15 @@ and `)` also work the same way.
 7
 >>> (1 + 2) * 3      # 1 + 2 is calculated first
 9
+>>>
+```
+
+You can also leave out spaces to show what's calculated first. Python
+ignores it, but our code will be easier to read for people.
+
+```python
+>>> 1 + 2*3         # now it looks like 2*3 is calculated first
+7
 >>>
 ```
 
