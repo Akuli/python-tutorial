@@ -324,8 +324,8 @@ else:
 
     ```python
     namelist = ('wub_wub', 'RubyPinch', 'go|dfish', 'Nitori')
-    namelist.append('pb122-two')
-    if 'pb122-two' in namelist:
+    namelist.append('pb122')
+    if 'pb122' in namelist:
         print("Now I know Akuli!")
     ```
 
