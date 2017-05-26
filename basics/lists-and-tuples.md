@@ -320,7 +320,16 @@ else:
 
 ## Exercises
 
-1. Fix this program.
+1. Fix this program:
+
+    ```python
+    namelist = ('wub_wub', 'RubyPinch', 'go|dfish', 'Nitori')
+    namelist.append('Akuli')
+    if 'Akuli' in namelist:
+        print("Now I know Akuli!")
+    ```
+
+2. Fix this program.
 
     ```python
     print("Hello!")
@@ -328,7 +337,7 @@ else:
     print("Your name is " + name + ".")
     ```
 
-2. Fix this program.
+3. Fix this program.
 
     ```python
     namelist = ['wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
