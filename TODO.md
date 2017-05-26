@@ -35,6 +35,9 @@ This tutorial is not complete. It still needs:
     - "What the heck is this?" section for stuff i haven't talked about
         - regexes
 
+- add a screenshot about geany's running settings to
+  basics/editor-setup.md
+
 ***
 
 If you have trouble with this tutorial please [tell me about

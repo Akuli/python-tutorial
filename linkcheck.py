@@ -38,7 +38,7 @@ This finds links like this...
 
     [some website](http://github.com/)
     [another website](https://github.com/)
-    [local header](#some-header)
+    [local link](#some-title)
 """
 
 import os
@@ -47,7 +47,7 @@ import posixpath
 import common
 
 
-def check(filepath, target):
+def check(this_file, target, title, titledict):
     """Check if a link's target is like it should be.
 
     Return an error message string or "ok".
@@ -57,45 +57,99 @@ def check(filepath, target):
         # be added later.
         return "ok"
 
-    if '#' in target:
-        where = target.index('#')
-        if where == 0:
-            # It's a link to a title in the same file, we need to skip it.
-            return "ok"
-        target = target[:where]
+    path = posixpath.join(posixpath.dirname(this_file), target)
+    path = posixpath.normpath(path)
+    real_path = common.slashfix(path)
 
-    path = posixpath.join(posixpath.dirname(filepath), target)
-    realpath = common.slashfix(path)
-    if not os.path.exists(realpath):
+    if not os.path.exists(real_path):
         return "doesn't exist"
+
     if target.endswith('/'):
         # A directory.
-        if os.path.isdir(realpath):
-            return "ok"
-        return "not a directory"
+        if not os.path.isdir(real_path):
+            return "not a directory"
     else:
         # A file.
-        if os.path.isfile(realpath):
-            return "ok"
-        return "not a file"
+        if not os.path.isfile(real_path):
+            return "not a file"
+
+    if title is not None and title not in titledict[path]:
+        return "no title named %s" % title
+    return "ok"
+
+
+def find_titles(filename):
+    """Read titles of a markdown file and return a list of them."""
+    result = []
+
+    with common.slashfix_open(filename, 'r') as f:
+        for line in f:
+            if line.startswith('```'):
+                # it's a code block, let's skip to the end of it to
+                # avoid detecting comments as titles
+                while f.readline().rstrip() != '```':
+                    pass
+            if line.startswith('#'):
+                # found a title
+                result.append(common.header_link(line.lstrip('#').strip()))
+
+    return result
+
+
+def find_links(this_file):
+    """Read links of a markdown file.
+
+    Return a list of (target, title, lineno) pairs where title can be None.
+    """
+    result = []
+
+    with common.slashfix_open(this_file, 'r') as f:
+        for match, lineno in common.find_links(f):
+            target = match.group(2)
+            if '#' in target:
+                file, title = target.split('#', 1)
+                if not file:
+                    # link to this file, [blabla](#hi)
+                    file = posixpath.basename(this_file)
+            else:
+                file = target
+                title = None
+
+            result.append((file, title, lineno))
+
+    return result
+
+
+def get_line(filename, lineno):
+    """Return the lineno'th line of a file."""
+    with common.slashfix_open(filename, 'r') as f:
+        for lineno2, line in enumerate(f, start=1):
+            if lineno == lineno2:
+                return line
+    raise ValueError("%s is less than %d lines long" % (filename, lineno))
 
 
 def main():
-    print("Searching and checking links...")
-    broken = 0
-    total = 0
+    print("Searching for titles and links...")
+    titledict = {}      # {filename: [title1, title2, ...]}
+    linkdict = {}       # {filename: [(file, title, lineno), ...])
     for path in common.get_markdown_files():
-        with common.slashfix_open(path, 'r') as f:
-            for match, lineno in common.find_links(f):
-                text, target = match.groups()
-                status = check(path, target)
-                if status != "ok":
-                    # The .group(0) is not perfect, but it's good enough.
-                    print("  file %s, line %d: %s" % (path, lineno, status))
-                    print("    " + match.group(0))
-                    print()
-                    broken += 1
-                total += 1
+        titledict[path] = find_titles(path)
+        linkdict[path] = find_links(path)
+
+    print("Checking the links...")
+    total = 0
+    broken = 0
+
+    for filename, linklist in linkdict.items():
+        for target, title, lineno in linklist:
+            status = check(filename, target, title, titledict)
+            if status != "ok":
+                print("  file %s, line %d: %s" % (filename, lineno, status))
+                print("    %s" % get_line(filename, lineno))
+                broken += 1
+            total += 1
+
     print("%d/%d links seem to be broken." % (broken, total))
 
 

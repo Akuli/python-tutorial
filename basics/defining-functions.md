@@ -44,9 +44,9 @@ In this tutorial we'll learn to define a `print_box` function
 that prints text in a box. We can write the code for printing the
 box once, and then use it multiple times anywhere in the program.
 
-Dividing a long program into simple functions also makes the code
-easier to work with. If there's a problem with the code we can
-test the functions one by one and find the problem easily.
+[Dividing a long program into simple functions](larger-program.md) also
+makes the code easier to work with. If there's a problem with the code
+we can test the functions one by one and find the problem easily.
 
 ## First functions
 
@@ -68,9 +68,15 @@ Let's use it to define a function that does nothing.
 >>>
 ```
 
-Seems to be working so far, we have a function. Actually it's just
-a value that is assigned to a variable called `do_nothing`. Let's see
-what happens if we call it.
+Seems to be working so far, we have a function. It's just a value that
+is assigned to a variable called `do_nothing`. You can ignore the
+`0xblablabla` stuff for now.
+
+The `pass` is needed here because without it, Python doesn't know when
+the function ends and it gives us a syntax error. We don't need the
+`pass` when our functions contain something else.
+
+Let's see what happens if we call our function.
 
 ```python
 >>> do_nothing()
@@ -176,15 +182,15 @@ integer because immutable values cannot be modified in-place.
 Fortunately, Python will tell us if something's wrong.
 
 ```python
->>> foo = 1
->>> def bar():
-...     foo += 1
+>>> thing = 1
+>>> def stuff():
+...     thing += 1
 ...
->>> bar()
+>>> stuff()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "<stdin>", line 2, in bar
-UnboundLocalError: local variable 'foo' referenced before assignment
+  File "<stdin>", line 2, in stuff
+UnboundLocalError: local variable 'thing' referenced before assignment
 >>>
 ```
 
@@ -283,8 +289,8 @@ def print_box(message, character):
     print(character * len(message))
 ```
 
-Then we could change our existing code to always call `print_box` with
-a star as the second argument:
+Then we could change our code to always call `print_box` with a star as
+the second argument:
 
 ```python
 print_box("Hello World", "*")
@@ -355,11 +361,11 @@ need to:
 ## Output
 
 The built-in input function [returns a value](using-functions.md#return-values).
-Can our function return a value also?
+Can our function return a value too?
 
 ```python
->>> def times_two(x):
-...     return x * 2
+>>> def times_two(thing):
+...     return thing * 2
 ...
 >>> times_two(3)
 6
@@ -412,7 +418,7 @@ None
 
 ## Return or print?
 
-There's two ways to output information from functions. They can print
+There are two ways to output information from functions. They can print
 something or they can return something. So, should we print or return?
 
 Most of the time **returning makes functions much easier to use**. Think
@@ -434,6 +440,47 @@ If our function returns a value we can always print it, like this:
 hi
 >>>
 ```
+
+## Common problems
+
+Functions are easy to understand, but you need to pay attention to how
+you're calling them. Note that `some_function` and `some_function()` do
+two completely different things.
+
+```python
+>>> def say_hi():
+...     print("howdy hi")
+...
+>>> say_hi     # just checking what it is, doesn't run anything
+<function say_hi at 0x7f997d2a8510>
+>>> say_hi()   # this runs it
+howdy hi
+>>>
+```
+
+Typing `say_hi` just gives us the value of the `say_hi` variable, which
+is the function we defined. But `say_hi()` **calls** that function, so
+it runs and gives us a return value. The return value is None so the
+`>>>` prompt [doesn't show it](#variables.md#none).
+
+But we know that the print function shows None, so what happens if we
+wrap the whole thing in `print()`?
+
+```python
+>>> print(say_hi)       # prints the function, just like plain say_hi
+<function say_hi at 0x7fd913f58488>
+>>> print(say_hi())     # runs the function and then prints the return value
+howdy hi
+None
+>>>
+```
+
+The `print(say_hi())` thing looks a bit weird at first, but it's easy to
+understand. There's a print insnde `say_hi` and there's also the print
+we just wrote, so two things are printed. Python first ran `say_hi()`,
+and it returned None so Python did `print(None)`. Adding an extra
+`print()` around a function call is actually a common mistake, and I
+have helped many people with this problem.
 
 ## Examples
 
@@ -463,7 +510,7 @@ def ask_until_correct(prompt, correct_options,
     while True:
         answer = input(prompt + ' ')
         if answer in correct_options:
-            return answer   # returning ends the function
+            return answer
         print(error_message)
 
 
@@ -489,6 +536,8 @@ print("Your favorite color is %s!" % choice)
     function does. Returning also ends the function immediately.
 - Return a value instead of printing it if you need to do something with
     it after calling the function.
+- Remember that `thing`, `thing()`, `print(thing)` and `print(thing())`
+    do different things.
 
 ## Exercises
 

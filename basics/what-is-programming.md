@@ -135,8 +135,10 @@ have learned, and create something with it.
 
 ## But reading is boring!
 
-Yes, I know. You can just try the code examples yourself and read the
-rest of this tutorial only if you don't understand the code.
+This chapter is probably the most boring chapter in the whole tutorial.
+Other chapters contain much less text and much more code. You can also
+get pretty far by just reading the code, and then reading the text only
+if you don't understand the code.
 
 ## Summary
 

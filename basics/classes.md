@@ -1,13 +1,13 @@
-# Defining and using custom classes in Python
+# Defining and using custom classes
 
 When I was getting started in Python I learned to make classes for
 tkinter GUI's before I understood how they work. Everything I did with
 classes worked, but I didn't understand how. Hopefully you'll first
 learn to understand classes, and then learn to use them.
 
-## Why should I use custom classes in my projects?
+## What are classes?
 
-Python comes with a lot of classes that you are already familiar with.
+Python comes with many classes that we know already.
 
 ```python
 >>> str
@@ -51,11 +51,11 @@ We can also get an instance's class with `type()`:
 >>>
 ```
 
-Let's say you make a program that processes data about websites. With a
-custom class, you're not limited to `str`, `int` and other classes
-Python comes with. Instead you can define a Website class, and make
-Websites and process information about websites directly. Defining your
-own object types like this is called **object-orientated programming**.
+Let's say that we make a program that processes data about websites.
+With a custom class, we're not limited to `str`, `int` and other classes
+Python comes with. Instead we can define a Website class, and make
+Websites and process information about websites directly. Defining our
+own types like this is called **object-orientated programming**.
 
 ## First class
 
@@ -76,6 +76,9 @@ Let's use it to define an empty class.
 <class '__main__.Website'>
 >>>
 ```
+
+The `pass` is needed here, just like [when defining functions that do
+nothing](defining-functions.md#first-functions).
 
 Note that I named the class `Website`, not `website`. This way we know
 that it's a class. Built-in classes use lowercase names (like `str`

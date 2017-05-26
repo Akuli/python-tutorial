@@ -5,7 +5,7 @@ places to ask for help in.
 
 ## IRC
 
-IRC is the oldest chatting service I know, but as of 2016, it's still
+IRC is the oldest chatting service I know, but as of 2017, it's still
 in use, and a great way to get help in Python. You don't need to
 register anywhere, just click one of the links below and you're good to
 go.
