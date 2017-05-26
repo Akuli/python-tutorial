@@ -381,7 +381,13 @@ while True:
     option = input("Choose an option: ")
 
     # Things like option == 0 don't work because option is a string
-    # and it needs to be compared with a string.
+    # and it needs to be compared with a string:
+    #   >>> 0 == 0
+    #   True
+    #   >>> '0' == '0'
+    #   True
+    #   >>> 0 == '0'
+    #   False
     if option == '0':
         print("Bye!")
         break
