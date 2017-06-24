@@ -158,7 +158,12 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 ## Lists and tuples
 
-1. When we run the program we get a weird error:
+1.  Look carefully. The `namelist` is written in `()` instead of `[]`,
+    so it's actually a tuple, not a list. Using confusing variable names
+    is of course a bad idea, but you shouldn't be surprised if someone
+    is doing that. Replace the `()` with `[]` and the code will work.
+
+2. When we run the program we get a weird error:
 
         Hello!
         Enter your name: my name
@@ -189,7 +194,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     Python created a tuple automatically, but that's not what we
     wanted. If we remove the comma, everything works just fine.
 
-2. Again, the code gives us a weird error message.
+3. Again, the code gives us a weird error message.
 
         Enter your name: my name
         Traceback (most recent call last):
