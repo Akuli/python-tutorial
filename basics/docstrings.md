@@ -150,7 +150,9 @@ def do_hello():
 
 Then we can import it and call help on it:
 
-```python
+[comment]: # (github screws up syntax highlighting here)
+
+```
 >>> import test
 >>> help(test)
 Help on module testie:

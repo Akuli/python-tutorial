@@ -111,10 +111,10 @@ Dictionaries have some similarities with lists. For example, both
 lists and dictionaries have a length.
 
 ```python
->>> len(names_and_pets)     # contains two elements
-2
->>> len(favorite_pets)    # contains two key:value pairs
-2
+>>> len(names_and_pets)     # contains three elements
+3
+>>> len(favorite_pets)    # contains three key:value pairs
+3
 >>>
 ```
 
