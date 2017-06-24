@@ -398,5 +398,5 @@ star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 You may use this tutorial freely at your own risk. See
 [LICENSE](../LICENSE).
 
-[Previous](../basics/classes.md) | [Next](functions.md) |
+[Previous](../basics/docstrings.md) | [Next](functions.md) |
 [List of contents](../README.md#advanced)
