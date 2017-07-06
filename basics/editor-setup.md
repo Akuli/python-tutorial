@@ -34,10 +34,10 @@ Note that most other editors come with settings that are not suitable
 for writing Python code. _**TODO:** add a link to the old editor setup
 tutorial here._
 
-Most of these editors are lacking some important features, they have so
-many features that they would confuse you or they aren't free. You can
-use these editors if you like them, but in my experience **these editors
-are BAD for getting started with programming**:
+Most of these editors lack some important features, they have so many
+features that confuse people or they aren't free. You can use these
+editors if you like them, but **these editors are BAD for getting
+started with programming**:
 
 - PyCharm
 - IDLE
