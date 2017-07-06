@@ -36,17 +36,17 @@ tutorial here._
 
 Most of these editors are lacking some important features, they have so
 many features that they would confuse you or they aren't free. You can
-use these editors if you like them, but **I dont recommend these editors
-for getting started with programming**:
+use these editors if you like them, but in my experience **these editors
+are BAD for getting started with programming**:
 
+- PyCharm
+- IDLE
 - Emacs
 - Gedit
-- IDLE
 - Nano
 - NetBeans
 - Notepad
 - Pluma
-- PyCharm
 - Spyder
 - Vim
 - Wingware
