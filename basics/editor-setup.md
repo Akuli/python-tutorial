@@ -28,11 +28,11 @@ files and it doesn't have too many other featues. [Install it with these
 instructions](https://github.com/Akuli/porcupine/wiki/Installing-and-Running-Porcupine),
 and then [learn to use it by writing the classic Hello World
 program](https://github.com/Akuli/porcupine/wiki/First-Program). Then
-you can [skip the rest of this chapter](TODO).
+you can [skip the rest of this chapter](#editor-or--prompt).
 
 Note that most other editors come with settings that are not suitable
-for writing Python code. **TODO:** *add a link to the old editor setup
-tutorial here*
+for writing Python code. _**TODO:** add a link to the old editor setup
+tutorial here._
 
 Most of these editors are lacking some important features, they have so
 many features that they would confuse you or they aren't free. You can
