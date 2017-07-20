@@ -13,6 +13,8 @@ text displaying function = print
 text asking function = input
 ```
 
+**Save this example file to questions.txt**, we'll need it later.
+
 This might seem useless to you right now, but a program like this can
 actually be really useful for learning different kinds of things. I
 originally wrote a program like this to study words of a foreign
