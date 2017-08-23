@@ -139,7 +139,7 @@ Note that a `#` inside a string doesn't create a comment.
 ## Using Python as a calculator
 
 ```diff
----------- WARNING: This part contains boring math. Be careful! ----------
+---------- WARNING: This part contains boring math. Proceed with caution. ----------
 ```
 
 Let's type some math stuff into Python and see what it does.
