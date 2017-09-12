@@ -47,8 +47,8 @@ That worked. How about numbers?
 
 There we go, it echoes them back.
 
-In some countries, decimal numbers are written with a comma, like `3,14`
-instead of `3.14`. Maybe Python knows that?
+In some countries, decimal numbers are written like `3,14` instead of
+`3.14`. Maybe Python knows that?
 
 ```python
 >>> 3,14
@@ -60,11 +60,24 @@ We didn't get an error... but `(3, 14)` is not at all what we expected!
 So from now on, let's use a dot with decimal numbers, because `3.14`
 worked just fine. Later we'll learn what `(3, 14)` is.
 
+Python also supports simple math:
+
+```python
+>>> 3 + 2
+5
+>>> 3 - 2
+1
+>>> 3 * 2
+6
+>>> 3 / 2
+1.5
+>>> 
+```
+
 ## Comments
 
-**Comments are text that does nothing.** They can be created by typing a
-`#` and then some text after it, and they are useful when our code would
-be hard to understand without them.
+**Comments are text that does nothing.** Everything after a `#` is ignored.
+Like this:
 
 ```python
 >>> 1 + 2     # can you guess what the result is?
@@ -72,13 +85,10 @@ be hard to understand without them.
 >>>
 ```
 
-Again, I put a space after the `#` and multiple spaces before it just to
-make things easier to read.
+Comments are useful for explaining something to people reading the code.
 
-If we write a comment on a line with no code on it, the prompt changes
-from `>>>` to `...`. To be honest, I have no idea why it does that and I
-think it would be better if it would just stay as `>>>`. The prompt goes
-back to `>>>` when we press Enter again.
+The interactive prompt does this if you enter a comment on a line with
+nothing else on it:
 
 ```python
 >>> # hello there
@@ -86,39 +96,34 @@ back to `>>>` when we press Enter again.
 >>>
 ```
 
+I have no idea why this happens and I think it would be better if the
+prompt would just stay as `>>>`. Press Enter twice to get the prompt
+back to `>>>`.
+
 ## Strings
 
 Strings are small pieces of text that we can use in our programs. We can
-create strings by simply writing some text in quotes.
+create strings like this:
 
 ```python
 >>> 'hello'
 'hello'
 >>> 'this is a test'
 'this is a test'
->>> 
+>>> 'string with a # in it'
+'string with a # in it'
+>>> 'test'
+'test'
+>>> "test"
+'test'
 ```
 
-Strings can also be written with "double quotes" instead of 'single
-quotes'. This is useful when we need to put quotes inside the string.
+It doesn't matter if you use 'single quotes' or "double quotes". Python
+prefers single quotes when displaying strings to us, but it understands
+both quote styles. Double quotes are useful for strings that contain
+single quotes, like `"it's weird"`.
 
-```python
->>> "hello there"
-'hello there'
->>> "it's sunny"
-"it's sunny"
->>> 
-```
-
-It's also possible to add single quotes and double quotes into the same
-string, but most of the time we don't need to do that so I'm not going
-to talk about it now.
-
-It doesn't matter which quotes you use when the string doesn't need to
-contain any quotes. If you think that one of the quote types looks nicer
-than the other or you find it faster to type, go ahead and use that.
-
-Strings can be joined together easily with `+` or repeated with `*`:
+You can also do this:
 
 ```python
 >>> "hello" + "world"
@@ -127,75 +132,6 @@ Strings can be joined together easily with `+` or repeated with `*`:
 'hellohellohello'
 >>> 
 ```
-
-Note that a `#` inside a string doesn't create a comment.
-
-```python
->>> "strings can contain # characters"
-'strings can contain # characters'
->>> 
-```
-
-## Using Python as a calculator
-
-```diff
----------- WARNING: This part contains boring math. Proceed with caution. ----------
-```
-
-Let's type some math stuff into Python and see what it does.
-
-```python
->>> 17 + 3
-20
->>> 17 - 3
-14
->>> 17 * 3
-51
->>> 17 / 3
-5.666666666666667
->>>
-```
-
-It's working, Python just calculates the result and echoes it back.
-
-I added a space on both sides of `+`, `-`, `*` and `/`. Everything would
-work without those spaces too:
-
-```python
->>> 4 + 2 + 1
-7
->>> 4+2+1
-7
->>>
-```
-
-However, I recommend always adding the spaces because they make the code
-easier to read.
-
-Things are calculated in the same order as in math. The parentheses `(`
-and `)` also work the same way.
-
-```python
->>> 1 + 2 * 3        # 2 * 3 is calculated first
-7
->>> (1 + 2) * 3      # 1 + 2 is calculated first
-9
->>>
-```
-
-You can also leave out spaces to show what's calculated first. Python
-ignores it, but our code will be easier to read for people.
-
-```python
->>> 1 + 2*3         # now it looks like 2*3 is calculated first
-7
->>>
-```
-
-Python also supports many other kinds of calculations, but most of the
-time you don't need them. Actually you don't need even these
-calculations most of the time, but these calculations are probably
-enough when you need to calculate something.
 
 ## Summary
 
