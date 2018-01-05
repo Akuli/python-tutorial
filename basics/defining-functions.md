@@ -177,20 +177,16 @@ However, modifying a global variable in-place from a function is easy.
 >>>
 ```
 
-This doesn't work if the value is of an immutable type, like string or
-integer because immutable values cannot be modified in-place.
-Fortunately, Python will tell us if something's wrong.
+This only works for changing in-place, we cannot assign a new value to
+the variable.
 
 ```python
->>> thing = 1
->>> def stuff():
-...     thing += 1
+>>> def set_stuff_to_something_new():
+...     stuff = ['more local stuff']
 ...
->>> stuff()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 2, in stuff
-UnboundLocalError: local variable 'thing' referenced before assignment
+>>> set_stuff_to_something_new()
+>>> stuff
+['global stuff', 'local stuff']
 >>>
 ```
 
@@ -261,10 +257,6 @@ This function can be called in two ways:
     just a small style detail that Python programmers like to do
     because `message = "hi"` and `some_function(message="hi")` do two
     completely different things.
-
-Personally, I would use this function with a positional argument. It
-only takes one argument, so I don't need to worry about which argument
-is which.
 
 Now it's time to solve our box printing problem:
 

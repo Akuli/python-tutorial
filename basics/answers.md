@@ -66,7 +66,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```python
     no_space = input("Enter a word: ")
     yes_space = no_space + " "
-    print(yes_space * 999 + no_space)
+    print(yes_space*999 + no_space)
     ```
 
 5. Like this:
@@ -79,12 +79,12 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```
 
 6. We can compare the word against an empty string (`""` or `''`) to
-    check if it's empty. In this example, the password is "s3cr3t".
+    check if it's empty. In this example, the password is "seKr3t".
 
     ```python
     word = input("Enter your password: ")
 
-    if word == "s3cr3t":
+    if word == "seKr3t":
         print("Welcome!")
     elif word == "":
         print("You didn't enter anything.")
@@ -92,8 +92,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print("Access denied.")
     ```
 
-    This is not a good way to ask a password from the user because the
-    password isn't hidden in any way, but this is just an example.
+    Again, this is not a good way to ask a real password from the user.
 
 ## Handy stuff: Strings
 
@@ -219,7 +218,8 @@ isn't exactly like mine but it works just fine it's ok, and you can
     problems and solutions:
 
     - `namelist` is None. It should be `namelist.extend('theelous3')`,
-        not `namelist = namelist.extend('theelous3')`.
+        not `namelist = namelist.extend('theelous3')`. See [this
+        thing](using-functions.md#return-values).
     - Now the namelist is like `['wub_wub', ..., 't', 'h', 'e', 'e', ...]`.
         Python treated `'theelous3'` like a list so it added each of its
         characters to `namelist`. We can use `namelist.append('theelous3')`
