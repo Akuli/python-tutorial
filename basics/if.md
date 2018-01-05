@@ -245,7 +245,20 @@ else:
 Now the `else` belongs to the `if 1 == 2` part and **it has nothing to
 do with the `if 1 == 1` part**. On the other hand, the elif version
 **grouped the multiple ifs together** and the `else` belonged to all of
-them.
+them. Adding a blank line makes this obvious:
+
+```python
+if 1 == 1:
+    print("hello")
+
+if 1 == 2:
+    print("this is weird")
+else:
+    print("world")
+```
+
+In general, adding blank lines to appropriate places is a good idea. If
+you are asked to "fix code", feel free to add missing blank lines.
 
 ## Summary
 
@@ -276,6 +289,7 @@ them.
     something = input("Enter something: ")
     if something = 'hello':
         print("Hello for you too!")
+
     elif something = 'hi'
         print('Hi there!')
     else:
