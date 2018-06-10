@@ -61,7 +61,7 @@ favorite_pets = {
 ```
 
 Here `'horusr'` and `'caisa64'` are **keys** in the dictionary, and
-`'cats'` and `'cats and docs'` are their **values**. Dictionaries are
+`'cats'` and `'cats and dogs'` are their **values**. Dictionaries are
 often named by their values. This dictionary has favorite pets as its
 values so I named the variable `favorite_pets`.
 
