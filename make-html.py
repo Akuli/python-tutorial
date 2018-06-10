@@ -39,11 +39,16 @@ import webbrowser
 try:
     import mistune
 except ImportError:
+    import platform
+    if platform.system() == 'Windows':
+        python = 'py'
+    else:
+        python = 'python3'
     print("mistune isn't installed.", file=sys.stderr)
-    print("You can install it like this:")
+    print("You can install it by running this command on a terminal or ")
+    print("command prompt:")
     print()
-    print(">>> import pip")
-    print(">>> pip.main(['install', '--user', 'mistune'])")
+    print("    %s -m pip install --user mistune" % python)
     sys.exit(1)
 
 try:
