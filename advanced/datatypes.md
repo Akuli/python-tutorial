@@ -4,7 +4,7 @@
    work because they're not as simple as the things that are here and i
    don't actually use them that much)
 
-Now we know how to ues lists, tuples and dictionaries. They are commonly
+Now we know how to use lists, tuples and dictionaries. They are commonly
 used data types in Python, and there's nothing wrong with them. In this
 chapter we'll learn more data types that make some things easier. You
 can always do everything with lists and dictionaries, but these data

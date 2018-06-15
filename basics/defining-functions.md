@@ -468,7 +468,7 @@ None
 ```
 
 The `print(say_hi())` thing looks a bit weird at first, but it's easy to
-understand. There's a print insnde `say_hi` and there's also the print
+understand. There's a print inside `say_hi` and there's also the print
 we just wrote, so two things are printed. Python first ran `say_hi()`,
 and it returned None so Python did `print(None)`. Adding an extra
 `print()` around a function call is actually a common mistake, and I
