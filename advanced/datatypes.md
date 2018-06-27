@@ -1,8 +1,8 @@
 # Handy data types in the standard library
 
-[](this doesn't explain how dict.setdefault and collections.defaultdict)
-[](work because they're not as simple as the things that are here and i)
-[](don't actually use them that much)
+[comment]: # (this doesn't explain how dict.setdefault and collections.defaultdict)
+[comment]: # (work because they're not as simple as the things that are here and i)
+[comment]: # (don't actually use them that much)
 
 Now we know how to use lists, tuples and dictionaries. They are commonly
 used data types in Python, and there's nothing wrong with them. In this
