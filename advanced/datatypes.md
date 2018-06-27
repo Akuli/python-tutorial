@@ -65,7 +65,7 @@ class](../basics/classes.md#what-are-classes).
 >>>
 ```
 
-When we did `set('hello')` we lost one `h` and the set ended up in a
+When we did `set('hello')` we lost one `l` and the set ended up in a
 different order because sets don't contain duplicates or keep track of
 their order.
 
