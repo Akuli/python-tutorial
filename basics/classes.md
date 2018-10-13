@@ -304,7 +304,7 @@ Free to use: True
 It's working. The `self` argument in `Website.info` was `github`.
 You could call it something else too such as `me`, `this` or `instance`,
 but use `self` instead. Other Python users have gotten used to it, and
-the official style guide recommens it also.
+the official style guide recommends it also.
 
 We still need to set `url`, `founding_year` and `free_to_use` manually.
 Maybe we could add a method to do that?
