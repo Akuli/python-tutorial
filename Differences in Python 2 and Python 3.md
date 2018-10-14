@@ -1,4 +1,4 @@
-##Differences Between Python 2 and Python 3
+## Differences Between Python 2 and Python 3
 
 |Sn|Python 2|Python 3|
 |:-|:-------|:-------|
