@@ -173,6 +173,7 @@ it causes a type error.
 >>> a -= 3
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 >>>
+```
 
 
 Now we also understand why typing hello to the prompt didn't work in
