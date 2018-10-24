@@ -426,7 +426,7 @@ while True:
 
 ## Exercises
 
-1. This code is supposed to print each number between 1 and 5. Fix it.
+1. This code is supposed to print the numbers 1,2,3,4,5. Fix it.
 
     ```python
     things = str([1, 2, 3, 4, 5])
