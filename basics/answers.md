@@ -436,9 +436,11 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
 ## More Classes
 
-1. Delete all global variables, and use arguments and return values. We also
-   need to handle the `len(words) == 0` case differently, and returning `None`
-   makes sense now.
+1. Delete the `global` everywhere, and add arguments and return values until
+   the code works.
+
+    We also need to handle the `len(words) == 0` case differently, and returning
+    `None` makes sense now.
 
     ```python
     import random

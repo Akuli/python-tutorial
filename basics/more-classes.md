@@ -14,10 +14,10 @@ for a reason. Let's look at this:
 
 ```python
 >>> stuff = 1
->>> def set_stuff():
+>>> def thingy():
 ...     stuff = 2
 ... 
->>> set_stuff()
+>>> thingy()
 >>> stuff   # this did NOT change to 2
 1
 >>> 
@@ -25,8 +25,8 @@ for a reason. Let's look at this:
 
 The problem is that `stuff` is a
 [local variable](defining-functions.md#locals-and-globals) inside the
-`set_stuff` function. There are actually two variables called `stuff`; the
-local `stuff` in `set_stuff`, and the global `stuff`:
+`thingy` function. There are actually two variables called `stuff`; the
+local `stuff` in `thingy`, and the global `stuff`:
 
 ![Global scope: stuff = 1. Local scope inside global scope: stuff = 2.](../images/stuff-global-and-local.png)
 
@@ -35,7 +35,7 @@ Of course, this is bad style because it's very confusing. To fix this, you
 see below):
 
 ```python
-def set_stuff():
+def thingy():
     global stuff
     stuff = 2
 ```
@@ -233,9 +233,9 @@ def validate_user_info():
     try:
         if int(room_number) <= 0:
             # room_number is '0', or negative (e.g. '-2')
-            return "room number is negative"
+            return "room number must be positive"
     except ValueError:
-        # int() failed, room_number is e.g. 'lol'
+        # int(room_number) failed, room_number is e.g. 'lol'
         return "room number is not an integer"
 
     if ' ' in user_name:
@@ -419,7 +419,7 @@ you can import it and try out all the things as usual, and figure out what's
 wrong:
 
 ```python
->>> import userinfo
+>>> import userinfo     # save the program to userinfo.py
 >>> info = userinfo.UserInfo('a', 'b', 'lol', '123-456-7890', '123-456-7890')
 >>> info
 <userinfo.UserInfo object at 0x7fd110f8ac88>
