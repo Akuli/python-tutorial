@@ -50,7 +50,8 @@ to learn more about whatever you want after studying it.
 18. [Modules](basics/modules.md)
 19. [Exceptions](basics/exceptions.md)
 20. [Classes](basics/classes.md)
-21. [Docstrings](basics/docstrings.md)
+21. [More Classes](basics/more-classes.md)
+22. [Docstrings](basics/docstrings.md)
 
 ### Advanced
 

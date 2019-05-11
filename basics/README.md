@@ -26,7 +26,8 @@ to learn more about whatever you want after studying it.
 18. [Modules](modules.md)
 19. [Exceptions](exceptions.md)
 20. [Classes](classes.md)
-21. [Docstrings](docstrings.md)
+21. [More Classes](more-classes.md)
+22. [Docstrings](docstrings.md)
 
 ***
 

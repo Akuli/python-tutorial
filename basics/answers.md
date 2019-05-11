@@ -433,6 +433,114 @@ isn't exactly like mine but it works just fine it's ok, and you can
     >>>
     ```
 
+
+## More Classes
+
+1. Delete all global variables, and use arguments and return values. We also
+   need to handle the `len(words) == 0` case differently, and returning `None`
+   makes sense now.
+
+    ```python
+    import random
+
+
+    # returns None if the sentence contains 0 words
+    def change_words_order(sentence):
+        no_dots_sentence = sentence.replace('.', '')
+        words = no_dots_sentence.split()
+        if len(words) == 0:
+            return None
+
+        lowercase_words = []
+        for word in words:
+            lowercase_words.append(word.lower())
+        random.shuffle(lowercase_words)
+
+        # in lowercase_words[0], first character uppercase, rest lowercase
+        # note that empty_list_or_empty_string[0] doesn't work
+        # lowercase_words is not empty because len(words) == 0 was handled separately
+        # lowercase_words[0] is not empty because it came from .split()
+        lowercase_words[0] = lowercase_words[0][0].upper() + lowercase_words[0][1:]
+        return ' '.join(lowercase_words) + '.'
+
+
+    def main():
+        print("This program changes the order of the words of a sentence randomly.")
+        print()
+
+        while True:
+            sentence = input('Enter a sentence: ')
+            new_sentence = change_words_order(sentence)
+            if new_sentence is not None:
+                print(new_sentence)
+
+    if __name__ == '__main__':
+        main()
+    ```
+
+2. This answer doesn't contain any code because I haven't seen your
+   program, and I don't know what your program does. You can
+   [show your program to me](../contact-me.md) if you want to.
+
+    If your program is short, the cleaned program that uses arguments and
+    return values is probably cleaner.
+
+3. See 2.
+
+4. One way is to replace all the allowed characters with empty strings (delete
+   them), and see what is left. Of course, add `import string` to the beginning
+   of the program.
+
+    ```python
+    bad_characters = user_name
+    for good_character in (string.ascii_letters + string.digits + '-'):
+        bad_characters = bad_characters.replace(good_character, '')
+
+    if bad_characters != '':
+        return "Username must not contain these characters: " + bad_characters
+    ```
+
+    For phone numbers, you need to decide how they have to be entered. The code
+    below accepts `xxx-xxx-xxxx`, where each `x` means a digit. The code ended
+    up being quite long, so I put it to a separate function.
+
+    I'm assuming that all phone numbers are 10 digits long. This is probably
+    wrong, and in a real program you should instead figure out what's the
+    correct way to validate a phone number, or find someone else's code that
+    does it correctly and use that.
+
+    ```python
+    def validate_phone_number(phone_number):
+        # split 'xxx-yyy-zzzz' to ['xxx', 'yyy', 'zzzz']
+        parts = phone_number.split('-')
+        if len(parts) != 3:
+            return False
+        if len(parts[0]) != 3 or len(parts[1]) != 3 or len(parts[2]) != 4:
+            return False
+
+        for part in parts:
+            for character in part:
+                if character not in string.digits:
+                    return False
+
+        return True
+    ```
+
+    Now you can use this function like this:
+
+    ```python
+    if not validate_phone_number(self.work_phone_number):
+        return "work phone number must be entered as xxx-xxx-xxxx"
+    if not validate_phone_number(self.personal_phone_number):
+        return "personal phone number must be entered as xxx-xxx-xxxx"
+    ```
+
+    It's also important to tell the user how to enter the phone numbers.
+    For example, you can replace `input("Work phone number: ")` with
+    `input("Work phone number (xxx-xxx-xxxx, each x is a digit): ")` or
+    something like that.
+
+
 ***
 
 If you have trouble with this tutorial please [tell me about
