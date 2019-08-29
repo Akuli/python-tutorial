@@ -1,7 +1,7 @@
 # Setting up an editor for programming
 
 An editor is a program that lets us write longer programs than we can
-write on the `>>>` prompt. Then we can save the programs to files and
+write on the `>>>` prompt. With an editor we can save the programs to files and
 run them as many times as we want without writing them again.
 
 When programmers say "editor" they don't mean programs like Microsoft
@@ -9,7 +9,8 @@ Word or LibreOffice/OpenOffice Writer. These programs are for writing
 text documents, not for programming. **Programming editors don't support
 things like bigger font sizes for titles or underlining bits of text**,
 but instead they have features that are actually useful for programming,
-like automatically displaying different things with different colors.
+like automatically displaying different things with different colors,
+but also highlighting mistakes in the code, and coloring syntax.
 
 If you are on Windows or Mac OSX you have probably noticed that your
 Python came with an editor called IDLE. We are not going to use it

@@ -86,8 +86,9 @@ Variable names are case-sensitive, like many other things in Python.
 ```
 
 There are also words that cannot be used as variable names
-because they have a special meaning. They are called **keywords**, and
-we can run `help('keywords')` to see the full list if we want to.
+because they are reserved by Python itself and have a special meaning. 
+They are called **keywords**, and we can run `help('keywords')` 
+to see the full list if we want to.
 We'll learn to use most of them later in this tutorial. Trying to use a
 keyword as a variable name causes a syntax error.
 
