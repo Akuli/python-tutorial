@@ -62,9 +62,9 @@ worked just fine. Later we'll learn what `(3, 14)` is.
 
 ## Comments
 
-**Comments are text that does nothing.** They can be created by typing a
-`#` and then some text after it, and they are useful when our code would
-be hard to understand without them.
+**Comments are text that don't do anything when they're run.** 
+They can be created by typing a `#` and then some text after it, 
+and they are useful when our code would be hard to understand without them.
 
 ```python
 >>> 1 + 2     # can you guess what the result is?
