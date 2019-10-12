@@ -141,6 +141,17 @@ We'll talk more about loops [in the next chapter](loops.md).
 >>>
 ```
 
+Another useful things about list is **comprehension**.
+**Comprehension** is a way to loop the list in single line. It makes our code more pythonic.
+
+```python
+>>> numbers = [1,2,3,4,5]
+>>> numbers_squared = [ number ** 2 for number in numbers ]
+>>> numbers_squared
+[1, 4, 9, 16, 25]
+>>>
+```
+
 We can also use slicing and indexing to change the content:
 
 ```python
