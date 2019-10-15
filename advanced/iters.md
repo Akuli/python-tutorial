@@ -246,6 +246,25 @@ while True:
     print(thing)
 ```
 
+## Checking if object is iterable or not
+
+There is an easy way of checking if an object in python is iterable or not. The following code will do the needful.
+```python
+>>> def check(A):
+...     try:
+...         st = iter(A)
+...         print('yes')
+...     except TypeError:
+...         print('no')
+...
+>>> check(25)
+no
+>>> check([25,35])
+yes
+>>>
+```
+Here you can observe that the 25 is an integer, so it is not iterable, but [25,35] is a list which is iterable so it outputs no and yes respectively.
+
 ## Generators
 
 It's possible to create a custom iterator with a class that defines an
@@ -442,7 +461,6 @@ does the same thing as our `count()`.
   generator runs it to the next yield and gives us the value it yielded.
 - [The itertools module](https://docs.python.org/3/library/itertools.html)
   contains many useful iterator-related things.
-
 ***
 
 If you have trouble with this tutorial please [tell me about
