@@ -142,11 +142,23 @@ We'll talk more about loops [in the next chapter](loops.md).
 ```
 
 Another useful things about list is **comprehension**.
-**Comprehension** is a way to loop the list in single line. It makes our code more pythonic.
+**Comprehension** is a way to construct a list in single line. It makes our code more clean, shorter and easier to read.
 
 ```python
 >>> numbers = [1,2,3,4,5]
 >>> numbers_squared = [ number ** 2 for number in numbers ]
+>>> numbers_squared
+[1, 4, 9, 16, 25]
+>>>
+```
+
+without comprehension:
+
+```python
+>>> numbers = [1,2,3,4,5]
+>>> numbers_squared = []
+>>> for number in numbers:
+...     numbers_squared.append(number**2)
 >>> numbers_squared
 [1, 4, 9, 16, 25]
 >>>
