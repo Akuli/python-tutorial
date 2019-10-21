@@ -121,6 +121,132 @@ It's recommended to always use `"""strings like this"""` for docstrings,
 even if the docstring is only one line long. This way it's easy to add
 more stuff to it later.
 
+## Popular Docstrings Format
+
+There might be different documentation strings available. You need not need to worry about the fact that you have to reinvent the wheel to study all. The formats of all the Documentation strings are nearly similar. The patterns are similar, but there are only nitty-gritty changes in each format.
+
+##### 1) Sphinx Style :
+
+Sphinx is the easy and traditional style, verbose and was initially created specifically for the Python Documentation. Sphinx uses a reStructuredText which is similar in usage to Markdown.
+
+```python
+class Vehicle(object):
+    '''
+    The Vehicle object contains lots of vehicles
+    :param arg: The arg is used for ...
+    :type arg: str
+    :param `*args`: The variable arguments are used for ...
+    :param `**kwargs`: The keyword arguments are used for ...
+    :ivar arg: This is where we store arg
+    :vartype arg: str
+    '''
+
+
+    def __init__(self, arg, *args, **kwargs):
+        self.arg = arg
+
+    def cars(self, distance, destination):
+        '''We can't travel a certain distance in vehicles without fuels, so here's the fuels
+
+        :param distance: The amount of distance traveled
+        :type amount: int
+        :param bool destinationReached: Should the fuels be refilled to cover required distance?
+        :raises: :class:`RuntimeError`: Out of fuel
+
+        :returns: A Car mileage
+        :rtype: Cars
+        '''  
+        pass
+
+```
+
+##### 2) Google Style :
+Google Style is easier and more intuitive to use. It can be used for the shorter form of documentation. A configuration of python file needs to be done to get started, so you need to add either sphinx.ext.napoleon or sphinxcontrib.napoleon to the extensions list in conf.py.
+
+```python
+class Vehicles(object):
+    '''
+    The Vehicle object contains a lot of vehicles
+
+    Args:
+        arg (str): The arg is used for...
+        *args: The variable arguments are used for...
+        **kwargs: The keyword arguments are used for...
+
+    Attributes:
+        arg (str): This is where we store arg,
+    '''
+
+    def __init__(self, arg, *args, **kwargs):
+        self.arg = arg
+
+    def cars(self, distance,destination):
+        '''We can't travel distance in vehicles without fuels, so here is the fuels
+
+        Args:
+            distance (int): The amount of distance traveled
+            destination (bool): Should the fuels refilled to cover the distance?
+
+        Raises:
+            RuntimeError: Out of fuel
+
+        Returns:
+            cars: A car mileage
+        '''
+        pass
+
+```
+
+##### 3) Numpy Style :
+
+Numpy style has a lot of details in the documentation. It is more verbose than other documentation, but it is an excellent choice if you want to do detailed documentation, i.e., extensive documentation of all the functions and parameters.
+
+```python
+class Vehicles(object):
+    '''
+    The Vehicles object contains lots of vehicles
+
+    Parameters
+    ----------
+    arg : str
+        The arg is used for ...
+    *args
+        The variable arguments are used for ...
+    **kwargs
+        The keyword arguments are used for ...
+
+    Attributes
+    ----------
+    arg : str
+        This is where we store arg,
+    '''
+
+    def __init__(self, arg, *args, **kwargs):
+        self.arg = arg
+
+    def cars(self, distance, destination):
+        '''We can't travel distance in vehicles without fuels, so here is the fuels
+
+        Parameters
+        ----------
+        distance : int
+            The amount of distance traveled
+        destination : bool
+            Should the fuels refilled to cover the distance?
+
+        Raises
+        ------
+        RuntimeError
+            Out of fuel
+
+        Returns
+        -------
+        cars
+            A car mileage
+        '''
+        pass
+```
+
 ## Documenting other stuff
 
 Docstrings aren't actually limited to functions. You can use them for
