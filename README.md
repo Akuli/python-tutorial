@@ -59,7 +59,7 @@ section. Most of the techniques explained here are great when you're
 working on a large project, and your code would be really repetitive
 without these things.
 
-You can experient with these things freely, but please **don't use these
+You can experiment with these things freely, but please **don't use these
 techniques just because you know how to use them.** Prefer the simple
 techniques from the Basics part instead when possible. Simple is better
 than complex.

@@ -104,7 +104,7 @@ should you do if you have a problem with the tutorial?
 1. Try the example code yourself.
 2. Read the code and the explanation for it again.
 3. If there's something you haven't seen before in the tutorial and it's
-    not explained, try to find it from the previous chapters.
+    not explained, try to find it in the previous chapters.
 4. If you can't find what you're looking for or you still have trouble
    understanding the tutorial or any other problems with the tutorial,
    please [tell me about it](../contact-me.md). I want to improve this
