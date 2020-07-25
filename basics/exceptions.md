@@ -319,7 +319,7 @@ it's usually better to use `sys.stderr` and `sys.exit`.
 ## Exception hierarchy
 
 Exceptions are organized like this. I made this tree with [this
-program](https://github.com/Akuli/classtree/) on Python 3.4. You may
+program](https://github.com/Akuli/classtree/) on Python 3.7. You may
 have more or less exceptions than I have if your Python is newer or
 older than mine, but they should be mostly similar.
 
@@ -333,6 +333,7 @@ older than mine, but they should be mostly similar.
     ├── BufferError
     ├── EOFError
     ├── ImportError
+    │   └── ModuleNotFoundError
     ├── LookupError
     │   ├── IndexError
     │   └── KeyError
@@ -357,7 +358,9 @@ older than mine, but they should be mostly similar.
     │   └── TimeoutError
     ├── ReferenceError
     ├── RuntimeError
-    │   └── NotImplementedError
+    │   ├── NotImplementedError
+    │   └── RecursionError
+    ├── StopAsyncIteration
     ├── StopIteration
     ├── SyntaxError
     │   └── IndentationError

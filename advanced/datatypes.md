@@ -316,68 +316,25 @@ TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
 >>>
 ```
 
-Dictionaries have an `update` method that adds everything from another
-dictionary into it. So we can merge dictionaries like this:
+Usually it's easiest to do this:
+
+```python
+>>> dict1 = {'a': 1, 'b': 2}
+>>> dict2 = {'c': 3}
+>>> {**dict1, **dict2}
+{'a': 1, 'b': 2, 'c': 3}
+```
+
+Dictionaries also have an `update` method that adds everything from another
+dictionary into it, and you can use that too. This was the most common way to
+do it before Python supported `{**dict1, **dict2}`.
 
 ```python
 >>> merged = {}
 >>> merged.update({'a': 1, 'b': 2})
 >>> merged.update({'c': 3})
 >>> merged
-{'c': 3, 'b': 2, 'a': 1}
->>>
-```
-
-Or we can [write a function](../basics/defining-functions.md) like this:
-
-```python
->>> def merge_dicts(dictlist):
-...     result = {}
-...     for dictionary in dictlist:
-...         result.update(dictionary)
-...     return result
-...
->>> merge_dicts([{'a': 1, 'b': 2}, {'c': 3}])
-{'c': 3, 'b': 2, 'a': 1}
->>>
-```
-
-Kind of like counting things, merging dictionaries is also a commonly
-needed thing and there's a class just for it in the `collections`
-module. It's called ChainMap:
-
-```python
->>> import collections
->>> merged = collections.ChainMap({'a': 1, 'b': 2}, {'c': 3})
->>> merged
-ChainMap({'b': 2, 'a': 1}, {'c': 3})
->>>
-```
-
-Our `merged` is kind of like the Counter object we created earlier. It's
-not a dictionary, but it behaves like a dictionary.
-
-```python
->>> for key, value in merged.items():
-...     print(key, value)
-...
-c 3
-b 2
-a 1
->>> dict(merged)
-{'c': 3, 'b': 2, 'a': 1}
->>>
-```
-
-Starting with Python 3.5 it's possible to merge dictionaries like this.
-**Don't do this unless you are sure that no-one will need to run your
-code on Python versions older than 3.5.**
-
-```python
->>> first = {'a': 1, 'b': 2}
->>> second = {'c': 3, 'd': 4}
->>> {**first, **second}
-{'d': 4, 'c': 3, 'a': 1, 'b': 2}
+{'a': 1, 'b': 2, 'c': 3}
 >>>
 ```
 

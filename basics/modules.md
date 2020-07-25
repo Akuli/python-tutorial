@@ -28,17 +28,17 @@ gave us?
 
 ```python
 >>> random
-<module 'random' from '/usr/lib/python3.4/random.py'>
+<module 'random' from '/usr/lib/python3.7/random.py'>
 >>>
 ```
 
 So it's a module, and it comes from a path... but what does
 all that mean?
 
-Now open the folder that contains your `random.py` is. On my
-system it's `/usr/lib/python3.4`, but yours will probably be
+Now open the folder that contains your `random.py`. On my
+system it's `/usr/lib/python3.7`, but yours will probably be
 different. To open a folder in your file manager you can press
-Windows-R on Windows or Alt+F2 on most GNU/Linux distributions,
+Windows-R on Windows or Alt+F2 on most Linux distributions,
 and just type your path there. I don't have an up-to-date copy
 of OSX so unfortunately I have no idea what you need to do on
 OSX.
@@ -138,11 +138,11 @@ places that modules are searched from:
 <module 'sys' (built-in)>
 >>> sys.path
 ['',
- '/usr/lib/python3.4',
- '/usr/lib/python3.4/plat-i386-linux-gnu',
- '/usr/lib/python3.4/lib-dynload',
- '/home/akuli/.local/lib/python3.4/site-packages',
- '/usr/local/lib/python3.4/dist-packages',
+ '/usr/lib/python37.zip',
+ '/usr/lib/python3.7',
+ '/usr/lib/python3.7/lib-dynload',
+ '/home/akuli/.local/lib/python3.7/site-packages',
+ '/usr/local/lib/python3.7/dist-packages',
  '/usr/lib/python3/dist-packages']
 >>>
 ```
@@ -234,9 +234,9 @@ hello
 >>>
 >>> # information about Python's version, behaves like a tuple
 >>> sys.version_info
-sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
->>> sys.version_info[:3]  # this is Python 3.4.2
-(3, 4, 2)
+sys.version_info(major=3, minor=7, micro=3, releaselevel='final', serial=0)
+>>> sys.version_info[:3]  # this is Python 3.7.3
+(3, 7, 3)
 >>>
 >>> sys.exit()  # exit out of Python
 ```
