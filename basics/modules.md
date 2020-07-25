@@ -241,7 +241,7 @@ sys.version_info(major=3, minor=7, micro=3, releaselevel='final', serial=0)
 >>> sys.exit()  # exit out of Python
 ```
 
-**TODO:** why stderr instead of stdout.
+**TODO:** why stderr instead of stdout, when to use `sys.stdin.readline()` instead of `input()`
 
 `sys.exit()` does the same thing as `sys.exit(0)`. The zero means that
 the program succeeded, and everything's fine. If our program has an
@@ -461,17 +461,14 @@ then typing in what you want to search for.
 - [webbrowser](https://pymotw.com/3/webbrowser/):
     open a web browser from Python
 
-I also use these modules, but they don't come with Python so you'll
-need to install them yourself if you want to use them:
-
-- [appdirs](https://github.com/activestate/appdirs):
-    an easy way to find out where to put setting files
-- [requests](http://docs.python-requests.org/en/master/user/quickstart/):
-    an awesome networking library
+There are also lots of awesome modules that don't come with Python.
+You can search for those on the [Python package index](https://pypi.org/),
+or PyPI for short. It's often better to find a library that does something
+difficult than to spend a lot of time trying to do it yourself.
 
 I recommend reading [the official documentation about installing
-modules](https://docs.python.org/3/installing/). If you're using
-GNU/Linux also read the "Installing into the system Python on Linux"
+modules](https://docs.python.org/3/installing/) from PyPI. If you're using
+Linux, then also read the "Installing into the system Python on Linux"
 section at the bottom.
 
 ## Summary
