@@ -121,6 +121,139 @@ It's recommended to always use `"""strings like this"""` for docstrings,
 even if the docstring is only one line long. This way it's easy to add
 more stuff to it later.
 
+## Popular Docstring Formats
+
+There are different styles for writing docstrings. If you are contributing to
+another Python project, make sure to use the same style as rest of that project
+is using.
+
+If you are starting a new project, then you can use whichever style you
+want, but don't "reinventing the wheel"; use an existing style instead instead of
+making up your own. Here are some examples of popular docstring styles to choose
+from:
+
+### Sphinx Style
+
+[Sphinx](https://www.sphinx-doc.org/en/master/) is the Python documentation tool
+that [the official Python documentation](https://docs.python.org/3/) uses.
+By default, sphinx expects you to write docstrings like this:
+
+```python
+class Vehicles:
+    """
+    The Vehicles object contains lots of vehicles.
+    :param arg: The arg is used for ...
+    :type arg: str
+    :ivar arg: This is where we store arg
+    :vartype arg: str
+    """
+
+    def __init__(self, arg):
+        self.arg = arg
+
+    def cars(self, distance, destination):
+        """We can't travel a certain distance in vehicles without fuels, so here's the fuels
+
+        :param distance: The amount of distance traveled
+        :type amount: int
+        :param bool destinationReached: Should the fuels be refilled to cover required distance?
+        :raises: :class:`RuntimeError`: Out of fuel
+
+        :returns: A Car mileage
+        :rtype: Cars
+        """  
+        ...
+```
+
+### Google Style
+
+Google Style is meant to be easier to read and use without a tool like sphinx.
+Sphinx can be configured to use that with
+[sphinx.ext.napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
+
+```python
+class Vehicles:
+    """
+    The Vehicles object contains lots of vehicles.
+
+    Args:
+        arg (str): The arg is used for...
+
+    Attributes:
+        arg (str): This is where we store arg.
+    """
+
+    def __init__(self, arg):
+        self.arg = arg
+
+    def cars(self, distance, destination):
+        """We can't travel distance in vehicles without fuels, so here is the fuels
+
+        Args:
+            distance (int): The amount of distance traveled
+            destination (bool): Should the fuels refilled to cover the distance?
+
+        Raises:
+            RuntimeError: Out of fuel
+
+        Returns:
+            cars: A car mileage
+        """
+        ...
+
+```
+
+### Numpy Style
+
+[Numpy](https://numpy.org/) is a large and popular Python library,
+and numpy developers have their own docstring style.
+
+```python
+class Vehicles:
+    """
+    The Vehicles object contains lots of vehicles.
+
+    Parameters
+    ----------
+    arg : str
+        The arg is used for ...
+    *args
+        The variable arguments are used for ...
+    **kwargs
+        The keyword arguments are used for ...
+
+    Attributes
+    ----------
+    arg : str
+        This is where we store arg.
+    """
+
+    def __init__(self, arg):
+        self.arg = arg
+
+    def cars(self, distance, destination):
+        """We can't travel distance in vehicles without fuels, so here is the fuels
+
+        Parameters
+        ----------
+        distance : int
+            The amount of distance traveled
+        destination : bool
+            Should the fuels refilled to cover the distance?
+
+        Raises
+        ------
+        RuntimeError
+            Out of fuel
+
+        Returns
+        -------
+        cars
+            A car mileage
+        """
+        pass
+```
+
 ## Documenting other stuff
 
 Docstrings aren't actually limited to functions. You can use them for
