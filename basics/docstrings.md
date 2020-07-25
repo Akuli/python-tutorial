@@ -121,6 +121,83 @@ It's recommended to always use `"""strings like this"""` for docstrings,
 even if the docstring is only one line long. This way it's easy to add
 more stuff to it later.
 
+## Documenting other stuff
+
+Docstrings aren't actually limited to functions. You can use them for
+documenting [classes](classes.md) and their methods too. For example,
+let's make a file like this and save it to `test.py`:
+
+```python
+"""A test module.
+
+It contains a class and a function.
+"""
+
+
+class Thing:
+    """This is a test class."""
+
+    def thingy(self):
+        """This is a test method."""
+        print("hello")
+
+
+def do_hello():
+    """This is a test function."""
+    thing = Thing()
+    thing.thingy()
+```
+
+Then we can import it and call help on it:
+
+[comment]: # (github screws up syntax highlighting here)
+
+```
+>>> import test
+>>> help(test)
+Help on module testie:
+
+NAME
+    testie - A test module.
+
+DESCRIPTION
+    It contains a class and a function.
+
+CLASSES
+    builtins.object
+        Thing
+
+    class Thing(builtins.object)
+     |  This is a test class.
+     |
+     |  Methods defined here:
+     |
+     |  thingy(self)
+     |      This is a test method.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    do_hello()
+        This is a test function.
+
+FILE
+    /home/akuli/testie.py
+```
+
+That's pretty cool. We just added docstrings to our code and Python made
+this thing out of it.
+
+You might be wondering what `__weakref__` is. You don't need to care
+about it, and I think it would be better if `help()` would hide it.
+
 ## Popular Docstring Formats
 
 There are different styles for writing docstrings. If you are contributing to
@@ -253,83 +330,6 @@ class Vehicles:
         """
         pass
 ```
-
-## Documenting other stuff
-
-Docstrings aren't actually limited to functions. You can use them for
-documenting [classes](classes.md) and their methods too. For example,
-let's make a file like this and save it to `test.py`:
-
-```python
-"""A test module.
-
-It contains a class and a function.
-"""
-
-
-class Thing:
-    """This is a test class."""
-
-    def thingy(self):
-        """This is a test method."""
-        print("hello")
-
-
-def do_hello():
-    """This is a test function."""
-    thing = Thing()
-    thing.thingy()
-```
-
-Then we can import it and call help on it:
-
-[comment]: # (github screws up syntax highlighting here)
-
-```
->>> import test
->>> help(test)
-Help on module testie:
-
-NAME
-    testie - A test module.
-
-DESCRIPTION
-    It contains a class and a function.
-
-CLASSES
-    builtins.object
-        Thing
-
-    class Thing(builtins.object)
-     |  This is a test class.
-     |
-     |  Methods defined here:
-     |
-     |  thingy(self)
-     |      This is a test method.
-     |
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-
-FUNCTIONS
-    do_hello()
-        This is a test function.
-
-FILE
-    /home/akuli/testie.py
-```
-
-That's pretty cool. We just added docstrings to our code and Python made
-this thing out of it.
-
-You might be wondering what `__weakref__` is. You don't need to care
-about it, and I think it would be better if `help()` would hide it.
 
 ## When should we use docstrings?
 
