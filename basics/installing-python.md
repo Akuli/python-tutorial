@@ -40,8 +40,9 @@ me](../contact-me.md).
 ### Linux
 
 You already have Python 3, **there's no need to install anything**. You
-may also have Python 2, but don't try to remove it. Some of your
-programs are probably written in Python 2, so removing Python 2 would
+may also have Python 2, but don't try to remove it.
+Some of the programs that came with your operating system
+are probably written in Python 2, so removing Python 2 would
 break them.
 
 ## Running Python
