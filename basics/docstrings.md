@@ -139,20 +139,20 @@ that [the official Python documentation](https://docs.python.org/3/) uses.
 By default, sphinx expects you to write docstrings like this:
 
 ```python
-class Vehicle(object):
-    '''
-    The Vehicle object contains lots of vehicles.
+class Vehicles:
+    """
+    The Vehicles object contains lots of vehicles.
     :param arg: The arg is used for ...
     :type arg: str
     :ivar arg: This is where we store arg
     :vartype arg: str
-    '''
+    """
 
     def __init__(self, arg):
         self.arg = arg
 
     def cars(self, distance, destination):
-        '''We can't travel a certain distance in vehicles without fuels, so here's the fuels
+        """We can't travel a certain distance in vehicles without fuels, so here's the fuels
 
         :param distance: The amount of distance traveled
         :type amount: int
@@ -161,7 +161,7 @@ class Vehicle(object):
 
         :returns: A Car mileage
         :rtype: Cars
-        '''  
+        """  
         ...
 ```
 
@@ -172,22 +172,22 @@ Sphinx can be configured to use that with
 [sphinx.ext.napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
 
 ```python
-class Vehicles(object):
-    '''
-    The Vehicle object contains a lot of vehicles
+class Vehicles:
+    """
+    The Vehicles object contains lots of vehicles.
 
     Args:
         arg (str): The arg is used for...
 
     Attributes:
-        arg (str): This is where we store arg,
-    '''
+        arg (str): This is where we store arg.
+    """
 
     def __init__(self, arg):
         self.arg = arg
 
     def cars(self, distance, destination):
-        '''We can't travel distance in vehicles without fuels, so here is the fuels
+        """We can't travel distance in vehicles without fuels, so here is the fuels
 
         Args:
             distance (int): The amount of distance traveled
@@ -198,7 +198,7 @@ class Vehicles(object):
 
         Returns:
             cars: A car mileage
-        '''
+        """
         ...
 
 ```
@@ -207,13 +207,11 @@ class Vehicles(object):
 
 [Numpy](https://numpy.org/) is a large and popular Python library,
 and numpy developers have their own docstring style.
-It is an excellent choice if you want to do detailed documentation,
-i.e., extensive documentation of all the functions and parameters.
 
 ```python
-class Vehicles(object):
-    '''
-    The Vehicles object contains lots of vehicles
+class Vehicles:
+    """
+    The Vehicles object contains lots of vehicles.
 
     Parameters
     ----------
@@ -227,14 +225,14 @@ class Vehicles(object):
     Attributes
     ----------
     arg : str
-        This is where we store arg,
-    '''
+        This is where we store arg.
+    """
 
     def __init__(self, arg):
         self.arg = arg
 
     def cars(self, distance, destination):
-        '''We can't travel distance in vehicles without fuels, so here is the fuels
+        """We can't travel distance in vehicles without fuels, so here is the fuels
 
         Parameters
         ----------
@@ -252,7 +250,7 @@ class Vehicles(object):
         -------
         cars
             A car mileage
-        '''
+        """
         pass
 ```
 
