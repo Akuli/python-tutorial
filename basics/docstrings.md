@@ -121,28 +121,34 @@ It's recommended to always use `"""strings like this"""` for docstrings,
 even if the docstring is only one line long. This way it's easy to add
 more stuff to it later.
 
-## Popular Docstrings Format
+## Popular Docstring Formats
 
-There might be different documentation strings available. You need not need to worry about the fact that you have to reinvent the wheel to study all. The formats of all the Documentation strings are nearly similar. The patterns are similar, but there are only nitty-gritty changes in each format.
+There are different styles for writing docstrings. If you are contributing to
+another Python project, make sure to use the same style as rest of that project
+is using.
 
-##### 1) Sphinx Style :
+If you are starting a new project, then you can use whichever style you
+want, but don't "reinventing the wheel"; use an existing style instead instead of
+making up your own. Here are some examples of popular docstring styles to choose
+from:
 
-Sphinx is the easy and traditional style, verbose and was initially created specifically for the Python Documentation. Sphinx uses a reStructuredText which is similar in usage to Markdown.
+### Sphinx Style
+
+[Sphinx](https://www.sphinx-doc.org/en/master/) is the Python documentation tool
+that [the official Python documentation](https://docs.python.org/3/) uses.
+By default, sphinx expects you to write docstrings like this:
 
 ```python
 class Vehicle(object):
     '''
-    The Vehicle object contains lots of vehicles
+    The Vehicle object contains lots of vehicles.
     :param arg: The arg is used for ...
     :type arg: str
-    :param `*args`: The variable arguments are used for ...
-    :param `**kwargs`: The keyword arguments are used for ...
     :ivar arg: This is where we store arg
     :vartype arg: str
     '''
 
-
-    def __init__(self, arg, *args, **kwargs):
+    def __init__(self, arg):
         self.arg = arg
 
     def cars(self, distance, destination):
@@ -156,12 +162,14 @@ class Vehicle(object):
         :returns: A Car mileage
         :rtype: Cars
         '''  
-        pass
-
+        ...
 ```
 
-##### 2) Google Style :
-Google Style is easier and more intuitive to use. It can be used for the shorter form of documentation. A configuration of python file needs to be done to get started, so you need to add either sphinx.ext.napoleon or sphinxcontrib.napoleon to the extensions list in conf.py.
+### Google Style
+
+Google Style is meant to be easier to read and use without a tool like sphinx.
+Sphinx can be configured to use that with
+[sphinx.ext.napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
 
 ```python
 class Vehicles(object):
@@ -170,17 +178,15 @@ class Vehicles(object):
 
     Args:
         arg (str): The arg is used for...
-        *args: The variable arguments are used for...
-        **kwargs: The keyword arguments are used for...
 
     Attributes:
         arg (str): This is where we store arg,
     '''
 
-    def __init__(self, arg, *args, **kwargs):
+    def __init__(self, arg):
         self.arg = arg
 
-    def cars(self, distance,destination):
+    def cars(self, distance, destination):
         '''We can't travel distance in vehicles without fuels, so here is the fuels
 
         Args:
@@ -193,13 +199,16 @@ class Vehicles(object):
         Returns:
             cars: A car mileage
         '''
-        pass
+        ...
 
 ```
 
-##### 3) Numpy Style :
+### Numpy Style
 
-Numpy style has a lot of details in the documentation. It is more verbose than other documentation, but it is an excellent choice if you want to do detailed documentation, i.e., extensive documentation of all the functions and parameters.
+[Numpy](https://numpy.org/) is a large and popular Python library,
+and numpy developers have their own docstring style.
+It is an excellent choice if you want to do detailed documentation,
+i.e., extensive documentation of all the functions and parameters.
 
 ```python
 class Vehicles(object):
@@ -221,7 +230,7 @@ class Vehicles(object):
         This is where we store arg,
     '''
 
-    def __init__(self, arg, *args, **kwargs):
+    def __init__(self, arg):
         self.arg = arg
 
     def cars(self, distance, destination):
