@@ -1,4 +1,4 @@
-# Python programming tutorial For Begineers
+# Python programming tutorial for begineers
 
 This is a concise Python 3 programming tutorial for people who think
 that reading is boring. I try to show everything with simple code
