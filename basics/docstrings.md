@@ -205,7 +205,7 @@ another Python project, make sure to use the same style as rest of that project
 is using.
 
 If you are starting a new project, then you can use whichever style you
-want, but don't "reinventing the wheel"; use an existing style instead instead of
+want, but don't "reinvent the wheel"; use an existing style instead instead of
 making up your own. Here are some examples of popular docstring styles to choose
 from:
 
@@ -333,9 +333,8 @@ class Vehicles:
 
 ## When should we use docstrings?
 
-Always use docstrings when writing code that other people will import.
-The `help()` function is awesome, so it's important to make sure it's
-actually helpful.
+I recommend using docstrings when writing code that other people will import.
+The `help()` function is awesome, so it's good to make sure it's actually helpful.
 
 If your code is not meant to be imported, docstrings are usually a good
 idea anyway. Other people reading your code will understand what it's
@@ -347,7 +346,7 @@ doing without having to read through all of the code.
 - A `"""triple-quoted string"""` string in the beginning of a function,
   class or file is a docstring. It shows up in `help()`.
 - Docstrings are not comments.
-- Usually it's a good idea to add docstrings everywhere
+- Usually it's a good idea to add docstrings everywhere.
 
 ***
 
