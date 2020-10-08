@@ -133,6 +133,29 @@ immediately.
 >>>
 ```
 
+While with a condition
+
+```python
+>>> cont = 10
+>>> while (cont >= 0):
+...     print(cont)
+...     cont -= 1
+...
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+>>>
+```
+
+
 ## Until loops
 
 Python doesn't have until loops. If we need an until loop, we can use
@@ -212,6 +235,7 @@ how about you
 >>>
 ```
 
+
 Without the comments, that's only two simple lines, and one variable.
 Much better than anything else we tried before.
 
@@ -231,6 +255,7 @@ Note that `for thing in stuff:` is not same as `for (thing in stuff):`.
 Here the `in` keyword is just a part of the for loop and it has a
 different meaning than it would have if we had `thing in stuff` without
 a `for`. Trying to do `for (thing in stuff):` creates an error.
+
 
 Right now the while loop version might seem easier to understand for
 you, but later you'll realize that for loops are much easier to work
@@ -260,8 +285,29 @@ c
 >>>
 ```
 
+You can print the multiplication tables.
+
+```python
+>>> table = 2
+>>> for i in range(1, 11):
+...     print(table,"x", i, "=",(table*i))
+...
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+>>>
+```
+
 If we can for loop over something, then that something is **iterable**.
 Lists, tuples and strings are all iterable.
+
 
 There's only one big limitation with for looping over lists. We
 shouldn't modify the list in the for loop. If we do, the results can
