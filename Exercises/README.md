@@ -1,6 +1,6 @@
-#Exercise
+# Exercise
 ### These are some Exercises that will help you learn
-#Strings
+# Strings
 1. Write  code to count a character from a string without using any built-in methods other than input() and print()
   <br>**Ans)** Refer [This](Strings/character%20count%20without%20methods(using%20for).py)
 2. **FIX THE CODE:** The programme must be able to find all the occurances of a sub-string and something prevents it. Refer the Output for more details
@@ -22,7 +22,7 @@ So,correct the code
    (Also optimise the code with better variable names if needed) 
    
 
-#Patterns
+# Patterns
 1. Make a programme to get a pyramid like shown in the OUTPUT section where user can type the number of rows needed"""
    >**OUTPUT** for 5 rows<br>
 1 <br>
@@ -42,7 +42,7 @@ So,correct the code
 5 <br>
     
 **Ans)** Refer [this](Patterns/1234%20234%2034%204%20pyramid.py)
-#Palindrome
+# Palindrome
 1. Check if a number is pallindrome by converting it into a string
    <br>**Ans)** Refer [this](pallindrome/Checking%20if%20a%20number%20is%20a%20pallindrome%20Easy.py)
 2. Check if a number is pallindrome by accepting a number from user using int(input("Enter the number"))<br>
