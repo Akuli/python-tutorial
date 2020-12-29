@@ -148,7 +148,7 @@ functions, and they are deleted when the function exits.
 
 ```python
 >>> def thingy():
-...     d = "hello again, i'm a local variable"
+...     d = "hello again, character'm a local variable"
 ...     print('inside thingy:', d)
 ...
 >>> thingy()

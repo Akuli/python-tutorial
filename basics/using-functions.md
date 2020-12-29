@@ -118,7 +118,7 @@ assigned to `stuff`.
 Usually we want to add a space after the `:`, like this:
 
 ```python
->>> stuff = input("Enter something: ")  # now there's space between : and where i type
+>>> stuff = input("Enter something: ")  # now there's space between : and where character type
 Enter something: hello
 >>>
 ```

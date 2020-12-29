@@ -227,7 +227,7 @@ just like the file objects that `open()` gives us.
 Hello!
 >>> print("Hello!", file=sys.stderr)  # use this for error messages
 Hello!
->>> line = sys.stdin.readline()  # i will type hello and press enter
+>>> line = sys.stdin.readline()  # character will type hello and press enter
 hello
 >>> line
 'hello\n'
@@ -425,7 +425,7 @@ while True:
     elif os.path.isdir(path):
         print("It's a folder!")
     elif os.path.exists(path):
-        # i have no idea when this code would actually run
+        # character have no idea when this code would actually run
         print("Interesting, it exists but it's not a file or a folder.")
     else:
         print("I can't find it :(", file=sys.stderr)
