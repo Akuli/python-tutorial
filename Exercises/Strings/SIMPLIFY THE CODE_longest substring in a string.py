@@ -1,4 +1,5 @@
-'''simplify the code to get the same result'''
+'''simplify the code to get the same result
+Also optimise the code with better variable names if needed'''
 
 
 x = input("Enter the string:   ")

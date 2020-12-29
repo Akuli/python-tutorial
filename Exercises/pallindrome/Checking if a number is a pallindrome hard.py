@@ -1,5 +1,5 @@
-'''This method is a little hard.It checks if a number is directly if a number is a  pallindrome without converting it into a string'''
-
+'''Check if a number is pallindrome by accepting a numbre from user using int(input("Enter the number")) '''
+"INSTRUCTION:Do not convert it into a string or to anyother format. Only use it as an integer itself"
 
 user_input=int(input("Type the number to check:")) #gets the input from the user
 store=user_input #stores the input variable in another variable

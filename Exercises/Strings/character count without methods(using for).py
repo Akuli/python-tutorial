@@ -1,4 +1,4 @@
-'''This counts the number of character that are occurring without using the built-in methods'''
+'''Write  code to count a character from a string without using any built-in methods other than input() and print()'''
 
 
 string_input = input("Type the string:") #gets the input string

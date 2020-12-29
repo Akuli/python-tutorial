@@ -1,4 +1,6 @@
-'''This method uses string method to check if a number is a pallindrome'''
+'''Check if a number is pallindrome by converting it into a string'''
+
+
 pallindrome_input=input("Type the number to check:") #to get the input from user
 pallindrome_check=pallindrome_input[::-1] #Reverses the string
 
