@@ -317,7 +317,15 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print(column,end=" ") # this is where the number is printed into rows
     print()#creates a new line for the next row
    ```
-
+6. The idea is more or less same as in the above question.
+   ```python
+   rows=int(input("Type the number of rows needed:"))#gets the number of rows from the user
+    
+   for row in range(1, rows + 2): #finds the row from rows' variable
+     for column in range(row,rows+1, 1): # this is actually the column where a number has to be added
+        print(column, end=' ')# this is where the number is printed into rows
+     print()#creates a new line for the next row
+   ```
 
 ## Trey Hunner: zip and enumerate
 
