@@ -92,7 +92,18 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print("Access denied.")
     ```
 
-    Again, this is not a good way to ask a real password from the user.
+    Again, this is not a good way to ask a real password from the user. 
+
+7. Here, we create  a new variable `pallindrome_check`.We use this variable to store the  reversed  string(of`pallindrome_input`). <br>Then we check if the string that was given(`pallindrome_input`)
+   and the reversed sting(`pallindrome_check`) is the same using a simple `if loop`
+   ```python
+   pallindrome_input=input("Type the number to check:") #to get the input from user
+   pallindrome_check=pallindrome_input[::-1] #Reverses the string
+   if pallindrome_input==pallindrome_check:
+    print(f"This number is a pallindrome")
+   else:
+    print("This number is not a pallindrome")
+   ```
 
 ## Handy stuff: Strings
 
@@ -295,6 +306,18 @@ isn't exactly like mine but it works just fine it's ok, and you can
         converted_numbers.append(int(number))
     print(converted_numbers)
     ```
+5. We actually use the first `for` loop to loop through the number of rows needed.Now,
+   through that `for` loop we got the row number.<br>
+   Now,the next `for` loop helps us to identify which numbers should be printed on the row which we currently accessed from the `for` loop above
+   ```python
+   rows=int(input("Type the number of rows needed:")) #gets the number of rows from the user
+   
+   for row in range(1,rows+1): #finds the row from rows' variable
+    for column in range(1,row+1): # this is actually the column where a number has to be added
+        print(column,end=" ") # this is where the number is printed into rows
+    print()#creates a new line for the next row
+   ```
+
 
 ## Trey Hunner: zip and enumerate
 
