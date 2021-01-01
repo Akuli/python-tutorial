@@ -471,20 +471,24 @@ while True:
     print(numbers)
     ```
 5. Make a programme to get a pyramid like shown in the OUTPUT section where user can type the number of rows needed
-   >**OUTPUT** for 5 rows<br>
-1 <br>
-1 2 <br>
-1 2 3 <br>
-1 2 3 4 <br>
-1 2 3 4 5 <br>
+   ```
+   OUTPUT for 5 rows
+   1 
+   1 2 
+   1 2 3 
+   1 2 3 4 
+   1 2 3 4 5 
+   ```
 
 6. Make a programme to get a pyramid like shown in the OUTPUT section where user can type the number of rows needed
-    >**OUTPUT** when rows is equal to 5<br>
-1 2 3 4 5 <br>
-2 3 4 5 <br>
-3 4 5 <br>
-4 5 <br>
-5 <br>
+   ```
+   OUTPUT when rows is equal to 5
+   1 2 3 4 5 
+   2 3 4 5 
+   3 4 5 
+   4 5 
+   5 
+   ```
 The answers are [here](answers.md#loops).
 
 ***

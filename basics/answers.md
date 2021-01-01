@@ -97,7 +97,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 7. Here, we create  a new variable `palindrome_check`.We use this variable to store the  reversed  string(of`palindrome_input`). Then we check if the string that was given(`palindrome_input`)
    and the reversed sting(`palindrome_check`) is the same using a simple `if loop`
    ```python
-   palindrome_input=input("Type the number to check:") #to get the input from user
+   palindrome_input=input("Type the number to check:") 
    palindrome_check=palindrome_input[::-1] #Reverses the string
    if palindrome_input==palindrome_check:
     print(f"This number is a palindrome")
@@ -306,25 +306,28 @@ isn't exactly like mine but it works just fine it's ok, and you can
         converted_numbers.append(int(number))
     print(converted_numbers)
     ```
-5. We actually use the first `for` loop to loop through the number of rows needed.Now,
-   through that `for` loop we got the row number.<br>
-   Now,the next `for` loop helps us to identify which numbers should be printed on the row which we currently accessed from the `for` loop above
-   ```python
-   rows=int(input("Type the number of rows needed:")) #gets the number of rows from the user
-   
-   for row in range(1,rows+1): #finds the row from rows' variable
-    for column in range(1,row+1): # this is actually the column where a number has to be added
-        print(column,end=" ") # this is where the number is printed into rows
-    print()#creates a new line for the next row
+
+5. ``` python
+   rows=int(input("Type the number of rows needed:")) 
+   for row in range(1,rows+1):
+       for column in range(1,row+1): 
+           print(column,end=" ") 
+       print()#creates a new line for the next row
    ```
+   We actually use the first `for` loop to loop through the number of rows needed.Now,
+   through that `for` loop we got the row number.
+   Now,the next `for` loop helps us to identify which numbers should be printed on the row which we currently accessed from the `for` loop above
+
+   
+  
 6. The idea is more or less same as in the above question.
    ```python
-   rows=int(input("Type the number of rows needed:"))#gets the number of rows from the user
+   rows=int(input("Type the number of rows needed:"))
     
-   for row in range(1, rows + 2): #finds the row from rows' variable
-     for column in range(row,rows+1, 1): # this is actually the column where a number has to be added
-        print(column, end=' ')# this is where the number is printed into rows
-     print()#creates a new line for the next row
+   for row in range(1, rows + 1): 
+     for column in range(row,rows+1): 
+        print(column, end=' ')
+     print()
    ```
 
 ## Trey Hunner: zip and enumerate
