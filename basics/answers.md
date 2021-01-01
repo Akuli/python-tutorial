@@ -94,15 +94,15 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
     Again, this is not a good way to ask a real password from the user. 
 
-7. Here, we create  a new variable `pallindrome_check`.We use this variable to store the  reversed  string(of`pallindrome_input`). <br>Then we check if the string that was given(`pallindrome_input`)
-   and the reversed sting(`pallindrome_check`) is the same using a simple `if loop`
+7. Here, we create  a new variable `palindrome_check`.We use this variable to store the  reversed  string(of`palindrome_input`). Then we check if the string that was given(`palindrome_input`)
+   and the reversed sting(`palindrome_check`) is the same using a simple `if loop`
    ```python
-   pallindrome_input=input("Type the number to check:") #to get the input from user
-   pallindrome_check=pallindrome_input[::-1] #Reverses the string
-   if pallindrome_input==pallindrome_check:
-    print(f"This number is a pallindrome")
+   palindrome_input=input("Type the number to check:") #to get the input from user
+   palindrome_check=palindrome_input[::-1] #Reverses the string
+   if palindrome_input==palindrome_check:
+    print(f"This number is a palindrome")
    else:
-    print("This number is not a pallindrome")
+    print("This number is not a palindrome")
    ```
 
 ## Handy stuff: Strings

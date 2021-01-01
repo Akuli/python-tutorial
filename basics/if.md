@@ -311,7 +311,7 @@ you are asked to "fix code", feel free to add missing blank lines.
     `Access denied` or `You didn't enter anything` depending on whether
     the user entered the correct password, a wrong password, or nothing
     at all by pressing Enter without typing anything.
-7. Make a programme to take the input from the user and check if it is a pallindrome.
+7. Make a programme to take the input from the user and check if it is a palindrome.
 
 The answers are [here](answers.md#if-else-and-elif).
 
