@@ -470,7 +470,25 @@ while True:
         number = int(number)
     print(numbers)
     ```
+5. Make a programme to get a pyramid like shown in the OUTPUT section where user can type the number of rows needed
+   ```
+   OUTPUT for 5 rows
+   1 
+   1 2 
+   1 2 3 
+   1 2 3 4 
+   1 2 3 4 5 
+   ```
 
+6. Make a programme to get a pyramid like shown in the OUTPUT section where user can type the number of rows needed
+   ```
+   OUTPUT when rows is equal to 5
+   1 2 3 4 5 
+   2 3 4 5 
+   3 4 5 
+   4 5 
+   5 
+   ```
 The answers are [here](answers.md#loops).
 
 ***

@@ -92,7 +92,18 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print("Access denied.")
     ```
 
-    Again, this is not a good way to ask a real password from the user.
+    Again, this is not a good way to ask a real password from the user. 
+
+7. Here, we create  a new variable `palindrome_check`.We use this variable to store the  reversed  string(of`palindrome_input`). Then we check if the string that was given(`palindrome_input`)
+   and the reversed sting(`palindrome_check`) is the same using a simple `if loop`
+   ```python
+   palindrome_input=input("Type the number to check:") 
+   palindrome_check=palindrome_input[::-1] #Reverses the string
+   if palindrome_input==palindrome_check:
+    print(f"This number is a palindrome")
+   else:
+    print("This number is not a palindrome")
+   ```
 
 ## Handy stuff: Strings
 
@@ -295,6 +306,29 @@ isn't exactly like mine but it works just fine it's ok, and you can
         converted_numbers.append(int(number))
     print(converted_numbers)
     ```
+
+5. ``` python
+   rows=int(input("Type the number of rows needed:")) 
+   for row in range(1,rows+1):
+       for column in range(1,row+1): 
+           print(column,end=" ") 
+       print()#creates a new line for the next row
+   ```
+   We actually use the first `for` loop to loop through the number of rows needed.Now,
+   through that `for` loop we got the row number.
+   Now,the next `for` loop helps us to identify which numbers should be printed on the row which we currently accessed from the `for` loop above
+
+   
+  
+6. The idea is more or less same as in the above question.
+   ```python
+   rows=int(input("Type the number of rows needed:"))
+    
+   for row in range(1, rows + 1): 
+     for column in range(row,rows+1): 
+        print(column, end=' ')
+     print()
+   ```
 
 ## Trey Hunner: zip and enumerate
 
