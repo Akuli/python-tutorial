@@ -44,7 +44,7 @@ thing(stuff)
 ```
 
 That sucked! We have no idea about what it does based on this. All we
-know is that it takes a `thing` argument.
+know is that it takes a `stuff` argument.
 
 This is when documentation strings or docstrings come in. All we need to
 do is to add a string to the beginning of our function and it will show
