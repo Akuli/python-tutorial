@@ -480,7 +480,7 @@ while True:
    1 2 3 4 5 
    ```
 
-6. Make a programme to get a pyramid like shown in the OUTPUT section where user can type the number of rows needed
+6. Modify your program from the previous exercise to print this instead:
    ```
    OUTPUT when rows is equal to 5
    1 2 3 4 5 
