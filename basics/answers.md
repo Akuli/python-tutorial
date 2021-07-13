@@ -326,9 +326,10 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print(number, end=' ')
      print()
    ```
-Here,the first for loop fetches us the column to which we have to add the number.<br>
-Now,suppose the column is 2.The second for loop finds all the numbers that lie between the column number(i.e. here 2) and the total rows we need.<br>
-If total rows we need is 5 then we get 2,3,4 and 5 in the second for loop
+   Here,the first `for` loop fetches us the column to which we have to add the number.<br>
+   Now,suppose the column is `2`.The second `for` loop finds all the numbers that lie between the column number(i.e. here 2) and the total rows we need.
+   Eg:If total rows we need is 5 then we get 2,3,4 and 5 in the second `for` loop, when column_count is 2<br>
+
 ## Trey Hunner: zip and enumerate
 
 1. Read some lines with `input` into a list and then enumerate it.
