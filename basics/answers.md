@@ -308,11 +308,11 @@ isn't exactly like mine but it works just fine it's ok, and you can
     ```
 
 5. ``` python
-   rows=int(input("Type the number of rows needed:")) 
-   for row in range(1,rows+1):
-       for column in range(1,row+1): 
-           print(column,end=" ") 
-       print()#creates a new line for the next row
+   row_count = int(input("Type the number of rows needed:")) 
+   for column_count in range(1, row_count+1):
+       for number in range(1, column_count+1): 
+           print(number, end=" ") 
+       print()  # creates a new line for the next row
    ```
    We actually use the first `for` loop to loop through the number of rows needed.Now,
    through that `for` loop we got the row number.
