@@ -482,7 +482,7 @@ while True:
 
 6. Modify your program from the previous exercise to print this instead:
    ```
-   OUTPUT when rows is equal to 5
+   OUTPUT for 5 rows
    1 2 3 4 5 
    2 3 4 5 
    3 4 5 
