@@ -308,6 +308,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
 5. ``` python
    row_count = int(input("Type the number of rows needed:")) 
    for column_count in range(1, row_count+1):
+       # Print numbers from 1 to column_count
        for number in range(1, column_count+1): 
            print(number, end=" ") 
        print()  # creates a new line for the next row
