@@ -160,8 +160,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
    and the reversed sting(`palindrome_check`) is the same using a simple `if loop`
    ```python
    palindrome_input=input("Type the number to check:") 
-   palindrome_check=palindrome_input[::-1] #Reverses the string
-   if palindrome_input==palindrome_check:
+   if palindrome_input == palindrome_input[::-1]:
     print(f"This number is a palindrome")
    else:
     print("This number is not a palindrome")
