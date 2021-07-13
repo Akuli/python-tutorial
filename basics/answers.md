@@ -319,16 +319,17 @@ isn't exactly like mine but it works just fine it's ok, and you can
 
    
   
-6. The idea is more or less same as in the above question.
-   ```python
+6. ```python
    row_count=int(input("Type the number of rows needed:"))
     
-   for column_count in range(1, row_count + 1): 
-     for number in range(row_count,column_count+1): 
+   for column_count in range(1, row_count + 1): # first for loop
+     for number in range(column_count,row_count+1):# second for loop 
         print(number, end=' ')
      print()
    ```
-
+Here,the first for loop fetches us the column to which we have to add the number.<br>
+Now,suppose the column is 2.The second for loop finds all the numbers that lie between the column number(i.e. here 2) and the total rows we need.<br>
+If total rows we need is 5 then we get 2,3,4 and 5 in the second for loop
 ## Trey Hunner: zip and enumerate
 
 1. Read some lines with `input` into a list and then enumerate it.
