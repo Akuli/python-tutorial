@@ -321,8 +321,8 @@ isn't exactly like mine but it works just fine it's ok, and you can
 6. ```python
    row_count=int(input("Type the number of rows needed:"))
     
-   for column_count in range(1, row_count + 1): # first for loop
-     for number in range(column_count,row_count+1):# second for loop 
+   for line_number in range(1, row_count + 1):
+     for number in range(line_number, row_count+1):
         print(number, end=' ')
      print()
    ```
