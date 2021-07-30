@@ -163,7 +163,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
    if palindrome_input == palindrome_input[::-1]:
        print("This string is a palindrome")
    else:
-    print("This number is not a palindrome")
+       print("This string is not a palindrome")
    ```
 ## Lists and tuples
 
