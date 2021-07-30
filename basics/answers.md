@@ -327,8 +327,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
      print()
    ```
    Here,the first `for` loop fetches us the column to which we have to add the number.<br>
-   Now,suppose the column is `2`.The second `for` loop finds all the numbers that lie between the column number(i.e. here 2) and the total rows we need.
-   Eg:If total rows we need is 5 then we get 2,3,4 and 5 in the second `for` loop, when column_count is 2<br>
+   For example, on line 2, we should print numbers from 2 to 5, as in `range(2, 6)`, or in general, `range(line_number, row_count+1)`.
 
 ## Trey Hunner: zip and enumerate
 
