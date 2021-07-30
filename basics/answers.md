@@ -92,7 +92,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print("Access denied.")
     ```
 
-    Again, this is not a good way to ask a real password from the user.
+    Again, this is not a good way to ask a real password from the user. 
 
 ## Handy stuff: Strings
 
@@ -156,7 +156,15 @@ isn't exactly like mine but it works just fine it's ok, and you can
     print(message, "!!!")
     print(message, "!!!")
     ```
-
+3. In the code below, `palindrome_input[::-1]` is the string `palindrome_input` reversed.
+   For example, if `palindrome_input` is `"hello"`, then `palindrome_input[::-1]` is `"olleh"`.
+   ```python
+   palindrome_input=input("Type the number to check:") 
+   if palindrome_input == palindrome_input[::-1]:
+       print("This string is a palindrome")
+   else:
+       print("This string is not a palindrome")
+   ```
 ## Lists and tuples
 
 1.  Look carefully. The `namelist` is written in `()` instead of `[]`,
@@ -295,6 +303,36 @@ isn't exactly like mine but it works just fine it's ok, and you can
         converted_numbers.append(int(number))
     print(converted_numbers)
     ```
+
+5. ``` python
+   row_count = int(input("Type the number of rows needed:")) 
+   for column_count in range(1, row_count+1):
+       # Print numbers from 1 to column_count
+       for number in range(1, column_count+1): 
+           print(number, end=" ") 
+       print()  # creates a new line for the next row
+   ```
+   If the user enters 5, we want to do a row with 1 column, then 2 columns, and so on until 5 columns.
+   That would be `for column_count in range(1, 6)`, because the end of the range is excluded.
+   In general, we need to specify `row_count + 1` so that it actually ends at  `row_count`.
+   The second loop is similar.
+
+   Usually `print(number)` puts a newline character at the end of the line, so that the next print goes to the next line.
+   To get all numbers on the same line, we use a space instead of a newline character,
+   but we still need `print()` to add a newline character once we have printed the entire row.
+
+   
+  
+6. ```python
+   row_count=int(input("Type the number of rows needed:"))
+    
+   for line_number in range(1, row_count + 1):
+     for number in range(line_number, row_count+1):
+        print(number, end=' ')
+     print()
+   ```
+   Just like in the previous exercise, if the user enters 5, the first `for` loop gives the line numbers `1, 2, 3, 4, 5`.<br>
+   For example, on line 2, we should print numbers from 2 to 5, as in `range(2, 6)`, or in general, `range(line_number, row_count+1)`.
 
 ## Trey Hunner: zip and enumerate
 
