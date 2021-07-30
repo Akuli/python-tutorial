@@ -156,8 +156,8 @@ isn't exactly like mine but it works just fine it's ok, and you can
     print(message, "!!!")
     print(message, "!!!")
     ```
-3. Here, we create  a new variable `palindrome_check`.We use this variable to store the  reversed  string(of`palindrome_input`). Then we check if the string that was given(`palindrome_input`)
-   and the reversed sting(`palindrome_check`) is the same using a simple `if loop`
+3. In the code below, `palindrome_input[::-1]` is the string `palindrome_input` reversed.
+   For example, if `palindrome_input` is `"hello"`, then `palindrome_input[::-1]` is `"olleh"`.
    ```python
    palindrome_input=input("Type the number to check:") 
    if palindrome_input == palindrome_input[::-1]:
