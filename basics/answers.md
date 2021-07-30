@@ -161,7 +161,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
    ```python
    palindrome_input=input("Type the number to check:") 
    if palindrome_input == palindrome_input[::-1]:
-    print(f"This number is a palindrome")
+       print("This string is a palindrome")
    else:
     print("This number is not a palindrome")
    ```
