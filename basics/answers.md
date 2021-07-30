@@ -331,7 +331,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
         print(number, end=' ')
      print()
    ```
-   Here,the first `for` loop fetches us the column to which we have to add the number.<br>
+   Just like in the previous exercise, if the user enters 5, the first `for` loop gives the line numbers `1, 2, 3, 4, 5`.<br>
    For example, on line 2, we should print numbers from 2 to 5, as in `range(2, 6)`, or in general, `range(line_number, row_count+1)`.
 
 ## Trey Hunner: zip and enumerate
