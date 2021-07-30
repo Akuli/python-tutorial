@@ -424,7 +424,7 @@ ValueError: could not convert string to float: 'hello'
     print(message, "!!!")
     print(message, "!!!")
     ```
-3. Make a program to take the input from the user and check if it is a palindrome.<br>
+3. Make a program to ask a string from the user and check if it is a palindrome.<br>
    (Hint: A string is a palindrome if it is the same when reversed. Google how to reverse a string.)
 
 The answers are [here](answers.md#handy-stuff-strings).
