@@ -312,9 +312,14 @@ isn't exactly like mine but it works just fine it's ok, and you can
            print(number, end=" ") 
        print()  # creates a new line for the next row
    ```
-   We actually use the first `for` loop to loop through the number of rows needed.Now,
-   through that `for` loop we got to which column the number should be inserted.
-   Now,the next `for` loop helps us to identify which numbers should be printed on the row which we currently accessed from the `for` loop above
+   If the user enters 5, we want to do a row with 1 column, then 2 columns, and so on until 5 columns.
+   That would be `for column_count in range(1, 6)`, because the end of the range is excluded.
+   In general, we need to specify `row_count + 1` so that it actually ends at  `row_count`.
+   The second loop is similar.
+
+   Usually `print(number)` puts a newline character at the end of the line, so that the next print goes to the next line.
+   To get all numbers on the same line, we use a space instead of a newline character,
+   but we still need `print()` to add a newline character once we have printed the entire row.
 
    
   
