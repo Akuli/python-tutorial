@@ -100,7 +100,8 @@ Lists have a few [useful
 methods](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
 Some of the most commonly used ones are append, extend and remove.
 `append` adds an item to the end of a list, `extend` adds
-multiple items from another list and `remove` removes an item.
+multiple items from another list and `remove` removes an item. 
+It can also be added with the method of `insert`
 
 ```python
 >>> names
@@ -115,7 +116,9 @@ multiple items from another list and `remove` removes an item.
 >>> names.extend(['go|dfish', 'theelous3'])  # wb guys
 >>> names
 ['wub_wub', 'RubyPinch', 'Nitori', 'Akuli', 'go|dfish', 'theelous3']
->>>
+>>> names.insert(len(names), "Aly")
+>>> names
+['wub_wub', 'RubyPinch', 'Nitori', 'Akuli', 'go|dfish', 'theelous3', 'Aly']
 ```
 
 Note that `remove` removes only the first match it finds.
@@ -127,6 +130,26 @@ Note that `remove` removes only the first match it finds.
 ['go|dfish', 'theelous3']
 >>>
 ```
+
+The method `pop` also works for delete elements of the list.
+
+```python
+>>> names = ['theelous3', 'go|dfish', 'theelous3']
+>>> names.pop(1)
+>>> names    # the second item was removed
+'go|dfish'
+>>> names
+['theelous3', 'theelous3']
+
+>>> names = ['theelous3', 'go|dfish', 'theelous3']
+>>> names.pop()
+theelous3'
+>>> names
+['theelous3', 'go|dfish']
+
+>>>
+```
+
 
 If we need to remove all matching items we can use a simple while loop.
 We'll talk more about loops [in the next chapter](loops.md).
@@ -253,6 +276,44 @@ like this:
 
 ![Different lists.](../images/differentlist.png)
 
+
+We can count the number of items that have a list.
+
+```python
+>>> a = [1, 2, 3, 4, 2, 5, 2]
+>>> a.count(2)
+3
+>>> a.count(5)
+1
+>>> a.count(9)
+0
+>>> a = ['theelous3', 'wub_wub', 'RubyPinch', 'go|dfish', 'Nitori']
+>>> a.count('wub_wub')
+1
+```
+
+
+We can sort the items that have a list
+
+```python
+>>> a = [1, 2, 3, 4, 2, 5, 2]
+>>> a.sort()
+>>> a
+[1, 2, 2, 2, 3, 4, 5]
+>>> a.sort(reverse = True)
+>>> a
+[5, 4, 3, 2, 2, 2, 1]
+>>> a = ['wub_wub', 'theelous3', 'RubyPinch', 'go|dfish', 'Nitori']
+>>> a.sort()
+>>> a
+['Nitori', 'RubyPinch', 'go|dfish', 'theelous3', 'wub_wub']
+>>> a.sort(reverse = True)
+['wub_wub', 'theelous3', 'go|dfish', 'RubyPinch', 'Nitori']
+>>>
+```
+
+
+
 ## Tuples
 
 Tuples are a lot like lists, but they're immutable so they
@@ -296,6 +357,41 @@ but some people like to do it this way.
 ('hello',)
 >>>
 ```
+
+
+You can have nested tuples.
+
+```python
+>>> n = 1, 2, 3
+>>> n
+(1, 2, 3)
+>>> n[0]
+1
+>>> l = 'a', 'b', 'c'
+>>> l
+('a', 'b', 'c')
+>>> l[0]
+'a'
+>>> t = n, l 
+>>> t
+((1, 2, 3), ('a', 'b', 'c')) #The tuples n and l are nested
+>>> t[0]
+(1, 2, 3)
+>>> t[1]
+('a', 'b', 'c')
+>>> t[1][2]
+'c'
+>>> v = ([1, 2, 3], [3, 2, 1,[7, 8, 9]])
+>>> v
+([1, 2, 3], [3, 2, 1, [7, 8, 9]])
+>>> v[1]
+[3, 2, 1, [7, 8, 9]]
+>>> v[1][3]
+[7, 8, 9]
+>>> v[1][3][0]
+7
+```
+
 
 Tuples don't have methods like append, extend and remove
 because they can't change themselves in-place.

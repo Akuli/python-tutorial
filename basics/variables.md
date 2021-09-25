@@ -119,11 +119,40 @@ can also use `+=`, `-=`, `*=` and `/=` instead of `+`, `-`, `*` and
 `/`. The "advanced" `%=`, `//=` and `**=` also work.
 
 ```python
+>>> a = 11
 >>> a += 2          # a = a + 2
+>>> a
+13
+
+>>> a = 11
 >>> a -= 2          # a = a - 2
+>>> a
+9
+
+a = 11
 >>> a *= 2          # a = a * 2
+>>> a
+22
+
+>>> a = 11
 >>> a /= 2          # a = a / 2
->>>
+>>> a
+5.5
+
+>>> a = 11
+>>> a %= 2          # a = a % 2
+>>> a
+1
+
+>>> a = 11
+>>> a //= 2         # a = a // 2
+>>> a
+5
+
+a = 11
+>>> a **= 2         # a = a ^ 2
+>>> a
+121
 ```
 
 This is not limited to integers.
@@ -136,6 +165,17 @@ This is not limited to integers.
 'hellohellohelloworld'
 >>>
 ```
+
+But, you can only use `+=` and `*=`. Because of with the others operators
+it causes a type error.
+
+```python
+>>> a = 'hello'
+>>> a -= 3
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+>>>
+```
+
 
 Now we also understand why typing hello to the prompt didn't work in
 the beginning of this tutorial. But we can assign something to a
