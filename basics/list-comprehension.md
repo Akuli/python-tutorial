@@ -22,7 +22,7 @@ print(arr)
 The example above shows a list of animals and the for loop iterates through the list of animals and the if statement filters the list and only adds the animal if their name is exactly 3 characters long.
 
 ## With List Comprehension
-```
+```python
 animals = ["dog", "cat", "giraffe", "donkey", "ape"]
 
 arr = [i for i in animals if len(i) == 3]
