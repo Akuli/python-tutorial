@@ -70,7 +70,7 @@ print(arr)
 ```
 For this example the condition is that only the numbers that is less than 5 would get put into the array.
 
-##Summary
+## Summary
 - List comprehensions are a good way to shorten code
 - They are versatile when it comes to iterating through iterable datasets
 - Not only can you filter out data with a condition you can also change the data before it gets added to the new list
