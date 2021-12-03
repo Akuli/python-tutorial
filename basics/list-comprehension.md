@@ -48,8 +48,30 @@ print(arr)
 ```python
 ['dog', 'cat', 'ape']
 ```
-The **i** is essentially an animal each iteration where it checks if the animal's name is 3 characters long and if it does it **also** changes that animal name to all lower case before it finally appends or adds it to the list.
+The **i** is essentially the **item** which is an animal in each iteration where it checks if the animal's name is 3 characters long and if it does it **also** changes that animal name to all lower case before it finally appends or adds it to the list.
 
+**Iterable:** The iterable is the object that is being iterated over and can be any iterable object such as a set, list, tuple etc.
+```python
+arr = [i for i in range(5)]
+print(arr)
+```
+```python
+[0, 1, 2, 3, 4]
+```
+This essentially adds 0 to 4 to the new array with range(5).
 
+**Condition** The condition is a sort of filter that is specified to get the specific data that is wanted.
+```python
+arr = [i for i in range(10) if i < 5]
+print(arr)
+```
+```python
+[0, 1, 2, 3, 4]
+```
+For this example the condition is that only the numbers that is less than 5 would get put into the array.
 
-
+##Summary
+- List comprehensions are a good way to shorten code
+- They are versatile when it comes to iterating through iterable datasets
+- Not only can you filter out data with a condition you can also change the data before it gets added to the new list
+- List comprehensions normally follow: newlist = [**expression** for **item** in **iterable** if **condition**]
