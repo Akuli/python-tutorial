@@ -1,5 +1,7 @@
 # Trey Hunner: zip and enumerate
 
+> Find the detailed Zip and Enumerate Tutorial [here!](detailed_zip_&_enumerate.md)
+
 Now we know how [for loops](loops.md#for-loops) work in Python. But
 for loops aren't limited to printing each item in a list, they can
 do a lot more.
