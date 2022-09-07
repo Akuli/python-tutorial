@@ -103,7 +103,7 @@ After calling zip, an iterator is returned. In order to see the content wrapped 
 If the lists are of different lengths, some items from the end of the longer list will be ignored.
 
 ```python
->>> users = ["Tushar", "Aman", "Anurag", "Sohit"]
+>>> users = ["Tushar", "Aman", "Anurag"]
 >>> emails = ["tushar@example.com", "aman@example.com", "anurag@example.com", "sohit@example.com"]
 >>> users_contact = zip(users, emails)
 >>> print(list(users_contact))
@@ -111,9 +111,13 @@ If the lists are of different lengths, some items from the end of the longer lis
 >>>
 ```
 
-Length of `users` list is 3 thus it is the shortest. `zip()` function will crop other lists to consider them equally and will finally join all items together.
+Here the shortest list is `users`, with length 3, so `zip(users, emails)` only takes the first 3 emails.
+> We do not recommend calling `zip()` with lists of different lengths.
 
-### Using zip with for loop
+### Using zip with `for` loop
+
+It is very common to `for` loop over a `zip()`, and unpack the returned tuples in the `for` loop.
+This is why we introduced unpacking in the beginning of this page.
 
 ```python
 >>> roll_nums = [20, 25, 28]
@@ -138,24 +142,6 @@ Roll number of Michel is 28
 >>>
 ```
 
-Before we use it in a loop let's take a look how we would do the same thing in a traditional way.
-
-### looping without `enumerate()`
-
-```python
->>> even_nums = [2, 4, 6, 8, 10, 12]
->>> for index in range(0,  len(even_nums)):
-...     print(f"Index of {even_nums[index]} is {index}")
-...
-Index of 2 is 0
-Index of 4 is 1
-Index of 6 is 2
-Index of 8 is 3
-Index of 10 is 4
-Index of 12 is 5
->>>
-```
-
 ### looping with `enumerate()`
 
 ```python
@@ -172,9 +158,28 @@ Index of 12 is 5
 >>>
 ```
 
-Now you're ready to read [this awesome looping
-tutorial](http://treyhunner.com/2016/04/how-to-loop-with-indexes-in-python/).
-Read it now, then come back here and do the exercises.
+### looping without `enumerate()`
+
+let's take a look at how we can do the same thing in a more traditional way.
+
+```python
+>>> even_nums = [2, 4, 6, 8, 10, 12]
+>>> for index in range(0,  len(even_nums)):
+...     print(f"Index of {even_nums[index]} is {index}")
+...
+Index of 2 is 0
+Index of 4 is 1
+Index of 6 is 2
+Index of 8 is 3
+Index of 10 is 4
+Index of 12 is 5
+>>>
+```
+
+* `range(0, len(even_nums))` gives 0,1,2,3,4,5, with the list length 6 excluded
+* because these are the valid indexes of a list of length 6, `even_nums[index]` prints each element of `even_nums`
+
+> This is complicated to think about and easy to get wrong, so it's better to use `enumerate()`
 
 ## Exercises
 
