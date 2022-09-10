@@ -30,25 +30,26 @@
 
 import argparse
 import os
+import platform
 import posixpath
 import shutil
 import sys
 import textwrap
 import webbrowser
 
+if platform.system() == 'Windows':
+    python = 'py'
+else:
+    python = 'python3'
+
 try:
     import mistune
 except ImportError:
-    import platform
-    if platform.system() == 'Windows':
-        python = 'py'
-    else:
-        python = 'python3'
     print("mistune isn't installed.", file=sys.stderr)
     print("You can install it by running this command on a terminal or ")
     print("command prompt:")
     print()
-    print("    %s -m pip install --user mistune" % python)
+    print("    %s -m pip install mistune" % python)
     sys.exit(1)
 
 try:
@@ -112,7 +113,7 @@ def fix_filename(filename):
     return filename
 
 
-class TutorialRenderer(mistune.Renderer):
+class TutorialRenderer(mistune.HTMLRenderer):
 
     def __init__(self, pygments_style):
         super().__init__()
@@ -226,8 +227,7 @@ def main():
     if pygments is None:
         print("Pygments isn't installed. You can install it like this:")
         print()
-        print(">>> import pip")
-        print(">>> pip.main(['install', '--user', 'pygments'])")
+        print("    %s -m pip install pygments" % python)
         print()
         print("You can also continue without Pygments, but the code examples")
         print("will not be colored.")
