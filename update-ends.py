@@ -35,9 +35,10 @@ import common
 
 
 END_TEMPLATE = """\
-If you have trouble with this tutorial please [tell me about
-it]({toplevel}/contact-me.md) and I'll make this tutorial better. If you
-like this tutorial, please [give it a
+If you have trouble with this tutorial, please
+[tell me about it]({toplevel}/contact-me.md) and I'll make this tutorial better,
+or [ask for help online]({toplevel}/getting-help.md).
+If you like this tutorial, please [give it a
 star]({toplevel}/README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
 
 You may use this tutorial freely at your own risk. See
