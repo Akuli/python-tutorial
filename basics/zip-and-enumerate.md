@@ -76,9 +76,12 @@ c 3
 >>>
 ```
 
+This feature is often used with Python's built-in `zip()` and `enumerate()` functions.
+
+
 ## zip
 
-What comes to your mind when you hear the word `zip`? A mechanism extensively used to tie two parts of something, e.g. shirt or jacket. Python's `zip()` functions does pretty much same, it helps us tie corresponding items together.
+What comes to your mind when you hear the word `zip`? A mechanism extensively used to tie two parts of something, e.g. shirt or jacket. Python's `zip()` functions does pretty much the same, it helps us tie corresponding items together.
 
 ```python
 >>> users = ["Tushar", "Aman", "Anurag", "Sohit"]
@@ -88,14 +91,21 @@ What comes to your mind when you hear the word `zip`? A mechanism extensively us
 [('usr122', 'Tushar'), ('usr123', 'Aman'), ('usr124', 'Anurag'), ('usr125', 'Sohit')]
 >>>
 ```
-After calling zip, an iterator is returned. In order to see the content wrapped inside, we need to first convert it to a list. Basically, `zip()` is an iterator, i.e. lazy: it gives the items as needed, instead of calculating them and storing them into memory all at once. So the zip object cannot show its elements before the elements are used, because it hasn't computed them yet.
+
+Note that `print(user_details)` doesn't work as expected:
+
+```
+>>> print(user_details)
+<zip object at 0x0000016938E311C0>
+>>>
+```
+
+This is because `zip()` is an iterator, i.e. lazy: it gives the items as needed, instead of calculating them and storing them into memory all at once like a list. So the zip object cannot show its elements before the elements are used, because it hasn't computed them yet.
+
 ```python
 >>> users = ["Tushar", "Aman", "Anurag", "Sohit"]
 >>> uids = ["usr122", "usr123", "usr124", "usr125"]
 >>> user_details = zip(uids, users)
->>> print(user_details)
-<zip object at 0x0000016938E311C0>
->>>
 ```
 
 If the lists are of different lengths, some items from the end of the longer list will be ignored.
@@ -110,12 +120,13 @@ If the lists are of different lengths, some items from the end of the longer lis
 
 
 Here the shortest list is `users`, with length 3, so `zip(users, emails)` only takes the first 3 emails.
-> We do not recommend calling `zip()` with lists of different lengths, because ignoring items is usually not what you intended to do.
+We do not recommend calling `zip()` with lists of different lengths, because ignoring items is usually not what you intended to do.
 
-### Using zip with `for` loop
+### Using zip in a `for` loop
 
 It is very common to `for` loop over a `zip()`, and unpack the returned tuples in the `for` loop.
 This is why we introduced unpacking in the beginning of this page.
+When used this way, there's no need to convert the result of `zip(...)` to a list.
 
 ```python
 >>> roll_nums = [20, 25, 28]
@@ -131,7 +142,7 @@ Roll number of Michel is 28
 
 ## enumerate
 
-`enumerate()` is an amazing Built-in function offered by python. When used, gives us the index and the item combined. long story short! `enumerate` comes in handy while working with loops as it gives us access to both the item and it's index at the same time.
+`enumerate()` is an amazing Built-in function offered by python. When used, gives us the index and the item combined.
 
 ```python
 >>> even_nums = [2, 4, 6, 8, 10, 12]
@@ -146,8 +157,6 @@ Index of 10 is 4
 Index of 12 is 5
 >>>
 ```
-
-### looping without `enumerate()`
 
 It is also possible (but more difficult) to do this without `enumerate()`:
 
