@@ -78,18 +78,7 @@ c 3
 
 ## zip
 
-What comes to your mind when you hear the word `zip`? A mechanism extensively used to tie two parts of something i.e. Shirt, Jacket etc. The `zip()` functions does pretty much same, it helps us tie two or more different items together.
-
-```python
->>> users = ["Tushar", "Aman", "Anurag", "Sohit"]
->>> uids = ["usr122", "usr123", "usr124", "usr125"]
->>> user_details = zip(uids, users)
->>> print(user_details)
-<zip object at 0x0000016938E311C0>
->>>
-```
-
-After calling zip, an iterator is returned. In order to see the content wrapped inside, we need to first convert it to a list. Basically, `zip()` is an iterator, i.e. lazy: it gives the items as needed, instead of calculating them and storing them into memory all at once. So the zip object cannot show its elements before the elements are used, because it hasn't computed them yet.
+What comes to your mind when you hear the word `zip`? A mechanism extensively used to tie two parts of something, e.g. shirt or jacket. Python's `zip()` functions does pretty much same, it helps us tie corresponding items together.
 
 ```python
 >>> users = ["Tushar", "Aman", "Anurag", "Sohit"]
@@ -99,9 +88,17 @@ After calling zip, an iterator is returned. In order to see the content wrapped 
 [('usr122', 'Tushar'), ('usr123', 'Aman'), ('usr124', 'Anurag'), ('usr125', 'Sohit')]
 >>>
 ```
+After calling zip, an iterator is returned. In order to see the content wrapped inside, we need to first convert it to a list. Basically, `zip()` is an iterator, i.e. lazy: it gives the items as needed, instead of calculating them and storing them into memory all at once. So the zip object cannot show its elements before the elements are used, because it hasn't computed them yet.
+```python
+>>> users = ["Tushar", "Aman", "Anurag", "Sohit"]
+>>> uids = ["usr122", "usr123", "usr124", "usr125"]
+>>> user_details = zip(uids, users)
+>>> print(user_details)
+<zip object at 0x0000016938E311C0>
+>>>
+```
 
 If the lists are of different lengths, some items from the end of the longer list will be ignored.
-
 ```python
 >>> users = ["Tushar", "Aman", "Anurag"]
 >>> emails = ["tushar@example.com", "aman@example.com", "anurag@example.com", "sohit@example.com"]
@@ -111,8 +108,9 @@ If the lists are of different lengths, some items from the end of the longer lis
 >>>
 ```
 
+
 Here the shortest list is `users`, with length 3, so `zip(users, emails)` only takes the first 3 emails.
-> We do not recommend calling `zip()` with lists of different lengths.
+> We do not recommend calling `zip()` with lists of different lengths, because ignoring items is usually not what you intended to do.
 
 ### Using zip with `for` loop
 
@@ -137,15 +135,6 @@ Roll number of Michel is 28
 
 ```python
 >>> even_nums = [2, 4, 6, 8, 10, 12]
->>> print(list(enumerate(even_nums)))
-[(0, 2), (1, 4), (2, 6), (3, 8), (4, 10), (5, 12)]
->>>
-```
-
-### looping with `enumerate()`
-
-```python
->>> even_nums = [2, 4, 6, 8, 10, 12]
 >>> for index, item in enumerate(even_nums):
 ...     print(f"Index of {item} is {index}")
 ...
@@ -160,7 +149,7 @@ Index of 12 is 5
 
 ### looping without `enumerate()`
 
-let's take a look at how we can do the same thing in a more traditional way.
+It is also possible (but more difficult) to do this without `enumerate()`:
 
 ```python
 >>> even_nums = [2, 4, 6, 8, 10, 12]
@@ -176,10 +165,11 @@ Index of 12 is 5
 >>>
 ```
 
-* `range(0, len(even_nums))` gives 0,1,2,3,4,5, with the list length 6 excluded
-* because these are the valid indexes of a list of length 6, `even_nums[index]` prints each element of `even_nums`
+Here:
+* `range(0, len(even_nums))` gives 0,1,2,3,4,5, with the list length 6 excluded. These are the indexes of our list of length 6.
+* `even_nums[index]` prints each element of `even_nums`, because `index` comes from the range of all indexes into that list.
 
-> This is complicated to think about and easy to get wrong, so it's better to use `enumerate()`
+Because this is complicated to think about and easy to get wrong, it is better to use `enumerate()`.
 
 ## Exercises
 
