@@ -74,7 +74,7 @@ twice.
 >>>
 ```
 
-We have also used [enumerate](../basics/trey-hunner-zip-and-enumerate.md)
+We have also used [enumerate](../basics/zip-and-enumerate.md)
 before, and it actually remembers its position also:
 
 ```python

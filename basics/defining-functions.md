@@ -453,7 +453,7 @@ howdy hi
 Typing `say_hi` just gives us the value of the `say_hi` variable, which
 is the function we defined. But `say_hi()` **calls** that function, so
 it runs and gives us a return value. The return value is None so the
-`>>>` prompt [doesn't show it](#variables.md#none).
+`>>>` prompt [doesn't show it](variables.md#none).
 
 But we know that the print function shows None, so what happens if we
 wrap the whole thing in `print()`?
