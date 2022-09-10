@@ -85,7 +85,7 @@ def update_end(filename, end):
     separator.
     """
     end = '\n***\n\n' + end
-    with common.slashfix_open(filename, 'r') as f:
+    with open(filename, 'r') as f:
         content = f.read()
     if content.endswith(end):
         # No need to do anything.
@@ -96,11 +96,11 @@ def update_end(filename, end):
         # We need to remove the old ending first.
         print("  Removing old end:", filename)
         where = content.index('\n***\n')
-        with common.slashfix_open(filename, 'w') as f:
+        with open(filename, 'w') as f:
             f.write(content[:where])
 
     print("  Adding end:", filename)
-    with common.slashfix_open(filename, 'a') as f:
+    with open(filename, 'a') as f:
         f.write(end)
 
 

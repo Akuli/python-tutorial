@@ -92,12 +92,11 @@ HTML_TEMPLATE = """\
 """
 
 
-def mkdir_slashfix_open(filename, mode):
-    """Like common.slashfix_open(), but make directories as needed."""
-    real_filename = common.slashfix(filename)
-    directory = os.path.dirname(real_filename)
+def mkdir_and_open(filename, mode):
+    """Like open(), but make directories as needed."""
+    directory = os.path.dirname(filename)
     os.makedirs(directory, exist_ok=True)
-    return open(real_filename, mode)
+    return open(filename, mode)
 
 
 def fix_filename(filename):
@@ -252,7 +251,7 @@ def main():
         htmlfile = posixpath.join(args.outdir, fixed_file)
         print('  %-30.30s  -->  %-30.30s' % (markdownfile, htmlfile), end='\r')
 
-        with common.slashfix_open(markdownfile, 'r') as f:
+        with open(markdownfile, 'r') as f:
             markdown = f.read()
         renderer = TutorialRenderer(args.pygments_style)
         body = mistune.markdown(markdown, renderer=renderer)
@@ -264,7 +263,7 @@ def main():
             body=body,
             stylefile=stylefile,
         )
-        with mkdir_slashfix_open(htmlfile, 'w') as f:
+        with mkdir_and_open(htmlfile, 'w') as f:
             print(html, file=f)
     print()
 

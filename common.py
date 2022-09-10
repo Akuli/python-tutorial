@@ -122,16 +122,6 @@ def askyesno(question, default=True):
         print("Please type y, n or nothing at all.")
 
 
-def slashfix(path):
-    """Replace / with os.sep."""
-    return path.replace('/', os.sep)
-
-
-def slashfix_open(file, mode):
-    """An easy way to use slashfix() and open() together."""
-    return open(slashfix(file), mode)
-
-
 @contextlib.contextmanager
 def backup(filename):
     """A context manager that backs up a file."""

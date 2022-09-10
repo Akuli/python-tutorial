@@ -59,18 +59,17 @@ def check(this_file, target, title, titledict):
 
     path = posixpath.join(posixpath.dirname(this_file), target)
     path = posixpath.normpath(path)
-    real_path = common.slashfix(path)
 
-    if not os.path.exists(real_path):
+    if not os.path.exists(path):
         return "doesn't exist"
 
     if target.endswith('/'):
         # A directory.
-        if not os.path.isdir(real_path):
+        if not os.path.isdir(path):
             return "not a directory"
     else:
         # A file.
-        if not os.path.isfile(real_path):
+        if not os.path.isfile(path):
             return "not a file"
 
     if title is not None and title not in titledict[path]:
@@ -82,7 +81,7 @@ def find_titles(filename):
     """Read titles of a markdown file and return a list of them."""
     result = []
 
-    with common.slashfix_open(filename, 'r') as f:
+    with open(filename, 'r') as f:
         for line in f:
             if line.startswith('```'):
                 # it's a code block, let's skip to the end of it to
@@ -103,7 +102,7 @@ def find_links(this_file):
     """
     result = []
 
-    with common.slashfix_open(this_file, 'r') as f:
+    with open(this_file, 'r') as f:
         for match, lineno in common.find_links(f):
             target = match.group(2)
             if '#' in target:
@@ -122,7 +121,7 @@ def find_links(this_file):
 
 def get_line(filename, lineno):
     """Return the lineno'th line of a file."""
-    with common.slashfix_open(filename, 'r') as f:
+    with open(filename, 'r') as f:
         for lineno2, line in enumerate(f, start=1):
             if lineno == lineno2:
                 return line
