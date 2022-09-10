@@ -13,7 +13,7 @@ it, there are a few ways to contact me:
 
 - Tell me on IRC.
 
-    I'm usually on ##learnpython and ##python-friendly on freenode. See
+    I'm regularly on ##learnpython on libera. See
     [Getting help](getting-help.md) for instructions to getting there.
 
 ***
