@@ -241,80 +241,19 @@ Instead it's recommended to use string formatting. It means putting
 other things in the middle of a string.
 
 Python has multiple ways to format strings. One is not necessarily
-better than others, they are just different. Here's a few ways to solve
+better than others, they are just different. Here's a way to solve
 our problem:
 
-- `.format()`-formatting, also known as new-style formatting. This
-    formatting style has a lot of features, but it's a little bit more
-    typing than `%s`-formatting.
-
-    ```python
-    >>> "Hello {}.".format(name)
-    'Hello Akuli.'
-    >>> "My name is {} and I'm on the {} channel on {}.".format(name, channel, network)
-    "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>>
-    ```
-
-- `%s`-formatting, also known as old-style formatting. This has less
-    features than `.format()`-formatting, but `'Hello %s.' % name` is
-    shorter and faster to type than `'Hello {}.'.format(name)`. I like
-    to use `%s` formatting for simple things and `.format` when I need
-    more powerful features.
-
-    ```python
-    >>> "Hello %s." % name
-    'Hello Akuli.'
-    >>> "My name is %s and I'm on the %s channel on %s." % (name, channel, network)
-    "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>>
-    ```
-
-    In the second example we had `(name, channel, network)` on the right
-    side of the `%` sign. It was a tuple, and we'll talk more about them
-    [later](lists-and-tuples.md#tuples).
-
-    If we have a variable that may be a tuple we need to wrap it in another
-    tuple when formatting:
-
-    ```python
-    >>> thestuff = (1, 2, 3)
-    >>> "we have %s" % thestuff
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: not all arguments converted during string formatting
-    >>> "we have %s and %s" % ("hello", thestuff)
-    'we have hello and (1, 2, 3)'
-    >>> "we have %s" % (thestuff,)
-    'we have (1, 2, 3)'
-    >>>
-    ```
-
-    Here `(thestuff,)` was a tuple that contained nothing but `thestuff`.
-
-- f-strings are even less typing, but new in Python 3.6. **Use this only if
+- F-strings is a new formatting mechanism and was introduced in Python 3.6. **Use this only if
     you know that nobody will need to run your code on Python versions older
-    than 3.6.** Here the f is short for "format", and the content of the
-    string is same as it would be with `.format()` but we can use variables
-    directly.
-
+    than 3.6.** Here the `f` is short for "format". f-string is just a string prefixed with `f`.
     ```python
     >>> f"My name is {name} and I'm on the {channel} channel on {network}."
     "My name is Akuli and I'm on the ##learnpython channel on freenode."
     >>>
     ```
 
-All of these formatting styles have many other features also:
-
-```python
->>> 'Three zeros and number one: {:04d}'.format(1)
-'Three zeros and number one: 0001'
->>> 'Three zeros and number one: %04d' % 1
-'Three zeros and number one: 0001'
->>>
-```
-
-If you need to know more about formatting I recommend reading
+If you need to know more about older formatting methods I recommend reading
 [this](https://pyformat.info/).
 
 ## Other things
