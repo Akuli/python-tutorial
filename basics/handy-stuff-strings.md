@@ -241,20 +241,16 @@ Instead it's recommended to use string formatting. It means putting
 other things in the middle of a string.
 
 Python has multiple ways to format strings. One is not necessarily
-better than others, they are just different. Here's a way to solve
-our problem:
+better than others; they each have their own advantages and disadvantages.
+In this tutorial, we will focus on f-strings, which is the most common and usually the easiest way.
 
-- F-strings is a new formatting mechanism and was introduced in Python 3.6. **Use this only if
-    you know that nobody will need to run your code on Python versions older
-    than 3.6.** Here the `f` is short for "format". f-string is just a string prefixed with `f`.
+`f` in f-strings stands for "format", f-strings are string literals that have an `f` at the beginning and curly braces containing expressions that will be replaced with their values at runtime. To create f-strings, you have to add an `f` or an `F` before the opening quotes of a string.
+
     ```python
     >>> f"My name is {name} and I'm on the {channel} channel on {network}."
     "My name is Akuli and I'm on the ##learnpython channel on freenode."
     >>>
     ```
-
-If you need to know more about older formatting methods I recommend reading
-[this](https://pyformat.info/).
 
 ## Other things
 
