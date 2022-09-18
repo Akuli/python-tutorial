@@ -246,11 +246,11 @@ In this tutorial, we will focus on f-strings, which is the most common and usual
 
 `f` in f-strings stands for "format", f-strings are string literals that have an `f` at the beginning and curly braces containing expressions that will be replaced with their values at runtime. To create f-strings, you have to add an `f` or an `F` before the opening quotes of a string.
 
-    ```python
-    >>> f"My name is {name} and I'm on the {channel} channel on {network}."
-    "My name is Akuli and I'm on the ##learnpython channel on freenode."
-    >>>
-    ```
+```python
+>>> f"My name is {name} and I'm on the {channel} channel on {network}."
+"My name is Akuli and I'm on the ##learnpython channel on freenode."
+>>>
+```
 
 ## Other things
 
