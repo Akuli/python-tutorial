@@ -12,7 +12,7 @@ or very little programming experience. If you have programmed a lot in
 the past using some other language you may want to read [the official
 tutorial](https://docs.python.org/3/tutorial/) instead.
 
-You can use Python 3.5 or any newer Python with this tutorial. **Don't
+You can use Python 3.6 or any newer Python with this tutorial. **Don't
 use Python 2 because it's no longer supported.**
 
 ## List of contents
