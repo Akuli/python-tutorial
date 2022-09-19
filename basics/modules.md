@@ -369,8 +369,8 @@ for thing in things:
 ```
 
 Measure how long it takes for the user to answer a question.
-The `%.2f` rounds to 2 decimals, and you can find more formatting
-tricks [here](https://pyformat.info/).
+The `{:.2f}` rounds to 2 decimals, and you can find more formatting
+tricks [here](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals).
 
 ```python
 import time
@@ -381,7 +381,7 @@ end = time.time()
 difference = end - start
 
 if answer == '3':
-    print("Correct! That took %.2f seconds." % difference)
+    print(f"Correct! That took {difference:.2f} seconds.")
 else:
     print("That's not correct...")
 ```
@@ -410,7 +410,7 @@ Check what a path points to.
 import os
 import sys
 
-print("You are currently in %s." % os.getcwd())
+print(f"You are currently in {os.getcwd()}.")
 
 while True:
     path = input("A path, or nothing at all to quit: ")
