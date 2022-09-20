@@ -82,7 +82,7 @@ def ask_questions(answers):
             print("Correct!")
             correct.append(question)
         else:
-            print("Wrong! The correct answer is %s." % answer)
+            print(f"Wrong! The correct answer is {answer}.")
             wrong.append(question)
 
     return (correct, wrong)
@@ -181,11 +181,11 @@ def ask_questions(answers):
     wrong = []
 
     for question, answer in answers.items():
-        if input('%s = ' % question).strip() == answer:
+        if input(f'{question} = ').strip() == answer:
             print("Correct!")
             correct.append(question)
         else:
-            print("Wrong! The correct answer is %s." % answer)
+            print(f"Wrong! The correct answer is {answer}.")
             wrong.append(question)
 
     return (correct, wrong)

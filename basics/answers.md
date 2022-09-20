@@ -101,15 +101,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
     really long and it's hard to see what it does.
 
     The solution is string formatting. At the time of writing this, I
-    recommend replacing the last line with one of these:
-
-    ```python
-    print("You entered %s, %s, %s and %s." % (word1, word2, word3, word4))
-    print("You entered {}, {}, {} and {}.".format(word1, word2, word3, word4))
-    ```
-
-    In the future when most people will have Python 3.6 or newer, you
-    can also use this:
+    recommend replacing the last line with this:
 
     ```python
     print(f"You entered {word1}, {word2}, {word3} and {word4}.")

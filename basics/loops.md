@@ -416,7 +416,7 @@ while True:
             print("I don't know anybody yet.")
         else:
             for name in namelist:
-                print("I know %s!" % name)
+                print(f"I know {name}!")
 
     else:
         print("I don't understand :(")

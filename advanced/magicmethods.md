@@ -112,13 +112,10 @@ the message is 'hello'
 
 Combining `repr()` with [string
 formatting](../basics/handy-stuff-strings.md#string-formatting) is also
-easy. `%` formatting has a `%r` formatter, and `.format()` formatting
-has a `!r` flag.
+easy.
 
 ```python
->>> print("the message is %r" % (message,))
-the message is 'hello'
->>> print("the message is {!r}".format(message))
+>>> print(f"the message is {message}")
 the message is 'hello'
 >>>
 ```
@@ -155,8 +152,7 @@ follow one of these styles:
     ...         self.name = name
     ...         self.founding_year = founding_year
     ...     def __repr__(self):
-    ...         return 'Website(name=%r, founding_year=%r)' % (
-    ...             self.name, self.founding_year)
+    ...         return f'Website(name={self.name}, founding_year={self.founding_year})'
     ...
     >>> github = Website('GitHub', 2008)
     >>> github
@@ -174,8 +170,7 @@ follow one of these styles:
     ...         self.name = name
     ...         self.founding_year = founding_year
     ...     def __repr__(self):
-    ...         return '<Website %r, founded in %r>' % (
-    ...             self.name, self.founding_year)
+    ...         return f'<Website {self.name}, founded in {self.founding_year}>'
     ...
     >>> github = Website('GitHub', 2008)
     >>> github

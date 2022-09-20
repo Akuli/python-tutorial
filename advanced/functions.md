@@ -50,7 +50,7 @@ For example, instead of this...
 
 ```python
 def get_new_info(username):
-    print("Changing user information of %s." % username)
+    print(f"Changing user information of {username}.")
     username = input("New username: ")
     password = input("New password: ")
     fullname = input("Full name: ")
@@ -66,7 +66,7 @@ class User:
     # them here
 
     def change_info(self):
-        print("Changing user information of %s." % self.username)
+        print(f"Changing user information of {self.username}.")
         self.username = input("New username: ")
         self.password = input("New password: ")
         self.fullname = input("Full name: ")
