@@ -115,7 +115,7 @@ formatting](../basics/handy-stuff-strings.md#string-formatting) is also
 easy.
 
 ```python
->>> print(f"the message is {message}")
+>>> print(f"the message is {repr(message)}")
 the message is 'hello'
 >>>
 ```
@@ -152,7 +152,7 @@ follow one of these styles:
     ...         self.name = name
     ...         self.founding_year = founding_year
     ...     def __repr__(self):
-    ...         return f'Website(name={self.name}, founding_year={self.founding_year})'
+    ...         return f'Website(name={repr(self.name)}, founding_year={repr(self.founding_year)})'
     ...
     >>> github = Website('GitHub', 2008)
     >>> github
@@ -170,7 +170,7 @@ follow one of these styles:
     ...         self.name = name
     ...         self.founding_year = founding_year
     ...     def __repr__(self):
-    ...         return f'<Website {self.name}, founded in {self.founding_year}>'
+    ...         return f'<Website {repr(self.name)}, founded in {repr(self.founding_year)}>'
     ...
     >>> github = Website('GitHub', 2008)
     >>> github
