@@ -510,7 +510,7 @@ colors = ['red', 'yellow', 'blue', 'green', 'orange', 'pink', 'black',
           'gray', 'white', 'brown']
 choice = ask_until_correct("What's your favorite color?", colors,
                            error_message="I don't know that color.")
-print("Your favorite color is %s!" % choice)
+print(f"Your favorite color is {choice}!")
 ```
 
 ## Summary

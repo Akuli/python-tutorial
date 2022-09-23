@@ -249,9 +249,9 @@ text = input("Enter a number: ")
 try:
     number = int(text)
 except ValueError:
-    print("'%s' is not a number." % text, file=sys.stderr)
+    print(f"'{text}' is not a number.", file=sys.stderr)
     sys.exit(1)
-print("Your number doubled is %d." % (number * 2))
+print(f"Your number doubled is {(number * 2)}.")
 ```
 
 ## Raising exceptions
@@ -452,7 +452,7 @@ def greet():
 try:
     greet()
 except OSError:
-    print("Cannot read '%s'!" % filename, file=sys.stderr)
+    print(f"Cannot read '{filename}'!", file=sys.stderr)
     if askyesno("Would you like to create a default greeting file?"):
         with open(filename, 'w') as f:
             print(default_greeting, file=f)
