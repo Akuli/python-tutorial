@@ -25,7 +25,7 @@ isn't exactly like mine but it works just fine it's ok, and you can
         `print('You entered:', something)`.
 
 2. The broken code has mostly the same issues as exercise 1. Here are
-    the problems that excercise 1 doesn't have:
+    the problems that exercise 1 doesn't have:
 
     - The if-elif-else has a blank line at a confusing place. Delete it.
     - After deleting the code, it looks quite dense. Add a new blank
