@@ -25,7 +25,7 @@ everything and recommend to everyone.
 
 If you aren't sure about which editor you should use, I recommend
 Porcupine. It's a simple editor I wrote in Python; it lets you edit
-files and it doesn't have too many other featues. [Install it with these
+files and it doesn't have too many other features. [Install it with these
 instructions](https://github.com/Akuli/porcupine/#installing-porcupine),
 and then [learn to use it by writing the classic Hello World
 program](https://github.com/Akuli/porcupine/wiki/First-Program). Then
