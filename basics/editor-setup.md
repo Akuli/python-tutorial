@@ -32,14 +32,13 @@ program](https://github.com/Akuli/porcupine/wiki/First-Program). Then
 you can [skip the rest of this chapter](#editor-or--prompt).
 
 Note that most other editors come with settings that are not suitable
-for writing Python code. _**TODO:** add a link to the old editor setup
-tutorial here._
+for writing Python code. For example, setting up `Vim`,a popular editor, for coding in Python is a nightmare.
+If you want to know more about setting up `Vim` for Python, [refer this](https://realpython.com/vim-and-python-a-match-made-in-heaven/). 
 
 Most of these editors lack some important features, they have so many
-features that confuse people or they aren't free. You can use these
-editors if you like them, but **these editors are BAD for getting
-started with programming**:
-
+features that confuse people, or they aren't free. You can use these
+editors if you like them, but can be generally avoided in the beginning stage.
+Here is a list of editors that are more feature rich but generally have a steeper learning curve:
 - PyCharm
 - IDLE
 - Emacs
@@ -52,8 +51,8 @@ started with programming**:
 - Vim
 - Wingware
 
-This list doesn't contain all bad editors, but these are editors that
-people often try to use. If you know a bad editor and you think I should
+This list doesn't contain all the editors out there but a few popular ones.
+If you know another editor that has not been included and you think I should
 mention it here, please [let me know](../contact-me.md).
 
 ## Editor or `>>>` prompt?
