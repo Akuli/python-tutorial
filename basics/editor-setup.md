@@ -23,36 +23,47 @@ The choice of an editor is a very personal thing. There are many
 editors, and most programmers have a favorite editor that they use for
 everything and recommend to everyone.
 
-If you aren't sure about which editor you should use, I recommend
-Porcupine. It's a simple editor I wrote in Python; it lets you edit
-files and it doesn't have too many other features. [Install it with these
-instructions](https://github.com/Akuli/porcupine/#installing-porcupine),
-and then [learn to use it by writing the classic Hello World
-program](https://github.com/Akuli/porcupine/wiki/First-Program). Then
-you can [skip the rest of this chapter](#editor-or--prompt).
+The editors can be broadly divided into three:-
 
-Note that most other editors come with settings that are not suitable
-for writing Python code. For example, setting up `Vim`,a popular editor, for coding in Python is a nightmare.
-If you want to know more about setting up `Vim` for Python, [refer this](https://realpython.com/vim-and-python-a-match-made-in-heaven/). 
+#### The Basic Text Editors
+These editors are usually found in-built in the OS as part of its productive suite. They do not have features like
+code compilation/running, auto-completion, syntax highlighting, etc. that makes one's life easier. They are  usually used for relatively simple
+text editing and is not preferred  for coding.  
 
-Most of these editors lack some important features, they have so many
-features that confuse people, or they aren't free. You can use these
-editors if you like them, but can be generally avoided in the beginning stage.
-Here is a list of editors that are more feature rich but generally have a steeper learning curve:
-- PyCharm
-- IDLE
-- Emacs
-- Gedit
-- Nano
-- NetBeans
-- Notepad
-- Pluma
-- Spyder
-- Vim
-- Wingware
+A few popular ones in this category are:
+- Notepad (Windows)
+- Gedit (Linux/Ubuntu)
+- Notepad ++ (Windows)
+- Nano (Linux,Mac OS)
 
+#### Advanced Text Editors
+The text editors in this category are  mainly preferred for coding at a beginner stage. They have features like auto-completion, syntax highlighting,
+code compilation, etc. They are "smart" editors have "smart" features like Error Checking, Debugging, etc. They are relatively easy to learn and have the necessary features
+to start your programming journey.
+
+A few popular ones in this category are:
+- Visual Studio Code / VS Code (Windows/Linux/Mac OS)
+- IDLE (Usually is preinstalled with newer versions of Python) (Windows/Linux/Mac OS)
+- Thonny (Windows/Linux/Mac OS)
+- Porcupine(Windows/Linux/Mac OS)
+- Geany(Windows/Linux/Mac OS)
+
+#### Professional Level Editors / IDEs
+This category of text editors are usually professional grade pieces of software. They are mostly proprietary and paid. They have a steep
+learning curve due to host of features they have to offer. Usually `IDE`s or `Integrated Development Environment`s fall under this.
+IDEs usually consolidates the basic tools that are necessary to not only build but also test the software. These types of editors are generally not preferred
+in the beginning stage and is usually preferred when writing complex pieces of software.
+
+A few popular ones in this category are:
+- Visual Studio (Not be confused with `Visual Studio Code`) (Windows)
+- Pycharm (Windows/Linux/Mac OS)
+- Vim (Windows/Linux/Mac OS)
+- Emacs (Windows/Linux/Mac OS)
+
+There are no "right" or "wrong" editors.The preference of an editor
+is a personal choice and thus exploring all the options out there would be necessary to choose your preferred editor.
 This list doesn't contain all the editors out there but a few popular ones.
-If you know another editor that has not been included and you think I should
+If you know another editor that has not been included, and you think I should
 mention it here, please [let me know](../contact-me.md).
 
 ## Editor or `>>>` prompt?
@@ -78,7 +89,7 @@ echoes it back, but if you make a file that contains nothing but a
 ***
 
 If you have trouble with this tutorial, please
-[tell me about it](../contact-me.md) and I'll make this tutorial better,
+[tell me about it,](../contact-me.md) and I'll make this tutorial better,
 or [ask for help online](../getting-help.md).
 If you like this tutorial, please [give it a
 star](../README.md#how-can-i-thank-you-for-writing-and-sharing-this-tutorial).
