@@ -34,7 +34,7 @@ A few popular ones in this category are:
 - Notepad (Windows)
 - Gedit (Linux)
 - Notepad ++ (Windows)
-- Nano (Linux,Mac OS)
+- Nano (Linux/Mac OS)
 
 #### Advanced Text Editors
 The text editors in this category are  mainly preferred for coding at a beginner stage. They have features like auto-completion, syntax highlighting,
