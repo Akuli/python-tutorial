@@ -26,7 +26,7 @@ everything and recommend to everyone.
 The editors can be broadly divided into three categories:
 
 #### The Basic Text Editors
-These editors are usually found in-built in the OS as part of its productive suite. They do not have features like
+These editors usually come with the operating system. They do not have features like
 code compilation/running, auto-completion, syntax highlighting, etc. that makes one's life easier. They are  usually used for relatively simple
 text editing and is not preferred  for coding.  
 
