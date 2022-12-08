@@ -38,7 +38,7 @@ A few popular ones in this category are:
 
 #### Advanced Text Editors
 The text editors in this category are  mainly preferred for coding at a beginner stage. They have features like auto-completion, syntax highlighting,
-code compilation, etc. They are "smart" editors have "smart" features like Error Checking, Debugging, etc. They are relatively easy to learn and have the necessary features
+running and debugging code, highlighting errors, etc. They are relatively easy to learn and have the necessary features
 to start your programming journey.
 
 A few popular ones in this category are:
