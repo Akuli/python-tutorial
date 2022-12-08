@@ -43,7 +43,7 @@ to start your programming journey.
 
 A few popular ones in this category are:
 - Visual Studio Code / VS Code (Windows/Linux/Mac OS)
-- IDLE (Usually is preinstalled with newer versions of Python) (Windows/Linux/Mac OS)
+- IDLE (Usually comes with Python) (Windows/Linux/Mac OS)
 - Thonny (Windows/Linux/Mac OS)
 - [Porcupine](https://github.com/Akuli/porcupine) (created by the author of this tutorial) (Windows/Linux/Mac OS)
 - Geany(Windows/Linux/Mac OS)
