@@ -46,7 +46,9 @@ A few popular ones in this category are:
 - IDLE (Usually comes with Python) (Windows/Linux/Mac OS)
 - Thonny (Windows/Linux/Mac OS)
 - [Porcupine](https://github.com/Akuli/porcupine) (created by the author of this tutorial) (Windows/Linux/Mac OS)
-- Geany(Windows/Linux/Mac OS)
+- Geany (Windows/Linux/Mac OS)
+
+**We recommend that you look into a few of these editors and install your favorite one.**
 
 #### Professional Level Editors / IDEs
 This category of text editors are usually professional grade pieces of software. They are mostly proprietary and paid. They have a steep
