@@ -36,7 +36,7 @@ A few popular ones in this category are:
 - Notepad ++ (Windows)
 - Nano (Linux/Mac OS)
 
-#### Advanced Text Editors
+#### Smart Text Editors
 The text editors in this category have features like auto-completion, syntax highlighting,
 running and debugging code, highlighting errors, etc. They are relatively easy to learn and have the necessary features
 to start your programming journey.
