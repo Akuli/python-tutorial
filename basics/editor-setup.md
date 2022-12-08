@@ -13,9 +13,9 @@ like automatically displaying different things with different colors,
 but also highlighting mistakes in the code, and coloring syntax.
 
 If you are on Windows or Mac OSX you have probably noticed that your
-Python came with an editor called IDLE. We are not going to use it
-because it's lacking some important features, and most experienced
-programmers (including me) don't use it or recommend it.
+Python came with an editor called IDLE. You could start using that as your default editor 
+but, it would be preferable to find other editors that supports more features than the IDLE.
+
 
 ## Which editor?
 
