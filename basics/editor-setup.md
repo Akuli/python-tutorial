@@ -60,7 +60,7 @@ A few popular ones in this category are:
 - Vim (Windows/Linux/Mac OS)
 - Emacs (Windows/Linux/Mac OS)
 
-There are no "right" or "wrong" editors.The preference of an editor
+As already mentioned, there are no "right" or "wrong" editors. The preference of an editor
 is a personal choice and we recommend trying different editors.
 The lists on this page don't contain all editors, but just a few of the most popular ones.
 
