@@ -54,7 +54,7 @@ A few popular ones in this category are:
 This category of text editors are usually professional grade pieces of software. They are mostly proprietary and paid. They have a steep
 learning curve because of how many features they have.
 These types of editors are generally not preferred
-in the beginning stage and is usually preferred when writing complex pieces of software.
+in the beginning stage. They are meant to be used for writing complex and large pieces of software.
 
 A few popular ones in this category are:
 - Visual Studio (Not be confused with *Visual Studio Code*) (Windows)
