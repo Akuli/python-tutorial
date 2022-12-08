@@ -57,7 +57,7 @@ IDEs usually consolidates the basic tools that are necessary to not only build b
 in the beginning stage and is usually preferred when writing complex pieces of software.
 
 A few popular ones in this category are:
-- Visual Studio (Not be confused with `Visual Studio Code`) (Windows)
+- Visual Studio (Not be confused with *Visual Studio Code*) (Windows)
 - Pycharm (Windows/Linux/Mac OS)
 - Vim (Windows/Linux/Mac OS)
 - Emacs (Windows/Linux/Mac OS)
