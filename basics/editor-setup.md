@@ -63,8 +63,6 @@ A few popular ones in this category are:
 There are no "right" or "wrong" editors.The preference of an editor
 is a personal choice and thus exploring all the options out there would be necessary to choose your preferred editor.
 This list doesn't contain all the editors out there but a few popular ones.
-If you know another editor that has not been included, and you think I should
-mention it here, please [let me know](../contact-me.md).
 
 ## Editor or `>>>` prompt?
 
