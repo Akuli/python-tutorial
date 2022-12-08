@@ -32,7 +32,7 @@ text editing and is not preferred  for coding.
 
 A few popular ones in this category are:
 - Notepad (Windows)
-- Gedit (Linux/Ubuntu)
+- Gedit (Linux)
 - Notepad ++ (Windows)
 - Nano (Linux,Mac OS)
 
