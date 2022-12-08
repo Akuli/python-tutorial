@@ -53,7 +53,7 @@ A few popular ones in this category are:
 #### IDEs
 This category of text editors are usually professional grade pieces of software. They are mostly proprietary and paid. They have a steep
 learning curve because of how many features they have.
-IDEs usually consolidates the basic tools that are necessary to not only build but also test the software. These types of editors are generally not preferred
+These types of editors are generally not preferred
 in the beginning stage and is usually preferred when writing complex pieces of software.
 
 A few popular ones in this category are:
