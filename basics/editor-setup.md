@@ -28,7 +28,7 @@ The editors can be broadly divided into three categories:
 #### The Basic Text Editors
 These editors usually come with the operating system. They do not have features like
 running code, auto-completion, etc. that make programming easier. They are usually used for relatively simple
-text editing and is not preferred  for coding.  
+text editing. Most programmers do not use these editors for programming.
 
 A few popular ones in this category are:
 - Notepad (Windows)
