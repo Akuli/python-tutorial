@@ -61,7 +61,7 @@ A few popular ones in this category are:
 - Emacs (Windows/Linux/Mac OS)
 
 There are no "right" or "wrong" editors.The preference of an editor
-is a personal choice and thus exploring all the options out there would be necessary to choose your preferred editor.
+is a personal choice and we recommend trying different editors.
 The lists on this page don't contain all editors, but just a few of the most popular ones.
 
 ## Editor or `>>>` prompt?
