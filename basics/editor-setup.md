@@ -23,7 +23,7 @@ The choice of an editor is a very personal thing. There are many
 editors, and most programmers have a favorite editor that they use for
 everything and recommend to everyone.
 
-The editors can be broadly divided into three:-
+The editors can be broadly divided into three categories:
 
 #### The Basic Text Editors
 These editors are usually found in-built in the OS as part of its productive suite. They do not have features like
