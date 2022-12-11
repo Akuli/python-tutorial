@@ -49,7 +49,7 @@ A few popular ones in this category are:
 
 **We recommend that you look into a few of these editors and install your favorite one.**
 
-#### IDEs
+#### IDEs and advanced editors
 This category of text editors are usually professional grade pieces of software. They are mostly proprietary and paid. They have a steep
 learning curve because of how many features they have.
 These types of editors are generally not preferred
