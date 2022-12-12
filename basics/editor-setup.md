@@ -13,9 +13,8 @@ like automatically displaying different things with different colors,
 but also highlighting mistakes in the code, and coloring syntax.
 
 If you are on Windows or Mac OSX you have probably noticed that your
-Python came with an editor called IDLE. We are not going to use it
-because it's lacking some important features, and most experienced
-programmers (including me) don't use it or recommend it.
+Python came with an editor called IDLE. You can use IDLE, but we recommend exploring other options first.
+
 
 ## Which editor?
 
@@ -23,38 +22,48 @@ The choice of an editor is a very personal thing. There are many
 editors, and most programmers have a favorite editor that they use for
 everything and recommend to everyone.
 
-If you aren't sure about which editor you should use, I recommend
-Porcupine. It's a simple editor I wrote in Python; it lets you edit
-files and it doesn't have too many other features. [Install it with these
-instructions](https://github.com/Akuli/porcupine/#installing-porcupine),
-and then [learn to use it by writing the classic Hello World
-program](https://github.com/Akuli/porcupine/wiki/First-Program). Then
-you can [skip the rest of this chapter](#editor-or--prompt).
+The editors can be broadly divided into three categories:
 
-Note that most other editors come with settings that are not suitable
-for writing Python code. _**TODO:** add a link to the old editor setup
-tutorial here._
+#### The Basic Text Editors
+These editors usually come with the operating system. They do not have features like
+running code, auto-completion, etc. that make programming easier. They are usually used for relatively simple
+text editing. Most programmers do not use these editors for programming.
 
-Most of these editors lack some important features, they have so many
-features that confuse people or they aren't free. You can use these
-editors if you like them, but **these editors are BAD for getting
-started with programming**:
+A few popular ones in this category are:
+- Notepad (Windows)
+- Gedit (Linux)
+- Notepad ++ (Windows)
+- Nano (Linux/Mac OS)
 
-- PyCharm
-- IDLE
-- Emacs
-- Gedit
-- Nano
-- NetBeans
-- Notepad
-- Pluma
-- Spyder
-- Vim
-- Wingware
+#### Smart Text Editors
+The text editors in this category have features like auto-completion, syntax highlighting,
+running and debugging code, highlighting errors, etc. They are relatively easy to learn and have the necessary features
+to start your programming journey.
 
-This list doesn't contain all bad editors, but these are editors that
-people often try to use. If you know a bad editor and you think I should
-mention it here, please [let me know](../contact-me.md).
+A few popular ones in this category are:
+- Visual Studio Code / VS Code (Windows/Linux/Mac OS)
+- IDLE (Usually comes with Python) (Windows/Linux/Mac OS)
+- Thonny (Windows/Linux/Mac OS)
+- [Porcupine](https://github.com/Akuli/porcupine) (created by the author of this tutorial) (Windows/Linux/Mac OS)
+- Geany (Windows/Linux/Mac OS)
+
+**We recommend that you look into a few of these editors and install your favorite one.**
+
+#### IDEs and advanced editors
+This category of text editors are usually professional grade pieces of software. They are mostly proprietary and paid. They have a steep
+learning curve because of how many features they have.
+These types of editors are generally not preferred
+in the beginning stage. They are meant to be used for writing complex and large pieces of software.
+
+A few popular ones in this category are:
+- Visual Studio (Not be confused with *Visual Studio Code*) (Windows)
+- Pycharm (Windows/Linux/Mac OS)
+- Vim (Windows/Linux/Mac OS)
+- Emacs (Windows/Linux/Mac OS)
+
+As already mentioned, there are no "right" or "wrong" editors. The preference of an editor
+is a personal choice and we recommend trying different editors.
+The lists on this page don't contain all editors, but just a few of the most popular ones.
 
 ## Editor or `>>>` prompt?
 
