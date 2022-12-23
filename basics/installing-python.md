@@ -20,13 +20,13 @@ Let's get started!
 
 Installing Python on Windows is a lot like installing any other program.
 
-1. Go to [the official Python website](https://www.python.org/).
+1. Go to [the official Python website](https://www.python.org/downloads/).
 2. Move your mouse over the blue Downloads button, but don't click it.
    Then click the button that downloads the latest version of Python.
 3. Run the installer.
 4. Make sure that the launcher gets installed and click Install Now.
 
-    ![The py.exe launcher.](../images/py-exe.png)
+    ![The py.exe launcher.](../images/py-exe3.8.png)
 
 ### Mac OSX
 
