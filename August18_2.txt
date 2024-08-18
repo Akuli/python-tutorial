@@ -1,0 +1,368 @@
+Last login: Thu Aug 15 22:23:25 on ttys018
+raja@Falcon ~ % ls 
+Desktop		Google Drive	Music		Postman		mkdir.txt
+Documents	Library		My Drive	Public
+Downloads	Movies		Pictures	code
+raja@Falcon ~ % cd Desktop 
+raja@Falcon Desktop % ls
+Git_code_commit
+Screenshot 2024-07-23 at 7.36.41 PM.png
+learn_linux
+python-tutorial
+raja@Falcon Desktop % cd python-tutorial 
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		make-html.py
+README.md		contact-me.md		update-ends.py
+TODO.md			getting-help.md		update-readmes.py
+advanced		html-style.css		what-next.md
+basics			images
+classes.md		linkcheck.py
+raja@Falcon python-tutorial % git branch
+* master
+raja@Falcon python-tutorial % git branch -b main
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
+   or: git branch [<options>] [-l] [<pattern>...]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --recurse-submodules  recurse through submodules
+    --format <format>     format to use for the output
+
+raja@Falcon python-tutorial % git branch
+* master
+raja@Falcon python-tutorial % git switch -d main
+fatal: invalid reference: main
+raja@Falcon python-tutorial % git branch main
+raja@Falcon python-tutorial % git branch
+  main
+* master
+raja@Falcon python-tutorial % git branch raja
+raja@Falcon python-tutorial % git branch
+  main
+* master
+  raja
+raja@Falcon python-tutorial % git checkout raja
+Switched to branch 'raja'
+raja@Falcon python-tutorial % git branch
+  main
+  master
+* raja
+raja@Falcon python-tutorial % touch file.txt
+raja@Falcon python-tutorial % vi file.txt
+raja@Falcon python-tutorial % cat file.txt
+main courece is python
+raja@Falcon python-tutorial % git commit -a file.txt
+fatal: paths 'file.txt ...' with -a does not make sense
+raja@Falcon python-tutorial % git status
+On branch raja
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+raja@Falcon python-tutorial % git add .
+raja@Falcon python-tutorial % git status
+On branch raja
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   file.txt
+
+raja@Falcon python-tutorial % git commit -m "Testing" 
+[raja 9615812] Testing
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+raja@Falcon python-tutorial % git push  
+fatal: The current branch raja has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin raja
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+raja@Falcon python-tutorial % git push --set-upstream origin raja
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 291.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'raja' on GitHub by visiting:
+remote:      https://github.com/Rajagopalnaidu1985/python-tutorial/pull/new/raj
+remote: 
+To github.com:Rajagopalnaidu1985/python-tutorial.git
+ * [new branch]      raja -> raja
+branch 'raja' set up to track 'origin/raja'.
+raja@Falcon python-tutorial % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+raja@Falcon python-tutorial % git log
+commit e1127026eac08cb06ef5be1da8887d15e5457d5b (HEAD -> master, origin/master, origin/HEAD, main)
+Author: George Rahul <75750164+georgerahul24@users.noreply.github.com>
+Date:   Mon Dec 12 15:19:57 2022 +0530
+
+    Rewrite editor lists in editor-setup.md (#46)
+    
+    Co-authored-by: Akuli <akuviljanen17@gmail.com>
+
+commit 48a2e2472bb0bcaf06e75976db3ebfd244d4ab99
+Author: Sarvesh Kumar Dwivedi <georgiansarvesh4396@gmail.com>
+Date:   Sun Oct 2 23:12:55 2022 +0530
+
+    Fix a few typos (#43)
+
+commit 5183b3dcf791eef1e575e30ab3e83f12e48ed97b
+Author: Tushar Khatri <khatritushar320@gmail.com>
+Date:   Sat Sep 24 00:06:58 2022 +0530
+
+    Replace % with f-strings in multiple files mentioned in issue #19 (#41)
+
+commit 78504ac5ef9f737897af7fb1456d5cb8d98eb0f1
+Author: Tushar Khatri <khatritushar320@gmail.com>
+Date:   Tue Sep 20 00:43:29 2022 +0530
+
+    Replace % with f-string in basics/modules.md (#40)
+raja@Falcon python-tutorial % git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 2 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 953 bytes | 476.00 KiB/s, done.
+From github.com:Rajagopalnaidu1985/python-tutorial
+   e112702..e26635f  master     -> origin/master
+Updating e112702..e26635f
+Fast-forward
+ file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+raja@Falcon python-tutorial % git log
+commit e26635f9bbd5f1d2777a076112810b095293f38f (HEAD -> master, origin/master, origin/HEAD)
+Author: Rajagopalnaidu1985 <rajagopalnaidu.m@gmail.com>
+Date:   Sat Aug 17 10:29:44 2024 -0700
+
+    Testing via squash (#1)
+
+commit e1127026eac08cb06ef5be1da8887d15e5457d5b (main)
+Author: George Rahul <75750164+georgerahul24@users.noreply.github.com>
+Date:   Mon Dec 12 15:19:57 2022 +0530
+
+    Rewrite editor lists in editor-setup.md (#46)
+    
+    Co-authored-by: Akuli <akuviljanen17@gmail.com>
+
+commit 48a2e2472bb0bcaf06e75976db3ebfd244d4ab99
+Author: Sarvesh Kumar Dwivedi <georgiansarvesh4396@gmail.com>
+Date:   Sun Oct 2 23:12:55 2022 +0530
+
+    Fix a few typos (#43)
+
+commit 5183b3dcf791eef1e575e30ab3e83f12e48ed97b
+Author: Tushar Khatri <khatritushar320@gmail.com>
+Date:   Sat Sep 24 00:06:58 2022 +0530
+
+    Replace % with f-strings in multiple files mentioned in issue #19 (#41)
+
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		linkcheck.py
+README.md		contact-me.md		make-html.py
+TODO.md			file.txt		update-ends.py
+advanced		getting-help.md		update-readmes.py
+basics			html-style.css		what-next.md
+classes.md		images
+raja@Falcon python-tutorial % cd ..
+raja@Falcon Desktop % ls
+Git_code_commit
+Screenshot 2024-07-23 at 7.36.41 PM.png
+learn_linux
+python-tutorial
+raja@Falcon Desktop % cd python-tutorial 
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		linkcheck.py
+README.md		contact-me.md		make-html.py
+TODO.md			file.txt		update-ends.py
+advanced		getting-help.md		update-readmes.py
+basics			html-style.css		what-next.md
+classes.md		images
+raja@Falcon python-tutorial % cd master
+cd: no such file or directory: master
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		linkcheck.py
+README.md		contact-me.md		make-html.py
+TODO.md			file.txt		update-ends.py
+advanced		getting-help.md		update-readmes.py
+basics			html-style.css		what-next.md
+classes.md		images
+raja@Falcon python-tutorial % cd images
+raja@Falcon images % ls
+differentlist.png	indexing1.png		py-exe.png
+discord-explore.png	indexing2.png		samelist.png
+download-me.png		indexing3.png		slicing1.png
+drawings.odg		iters.png		slicing2.png
+freeze-melt.png		key.png			slicing3.png
+geany.png		locals-and-globals.png	terminal.png
+generators.png		modules.png		variables1.png
+idle-new.png		people.png		variables2.png
+idle.png		powershell.png
+raja@Falcon images % cd .
+raja@Falcon images % ls
+differentlist.png	indexing1.png		py-exe.png
+discord-explore.png	indexing2.png		samelist.png
+download-me.png		indexing3.png		slicing1.png
+drawings.odg		iters.png		slicing2.png
+freeze-melt.png		key.png			slicing3.png
+geany.png		locals-and-globals.png	terminal.png
+generators.png		modules.png		variables1.png
+idle-new.png		people.png		variables2.png
+idle.png		powershell.png
+raja@Falcon images % cd ..
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		linkcheck.py
+README.md		contact-me.md		make-html.py
+TODO.md			file.txt		update-ends.py
+advanced		getting-help.md		update-readmes.py
+basics			html-style.css		what-next.md
+classes.md		images
+raja@Falcon python-tutorial % git@github.com:Rajagopalnaidu1985/python-tutorial.git
+zsh: no such file or directory: git@github.com:Rajagopalnaidu1985/python-tutorial.git
+raja@Falcon python-tutorial % cd git@github.com:Rajagopalnaidu1985/python-tutorial.git
+cd: no such file or directory: git@github.com:Rajagopalnaidu1985/python-tutorial.git
+raja@Falcon python-tutorial % git switch main
+Switched to branch 'main'
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		make-html.py
+README.md		contact-me.md		update-ends.py
+TODO.md			getting-help.md		update-readmes.py
+advanced		html-style.css		what-next.md
+basics			images
+classes.md		linkcheck.py
+raja@Falcon python-tutorial % cd .
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		make-html.py
+README.md		contact-me.md		update-ends.py
+TODO.md			getting-help.md		update-readmes.py
+advanced		html-style.css		what-next.md
+basics			images
+classes.md		linkcheck.py
+raja@Falcon python-tutorial % cd ..
+raja@Falcon Desktop % ls
+Git_code_commit
+Screenshot 2024-07-23 at 7.36.41 PM.png
+learn_linux
+python-tutorial
+raja@Falcon Desktop % cd python-tutorial 
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		make-html.py
+README.md		contact-me.md		update-ends.py
+TODO.md			getting-help.md		update-readmes.py
+advanced		html-style.css		what-next.md
+basics			images
+classes.md		linkcheck.py
+raja@Falcon python-tutorial % git branch
+* main
+  master
+  raja
+raja@Falcon python-tutorial % cd raja
+cd: no such file or directory: raja
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		make-html.py
+README.md		contact-me.md		update-ends.py
+TODO.md			getting-help.md		update-readmes.py
+advanced		html-style.css		what-next.md
+basics			images
+classes.md		linkcheck.py
+raja@Falcon python-tutorial % git branch
+* main
+  master
+  raja
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		make-html.py
+README.md		contact-me.md		update-ends.py
+TODO.md			getting-help.md		update-readmes.py
+advanced		html-style.css		what-next.md
+basics			images
+classes.md		linkcheck.py
+raja@Falcon python-tutorial % git switch raja
+Switched to branch 'raja'
+Your branch is based on 'origin/raja', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+raja@Falcon python-tutorial % git branch
+  main
+  master
+* raja
+raja@Falcon python-tutorial % ls
+LICENSE			common.py		linkcheck.py
+README.md		contact-me.md		make-html.py
+TODO.md			file.txt		update-ends.py
+advanced		getting-help.md		update-readmes.py
+basics			html-style.css		what-next.md
+classes.md		images
+raja@Falcon python-tutorial % touch August18.txt
+raja@Falcon python-tutorial % vi file.txt
+
+Once we understand the flow of work in git hub its easy to manage the project. other wise can able to understand the topis.
+
+x = Raja
+y = Pratyusha
+z = Gaatra
+
+if (x+y = Z) what is the x value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- INSERT --
